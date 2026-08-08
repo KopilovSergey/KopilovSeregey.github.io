@@ -135,6 +135,29 @@ h2 {
     font-size: 0.8rem;
 }
 
+/* Контакты */
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: #0D6EFD;
+    font-weight: 500;
+    padding: 8px 16px;
+    border: 1px solid #0D6EFD;
+    border-radius: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.contact-links a:hover {
+    background: #0D6EFD;
+    color: #fff;
+}
+
 /* Футер */
 footer {
     text-align: center;
