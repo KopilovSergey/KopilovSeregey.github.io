@@ -1331,3 +1331,10 @@ a {
     text-align: center;
   }
 }
+/* Стиль для овальной кнопки с текстом "Алюминий · Сталь · ПЭНД" */
+.mbr-section-btn .btn-oval {
+  border-radius: 100px !important;
+  padding: 0.4rem 2.5rem !important;
+  font-size: 1.1rem !important;
+  letter-spacing: 1px;
+}
