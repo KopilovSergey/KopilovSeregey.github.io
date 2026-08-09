@@ -649,7 +649,7 @@
 }
 @media (min-width: 768px) {
   .cid-vrMAloTEiy {
-    align-items: flex-end;
+    align-items: center;  /* <--- было flex-end, стало center */
   }
   .cid-vrMAloTEiy .row {
     justify-content: center;
@@ -665,8 +665,8 @@
 }
 @media (max-width: 767px) {
   .cid-vrMAloTEiy {
-    -webkit-align-items: center;
-    align-items: flex-end;
+    -webkit-align-items: center; /* было flex-end */
+    align-items: center;         /* было flex-end */
   }
   .cid-vrMAloTEiy .mbr-row {
     -webkit-justify-content: center;
