@@ -4,89 +4,198 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сергей Копылов | Конструктор</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Иконки -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <!-- Шапка -->
-        <header>
-            <div class="avatar">
-                <img src="https://ui-avatars.com/api/?name=Сергей+Копылов&size=200&background=0D6EFD&color=fff" alt="Сергей Копылов">
+    <!-- Навигация (как в шаблоне) -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">СК</div>
+            <div class="nav-links">
+                <a href="#about">Обо мне</a>
+                <a href="#skills">Навыки</a>
+                <a href="#projects">Проекты</a>
+                <a href="#contact">Контакты</a>
             </div>
-            <h1>Сергей Копылов</h1>
-            <p class="subtitle">Конструктор</p>
-            <div class="social-links">
-                <a href="https://github.com/ваш-ник" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://t.me/ваш-ник" target="_blank"><i class="fab fa-telegram"></i></a>
-                <a href="mailto:ваш-email@example.com"><i class="fas fa-envelope"></i></a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
             </div>
-        </header>
+        </div>
+    </nav>
 
-        <!-- О себе (текст конструктора сохранён) -->
-        <section class="about">
-            <h2>О себе</h2>
-            <p>
-                Привет! Я Сергей Копылов, конструктор. Занимаюсь проектированием и разработкой 
-                технических решений. Мой опыт включает работу с различными инженерными системами, 
-                создание чертежей, моделей и документации. Стараюсь сочетать функциональность 
-                и эстетику в каждом проекте.
-            </p>
-        </section>
-
-        <!-- Навыки (как у оригинала, без сертификатов) -->
-        <section class="skills">
-            <h2>Навыки</h2>
-            <div class="skill-tags">
-                <span>AutoCAD</span>
-                <span>Компас-3D</span>
-                <span>SolidWorks</span>
-                <span>Проектирование</span>
-                <span>Черчение</span>
-                <span>Расчёты</span>
-                <span>Техническая документация</span>
-            </div>
-        </section>
-
-        <!-- Проекты (описания оставлены как у конструктора) -->
-        <section class="projects">
-            <h2>Проекты</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Проект 1</h3>
-                    <p>Разработка конструкторской документации для металлических конструкций. Создание 3D-моделей и чертежей для производства.</p>
-                    <a href="#" target="_blank">Подробнее <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="project-card">
-                    <h3>Проект 2</h3>
-                    <p>Проектирование узлов и механизмов для промышленного оборудования. Проведение прочностных расчётов и оптимизация параметров.</p>
-                    <a href="#" target="_blank">Подробнее <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="project-card">
-                    <h3>Проект 3</h3>
-                    <p>Разработка комплексного проекта с нуля: от эскизов до рабочей документации. Взаимодействие со смежными специалистами.</p>
-                    <a href="#" target="_blank">Подробнее <i class="fas fa-arrow-right"></i></a>
+    <!-- Hero-секция (главная) -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Конструктор</div>
+                <h1>Сергей Копылов</h1>
+                <p class="hero-subtitle">
+                    Проектирую надёжные и эстетичные технические решения.<br>
+                    От чертежей до готовых изделий.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Смотреть проекты</a>
+                    <a href="#contact" class="btn btn-outline">Связаться</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Контакты (без сертификатов) -->
-        <section class="contacts">
-            <h2>Контакты</h2>
-            <p>Вы можете связаться со мной через социальные сети или по электронной почте.</p>
-            <div class="contact-links">
-                <a href="https://github.com/ваш-ник" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://t.me/ваш-ник" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
-                <a href="mailto:ваш-email@example.com"><i class="fas fa-envelope"></i> Email</a>
+    <!-- Раздел "О себе" -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Обо мне</span>
+                <h2>Кто я и чем занимаюсь</h2>
             </div>
-        </section>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        Я Сергей Копылов, инженер-конструктор с опытом работы в промышленном проектировании.
+                        Создаю 3D-модели, чертежи и техническую документацию для металлических конструкций,
+                        узлов и механизмов. Моя цель — сочетать надёжность, функциональность и современный подход.
+                    </p>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check-circle"></i> Работа в AutoCAD, Компас-3D, SolidWorks</li>
+                        <li><i class="fas fa-check-circle"></i> Прочностные расчёты и оптимизация</li>
+                        <li><i class="fas fa-check-circle"></i> Взаимодействие со смежными специалистами</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-drafting-compass"></i>
+                        <span>Конструкторское бюро</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Футер -->
-        <footer>
+    <!-- Раздел "Навыки" (вместо сертификатов) -->
+    <section id="skills" class="section bg-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Мои компетенции</span>
+                <h2>Что я умею</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-cube"></i></div>
+                    <h3>3D-моделирование</h3>
+                    <p>Создание точных 3D-моделей в Компас-3D и SolidWorks для дальнейшей разработки.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-ruler-combined"></i></div>
+                    <h3>Проектирование</h3>
+                    <p>Разработка конструкторской документации, чертежей и спецификаций под требования заказчика.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-calculator"></i></div>
+                    <h3>Расчёты и анализ</h3>
+                    <p>Прочностные расчёты, подбор материалов и оптимизация параметров изделий.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-industry"></i></div>
+                    <h3>Производство</h3>
+                    <p>Сопровождение производства, адаптация документации под технологические процессы.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел "Проекты" -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Мои работы</span>
+                <h2>Реализованные проекты</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Металлические конструкции</h3>
+                        <p>Разработка КД для каркасов, ферм и опорных систем. Создание 3D-моделей и чертежей для монтажа.</p>
+                        <div class="project-tags">
+                            <span>AutoCAD</span>
+                            <span>Компас-3D</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Узлы и механизмы</h3>
+                        <p>Проектирование подвижных узлов для промышленного оборудования. Расчёты нагрузок и подбор материалов.</p>
+                        <div class="project-tags">
+                            <span>SolidWorks</span>
+                            <span>Расчёты</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Комплексные проекты</h3>
+                        <p>Полный цикл: от эскизного проекта до рабочей документации. Координация с технологами и заказчиками.</p>
+                        <div class="project-tags">
+                            <span>Спецификации</span>
+                            <span>Сборка</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел "Контакты" -->
+    <section id="contact" class="section bg-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Связь</span>
+                <h2>Будем на связи</h2>
+            </div>
+            <div class="contact-content">
+                <p>Обсудим ваш проект, техническое задание или сотрудничество.</p>
+                <div class="contact-buttons">
+                    <a href="https://t.me/ваш-ник" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-telegram"></i> Telegram
+                    </a>
+                    <a href="mailto:ваш-email@example.com" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="https://github.com/ваш-ник" target="_blank" class="btn btn-outline">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
             <p>&copy; 2026 Сергей Копылов. Все права защищены.</p>
-        </footer>
-    </div>
+        </div>
+    </footer>
+
+    <!-- Скрипт для мобильного меню -->
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
 
 </body>
 </html>
