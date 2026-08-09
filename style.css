@@ -1331,12 +1331,3 @@ a {
     text-align: center;
   }
 }
-
-/* ===== ДОПОЛНИТЕЛЬНЫЙ СТИЛЬ ДЛЯ ШЕСТЕРЁНКИ (логотип в меню) ===== */
-.navbar-logo svg {
-  display: block;
-  width: auto;
-  height: 100%;
-  max-height: 4.3rem;
-  object-fit: contain;
-}
