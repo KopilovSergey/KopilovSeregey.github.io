@@ -784,9 +784,8 @@ a {
     padding-right: 16px;
   }
 }
-/* ===== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ СЕКЦИЙ (из оригинального шаблона) ===== */
 
-/* Стили для секции отзывов (people05) */
+/* ===== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ СЕКЦИЙ (из шаблона) ===== */
 .cid-vrMAloTZwZ .item-wrapper img {
   width: 80px;
   height: 80px;
@@ -818,8 +817,6 @@ a {
   display: flex;
   justify-content: center;
 }
-
-/* Стили для бегущей строки (gallery10) */
 .cid-vrMAloTRc6 {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -847,8 +844,6 @@ a {
     min-height: 45px;
   }
 }
-
-/* Стили для секции "Обо мне" (article15) */
 .cid-vrMAloTPui {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -860,8 +855,6 @@ a {
 .cid-vrMAloTPui .mbr-section-subtitle {
   color: #000000;
 }
-
-/* Стили для метрик (features023) */
 .cid-vrMAloT6q9 {
   padding-top: 5rem;
   padding-bottom: 3rem;
@@ -911,8 +904,6 @@ a {
 .cid-vrMAloT6q9 .card-img {
   text-align: center;
 }
-
-/* Стили для галереи (gallery07) */
 .cid-vrMAloTIUh {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -995,8 +986,6 @@ a {
 .cid-vrMAloTIUh .grid-container-2 {
   align-items: flex-start;
 }
-
-/* Стили для FAQ (list05) */
 .cid-vrMAloTfrv {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -1008,6 +997,7 @@ a {
 .cid-vrMAloTfrv .mbr-section-subtitle {
   color: #000000;
 }
+.c
 .cid-vrMAloTfrv .mbr-section-title {
   color: #000000;
   text-align: center;
@@ -1033,8 +1023,6 @@ a {
     margin-bottom: 1rem;
   }
 }
-
-/* Стили для призыва к действию (header19) */
 .cid-vrMAloU7Ca {
   padding-top: 6em;
   padding-bottom: 6em;
@@ -1075,8 +1063,6 @@ a {
   text-align: center;
   color: var(--dominant-text, #ffffff);
 }
-
-/* Стили для образования/опыта (features03) */
 .cid-vrMAloUSbY {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -1125,8 +1111,6 @@ a {
 .cid-vrMAloUSbY .content-head {
   max-width: 800px;
 }
-
-/* Стили для соцсетей (social05) */
 .cid-vrMAloULm6 {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -1168,8 +1152,6 @@ a {
 .cid-vrMAloULm6 .social-list {
   color: #000000;
 }
-
-/* Стили для формы (form5) */
 .cid-vrMAloUFQJ {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -1194,8 +1176,6 @@ a {
 .cid-vrMAloUFQJ .content-head {
   max-width: 800px;
 }
-
-/* Стили для карты (contacts4) */
 .cid-vrMAloUu9O .main_wrapper {
   position: relative;
   height: 800px;
@@ -1284,8 +1264,6 @@ a {
   padding: 0;
   margin: 0;
 }
-
-/* Стили для футера (footer2) */
 .cid-vrMAloU6ia {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -1352,4 +1330,13 @@ a {
   .cid-vrMAloU6ia .copyright {
     text-align: center;
   }
+}
+
+/* ===== ДОПОЛНИТЕЛЬНЫЙ СТИЛЬ ДЛЯ ШЕСТЕРЁНКИ (логотип в меню) ===== */
+.navbar-logo svg {
+  display: block;
+  width: auto;
+  height: 100%;
+  max-height: 4.3rem;
+  object-fit: contain;
 }
