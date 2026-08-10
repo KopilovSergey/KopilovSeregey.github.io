@@ -634,13 +634,24 @@
   <a class="btn display-4" href="#" style="
     border-radius: 100px;
     padding: 0.4rem 1.8rem;
-    color: #000000;
+    color: #ffffff;
     background: transparent;
     border: 2px solid transparent;
-    border-image: linear-gradient(135deg, #6b0f1a 0%, #a3243a 50%, #c94a5e 100%) 1;
-    border-image-slice: 1;
+    background-clip: padding-box;
+    position: relative;
+    display: inline-block;
     transition: all 0.3s ease;
-  " onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='1'">Связаться</a>
+  " onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='1'">
+    <span style="
+      position: absolute;
+      inset: -2px;
+      border-radius: 100px;
+      padding: 2px;
+      background: linear-gradient(135deg, #6b0f1a 0%, #a3243a 50%, #c94a5e 100%);
+      z-index: -1;
+    "></span>
+    Связаться
+  </a>
 </div>
       </div>
     </div>
