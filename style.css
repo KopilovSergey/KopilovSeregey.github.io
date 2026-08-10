@@ -20,7 +20,7 @@ body {
   background-image: linear-gradient(135deg, #3b1c5a 0%, #7b4f9c 40%, #b392d4 80%, #d9c4e6 100%);
 }
 .is-builder .template {
-  background-color: #F5F1FA;
+  background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
 }
 body {
   font-family: 'Source Serif 4', sans-serif;
