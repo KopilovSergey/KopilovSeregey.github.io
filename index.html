@@ -631,49 +631,31 @@
           </li>
         </ul>
    <div class="navbar-buttons mbr-section-btn" style="position: relative; display: inline-block;">
-  <!-- Кнопка-обёртка (только контур и стекло, без текста) -->
   <a class="btn display-4" href="#" style="
     border-radius: 100px;
-    padding: 0.5rem 2.2rem;
+    padding: 0.4rem 1.8rem;
+    color: #000000;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 2px solid transparent;
     position: relative;
-    display: inline-block;
-    -webkit-mask: 
-      linear-gradient(#fff 0 0) padding-box,
-      linear-gradient(#fff 0 0) border-box;
-    mask: 
-      linear-gradient(#fff 0 0) padding-box,
-      linear-gradient(#fff 0 0) border-box;
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
+    z-index: 1;
     transition: all 0.3s ease;
+    white-space: nowrap;
   " onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='1'">
-    <!-- Градиентный контур -->
+    <!-- Градиентный контур через псевдоэлемент -->
     <span style="
       position: absolute;
       inset: -2px;
       border-radius: 100px;
       padding: 2px;
       background: linear-gradient(135deg, #6b0f1a 0%, #a3243a 50%, #c94a5e 100%);
-      z-index: 0;
+      z-index: -1;
+      pointer-events: none;
     "></span>
+    Связаться
   </a>
-
-  <!-- Текст (вынесен наружу, но позиционируется поверх кнопки) -->
-  <span style="
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #000000;
-    font-size: 1.2rem;
-    font-weight: 500;
-    pointer-events: none;
-    z-index: 10;
-  ">Связаться</span>
 </div>
       </div>
     </div>
