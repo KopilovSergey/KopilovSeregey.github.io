@@ -630,41 +630,22 @@
             <a class="nav-link link text-black display-4" href="#">Проекты</a>
           </li>
         </ul>
-     <div class="navbar-buttons mbr-section-btn">
+    <div class="navbar-buttons mbr-section-btn">
   <a class="btn display-4" href="#" style="
     border-radius: 100px;
     padding: 0.4rem 1.8rem;
     color: #000000;
-    background: transparent;
+    background: 
+      linear-gradient(135deg, #6b0f1a 0%, #a3243a 50%, #c94a5e 100%) padding-box,
+      linear-gradient(135deg, #6b0f1a 0%, #a3243a 50%, #c94a5e 100%) border-box;
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)) padding-box,
+      linear-gradient(135deg, #6b0f1a 0%, #a3243a 50%, #c94a5e 100%) border-box;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: 2px solid transparent;
-    position: relative;
     transition: all 0.3s ease;
-  " onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='1'">
-    <!-- Градиентный контур (нижний слой) -->
-    <span style="
-      position: absolute;
-      inset: -2px;
-      border-radius: 100px;
-      padding: 2px;
-      background: linear-gradient(135deg, #6b0f1a 0%, #a3243a 50%, #c94a5e 100%);
-      z-index: 0;
-    "></span>
-    <!-- Стеклянный фон (верхний слой) -->
-    <span style="
-      position: absolute;
-      inset: 0;
-      border-radius: 100px;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      z-index: 1;
-    "></span>
-    <!-- Текст (самый верхний слой) -->
-    <span style="
-      position: relative;
-      z-index: 2;
-    ">Связаться</span>
-  </a>
+  " onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='1'">Связаться</a>
 </div>
       </div>
     </div>
