@@ -811,44 +811,138 @@
     </div>
 </section>
   
-<!-- ==================== ОБО МНЕ (текст) ==================== -->
+<!-- ==================== НАВЫКИ И ИНСТРУМЕНТЫ ==================== -->
 <style>
-.cid-vrMAloTPui {
-  padding-top: 3rem; /* уменьшен отступ, чтобы поднять блок выше */
-  padding-bottom: 5rem;
-  background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
-}
-.cid-vrMAloTPui .mbr-text {
-  color: #000000;
-}
-.cid-vrMAloTPui .mbr-section-subtitle {
-  color: #000000;
-}
-.cid-vrMAloTPui .mbr-section-title {
-  color: #000000;
-  text-align: center;
-}
+  .skills-section .skill-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    border-radius: 1rem;
+    padding: 1.5rem 1.8rem;
+    margin-bottom: 1.2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    height: 100%;
+  }
+  .skills-section .skill-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  }
+  .skills-section .skill-card .skill-name {
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: #1a0b2e;
+  }
+  .skills-section .skill-card .skill-level {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 0.3rem;
+    letter-spacing: 0.3px;
+  }
+  .skills-section .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+  }
+  .skills-section .skill-tag {
+    background: rgba(200, 177, 228, 0.25);
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #3d1f6d;
+    border: 1px solid rgba(200, 177, 228, 0.4);
+    transition: background 0.3s, border-color 0.3s;
+    cursor: default;
+  }
+  .skills-section .skill-tag:hover {
+    background: rgba(200, 177, 228, 0.5);
+    border-color: #3d1f6d;
+  }
+  .skills-section .section-subtitle {
+    text-align: center;
+    font-weight: 500;
+    color: #1a0b2e;
+    margin-bottom: 2rem;
+  }
+  .skills-section .subhead {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1a0b2e;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  @media (max-width: 767px) {
+    .skills-section .skill-card {
+      padding: 1.2rem 1.5rem;
+    }
+  }
 </style>
-<section class="article15 cid-vrMAloTPui" id="about-me-15-vrMAloTPui">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-10">
-                <h2 class="mbr-section-title mbr-fonts-style mb-4 display-2" style="text-align: center;">
-                    <strong>О себе</strong>
-                </h2>
-                <h6 class="mbr-section-subtitle mbr-fonts-style mt-0 mb-4 display-5" style="text-align: center;">
-                    <strong>Проектирую детали, которые защищают технику.</strong>
-                </h6>
-                <p class="mbr-text mbr-fonts-style display-7" style="text-align: center;">
-                    Разрабатываю защитные, силовые, и универсальные аксессуары для квадроциклов и снегоходов из стали, алюминия и ПЭНД. Веду проект от идеи до полного комплекта серийной конструкторской документации по ГОСТ и ЕСКД.
-                </p>
-                <p class="mbr-text mbr-fonts-style display-7" style="text-align: center;">
-                    Работаю с 3D-сканированием — сканирую объекты и обрабатываю полученные данные для дальнейшего проектирования. Основной инструмент — Siemens NX. Дополнительно работаю в Blender, Компас 3D и SolidWorks. Практикую 3D-печать — дома есть собственный принтер Flaying Bear Ghost 5.
-                </p>
-            </div>
-        </div>
+
+<section class="list05 cid-vrMAloTfrv skills-section" id="skills-section">
+  <div class="container">
+    <div class="col-12 mb-5 content-head">
+      <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+        <strong>Инструменты и навыки</strong>
+      </h3>   
     </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-10">
+        <!-- Инструменты -->
+        <h4 class="subhead">Инструменты, которыми владею</h4>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="skill-card">
+              <div class="skill-name">Siemens NX</div>
+              <div class="skill-level">Уверенный уровень</div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-name">SolidWorks</div>
+              <div class="skill-level">Базовый уровень</div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-name">Компас-3D</div>
+              <div class="skill-level">Чуть выше базового</div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="skill-card">
+              <div class="skill-name">3D-сканирование</div>
+              <div class="skill-level">Практический уровень</div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-name">3D-печать</div>
+              <div class="skill-level">Практический уровень</div>
+            </div>
+            <div class="skill-card">
+              <div class="skill-name">Blender</div>
+              <div class="skill-level">Базовый уровень</div>
+            </div>
+          </div>
+        </div>
+        <!-- Оборудование -->
+        <div style="margin-top: 2rem; text-align: center; font-size: 0.95rem; color: #444;">
+          <p>Пользуюсь 3D-сканером <strong>Shining 3D Einstar</strong> и имею 3D-принтер <strong>Flying Bear Ghost 5</strong>.</p>
+        </div>
+        <!-- Навыки и компетенции (теги) -->
+        <h4 class="subhead" style="margin-top: 3rem;">Навыки и программы</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">ГОСТ / ЕСКД</span>
+          <span class="skill-tag">Профильная труба</span>
+          <span class="skill-tag">Листовой металл</span>
+          <span class="skill-tag">ПЭНД / Пластик</span>
+          <span class="skill-tag">3D-печать</span>
+          <span class="skill-tag">Реверс-инжиниринг</span>
+          <span class="skill-tag">Технологическая оснастка</span>
+          <span class="skill-tag">Сборочные узлы</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
 <!-- ==================== ГАЛЕРЕЯ РАБОТ ПО ГОДАМ ==================== -->
 <style>
 .cid-vrMAloTIUh {
