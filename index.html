@@ -922,6 +922,16 @@
   .skills-section .tag:hover {
     background: rgba(200, 177, 228, 0.6);
   }
+  .skills-section .text-skill {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #1a0b2e;
+  }
+  .skills-section .text-skill .level {
+    font-weight: 400;
+    color: #555;
+    font-size: 0.95rem;
+  }
   @media (max-width: 767px) {
     .skills-section .skill-item {
       margin-bottom: 1rem;
@@ -937,7 +947,7 @@
       </div>
     </div>
     <div class="row">
-      <!-- Левая колонка: шкалы -->
+      <!-- Левая колонка: шкалы и практические навыки -->
       <div class="col-lg-6">
         <!-- Siemens NX -->
         <div class="skill-item">
@@ -969,26 +979,6 @@
             <div class="skill-fill" style="width: 60%;"></div>
           </div>
         </div>
-        <!-- 3D-сканирование -->
-        <div class="skill-item">
-          <div class="skill-name">
-            <span>3D-сканирование</span>
-            <span class="skill-level-text">Практический</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" style="width: 75%;"></div>
-          </div>
-        </div>
-        <!-- 3D-печать -->
-        <div class="skill-item">
-          <div class="skill-name">
-            <span>3D-печать</span>
-            <span class="skill-level-text">Практический</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" style="width: 75%;"></div>
-          </div>
-        </div>
         <!-- Blender -->
         <div class="skill-item">
           <div class="skill-name">
@@ -997,6 +987,18 @@
           </div>
           <div class="skill-bar">
             <div class="skill-fill" style="width: 50%;"></div>
+          </div>
+        </div>
+        <!-- 3D-сканирование (без шкалы) -->
+        <div class="skill-item">
+          <div class="text-skill">
+            3D-сканирование <span class="level">— Практический</span>
+          </div>
+        </div>
+        <!-- 3D-печать (без шкалы) -->
+        <div class="skill-item">
+          <div class="text-skill">
+            3D-печать <span class="level">— Практический</span>
           </div>
         </div>
       </div>
