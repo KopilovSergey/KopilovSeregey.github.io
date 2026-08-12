@@ -1236,14 +1236,16 @@
     populateCarousel('track-2025', images2025, '2025');
     populateCarousel('track-2026', images2026, '2026');
     console.log('🟢 Заполнение завершено!');
+  });
 
-    // Принудительно прокручиваем карусели в начало (чтобы показать первую картинку)
-    setTimeout(() => {
-      const track2025 = document.getElementById('track-2025');
-      const track2026 = document.getElementById('track-2026');
-      if (track2025) track2025.scrollLeft = 0;
-      if (track2026) track2026.scrollLeft = 0;
-    }, 2000);
+  // === ЖДЁМ ПОЛНОЙ ЗАГРУЗКИ ВСЕХ КАРТИНОК ===
+  window.addEventListener('load', function() {
+    console.log('🟡 Все картинки загружены, прокручиваем карусели в начало...');
+    const track2025 = document.getElementById('track-2025');
+    const track2026 = document.getElementById('track-2026');
+    if (track2025) track2025.scrollLeft = 0;
+    if (track2026) track2026.scrollLeft = 0;
+    console.log('🟢 Карусели прокручены в начало!');
   });
 </script>
 
