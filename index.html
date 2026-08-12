@@ -1074,14 +1074,10 @@
     width: 100%;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    <div class="carousel-track" id="track-2025">
-  <div style="padding: 20px; color: white; background: red;">Тест</div>
-</div>
   }
   .gallery-years .carousel-track::-webkit-scrollbar {
     display: none;
   }
-  
   .gallery-years .carousel-item {
     flex: 0 0 auto;
     width: 220px;
@@ -1154,7 +1150,9 @@
       <h3>2025</h3>
       <div class="carousel-wrapper">
         <button class="carousel-btn prev" onclick="scrollCarousel('track-2025', -1)">‹</button>
-        <div class="carousel-track" id="track-2025"></div>
+        <div class="carousel-track" id="track-2025">
+          <div style="padding: 20px; color: white; background: red;">Тест</div>
+        </div>
         <button class="carousel-btn next" onclick="scrollCarousel('track-2025', 1)">›</button>
       </div>
     </div>
@@ -1164,7 +1162,9 @@
       <h3>2026</h3>
       <div class="carousel-wrapper">
         <button class="carousel-btn prev" onclick="scrollCarousel('track-2026', -1)">‹</button>
-        <div class="carousel-track" id="track-2026"></div>
+        <div class="carousel-track" id="track-2026">
+          <div style="padding: 20px; color: white; background: red;">Тест</div>
+        </div>
         <button class="carousel-btn next" onclick="scrollCarousel('track-2026', 1)">›</button>
       </div>
     </div>
@@ -1239,11 +1239,11 @@
 
     // Принудительно прокручиваем карусели в начало (чтобы показать первую картинку)
     setTimeout(() => {
-  const track2025 = document.getElementById('track-2025');
-  const track2026 = document.getElementById('track-2026');
-  if (track2025) track2025.scrollLeft = 0;
-  if (track2026) track2026.scrollLeft = 0;
-}, 500);
+      const track2025 = document.getElementById('track-2025');
+      const track2026 = document.getElementById('track-2026');
+      if (track2025) track2025.scrollLeft = 0;
+      if (track2026) track2026.scrollLeft = 0;
+    }, 500);
   });
 </script>
 
