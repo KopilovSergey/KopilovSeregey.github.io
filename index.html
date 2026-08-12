@@ -1167,9 +1167,8 @@
 </section>
 
 <script>
-  console.log('Скрипт карусели загружен');
+  console.log('Скрипт карусели загружен ✅');
 
-  // === НАСТРОЙТЕ СПИСОК ФАЙЛОВ ДЛЯ КАЖДОГО ГОДА ===
   const images2025 = [
     'Задний_бампер_снегохода_RM_FRONTIER',
     'Передний_бампер_квадроцикла_Loncin_Xolf_700i',
@@ -1196,15 +1195,18 @@
     'Корзина_багажная_для_лодки'
   ];
 
-  // === ФУНКЦИЯ ДЛЯ ЗАПОЛНЕНИЯ КАРУСЕЛИ ===
   function populateCarousel(trackId, imageList, year) {
+    console.log('▶ Заполняем карусель:', trackId, 'год:', year);
     const track = document.getElementById(trackId);
+    console.log('🔍 Ищем элемент с id:', trackId, '— найдено:', track);
     if (!track) {
-      console.error('Элемент с id', trackId, 'не найден!');
+      console.error('❌ Элемент не найден! Проверьте id в HTML.');
       return;
     }
+    console.log('✅ Элемент найден, начинаем заполнение...');
     track.innerHTML = '';
-    imageList.forEach(name => {
+    imageList.forEach((name, index) => {
+      console.log(`🖼️ Добавляем фото #${index + 1}:`, name);
       const item = document.createElement('div');
       item.className = 'carousel-item';
       const caption = name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
@@ -1214,9 +1216,9 @@
       `;
       track.appendChild(item);
     });
+    console.log('✅ Карусель', trackId, 'заполнена полностью!');
   }
 
-  // === ФУНКЦИЯ ПРОКРУТКИ ===
   function scrollCarousel(trackId, direction) {
     const track = document.getElementById(trackId);
     if (!track) return;
@@ -1224,10 +1226,11 @@
     track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
   }
 
-  // === ЗАПОЛНЯЕМ КАРУСЕЛИ ПРИ ЗАГРУЗКЕ ===
   document.addEventListener('DOMContentLoaded', function() {
+    console.log('🟡 DOM загружен, запускаем заполнение каруселей...');
     populateCarousel('track-2025', images2025, '2025');
     populateCarousel('track-2026', images2026, '2026');
+    console.log('🟢 Заполнение завершено!');
   });
 </script>
 
