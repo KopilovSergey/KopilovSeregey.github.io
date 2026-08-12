@@ -162,7 +162,6 @@ body {
 .bg-warning { background-color: #FFD863 !important; }
 .bg-danger { background-color: #E87A85 !important; }
 
-/* Кнопки primary, secondary и т.д. (оставляем оригинальные цвета) */
 .btn-primary,
 .btn-primary:active {
   background-color: #C8B1E4 !important;
@@ -210,8 +209,6 @@ body {
 }
 
 /* Остальные кнопки (info, success, warning, danger, white, black) - можно оставить как в оригинале, если не меняли */
-/* ... (сокращаю для краткости, но в финальном файле они будут) */
-/* ===== ОСТАЛЬНЫЕ КНОПКИ ===== */
 .btn-info,
 .btn-info:active {
   background-color: #6BE0F7 !important;
@@ -727,6 +724,7 @@ a { transition: color 0.6s; }
 @media (max-width: 767px) {
   .container-fluid { padding-left: 16px; padding-right: 16px; }
 }
+
 /* ===== СПЕЦИФИЧЕСКИЕ СТИЛИ СЕКЦИЙ ===== */
 
 /* ----- Отзывы (people05) ----- */
