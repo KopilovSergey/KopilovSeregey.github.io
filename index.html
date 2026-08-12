@@ -1227,7 +1227,7 @@
     track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
   }
 
-  // === ОДИН НАДЁЖНЫЙ ОБРАБОТЧИК ===
+  /// === ЖДЁМ ПОЛНОЙ ЗАГРУЗКИ И ПРОВЕРЯЕМ, ЧТО КАРУСЕЛЬ ЗАПОЛНЕНА ===
 window.addEventListener('load', function() {
   console.log('🟡 Страница полностью загружена, начинаем заполнение каруселей...');
 
@@ -1237,13 +1237,27 @@ window.addEventListener('load', function() {
 
   console.log('🟢 Заполнение завершено!');
 
-  // Прокручиваем в начало
-  const track2025 = document.getElementById('track-2025');
-  const track2026 = document.getElementById('track-2026');
-  if (track2025) track2025.scrollLeft = 0;
-  if (track2026) track2026.scrollLeft = 0;
-  console.log('🟢 Карусели прокручены в начало!');
-});
+  // Проверяем, есть ли картинки внутри карусели
+  function checkAndScroll() {
+    const track2025 = document.getElementById('track-2025');
+    const track2026 = document.getElementById('track-2026');
+    
+    // Если внутри есть хотя бы один элемент с картинкой — прокручиваем
+    if (track2025 && track2025.children.length > 0) {
+      track2025.scrollLeft = 0;
+      console.log('🟢 Карусель 2025 прокручена в начало!');
+    }
+    if (track2026 && track2026.children.length > 0) {
+      track2026.scrollLeft = 0;
+      console.log('🟢 Карусель 2026 прокручена в начало!');
+    }
+  }
+
+  // Проверяем сразу после заполнения
+  checkAndScroll();
+
+  // И ещё раз через 500 мс, на случай если картинки не успели прогрузиться
+  setTimeout(checkAndScroll, 500);
 </script>
 
 <!-- ==================== FAQ (ОБО МНЕ) ==================== -->
