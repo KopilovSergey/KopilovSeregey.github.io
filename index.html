@@ -1030,145 +1030,89 @@
   </div>
 </section>
   
-<!-- ==================== ГАЛЕРЕЯ РАБОТ ПО ГОДАМ (карусели) ==================== -->
+<!-- ==================== ГАЛЕРЕЯ РАБОТ ПО ГОДАМ (СЕТКА) ==================== -->
 <style>
-  .gallery-years {
+  .gallery-grid {
     padding-top: 5rem;
     padding-bottom: 5rem;
     background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
     text-align: center;
   }
-  .gallery-years h2 {
+  .gallery-grid h2 {
     color: #1a0b2e;
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 3rem;
   }
-  .gallery-years .year-row {
+  .gallery-grid .year-row {
     margin-bottom: 4rem;
   }
-  .gallery-years .year-row h3 {
+  .gallery-grid .year-row h3 {
     font-size: 2rem;
     color: #1a0b2e;
     margin-bottom: 1.5rem;
     font-weight: 600;
   }
-  .gallery-years .carousel-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+  .gallery-grid .grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
     max-width: 1000px;
     margin: 0 auto;
-    overflow: hidden;
   }
-  .gallery-years .carousel-track {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 1rem 0.5rem;
-    scrollbar-width: thin;
-    scrollbar-color: #6b3fa0 transparent;
-    width: 100%;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .gallery-years .carousel-track::-webkit-scrollbar {
-    display: none;
-  }
-  .gallery-years .carousel-item {
-    flex: 0 0 auto;
-    width: 220px;
-    text-align: center;
+  .gallery-grid .grid-item {
     background: rgba(255,255,255,0.6);
     border-radius: 1rem;
     padding: 0.5rem;
     backdrop-filter: blur(4px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
   }
-  .gallery-years .carousel-item img {
+  .gallery-grid .grid-item img {
     width: 100%;
     height: 160px;
     object-fit: cover;
     border-radius: 0.5rem;
     display: block;
   }
-  .gallery-years .carousel-item .caption {
+  .gallery-grid .grid-item .caption {
     margin-top: 0.5rem;
     font-size: 0.9rem;
     font-weight: 500;
     color: #1a0b2e;
   }
-  .gallery-years .carousel-btn {
-    background: rgba(255,255,255,0.7);
-    border: none;
-    border-radius: 50%;
-    width: 44px;
-    height: 44px;
-    font-size: 1.8rem;
-    color: #3d1f6d;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    flex-shrink: 0;
-    z-index: 2;
-    backdrop-filter: blur(4px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-  }
-  .gallery-years .carousel-btn:hover {
-    background: rgba(255,255,255,0.9);
-    transform: scale(1.05);
-  }
-  .gallery-years .carousel-btn:active {
-    transform: scale(0.95);
-  }
   @media (max-width: 768px) {
-    .gallery-years .carousel-item {
-      width: 160px;
+    .gallery-grid .grid-container {
+      grid-template-columns: repeat(2, 1fr);
     }
-    .gallery-years .carousel-item img {
-      height: 120px;
-    }
-    .gallery-years .carousel-btn {
-      width: 36px;
-      height: 36px;
-      font-size: 1.4rem;
+  }
+  @media (max-width: 480px) {
+    .gallery-grid .grid-container {
+      grid-template-columns: 1fr;
     }
   }
 </style>
 
-<section class="gallery-years" id="gallery-years">
+<section class="gallery-grid" id="gallery-grid">
   <div class="container">
     <h2>Мои работы по годам</h2>
 
     <!-- 2025 -->
     <div class="year-row">
       <h3>2025</h3>
-      <div class="carousel-wrapper">
-        <button class="carousel-btn prev" onclick="scrollCarousel('track-2025', -1)">‹</button>
-        <div class="carousel-track" id="track-2025"></div>
-        <button class="carousel-btn next" onclick="scrollCarousel('track-2025', 1)">›</button>
-      </div>
+      <div class="grid-container" id="grid-2025"></div>
     </div>
 
     <!-- 2026 -->
     <div class="year-row">
       <h3>2026</h3>
-      <div class="carousel-wrapper">
-        <button class="carousel-btn prev" onclick="scrollCarousel('track-2026', -1)">‹</button>
-        <div class="carousel-track" id="track-2026"></div>
-        <button class="carousel-btn next" onclick="scrollCarousel('track-2026', 1)">›</button>
-      </div>
+      <div class="grid-container" id="grid-2026"></div>
     </div>
   </div>
 </section>
 
 <script>
-  console.log('Скрипт карусели загружен ✅');
+  console.log('Скрипт сетки загружен ✅');
 
   const images2025 = [
     'Задний_бампер_снегохода_RM_FRONTIER',
@@ -1196,56 +1140,36 @@
     'Корзина_багажная_для_лодки'
   ];
 
-  function populateCarousel(trackId, imageList, year) {
-    console.log('▶ Заполняем карусель:', trackId, 'год:', year);
-    const track = document.getElementById(trackId);
-    console.log('🔍 Ищем элемент с id:', trackId, '— найдено:', track);
-    if (!track) {
-      console.error('❌ Элемент не найден! Проверьте id в HTML.');
+  function populateGrid(containerId, imageList, year) {
+    console.log('▶ Заполняем сетку:', containerId, 'год:', year);
+    const container = document.getElementById(containerId);
+    if (!container) {
+      console.error('❌ Контейнер не найден! Проверьте id в HTML.');
       return;
     }
-    console.log('✅ Элемент найден, начинаем заполнение...');
-    track.innerHTML = '';
+    container.innerHTML = '';
     imageList.forEach((name, index) => {
       console.log(`🖼️ Добавляем фото #${index + 1}:`, name);
       const item = document.createElement('div');
-      item.className = 'carousel-item';
+      item.className = 'grid-item';
       const caption = name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
       item.innerHTML = `
-  <img src="https://kopilovsergey.github.io/${year}/${encodeURIComponent(name)}.png" alt="${caption}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwY2VmMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNkMWY2ZCI+5L2g55WZ5r2uPC90ZXh0Pjwvc3ZnPg=='">
-  <div class="caption">${caption}</div>
-`;
-      track.appendChild(item);
+        <img src="https://kopilovsergey.github.io/${year}/${name}.png" alt="${caption}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwY2VmMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNkMWY2ZCI+5L2g55WZ5r2uPC90ZXh0Pjwvc3ZnPg=='">
+        <div class="caption">${caption}</div>
+      `;
+      container.appendChild(item);
     });
-    console.log('✅ Карусель', trackId, 'заполнена полностью!');
+    console.log('✅ Сетка', containerId, 'заполнена полностью!');
   }
 
-  function scrollCarousel(trackId, direction) {
-    const track = document.getElementById(trackId);
-    if (!track) return;
-    const scrollAmount = 240;
-    track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-  }
-
-  // === ОДИН НАДЁЖНЫЙ ОБРАБОТЧИК ===
   window.addEventListener('load', function() {
-    console.log('🟡 Страница полностью загружена, начинаем заполнение каруселей...');
-
-    // Заполняем карусели
-    populateCarousel('track-2025', images2025, '2025');
-    populateCarousel('track-2026', images2026, '2026');
-
-    console.log('🟢 Заполнение завершено!');
-
-    // Прокручиваем в начало
-    const track2025 = document.getElementById('track-2025');
-    const track2026 = document.getElementById('track-2026');
-    if (track2025) track2025.scrollLeft = 0;
-    if (track2026) track2026.scrollLeft = 0;
-    console.log('🟢 Карусели прокручены в начало!');
+    console.log('🟡 Страница полностью загружена, заполняем сетки...');
+    populateGrid('grid-2025', images2025, '2025');
+    populateGrid('grid-2026', images2026, '2026');
+    console.log('🟢 Сетки заполнены!');
   });
 </script>
-
+  
 <!-- ==================== FAQ (ОБО МНЕ) ==================== -->
 <style>
 .cid-vrMAloTfrv {
