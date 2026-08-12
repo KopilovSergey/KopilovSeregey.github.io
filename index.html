@@ -1029,121 +1029,198 @@
   </div>
 </section>
   
-<!-- ==================== ГАЛЕРЕЯ РАБОТ ПО ГОДАМ ==================== -->
+<!-- ==================== ГАЛЕРЕЯ РАБОТ ПО ГОДАМ (карусели) ==================== -->
 <style>
-.cid-vrMAloTIUh {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-  background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
-}
-.cid-vrMAloTIUh .item:focus,
-.cid-vrMAloTIUh span:focus {
-  outline: none;
-}
-.cid-vrMAloTIUh .item {
-  cursor: pointer;
-}
-.cid-vrMAloTIUh .grid-container {
-  grid-row-gap: 2rem;
-}
-@media (max-width: 767px) {
-  .cid-vrMAloTIUh .grid-container {
-    grid-row-gap: 1rem;
+  .gallery-years {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
+    text-align: center;
   }
-}
-.cid-vrMAloTIUh .grid-container-1,
-.cid-vrMAloTIUh .grid-container-2,
-.cid-vrMAloTIUh .grid-container-3 {
-  gap: 0 2rem;
-}
-@media (max-width: 767px) {
-  .cid-vrMAloTIUh .grid-container-1,
-  .cid-vrMAloTIUh .grid-container-2,
-  .cid-vrMAloTIUh .grid-container-3 {
-    gap: 0 1rem;
+  .gallery-years h2 {
+    color: #1a0b2e;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
   }
-}
-.cid-vrMAloTIUh .mbr-section-title {
-  color: #000000;
-}
-.cid-vrMAloTIUh .mbr-text,
-.cid-vrMAloTIUh .mbr-section-btn {
-  color: #000000;
-}
-.cid-vrMAloTIUh .content-head {
-  max-width: 800px;
-}
-.cid-vrMAloTIUh .container,
-.cid-vrMAloTIUh .container-fluid {
-  overflow: hidden;
-}
-.cid-vrMAloTIUh .grid-container {
-  display: grid;
-  transform: translate3d(-3rem, 0, 0);
-  width: 115vw;
-  grid-column-gap: 1rem;
-}
-.cid-vrMAloTIUh .grid-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.cid-vrMAloTIUh .grid-item img {
-  min-width: 30vw;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-}
-@media (max-width: 767px) {
-  .cid-vrMAloTIUh .grid-item img {
-    min-width: 35vw;
+  .gallery-years .year-row {
+    margin-bottom: 4rem;
   }
-}
-.cid-vrMAloTIUh .grid-container-1,
-.cid-vrMAloTIUh .grid-container-2,
-.cid-vrMAloTIUh .grid-container-3 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-columns: 1fr;
-  grid-auto-flow: column;
-}
-.cid-vrMAloTIUh .grid-container-1 {
-  align-items: flex-end;
-}
-.cid-vrMAloTIUh .grid-container-2 {
-  align-items: flex-start;
-}
+  .gallery-years .year-row h3 {
+    font-size: 2rem;
+    color: #1a0b2e;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+  .gallery-years .carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .gallery-years .carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: #6b3fa0 transparent;
+    width: 100%;
+    /* Скрываем скроллбар для красоты, но оставляем функциональность */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .gallery-years .carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+  .gallery-years .carousel-item {
+    flex: 0 0 auto;
+    width: 220px;
+    text-align: center;
+    background: rgba(255,255,255,0.6);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+  .gallery-years .carousel-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    display: block;
+  }
+  .gallery-years .carousel-item .caption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #1a0b2e;
+  }
+  .gallery-years .carousel-btn {
+    background: rgba(255,255,255,0.7);
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.8rem;
+    color: #3d1f6d;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    flex-shrink: 0;
+    z-index: 2;
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+  .gallery-years .carousel-btn:hover {
+    background: rgba(255,255,255,0.9);
+    transform: scale(1.05);
+  }
+  .gallery-years .carousel-btn:active {
+    transform: scale(0.95);
+  }
+  @media (max-width: 768px) {
+    .gallery-years .carousel-item {
+      width: 160px;
+    }
+    .gallery-years .carousel-item img {
+      height: 120px;
+    }
+    .gallery-years .carousel-btn {
+      width: 36px;
+      height: 36px;
+      font-size: 1.4rem;
+    }
+  }
 </style>
-<section class="gallery07 cid-vrMAloTIUh" id="gallery-16-vrMAloTIUh">
-  <div class="container-fluid gallery-wrapper">
-    <div class="row justify-content-center">
-      <div class="col-12 content-head">
-        <div class="mbr-section-head mb-5">
-          <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-            <strong>Мои работы по годам</strong>
-          </h4>
-        </div>
+
+<section class="gallery-years" id="gallery-years">
+  <div class="container">
+    <h2>Мои работы по годам</h2>
+
+    <!-- 2025 -->
+    <div class="year-row">
+      <h3>2025</h3>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn prev" onclick="scrollCarousel('track-2025', -1)">‹</button>
+        <div class="carousel-track" id="track-2025"></div>
+        <button class="carousel-btn next" onclick="scrollCarousel('track-2025', 1)">›</button>
       </div>
     </div>
-    <div class="grid-container">
-      <div class="grid-container-3" style="transform: translate3d(-200px, 0px, 0px);">
-        <div class="grid-item">
-          <img src="https://proxy.electricblaze.com/?u&#x3D;https%3A%2F%2Fimages.unsplash.com%2Fphoto-1454165804606-c3d57bc86b40%3Fixid%3DM3w0Mzc5fDB8MXxzZWFyY2h8M3x8cG9ydGZvbGlvfGVufDB8MHx8fDE3ODYxODE1NTR8MA%26ixlib%3Drb-4.1.0%26auto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D50&amp;e&#x3D;1791072000&amp;s&#x3D;Ymau5icELwhcQ7Mi4fe364yNXg49YOSAm5DiLr4SRpQ">
-        </div>
-        <div class="grid-item">
-          <img src="https://proxy.electricblaze.com/?u&#x3D;https%3A%2F%2Fimages.unsplash.com%2Fphoto-1533628635777-112b2239b1c7%3Fixid%3DM3w0Mzc5fDB8MXxzZWFyY2h8MTl8fHBvcnRmb2xpb3xlbnwwfDB8fHwxNzg2MTgxNTU0fDA%26ixlib%3Drb-4.1.0%26auto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D50&amp;e&#x3D;1791072000&amp;s&#x3D;8JShRNX1E-WfgHUC6C_fTjqlrUMe9Sir-NlpjCrntF0">
-        </div>
-        <div class="grid-item">
-          <img src="https://proxy.electricblaze.com/?u&#x3D;https%3A%2F%2Fimages.unsplash.com%2Fphoto-1488190211105-8b0e65b80b4e%3Fixid%3DM3w0Mzc5fDB8MXxzZWFyY2h8MTB8fHBvcnRmb2xpb3xlbnwwfDB8fHwxNzg2MTgxNTU0fDA%26ixlib%3Drb-4.1.0%26auto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D50&amp;e&#x3D;1791072000&amp;s&#x3D;5PboYdLdJUie36Gu6OBSbSOdvo_TMnKoEOcVlPYmBrk">
-        </div>
-        <div class="grid-item">
-          <img src="https://proxy.electricblaze.com/?u&#x3D;https%3A%2F%2Fimages.unsplash.com%2Fphoto-1480506132288-68f7705954bd%3Fixid%3DM3w0Mzc5fDB8MXxzZWFyY2h8OXx8cG9ydGZvbGlvfGVufDB8MHx8fDE3ODYxODE1NTR8MA%26ixlib%3Drb-4.1.0%26auto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D50&amp;e&#x3D;1791072000&amp;s&#x3D;XOYZGeR4bozi3Yu-_S1afIzTR1fUcFoni_LZSWbWLsA">
-        </div>
+
+    <!-- 2026 -->
+    <div class="year-row">
+      <h3>2026</h3>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn prev" onclick="scrollCarousel('track-2026', -1)">‹</button>
+        <div class="carousel-track" id="track-2026"></div>
+        <button class="carousel-btn next" onclick="scrollCarousel('track-2026', 1)">›</button>
       </div>
     </div>
   </div>
 </section>
 
+<script>
+  // === НАСТРОЙТЕ СПИСОК ФАЙЛОВ ДЛЯ КАЖДОГО ГОДА ===
+  // Впишите сюда имена файлов (без расширения .jfif), которые лежат в папках 2025/ и 2026/
+  const images2025 = [
+    'project1',
+    'project2',
+    'project3',
+    'project4',
+    'project5'
+    // добавьте свои имена
+  ];
+
+  const images2026 = [
+    'project6',
+    'project7',
+    'project8',
+    'project9'
+    // добавьте свои имена
+  ];
+
+  // === ФУНКЦИЯ ДЛЯ ЗАПОЛНЕНИЯ КАРУСЕЛИ ===
+  function populateCarousel(trackId, imageList, year) {
+    const track = document.getElementById(trackId);
+    if (!track) return;
+    track.innerHTML = '';
+    imageList.forEach(name => {
+      const item = document.createElement('div');
+      item.className = 'carousel-item';
+      // Формируем подпись: заменяем дефисы/подчеркивания на пробелы, каждое слово с заглавной
+      const caption = name
+        .replace(/[-_]/g, ' ')
+        .replace(/\b\w/g, l => l.toUpperCase());
+      item.innerHTML = `
+        <img src="${year}/${name}.jfif" alt="${caption}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwY2VmMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNkMWY2ZCI+5L2g55WZ5r2uPC90ZXh0Pjwvc3ZnPg=='">
+        <div class="caption">${caption}</div>
+      `;
+      track.appendChild(item);
+    });
+  }
+
+  // === ФУНКЦИЯ ПРОКРУТКИ (КНОПКИ ВЛЕВО/ВПРАВО) ===
+  function scrollCarousel(trackId, direction) {
+    const track = document.getElementById(trackId);
+    if (!track) return;
+    const scrollAmount = 240; // ширина одного элемента + gap (примерно)
+    track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  }
+
+  // === ЗАПОЛНЯЕМ КАРУСЕЛИ ПРИ ЗАГРУЗКЕ ===
+  document.addEventListener('DOMContentLoaded', function() {
+    populateCarousel('track-2025', images2025, '2025');
+    populateCarousel('track-2026', images2026, '2026');
+  });
+</script>
 <!-- ==================== FAQ (ОБО МНЕ) ==================== -->
 <style>
 .cid-vrMAloTfrv {
