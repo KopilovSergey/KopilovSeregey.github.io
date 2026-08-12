@@ -1170,23 +1170,40 @@
   });
 </script>
   
-<!-- ==================== ОБРАЗОВАНИЕ И ОПЫТ (ХРОНОЛОГИЯ) ==================== -->
+<!-- ==================== ОБРАЗОВАНИЕ И ОПЫТ (ХРОНОЛОГИЧЕСКОЕ ДРЕВО) ==================== -->
 <style>
-  .timeline-section {
+  .timeline-tree {
     padding-top: 5rem;
     padding-bottom: 5rem;
     background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
     text-align: center;
   }
-  .timeline-section h2 {
+  .timeline-tree h2 {
     color: #1a0b2e;
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 3rem;
   }
-  .timeline-section .timeline-item {
+  .timeline-tree .tree {
+    position: relative;
     max-width: 800px;
-    margin: 0 auto 3rem auto;
+    margin: 0 auto;
+    padding-left: 2.5rem;
+  }
+  /* Вертикальная линия */
+  .timeline-tree .tree::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #6b3fa0, #a67dc9);
+    border-radius: 10px;
+  }
+  .timeline-tree .tree-item {
+    position: relative;
+    margin-bottom: 3rem;
     background: rgba(255,255,255,0.6);
     backdrop-filter: blur(4px);
     border-radius: 1.5rem;
@@ -1195,331 +1212,93 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     border: 1px solid rgba(255,255,255,0.3);
   }
-  .timeline-section .timeline-item .year {
+  /* Точка на линии */
+  .timeline-tree .tree-item::before {
+    content: '';
+    position: absolute;
+    left: -2.5rem;
+    top: 2rem;
+    width: 16px;
+    height: 16px;
+    background: #6b3fa0;
+    border-radius: 50%;
+    border: 3px solid #a67dc9;
+    box-shadow: 0 0 0 4px rgba(107, 63, 160, 0.2);
+  }
+  /* Последний элемент — без нижнего отступа */
+  .timeline-tree .tree-item:last-child {
+    margin-bottom: 0;
+  }
+  .timeline-tree .tree-item .year {
     font-size: 1.8rem;
     font-weight: 700;
     color: #3d1f6d;
     margin-bottom: 0.2rem;
   }
-  .timeline-section .timeline-item .duration {
+  .timeline-tree .tree-item .duration {
     font-size: 1rem;
     color: #555;
     font-weight: 500;
     margin-bottom: 0.5rem;
   }
-  .timeline-section .timeline-item .company {
+  .timeline-tree .tree-item .company {
     font-size: 1.4rem;
     font-weight: 600;
     color: #1a0b2e;
     margin-bottom: 0.3rem;
   }
-  .timeline-section .timeline-item .position {
+  .timeline-tree .tree-item .position {
     font-size: 1.1rem;
     font-weight: 500;
     color: #3d1f6d;
     margin-bottom: 1rem;
   }
-  .timeline-section .timeline-item .description {
+  .timeline-tree .tree-item .description {
     font-size: 1rem;
     line-height: 1.6;
     color: #333;
   }
   @media (max-width: 767px) {
-    .timeline-section .timeline-item {
+    .timeline-tree .tree {
+      padding-left: 1.5rem;
+    }
+    .timeline-tree .tree-item {
       padding: 1.5rem 1.5rem;
+    }
+    .timeline-tree .tree-item::before {
+      left: -1.5rem;
+      top: 1.5rem;
+      width: 12px;
+      height: 12px;
     }
   }
 </style>
 
-<section class="timeline-section" id="timeline-section">
+<section class="timeline-tree" id="timeline-tree">
   <div class="container">
     <h2>Образование и опыт</h2>
+    <div class="tree">
 
-    <!-- Этап 1: 2019 -->
-    <div class="timeline-item">
-      <div class="year">2019 · 5 лет</div>
-      <div class="company">Свердловская Дирекция по ремонту и обслуживанию приборов безопасности</div>
-      <div class="position">Инженер 1 категории</div>
-      <div class="description">
-        Анализ оперативных данных по отказам систем безопасности на локомотиве. Анализ неисправностей локомотивных приборов безопасности.
-      </div>
-    </div>
-
-    <!-- Этап 2: 2024 -->
-    <div class="timeline-item">
-      <div class="year">2024 · 2 года (по настоящее время)</div>
-      <div class="company">Rival Powersports</div>
-      <div class="position">Инженер-конструктор защитных аксессуаров</div>
-      <div class="description">
-        Разработка и проектирование бамперов, защит, аксессуаров, универсальных изделий для квадроциклов, снегоходов и лодок. Работа в Siemens NX с полным производственным циклом: 3D-сканирование, реверс-инжиниринг, твердотельное моделирование, конструкторская документация по ГОСТ/ЕСКД. Взаимодействие с производством и авторский надзор на всех этапах разработки. Разработано более 24 изделий.
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ==================== СОЦИАЛЬНЫЕ СЕТИ ==================== -->
-<style>
-.cid-vrMAloULm6 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-  background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
-}
-.cid-vrMAloULm6 .social-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.cid-vrMAloULm6 .social-row .soc-item {
-  margin: 8px;
-}
-.cid-vrMAloULm6 .social-row .soc-item a:hover .mbr-iconfont,
-.cid-vrMAloULm6 .social-row .soc-item a:focus .mbr-iconfont {
-  background-color: #f7f7f7;
-}
-.cid-vrMAloULm6 .social-row .soc-item a .mbr-iconfont {
-  width: 72px;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100%;
-  font-size: 32px;
-  background-color: #f7f7f7;
-  color: var(--primary-color, #393193);
-  transition: all 0.3s ease-in-out;
-}
-.cid-vrMAloULm6 .row-links {
-  width: 100%;
-  justify-content: center;
-}
-.cid-vrMAloULm6 .mbr-section-title {
-  color: #ffffff;
-}
-.cid-vrMAloULm6 .mbr-section-title,
-.cid-vrMAloULm6 .social-list {
-  color: #000000;
-}
-</style>
-<section class="social05 cid-vrMAloULm6" id="follow-us-2-vrMAloULm6">
-  <div class="container">
-    <div class="row">
-      <h3 class="mbr-section-title align-center mb-5 mbr-fonts-style display-2">
-        <strong>Следите за нами!</strong>
-      </h3>
-      <div class="col-12">
-        <div class="social-row">
-          <div class="soc-item">
-            <a href="#" target="_blank">
-              <span class="mbr-iconfont socicon socicon-facebook"></span>
-            </a>
-          </div>
-          <div class="soc-item">
-            <a href="#" target="_blank">
-              <span class="mbr-iconfont socicon-twitter socicon"></span>
-            </a>
-          </div>
-          <div class="soc-item">
-            <a href="#" target="_blank">
-              <span class="mbr-iconfont socicon-instagram socicon"></span>
-            </a>
-          </div>
-          <div class="soc-item">
-            <a href="#" target="_blank">
-              <span class="mbr-iconfont socicon socicon-linkedin"></span>
-            </a>
-          </div>
-          <div class="soc-item">
-            <a href="#" target="_blank">
-              <span class="mbr-iconfont socicon socicon-twitch"></span>
-            </a>
-          </div>
+      <!-- Этап 1: 2019 -->
+      <div class="tree-item">
+        <div class="year">2019 · 5 лет</div>
+        <div class="company">Свердловская дирекция по ремонту и обслуживанию приборов безопасности</div>
+        <div class="position">Инженер 1 категории</div>
+        <div class="description">
+          Анализ оперативных данных по отказам систем безопасности на локомотиве. Анализ неисправностей локомотивных приборов безопасности.
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ==================== ФОРМА ОБРАТНОЙ СВЯЗИ ==================== -->
-<style>
-.cid-vrMAloUFQJ {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-  background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
-}
-.cid-vrMAloUFQJ .mbr-overlay {
-  background-color: #ffffff;
-  opacity: 0.4;
-}
-.cid-vrMAloUFQJ form .mbr-section-btn {
-  text-align: center;
-  width: 100%;
-}
-.cid-vrMAloUFQJ form .mbr-section-btn .btn {
-  display: inline-flex;
-}
-@media (max-width: 991px) {
-  .cid-vrMAloUFQJ form .mbr-section-btn .btn {
-    width: 100%;
-  }
-}
-.cid-vrMAloUFQJ .content-head {
-  max-width: 800px;
-}
-</style>
-<section class="form5 cid-vrMAloUFQJ" id="contact-form-2-vrMAloUFQJ">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 content-head">
-        <div class="mbr-section-head mb-5">
-          <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-            <strong>Свяжитесь со мной</strong>
-          </h3>                    
+      <!-- Этап 2: 2024 -->
+      <div class="tree-item">
+        <div class="year">2024 · 2 года (по настоящее время)</div>
+        <div class="company">Rival Powersports</div>
+        <div class="position">Инженер-конструктор защитных аксессуаров</div>
+        <div class="description">
+          Разработка и проектирование бамперов, защит, аксессуаров, универсальных изделий для квадроциклов, снегоходов и лодок. Работа в Siemens NX с полным производственным циклом: 3D-сканирование, реверс-инжиниринг, твердотельное моделирование, конструкторская документация по ГОСТ/ЕСКД. Взаимодействие с производством и авторский надзор на всех этапах разработки. Разработано более 24 изделий.
         </div>
       </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-        <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name">
-          <input type="hidden" name="email" data-form-email="true" value="">
-          <div class="row">
-            <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
-            <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">Oops...! some problem!</div>
-          </div>
-          <div class="dragArea row">
-            <div class="col-md col-sm-12 form-group mb-3" data-for="name">
-              <input type="text" name="name" placeholder="Имя" data-form-field="name" class="form-control" value="" id="name-form02-0">
-            </div>
-            <div class="col-md col-sm-12 form-group mb-3" data-for="email">
-              <input type="email" name="email" placeholder="Электронная почта" data-form-field="email" class="form-control" value="" id="email-form02-0">
-            </div>
-            <div class="col-12 form-group mb-3" data-for="textarea">
-              <textarea name="textarea" placeholder="Сообщение" data-form-field="textarea" class="form-control" id="textarea-form02-0"></textarea>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
-              <button type="submit" class="btn btn-primary display-7">Отправить</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ==================== КАРТА С КОНТАКТАМИ ==================== -->
-<style>
-.cid-vrMAloUu9O .main_wrapper {
-  position: relative;
-  height: 800px;
-  width: 100%;
-}
-.cid-vrMAloUu9O .b_wrapper {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-  pointer-events: none;
-}
-@media (max-width: 991px) {
-  .cid-vrMAloUu9O .b_wrapper {
-    position: relative;
-    width: 100%;
-    height: auto !important;
-    flex-direction: column;
-  }
-}
-.cid-vrMAloUu9O .row {
-  margin: 0;
-}
-@media (max-width: 991px) {
-  .cid-vrMAloUu9O .container-fluid {
-    padding: 0;
-  }
-}
-.cid-vrMAloUu9O .item-wrapper {
-  height: 100%;
-  background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
-  pointer-events: fill;
-  padding: 2.25rem;
-}
-@media (min-width: 992px) and (max-width: 1200px) {
-  .cid-vrMAloUu9O .item-wrapper {
-    padding: 1.5rem;
-  }
-}
-@media (max-width: 991px) {
-  .cid-vrMAloUu9O .item-wrapper {
-    width: 100%;
-    position: relative;
-    padding: 2rem;
-    border-radius: 0px !important;
-  }
-}
-.cid-vrMAloUu9O .google-map {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 1;
-}
-.cid-vrMAloUu9O .google-map iframe {
-  height: 100%;
-  width: 100%;
-  border-radius: 0px !important;
-}
-.cid-vrMAloUu9O .google-map [data-state-details] {
-  color: #edefeb;
-  height: 1.5em;
-  margin-top: -0.75em;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  width: 100%;
-}
-.cid-vrMAloUu9O .google-map[data-state] {
-  background: #edefeb;
-}
-.cid-vrMAloUu9O .google-map[data-state="loading"] [data-state-details] {
-  display: none;
-}
-@media (max-width: 991px) {
-  .cid-vrMAloUu9O .google-map {
-    position: static;
-  }
-}
-.cid-vrMAloUu9O ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-</style>
-<section class="contacts4 map1 cid-vrMAloUu9O" id="contacts-3-vrMAloUu9O">
-  <div class="main_wrapper">
-    <div class="b_wrapper">
-      <div class="container-fluid">
-        <div class="row justify-content-start">
-          <div class="col-md-5 col-lg-4 item-wrapper">
-            <h5 class="cardTitle mbr-fonts-style mb-2 display-5">
-              <strong>Контактные данные</strong>
-            </h5>
-            <ul class="list mbr-fonts-style display-7">
-              <li class="mbr-text item-wrap">Телефон: <a href="tel:8999522222" class="text-black">8999522222</a></li>
-              <li class="mbr-text item-wrap">WhatsApp: <a href="tel:8999522222" class="text-black">8999522222</a></li>
-              <li class="mbr-text item-wrap">Email: <a href="mailto:fhhen@mai.ru" class="text-black">fhhen@mai.ru</a></li>
-              <li class="mbr-text item-wrap">Телеграмм: @fjeb</li>
-              <li class="mbr-text item-wrap">Часы работы: Пн-Пт 9:00-18:00</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="google-map">
-      <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key&#x3D;AIzaSyCt1265A4qvZy9HKUeA8J15AOC4SrCyZe4&amp;q&#x3D;Paris%20France" allowfullscreen=""></iframe>
     </div>
   </div>
 </section>
