@@ -1170,130 +1170,91 @@
   });
 </script>
   
-<!-- ==================== ОБРАЗОВАНИЕ И ОПЫТ (КАРТОЧКИ) ==================== -->
+<!-- ==================== ОБРАЗОВАНИЕ И ОПЫТ (ХРОНОЛОГИЯ) ==================== -->
 <style>
-.cid-vrMAloUSbY {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-  background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
-}
-.cid-vrMAloUSbY .item-subtitle {
-  line-height: 1.2;
-  color: #000000;
-}
-.cid-vrMAloUSbY img,
-.cid-vrMAloUSbY .item-img {
-  width: 100%;
-  height: 100%;
-  height: 400px;
-  object-fit: cover;
-}
-.cid-vrMAloUSbY .item:focus,
-.cid-vrMAloUSbY span:focus {
-  outline: none;
-}
-.cid-vrMAloUSbY .item {
-  margin-bottom: 2rem;
-}
-@media (max-width: 767px) {
-  .cid-vrMAloUSbY .item {
+  .timeline-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
+    text-align: center;
+  }
+  .timeline-section h2 {
+    color: #1a0b2e;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+  }
+  .timeline-section .timeline-item {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(4px);
+    border-radius: 1.5rem;
+    padding: 2rem 2.5rem;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  .timeline-section .timeline-item .year {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #3d1f6d;
+    margin-bottom: 0.2rem;
+  }
+  .timeline-section .timeline-item .duration {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .timeline-section .timeline-item .company {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1a0b2e;
+    margin-bottom: 0.3rem;
+  }
+  .timeline-section .timeline-item .position {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #3d1f6d;
     margin-bottom: 1rem;
   }
-}
-.cid-vrMAloUSbY .item-wrapper {
-  position: relative;
-  border-radius: 4px;
-  height: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-}
-.cid-vrMAloUSbY .mbr-section-title {
-  color: #232323;
-}
-.cid-vrMAloUSbY .mbr-text,
-.cid-vrMAloUSbY .mbr-section-btn {
-  color: #232323;
-}
-.cid-vrMAloUSbY .item-title {
-  color: #232323;
-}
-.cid-vrMAloUSbY .content-head {
-  max-width: 800px;
-}
+  .timeline-section .timeline-item .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  @media (max-width: 767px) {
+    .timeline-section .timeline-item {
+      padding: 1.5rem 1.5rem;
+    }
+  }
 </style>
-<section class="features03 cid-vrMAloUSbY" id="news-1-vrMAloUSbY">
-  <div class="container-fluid">
-    <div class="row justify-content-center mb-5">
-      <div class="col-12 content-head">
-        <div class="mbr-section-head">
-          <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-            <strong>Образование и опыт</strong>
-          </h4>
-        </div>
+
+<section class="timeline-section" id="timeline-section">
+  <div class="container">
+    <h2>Образование и опыт</h2>
+
+    <!-- Этап 1: 2019 -->
+    <div class="timeline-item">
+      <div class="year">2019 · 5 лет</div>
+      <div class="company">Свердловская Дирекция по ремонту и обслуживанию приборов безопасности</div>
+      <div class="position">Инженер 1 категории</div>
+      <div class="description">
+        Анализ оперативных данных по отказам систем безопасности на локомотиве. Анализ неисправностей локомотивных приборов безопасности.
       </div>
     </div>
-    <div class="row">
-      <div class="item features-image col-12 col-md-6 col-lg-3 active">
-        <div class="item-wrapper">
-          <div class="item-img mb-3">
-            <img src="https://proxy.electricblaze.com/?u&#x3D;https%3A%2F%2Fimages.unsplash.com%2Fphoto-1516383740770-fbcc5ccbece0%3Fixid%3DM3w0Mzc5fDB8MXxzZWFyY2h8Mjh8fHBvcnRmb2xpb3xlbnwwfDB8fHwxNzg2MTgxNTU0fDA%26ixlib%3Drb-4.1.0%26auto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D50&amp;e&#x3D;1791072000&amp;s&#x3D;ydTxcWpLkX2HyYxpKfq_LME0qjrI-1orIs58KfIcKb8">
-          </div>
-          <div class="item-content align-left">
-            <h6 class="item-subtitle mbr-fonts-style mb-3 display-5">
-              <strong><a class="text-black fw-bold" href="#">Инженер РЖД</a></strong>
-            </h6>
-            <p class="mbr-text mbr-fonts-style mb-3 display-7">2020 год</p>
-            <p class="mbr-text mbr-fonts-style mb-3 display-7">Развитие в области проектирования, участие в крупных проектах и получение ценного опыта.</p>
-            <div class="mbr-section-btn item-footer"><a href="#" class="btn item-btn btn-primary display-7">Подробнее</a></div>
-          </div>
-        </div>
-      </div>
-      <div class="item features-image col-12 col-md-6 col-lg-3">
-        <div class="item-wrapper">
-          <div class="item-img mb-3">
-            <img src="https://proxy.electricblaze.com/?u&#x3D;https%3A%2F%2Fimages.unsplash.com%2Fphoto-1522542550221-31fd19575a2d%3Fixid%3DM3w0Mzc5fDB8MXxzZWFyY2h8N3x8cG9ydGZvbGlvfGVufDB8MHx8fDE3ODYxODE1NTR8MA%26ixlib%3Drb-4.1.0%26auto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D50&amp;e&#x3D;1791072000&amp;s&#x3D;Qgv-LknhMZ_j97XybW8B-34j27sCby8Npw9oBq4thyU" data-slide-to="1" data-bs-slide-to="1">
-          </div>
-          <div class="item-content align-left">
-            <h6 class="item-subtitle mbr-fonts-style mb-3 display-5">
-              <strong><a class="text-black fw-bold" href="#">Инженер-конструктор Rival Powersports</a></strong>
-            </h6>
-            <p class="mbr-text mbr-fonts-style mb-3 display-7">2025 год</p>
-            <p class="mbr-text mbr-fonts-style mb-3 display-7">Работа с квадроциклами, проектирование инновационных решений и аксессуаров.</p>
-            <div class="mbr-section-btn item-footer"><a href="#" class="btn item-btn btn-primary display-7">Подробнее</a></div>
-          </div>
-        </div>
-      </div>
-      <div class="item features-image col-12 col-md-6 col-lg-3">
-        <div class="item-wrapper">
-          <div class="item-img mb-3">
-            <img src="https://proxy.electricblaze.com/?u&#x3D;https%3A%2F%2Fimages.unsplash.com%2Fphoto-1545665277-5937489579f2%3Fixid%3DM3w0Mzc5fDB8MXxzZWFyY2h8Mnx8cG9ydGZvbGlvfGVufDB8MHx8fDE3ODYxODE1NTR8MA%26ixlib%3Drb-4.1.0%26auto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D50&amp;e&#x3D;1791072000&amp;s&#x3D;6zRpQ0KTo85qfcJvHws8N7S4kK2PQ9x6WdK9RwGLUQ0" data-slide-to="2" data-bs-slide-to="2">
-          </div>
-          <div class="item-content align-left">
-            <h6 class="item-subtitle mbr-fonts-style mt-0 mb-3 display-5">
-              <strong><a class="text-black fw-bold" href="#"></a></strong>
-            </h6>
-            <p class="mbr-text mbr-fonts-style mb-3 display-7"></p>
-            <p class="mbr-text mbr-fonts-style mb-3 display-7"></p>
-            <div class="mbr-section-btn item-footer"><a href="#" class="btn item-btn btn-primary display-7">Подробнее</a></div>
-          </div>
-        </div>
-      </div>
-      <div class="item features-image col-12 col-md-6 col-lg-3">
-        <div class="item-wrapper">
-          <div class="item-img mb-3">
-            <img src="https://proxy.electricblaze.com/?u&#x3D;https%3A%2F%2Fimages.unsplash.com%2Fphoto-1510936111840-65e151ad71bb%3Fixid%3DM3w0Mzc5fDB8MXxzZWFyY2h8MTZ8fHBvcnRmb2xpb3xlbnwwfDB8fHwxNzg2MTgxNTU0fDA%26ixlib%3Drb-4.1.0%26auto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D50&amp;e&#x3D;1791072000&amp;s&#x3D;EjAYdWL2NCjFzbKuab7Lu5pBM06dXN4IK_3ARsLmVRw" data-slide-to="3" data-bs-slide-to="3">
-          </div>
-          <div class="item-content align-left">
-            <h6 class="item-subtitle mbr-fonts-style mt-0 mb-3 display-5">
-              <strong><a class="text-black fw-bold" href="#"></a></strong>
-            </h6>
-            <p class="mbr-text mbr-fonts-style mb-3 display-7"></p>
-            <p class="mbr-text mbr-fonts-style mb-3 display-7"></p>
-            <div class="mbr-section-btn item-footer"><a href="#" class="btn item-btn btn-primary display-7">Подробнее</a></div>
-          </div>
-        </div>
+
+    <!-- Этап 2: 2024 -->
+    <div class="timeline-item">
+      <div class="year">2024 · 2 года (по настоящее время)</div>
+      <div class="company">Rival Powersports</div>
+      <div class="position">Инженер-конструктор защитных аксессуаров</div>
+      <div class="description">
+        Разработка и проектирование бамперов, защит, аксессуаров, универсальных изделий для квадроциклов, снегоходов и лодок. Работа в Siemens NX с полным производственным циклом: 3D-сканирование, реверс-инжиниринг, твердотельное моделирование, конструкторская документация по ГОСТ/ЕСКД. Взаимодействие с производством и авторский надзор на всех этапах разработки. Разработано более 24 изделий.
       </div>
     </div>
+
   </div>
 </section>
 
