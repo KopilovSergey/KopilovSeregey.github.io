@@ -650,6 +650,7 @@
     </div>
   </nav>
 </section>
+
 <!-- ==================== HERO-СЕКЦИЯ (главная) ==================== -->
 <style>
 .cid-vrMAloTEiy {
@@ -1901,106 +1902,6 @@
     document.body.append(animationInput);
   })();
 </script>
-<script>
-  // === НАСТРОЙТЕ СПИСОК ФАЙЛОВ ДЛЯ КАЖДОГО ГОДА ===
-  // Впишите сюда имена файлов (без расширения .png), которые лежат в папках 2025/ и 2026/
-  const images2025 = [
-    'Задний_бампер_снегохода_RM_FRONTIER',
-    'Передний_бампер_квадроцикла_Loncin_Xolf_700i',
-    'Задний_бампер_квадроцикла_Loncin_Xolf_700i',
-    'Алюминиевая_защита_днища_квадроцикла_Baltmotors_Striker_500_EFI',
-    'Комплект_пластиковой_защиты_днища_квадроцикла_BRP_CAN-AM_Maverick_R_X_RS',
-    'Бампер_снегохода_STELS_STAVR',
-    'Подкат_транспортировочный_для_снегохода',
-    'Задний_бампер_квадроцикла_Baltmotors_Striker_500_EFI',
-    'Передний_бампер_квадроцикла_Baltmotors_Striker_500_EFI',
-    'Комплект_пластиковой_защиты_днища_квадроцикла_BRC_X_TERRA-CT'
-    // добавьте свои имена
-  ];
 
-  const images2026 = [
-    'Тележка_под_лыжу_снегохода_из_круглой_трубы',
-    'Тележка_под_лыжу_снегохода_из_профильной_трубы',
-    'Передний_бампер_для_квадроцикла_GBM_Cronos_420',
-    'Комплект_пластиковой_защиты_днища_для_квадроцикла_GBM_Cronos_420',
-    'Комплект_алюминиевой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
-    'Комплект_пластиковой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
-    'Передний_бампер_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
-    'Комплект_пластиковой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C5',
-    'Комплект_алюминиевой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C5',
-    'Корзина_багажная_для_лодки'
-    // добавьте свои имена
-  ];
-
-  // === ФУНКЦИЯ ДЛЯ ЗАПОЛНЕНИЯ КАРУСЕЛИ ===
-  function populateCarousel(trackId, imageList, year) {
-    const track = document.getElementById(trackId);
-    if (!track) return;
-    track.innerHTML = '';
-    imageList.forEach(name => {
-      const item = document.createElement('div');
-      item.className = 'carousel-item';
-      // Формируем подпись: заменяем дефисы/подчеркивания на пробелы, каждое слово с заглавной
-      const caption = name
-        .replace(/[-_]/g, ' ')
-        .replace(/\b\w/g, l => l.toUpperCase());
-      item.innerHTML = `
-        <img src="${year}/${name}.png" alt="${caption}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwY2VmMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNkMWY2ZCI+5L2g55WZ5r2uPC90ZXh0Pjwvc3ZnPg=='">
-        <div class="caption">${caption}</div>
-      `;
-      track.appendChild(item);
-    });
-    
-    <script>
-      console.log('Скрипт карусели загружен');
-  // === НАСТРОЙТЕ СПИСОК ФАЙЛОВ ДЛЯ КАЖДОГО ГОДА ===
-  // Впишите сюда имена файлов (без расширения .png), которые лежат в папках 2025/ и 2026/
-  const images2025 = [
-    'Задний_бампер_снегохода_RM_FRONTIER',
-    'Передний_бампер_квадроцикла_Loncin_Xolf_700i',
-    'Задний_бампер_квадроцикла_Loncin_Xolf_700i',
-    'Алюминиевая_защита_днища_квадроцикла_Baltmotors_Striker_500_EFI',
-    'Комплект_пластиковой_защиты_днища_квадроцикла_BRP_CAN-AM_Maverick_R_X_RS',
-    'Бампер_снегохода_STELS_STAVR',
-    'Подкат_транспортировочный_для_снегохода',
-    'Задний_бампер_квадроцикла_Baltmotors_Striker_500_EFI',
-    'Передний_бампер_квадроцикла_Baltmotors_Striker_500_EFI',
-    'Комплект_пластиковой_защиты_днища_квадроцикла_BRC_X_TERRA-CT'
-    // добавьте свои имена
-  ];
-
-  const images2026 = [
-    'Тележка_под_лыжу_снегохода_из_круглой_трубы',
-    'Тележка_под_лыжу_снегохода_из_профильной_трубы',
-    'Передний_бампер_для_квадроцикла_GBM_Cronos_420',
-    'Комплект_пластиковой_защиты_днища_для_квадроцикла_GBM_Cronos_420',
-    'Комплект_алюминиевой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
-    'Комплект_пластиковой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
-    'Передний_бампер_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
-    'Комплект_пластиковой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C5',
-    'Комплект_алюминиевой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C5',
-    'Корзина_багажная_для_лодки'
-    // добавьте свои имена
-  ];
-
-  // === ФУНКЦИЯ ДЛЯ ЗАПОЛНЕНИЯ КАРУСЕЛИ ===
-  function populateCarousel(trackId, imageList, year) {
-    const track = document.getElementById(trackId);
-    if (!track) return;
-    track.innerHTML = '';
-    imageList.forEach(name => {
-      const item = document.createElement('div');
-      item.className = 'carousel-item';
-      // Формируем подпись: заменяем дефисы/подчеркивания на пробелы, каждое слово с заглавной
-      const caption = name
-        .replace(/[-_]/g, ' ')
-        .replace(/\b\w/g, l => l.toUpperCase());
-      item.innerHTML = `
-        <img src="${year}/${name}.png" alt="${caption}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwY2VmMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNkMWY2ZCI+5L2g55WZ5r2uPC90ZXh0Pjwvc3ZnPg=='">
-        <div class="caption">${caption}</div>
-      `;
-      track.appendChild(item);
-    });
-    
 </body>
 </html>
