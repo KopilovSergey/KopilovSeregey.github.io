@@ -1231,22 +1231,23 @@
     track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
-    console.log('🟡 DOM загружен, запускаем заполнение каруселей...');
-    populateCarousel('track-2025', images2025, '2025');
-    populateCarousel('track-2026', images2026, '2026');
-    console.log('🟢 Заполнение завершено!');
-  });
+  // === ОДИН НАДЁЖНЫЙ ОБРАБОТЧИК ===
+window.addEventListener('load', function() {
+  console.log('🟡 Страница полностью загружена, начинаем заполнение каруселей...');
 
-  // === ЖДЁМ ПОЛНОЙ ЗАГРУЗКИ ВСЕХ КАРТИНОК ===
-  window.addEventListener('load', function() {
-    console.log('🟡 Все картинки загружены, прокручиваем карусели в начало...');
-    const track2025 = document.getElementById('track-2025');
-    const track2026 = document.getElementById('track-2026');
-    if (track2025) track2025.scrollLeft = 0;
-    if (track2026) track2026.scrollLeft = 0;
-    console.log('🟢 Карусели прокручены в начало!');
-  });
+  // Заполняем карусели
+  populateCarousel('track-2025', images2025, '2025');
+  populateCarousel('track-2026', images2026, '2026');
+
+  console.log('🟢 Заполнение завершено!');
+
+  // Прокручиваем в начало
+  const track2025 = document.getElementById('track-2025');
+  const track2026 = document.getElementById('track-2026');
+  if (track2025) track2025.scrollLeft = 0;
+  if (track2026) track2026.scrollLeft = 0;
+  console.log('🟢 Карусели прокручены в начало!');
+});
 </script>
 
 <!-- ==================== FAQ (ОБО МНЕ) ==================== -->
