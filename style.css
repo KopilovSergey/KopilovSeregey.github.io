@@ -155,7 +155,7 @@ body {
   border-radius: 4px;
 }
 
-/* Цветовые классы (оставляем как в оригинале) */
+/* Цветовые классы */
 .bg-primary { background-color: #C8B1E4 !important; }
 .bg-success { background-color: #7BE7B5 !important; }
 .bg-info { background-color: #6BE0F7 !important; }
@@ -208,7 +208,6 @@ body {
   border-color: #6b37af !important;
 }
 
-/* Остальные кнопки (info, success, warning, danger, white, black) - можно оставить как в оригинале, если не меняли */
 .btn-info,
 .btn-info:active {
   background-color: #6BE0F7 !important;
@@ -1205,35 +1204,16 @@ a { transition: color 0.6s; }
     text-align: center;
   }
 }
-.gallery-years .carousel-item img {
-  border: 3px solid red !important;
-  height: 160px !important;
-  width: auto !important;
-  object-fit: contain !important;
-}
-.gallery-years .carousel-track {
-  overflow: visible !important;
-}
-.gallery-years .carousel-wrapper {
-  overflow: visible !important;
-}
-.gallery-years .carousel-item {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
+
+/* ===== ТЕСТОВЫЕ СТИЛИ ДЛЯ КАРУСЕЛИ ===== */
 .gallery-years .carousel-item img {
   border: 5px solid lime !important;
-  min-width: 100px !important;
-  min-height: 100px !important;
-}
-.gallery-years .carousel-item {
-  width: 300px !important;
-  height: 300px !important;
-  background: yellow !important;
-}
-.gallery-years .carousel-item img {
   width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
+  height: 220px !important;
+  object-fit: cover !important;
   display: block !important;
+}
+
+.gallery-years .carousel-track {
+  overflow: visible !important;
 }
