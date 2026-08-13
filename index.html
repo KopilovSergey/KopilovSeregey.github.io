@@ -1228,8 +1228,10 @@
       `;
       track.appendChild(item);
     });
-    // После заполнения обновляем кнопки и вешаем события
-    updateButtons(trackId);
+    // После заполнения обновляем кнопки с задержкой (чтобы браузер успел отрисовать)
+    setTimeout(() => {
+      updateButtons(trackId);
+    }, 100);
     track.addEventListener('scroll', () => updateButtons(trackId));
   }
 
@@ -1244,14 +1246,14 @@
     const scrollWidth = track.scrollWidth;
     const clientWidth = track.clientWidth;
 
-    // Скрыть кнопку "назад", если мы в самом начале
-    if (scrollLeft <= 0) {
+    // Скрыть кнопку "назад", если мы почти в самом начале (допускаем 5px)
+    if (scrollLeft < 5) {
       prevBtn.classList.add('hidden');
     } else {
       prevBtn.classList.remove('hidden');
     }
 
-    // Скрыть кнопку "вперёд", если мы в самом конце (с небольшим запасом)
+    // Скрыть кнопку "вперёд", если мы почти в самом конце (допускаем 5px)
     if (scrollLeft + clientWidth >= scrollWidth - 5) {
       nextBtn.classList.add('hidden');
     } else {
