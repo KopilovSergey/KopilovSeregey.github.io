@@ -1147,7 +1147,7 @@
     <div class="year-row">
       <h3>2025</h3>
       <div class="carousel-track">
-        <div class="carousel-track-inner" id="carousel-2025"></div>
+        <div class="carousel-track-inner" id="carousel-2025-inner"></div>
       </div>
     </div>
 
@@ -1200,7 +1200,6 @@
       `;
       container.appendChild(item);
     });
-    // Дублируем содержимое для бесконечной прокрутки
     const clone = container.cloneNode(true);
     container.appendChild(clone);
   }
@@ -1224,7 +1223,7 @@
   // === ЕДИНСТВЕННЫЙ ОБРАБОТЧИК LOAD ===
   window.addEventListener('load', function() {
     console.log('▶ Запускаем заполнение карусели 2025...');
-    populateCarousel('carousel-2025', images2025, '2025');
+    populateCarousel('carousel-2025-inner', images2025, '2025');
     console.log('✅ Карусель 2025 заполнена!');
 
     console.log('▶ Запускаем заполнение сетки 2026...');
@@ -1233,7 +1232,7 @@
 
     // === ПРОКРУТКА В НАЧАЛО ПОСЛЕ ЗАПОЛНЕНИЯ ===
     setTimeout(() => {
-      const track = document.querySelector('#carousel-2025');
+      const track = document.querySelector('#carousel-2025-inner');
       if (track) {
         track.scrollLeft = 0;
         console.log('🔄 Карусель 2025 прокручена в начало!');
@@ -1242,28 +1241,6 @@
   });
 </script>
 
-  // === ЕДИНСТВЕННЫЙ ОБРАБОТЧИК LOAD ===
-  window.addEventListener('load', function() {
-    console.log('▶ Запускаем заполнение карусели 2025...');
-    populateCarousel('carousel-2025', images2025, '2025');
-    console.log('✅ Карусель 2025 заполнена!');
-
-    console.log('▶ Запускаем заполнение сетки 2026...');
-    populateGrid('grid-2026', images2026, '2026');
-    console.log('✅ Сетка 2026 заполнена!');
-  });
-
-    // === ПРОКРУТКА В НАЧАЛО ПОСЛЕ ЗАПОЛНЕНИЯ ===
-  setTimeout(() => {
-    const track = document.querySelector('#carousel-2025');
-    if (track) {
-      track.scrollLeft = 0;
-      console.log('🔄 Карусель 2025 прокручена в начало!');
-    }
-  }, 500);
-  
-</script>
-  
 <!-- ==================== ОБРАЗОВАНИЕ И ОПЫТ (ХРОНОЛОГИЧЕСКОЕ ДРЕВО) ==================== -->
 <style>
   .timeline-tree {
