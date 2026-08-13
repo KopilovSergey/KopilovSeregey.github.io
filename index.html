@@ -1053,7 +1053,6 @@
     margin-bottom: 1.5rem;
     font-weight: 600;
   }
-  /* ---------- Сетка для 2026 ---------- */
   .gallery-mixed .grid-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -1082,7 +1081,6 @@
     font-weight: 500;
     color: #1a0b2e;
   }
-  /* ---------- Карусель для 2025 ---------- */
   .gallery-mixed .carousel-track {
     display: flex;
     gap: 1.5rem;
@@ -1094,6 +1092,7 @@
     display: flex;
     gap: 1.5rem;
     animation: scroll-right-to-left 30s linear infinite;
+    will-change: transform;
   }
   @keyframes scroll-right-to-left {
     0% { transform: translateX(0); }
@@ -1196,7 +1195,7 @@
       item.className = 'carousel-item';
       const caption = name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
       item.innerHTML = `
-        <img src="https://kopilovsergey.github.io/${year}/${name}.png" alt="${caption}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwY2VmMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNkMWY2ZCI+5L2g55WZ5r2uPC90ZXh0Pjwvc3ZnPg=='">
+        <img src="${year}/${name}.png" alt="${caption}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwY2VmMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNkMWY2ZCI+5L2g55WZ5r2uPC90ZXh0Pjwvc3ZnPg=='">
         <div class="caption">${caption}</div>
       `;
       container.appendChild(item);
@@ -1214,7 +1213,7 @@
       item.className = 'grid-item';
       const caption = name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
       item.innerHTML = `
-        <img src="https://kopilovsergey.github.io/${year}/${name}.png" alt="${caption}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwY2VmMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNkMWY2ZCI+5L2g55WZ5r2uPC90ZXh0Pjwvc3ZnPg=='">
+        <img src="${year}/${name}.png" alt="${caption}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwY2VmMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNkMWY2ZCI+5L2g55WZ5r2uPC90ZXh0Pjwvc3ZnPg=='">
         <div class="caption">${caption}</div>
       `;
       container.appendChild(item);
