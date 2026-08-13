@@ -1030,14 +1030,13 @@
   </div>
 </section>
   
-<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (карусель с фокусом, окончательная) ==================== -->
+<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (карусель с фокусом) ==================== -->
 <style>
   .gallery-scroll {
     padding-top: 5rem;
     padding-bottom: 5rem;
     background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
     text-align: center;
-    /* Запрещаем вертикальную прокрутку страницы, если что-то вылезает */
     overflow: hidden;
   }
   .gallery-scroll h2 {
@@ -1047,7 +1046,7 @@
     margin-bottom: 3rem;
   }
   .gallery-scroll .year-row {
-    margin-bottom: 8rem; /* увеличен отступ между годами */
+    margin-bottom: 8rem;
   }
   .gallery-scroll .year-row h3 {
     font-size: 2rem;
@@ -1080,7 +1079,6 @@
     display: none;
   }
 
-  /* ---------- Карточки (5 в ряд) ---------- */
   .gallery-scroll .scroll-item {
     flex: 0 0 calc((100% - 4 * 1.5rem) / 5);
     text-align: center;
@@ -1091,12 +1089,12 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     scroll-snap-align: center;
-    height: 250px; /* достаточно для картинки 160px при scale 1.5 */
-    overflow: hidden; /* обрезаем лишнее, если картинка вылезает */
+    height: 250px;           /* достаточно для картинки 160px при scale 1.5 */
+    overflow: hidden;        /* обрезаем лишнее, если картинка чуть вылезает */
   }
   .gallery-scroll .scroll-item img {
     width: 100%;
-    height: 160px; /* исходная высота картинок */
+    height: 160px;           /* фиксированная высота картинки */
     object-fit: cover;
     border-radius: 0.5rem;
     display: block;
@@ -1109,7 +1107,6 @@
     color: #1a0b2e;
   }
 
-  /* ---------- Кнопки ---------- */
   .gallery-scroll .scroll-btn {
     background: rgba(255,255,255,0.7);
     border: none;
@@ -1142,7 +1139,6 @@
     pointer-events: none;
   }
 
-  /* ---------- Адаптивность ---------- */
   @media (max-width: 768px) {
     .gallery-scroll .scroll-item {
       flex: 0 0 calc((100% - 1 * 1.5rem) / 2);
@@ -1197,8 +1193,31 @@
 <script>
   console.log('Галерея со скроллом и фокусом загружена ✅');
 
-  const images2025 = [ ... ]; // ваши массивы остаются без изменений
-  const images2026 = [ ... ];
+  const images2025 = [
+    'Задний_бампер_снегохода_RM_FRONTIER',
+    'Передний_бампер_квадроцикла_Loncin_Xolf_700i',
+    'Задний_бампер_квадроцикла_Loncin_Xolf_700i',
+    'Защита_днища_квадроцикла_Baltmotors_Striker_500_EFI',
+    'Комплект_пластиковой_защиты_днища_квадроцикла_BRP_CAN-AM_Maverick_R_X_RS',
+    'Бампер_снегохода_STELS_STAVR',
+    'Подкат_транспортировочный_для_снегохода',
+    'Задний_бампер_квадроцикла_Baltmotors_Striker_500_EFI',
+    'Передний_бампер_квадроцикла_Baltmotors_Striker_500_EFI',
+    'Комплект_пластиковой_защиты_днища_квадроцикла_BRC_X_TERRA-CT'
+  ];
+
+  const images2026 = [
+    'Тележка_под_лыжу_снегохода_из_круглой_трубы',
+    'Тележка_под_лыжу_снегохода_из_профильной_трубы',
+    'Передний_бампер_для_квадроцикла_GBM_Cronos_420',
+    'Комплект_пластиковой_защиты_днища_для_квадроцикла_GBM_Cronos_420',
+    'Комплект_алюминиевой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
+    'Комплект_пластиковой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
+    'Передний_бампер_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
+    'Комплект_пластиковой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C5',
+    'Комплект_алюминиевой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C5',
+    'Корзина_багажная_для_лодки'
+  ];
 
   function populateScroll(trackId, imageList, year) {
     const track = document.getElementById(trackId);
