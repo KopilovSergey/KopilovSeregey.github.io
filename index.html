@@ -1030,7 +1030,7 @@
   </div>
 </section>
   
-<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (адаптивный скролл с кнопками) ==================== -->
+<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (карусель с фокусом) ==================== -->
 <style>
   .gallery-scroll {
     padding-top: 5rem;
@@ -1073,20 +1073,23 @@
     padding: 1rem 0.5rem;
     scrollbar-width: none;
     width: 100%;
+    scroll-snap-type: x mandatory; /* добавляем привязку */
   }
   .gallery-scroll .scroll-track::-webkit-scrollbar {
     display: none;
   }
 
-  /* ---------- Карточки (адаптивная ширина) ---------- */
+  /* ---------- Карточки (5 в ряд, адаптивная ширина) ---------- */
   .gallery-scroll .scroll-item {
-    flex: 0 0 calc((100% - 3 * 1.5rem) / 4); /* 4 картинки в ряд на десктопе */
+    flex: 0 0 calc((100% - 4 * 1.5rem) / 5);
     text-align: center;
     background: rgba(255,255,255,0.6);
     border-radius: 1rem;
     padding: 0.5rem;
     backdrop-filter: blur(4px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-snap-align: center; /* привязка к центру */
   }
   .gallery-scroll .scroll-item img {
     width: 100%;
@@ -1094,6 +1097,7 @@
     object-fit: cover;
     border-radius: 0.5rem;
     display: block;
+    transition: transform 0.3s ease;
   }
   .gallery-scroll .scroll-item .caption {
     margin-top: 0.5rem;
@@ -1138,7 +1142,7 @@
   /* ---------- Адаптивность ---------- */
   @media (max-width: 768px) {
     .gallery-scroll .scroll-item {
-      flex: 0 0 calc((100% - 1 * 1.5rem) / 2); /* 2 картинки на планшете */
+      flex: 0 0 calc((100% - 1 * 1.5rem) / 2);
     }
     .gallery-scroll .scroll-item img {
       height: 120px;
@@ -1151,7 +1155,7 @@
   }
   @media (max-width: 480px) {
     .gallery-scroll .scroll-item {
-      flex: 0 0 100%; /* 1 картинка на мобильных */
+      flex: 0 0 100%;
     }
   }
 </style>
@@ -1165,8 +1169,8 @@
       <h3>2025</h3>
       <div class="scroll-wrapper">
         <button class="scroll-btn prev" id="btn-2025-prev" onclick="scrollTrack('track-2025', -1)">‹</button>
-<div class="scroll-track" id="track-2025"></div>
-<button class="scroll-btn next" id="btn-2025-next" onclick="scrollTrack('track-2025', 1)">›</button>
+        <div class="scroll-track" id="track-2025"></div>
+        <button class="scroll-btn next" id="btn-2025-next" onclick="scrollTrack('track-2025', 1)">›</button>
       </div>
     </div>
 
@@ -1175,15 +1179,15 @@
       <h3>2026</h3>
       <div class="scroll-wrapper">
         <button class="scroll-btn prev" id="btn-2026-prev" onclick="scrollTrack('track-2026', -1)">‹</button>
-<div class="scroll-track" id="track-2026"></div>
-<button class="scroll-btn next" id="btn-2026-next" onclick="scrollTrack('track-2026', 1)">›</button>
+        <div class="scroll-track" id="track-2026"></div>
+        <button class="scroll-btn next" id="btn-2026-next" onclick="scrollTrack('track-2026', 1)">›</button>
       </div>
     </div>
   </div>
 </section>
 
 <script>
-  console.log('Галерея со скроллом загружена ✅');
+  console.log('Галерея со скроллом и фокусом загружена ✅');
 
   const images2025 = [
     'Задний_бампер_снегохода_RM_FRONTIER',
@@ -1228,11 +1232,15 @@
       `;
       track.appendChild(item);
     });
-    // После заполнения обновляем кнопки с задержкой (чтобы браузер успел отрисовать)
+    // После заполнения обновляем кнопки и масштаб
     setTimeout(() => {
       updateButtons(trackId);
+      updateFocus(trackId);
     }, 100);
-    track.addEventListener('scroll', () => updateButtons(trackId));
+    track.addEventListener('scroll', () => {
+      updateButtons(trackId);
+      updateFocus(trackId);
+    });
   }
 
   function updateButtons(trackId) {
@@ -1246,14 +1254,12 @@
     const scrollWidth = track.scrollWidth;
     const clientWidth = track.clientWidth;
 
-    // Скрыть кнопку "назад", если мы почти в самом начале (допускаем 5px)
     if (scrollLeft < 5) {
       prevBtn.classList.add('hidden');
     } else {
       prevBtn.classList.remove('hidden');
     }
 
-    // Скрыть кнопку "вперёд", если мы почти в самом конце (допускаем 5px)
     if (scrollLeft + clientWidth >= scrollWidth - 5) {
       nextBtn.classList.add('hidden');
     } else {
@@ -1261,15 +1267,66 @@
     }
   }
 
+  function updateFocus(trackId) {
+    const track = document.getElementById(trackId);
+    if (!track) return;
+    const items = track.querySelectorAll('.scroll-item');
+    if (!items.length) return;
+
+    // Центр контейнера
+    const trackRect = track.getBoundingClientRect();
+    const centerX = trackRect.left + trackRect.width / 2;
+
+    // Находим элемент, ближайший к центру
+    let closestItem = null;
+    let closestDist = Infinity;
+    items.forEach(item => {
+      const rect = item.getBoundingClientRect();
+      const itemCenter = rect.left + rect.width / 2;
+      const dist = Math.abs(centerX - itemCenter);
+      if (dist < closestDist) {
+        closestDist = dist;
+        closestItem = item;
+      }
+    });
+
+    // Применяем масштаб: центральный 1.5, соседние 0.75, остальные без изменений (1)
+    items.forEach(item => {
+      const rect = item.getBoundingClientRect();
+      const itemCenter = rect.left + rect.width / 2;
+      const dist = Math.abs(centerX - itemCenter);
+      // Определяем индекс в ряду (0 = центральный, 1 = сосед, 2 = дальше)
+      // Но мы просто используем расстояние: если dist < 100px — центральный, если dist < 300px — сосед
+      // Лучше использовать относительное расстояние в процентах от ширины элемента
+      const itemWidth = rect.width;
+      const thresholdCenter = itemWidth * 0.6;   // примерно полэлемента
+      const thresholdSide = itemWidth * 1.8;     // примерно 1.5 элемента
+
+      if (dist < thresholdCenter) {
+        item.style.transform = 'scale(1.5)';
+        item.style.zIndex = '3';
+        item.style.boxShadow = '0 8px 24px rgba(0,0,0,0.15)';
+      } else if (dist < thresholdSide) {
+        item.style.transform = 'scale(0.75)';
+        item.style.zIndex = '1';
+        item.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)';
+      } else {
+        item.style.transform = 'scale(1)';
+        item.style.zIndex = '0';
+        item.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)';
+      }
+    });
+  }
+
   function scrollTrack(trackId, direction) {
     const track = document.getElementById(trackId);
     if (!track) return;
-    const item = track.querySelector('.scroll-item');
-    if (!item) return;
+    const items = track.querySelectorAll('.scroll-item');
+    if (!items.length) return;
     // Ширина одного элемента + gap 1.5rem (24px)
-    const itemWidth = item.offsetWidth + 24;
+    const itemWidth = items[0].offsetWidth + 24;
     track.scrollBy({ left: direction * itemWidth, behavior: 'smooth' });
-    // После прокрутки кнопки обновятся автоматически через событие scroll
+    // После прокрутки масштаб обновится через событие scroll
   }
 
   // === ЗАПОЛНЯЕМ ОБА ГОДА ПРИ ЗАГРУЗКЕ ===
@@ -1278,7 +1335,6 @@
     populateScroll('track-2026', images2026, '2026');
   });
 </script>
-
 <!-- ==================== ОБРАЗОВАНИЕ И ОПЫТ (ХРОНОЛОГИЧЕСКОЕ ДРЕВО) ==================== -->
 <style>
   .timeline-tree {
