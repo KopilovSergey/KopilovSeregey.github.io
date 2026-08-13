@@ -1030,7 +1030,7 @@
   </div>
 </section>
   
-<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (горизонтальный скролл для обоих годов) ==================== -->
+<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (адаптивный скролл с кнопками) ==================== -->
 <style>
   .gallery-scroll {
     padding-top: 5rem;
@@ -1077,9 +1077,10 @@
   .gallery-scroll .scroll-track::-webkit-scrollbar {
     display: none;
   }
+
+  /* ---------- Карточки (адаптивная ширина) ---------- */
   .gallery-scroll .scroll-item {
-    flex: 0 0 auto;
-    width: 220px;
+    flex: 0 0 calc((100% - 3 * 1.5rem) / 4); /* 4 картинки в ряд на десктопе */
     text-align: center;
     background: rgba(255,255,255,0.6);
     border-radius: 1rem;
@@ -1100,6 +1101,8 @@
     font-weight: 500;
     color: #1a0b2e;
   }
+
+  /* ---------- Кнопки ---------- */
   .gallery-scroll .scroll-btn {
     background: rgba(255,255,255,0.7);
     border: none;
@@ -1109,7 +1112,7 @@
     font-size: 1.8rem;
     color: #3d1f6d;
     cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
+    transition: background 0.3s, transform 0.2s, opacity 0.3s;
     flex-shrink: 0;
     z-index: 2;
     backdrop-filter: blur(4px);
@@ -1117,6 +1120,8 @@
     align-items: center;
     justify-content: center;
     line-height: 1;
+    opacity: 1;
+    pointer-events: auto;
   }
   .gallery-scroll .scroll-btn:hover {
     background: rgba(255,255,255,0.9);
@@ -1125,10 +1130,15 @@
   .gallery-scroll .scroll-btn:active {
     transform: scale(0.95);
   }
+  .gallery-scroll .scroll-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
 
+  /* ---------- Адаптивность ---------- */
   @media (max-width: 768px) {
     .gallery-scroll .scroll-item {
-      width: 160px;
+      flex: 0 0 calc((100% - 1 * 1.5rem) / 2); /* 2 картинки на планшете */
     }
     .gallery-scroll .scroll-item img {
       height: 120px;
@@ -1137,6 +1147,11 @@
       width: 36px;
       height: 36px;
       font-size: 1.4rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .gallery-scroll .scroll-item {
+      flex: 0 0 100%; /* 1 картинка на мобильных */
     }
   }
 </style>
@@ -1149,9 +1164,9 @@
     <div class="year-row">
       <h3>2025</h3>
       <div class="scroll-wrapper">
-        <button class="scroll-btn prev" onclick="scrollTrack('track-2025', -1)">‹</button>
+        <button class="scroll-btn prev" id="btn-2025-prev">‹</button>
         <div class="scroll-track" id="track-2025"></div>
-        <button class="scroll-btn next" onclick="scrollTrack('track-2025', 1)">›</button>
+        <button class="scroll-btn next" id="btn-2025-next">›</button>
       </div>
     </div>
 
@@ -1159,9 +1174,9 @@
     <div class="year-row">
       <h3>2026</h3>
       <div class="scroll-wrapper">
-        <button class="scroll-btn prev" onclick="scrollTrack('track-2026', -1)">‹</button>
+        <button class="scroll-btn prev" id="btn-2026-prev">‹</button>
         <div class="scroll-track" id="track-2026"></div>
-        <button class="scroll-btn next" onclick="scrollTrack('track-2026', 1)">›</button>
+        <button class="scroll-btn next" id="btn-2026-next">›</button>
       </div>
     </div>
   </div>
@@ -1213,14 +1228,46 @@
       `;
       track.appendChild(item);
     });
-    console.log('Скролл', trackId, 'заполнен!');
+    // После заполнения обновляем кнопки и вешаем события
+    updateButtons(trackId);
+    track.addEventListener('scroll', () => updateButtons(trackId));
+  }
+
+  function updateButtons(trackId) {
+    const track = document.getElementById(trackId);
+    if (!track) return;
+    const prevBtn = document.getElementById(trackId.replace('track', 'btn') + '-prev');
+    const nextBtn = document.getElementById(trackId.replace('track', 'btn') + '-next');
+    if (!prevBtn || !nextBtn) return;
+
+    const scrollLeft = track.scrollLeft;
+    const scrollWidth = track.scrollWidth;
+    const clientWidth = track.clientWidth;
+
+    // Скрыть кнопку "назад", если мы в самом начале
+    if (scrollLeft <= 0) {
+      prevBtn.classList.add('hidden');
+    } else {
+      prevBtn.classList.remove('hidden');
+    }
+
+    // Скрыть кнопку "вперёд", если мы в самом конце (с небольшим запасом)
+    if (scrollLeft + clientWidth >= scrollWidth - 5) {
+      nextBtn.classList.add('hidden');
+    } else {
+      nextBtn.classList.remove('hidden');
+    }
   }
 
   function scrollTrack(trackId, direction) {
     const track = document.getElementById(trackId);
     if (!track) return;
-    const scrollAmount = 240;
-    track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    const item = track.querySelector('.scroll-item');
+    if (!item) return;
+    // Ширина одного элемента + gap 1.5rem (24px)
+    const itemWidth = item.offsetWidth + 24;
+    track.scrollBy({ left: direction * itemWidth, behavior: 'smooth' });
+    // После прокрутки кнопки обновятся автоматически через событие scroll
   }
 
   // === ЗАПОЛНЯЕМ ОБА ГОДА ПРИ ЗАГРУЗКЕ ===
