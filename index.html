@@ -1232,7 +1232,6 @@
       `;
       track.appendChild(item);
     });
-    // После заполнения обновляем кнопки и масштаб
     setTimeout(() => {
       updateButtons(trackId);
       updateFocus(trackId);
@@ -1273,7 +1272,6 @@
     const items = track.querySelectorAll('.scroll-item');
     if (!items.length) return;
 
-    // Центр контейнера
     const trackRect = track.getBoundingClientRect();
     const centerX = trackRect.left + trackRect.width / 2;
 
@@ -1290,29 +1288,16 @@
       }
     });
 
-    // Применяем масштаб: центральный 1.5, соседние 0.75, остальные без изменений (1)
+    // Применяем масштаб:
+    // центральный -> 1.5, все остальные -> 0.75
     items.forEach(item => {
-      const rect = item.getBoundingClientRect();
-      const itemCenter = rect.left + rect.width / 2;
-      const dist = Math.abs(centerX - itemCenter);
-      // Определяем индекс в ряду (0 = центральный, 1 = сосед, 2 = дальше)
-      // Но мы просто используем расстояние: если dist < 100px — центральный, если dist < 300px — сосед
-      // Лучше использовать относительное расстояние в процентах от ширины элемента
-      const itemWidth = rect.width;
-      const thresholdCenter = itemWidth * 0.6;   // примерно полэлемента
-      const thresholdSide = itemWidth * 1.8;     // примерно 1.5 элемента
-
-      if (dist < thresholdCenter) {
+      if (item === closestItem) {
         item.style.transform = 'scale(1.5)';
         item.style.zIndex = '3';
         item.style.boxShadow = '0 8px 24px rgba(0,0,0,0.15)';
-      } else if (dist < thresholdSide) {
+      } else {
         item.style.transform = 'scale(0.75)';
         item.style.zIndex = '1';
-        item.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)';
-      } else {
-        item.style.transform = 'scale(1)';
-        item.style.zIndex = '0';
         item.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)';
       }
     });
@@ -1323,18 +1308,17 @@
     if (!track) return;
     const items = track.querySelectorAll('.scroll-item');
     if (!items.length) return;
-    // Ширина одного элемента + gap 1.5rem (24px)
-    const itemWidth = items[0].offsetWidth + 24;
+    const itemWidth = items[0].offsetWidth + 24; // + gap 1.5rem = 24px
     track.scrollBy({ left: direction * itemWidth, behavior: 'smooth' });
-    // После прокрутки масштаб обновится через событие scroll
+    // Масштаб обновится через событие scroll
   }
 
-  // === ЗАПОЛНЯЕМ ОБА ГОДА ПРИ ЗАГРУЗКЕ ===
   window.addEventListener('load', function() {
     populateScroll('track-2025', images2025, '2025');
     populateScroll('track-2026', images2026, '2026');
   });
 </script>
+  
 <!-- ==================== ОБРАЗОВАНИЕ И ОПЫТ (ХРОНОЛОГИЧЕСКОЕ ДРЕВО) ==================== -->
 <style>
   .timeline-tree {
