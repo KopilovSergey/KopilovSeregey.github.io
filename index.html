@@ -1030,62 +1030,32 @@
   </div>
 </section>
   
-<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (гибрид, надёжный) ==================== -->
+<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (горизонтальный скролл для обоих годов) ==================== -->
 <style>
-  .gallery-hybrid {
+  .gallery-scroll {
     padding-top: 5rem;
     padding-bottom: 5rem;
     background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
     text-align: center;
   }
-  .gallery-hybrid h2 {
+  .gallery-scroll h2 {
     color: #1a0b2e;
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 3rem;
   }
-  .gallery-hybrid .year-row {
+  .gallery-scroll .year-row {
     margin-bottom: 4rem;
   }
-  .gallery-hybrid .year-row h3 {
+  .gallery-scroll .year-row h3 {
     font-size: 2rem;
     color: #1a0b2e;
     margin-bottom: 1.5rem;
     font-weight: 600;
   }
 
-  /* ---------- Сетка для 2026 (стабильная) ---------- */
-  .gallery-hybrid .grid-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1.5rem;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  .gallery-hybrid .grid-item {
-    background: rgba(255,255,255,0.6);
-    border-radius: 1rem;
-    padding: 0.5rem;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    text-align: center;
-  }
-  .gallery-hybrid .grid-item img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 0.5rem;
-    display: block;
-  }
-  .gallery-hybrid .grid-item .caption {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #1a0b2e;
-  }
-
-  /* ---------- Горизонтальный скролл для 2025 (с кнопками) ---------- */
-  .gallery-hybrid .scroll-wrapper {
+  /* ---------- Горизонтальный скролл с кнопками ---------- */
+  .gallery-scroll .scroll-wrapper {
     position: relative;
     display: flex;
     align-items: center;
@@ -1095,7 +1065,7 @@
     margin: 0 auto;
     overflow: hidden;
   }
-  .gallery-hybrid .scroll-track {
+  .gallery-scroll .scroll-track {
     display: flex;
     gap: 1.5rem;
     overflow-x: auto;
@@ -1104,10 +1074,10 @@
     scrollbar-width: none;
     width: 100%;
   }
-  .gallery-hybrid .scroll-track::-webkit-scrollbar {
+  .gallery-scroll .scroll-track::-webkit-scrollbar {
     display: none;
   }
-  .gallery-hybrid .scroll-item {
+  .gallery-scroll .scroll-item {
     flex: 0 0 auto;
     width: 220px;
     text-align: center;
@@ -1117,20 +1087,20 @@
     backdrop-filter: blur(4px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   }
-  .gallery-hybrid .scroll-item img {
+  .gallery-scroll .scroll-item img {
     width: 100%;
     height: 160px;
     object-fit: cover;
     border-radius: 0.5rem;
     display: block;
   }
-  .gallery-hybrid .scroll-item .caption {
+  .gallery-scroll .scroll-item .caption {
     margin-top: 0.5rem;
     font-size: 0.9rem;
     font-weight: 500;
     color: #1a0b2e;
   }
-  .gallery-hybrid .scroll-btn {
+  .gallery-scroll .scroll-btn {
     background: rgba(255,255,255,0.7);
     border: none;
     border-radius: 50%;
@@ -1148,42 +1118,34 @@
     justify-content: center;
     line-height: 1;
   }
-  .gallery-hybrid .scroll-btn:hover {
+  .gallery-scroll .scroll-btn:hover {
     background: rgba(255,255,255,0.9);
     transform: scale(1.05);
   }
-  .gallery-hybrid .scroll-btn:active {
+  .gallery-scroll .scroll-btn:active {
     transform: scale(0.95);
   }
 
   @media (max-width: 768px) {
-    .gallery-hybrid .grid-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .gallery-hybrid .scroll-item {
+    .gallery-scroll .scroll-item {
       width: 160px;
     }
-    .gallery-hybrid .scroll-item img {
+    .gallery-scroll .scroll-item img {
       height: 120px;
     }
-    .gallery-hybrid .scroll-btn {
+    .gallery-scroll .scroll-btn {
       width: 36px;
       height: 36px;
       font-size: 1.4rem;
     }
   }
-  @media (max-width: 480px) {
-    .gallery-hybrid .grid-container {
-      grid-template-columns: 1fr;
-    }
-  }
 </style>
 
-<section class="gallery-hybrid" id="projects">
+<section class="gallery-scroll" id="projects">
   <div class="container">
     <h2>Мои работы по годам</h2>
 
-    <!-- 2025 – горизонтальный скролл с кнопками -->
+    <!-- 2025 -->
     <div class="year-row">
       <h3>2025</h3>
       <div class="scroll-wrapper">
@@ -1193,16 +1155,20 @@
       </div>
     </div>
 
-    <!-- 2026 – сетка -->
+    <!-- 2026 -->
     <div class="year-row">
       <h3>2026</h3>
-      <div class="grid-container" id="grid-2026"></div>
+      <div class="scroll-wrapper">
+        <button class="scroll-btn prev" onclick="scrollTrack('track-2026', -1)">‹</button>
+        <div class="scroll-track" id="track-2026"></div>
+        <button class="scroll-btn next" onclick="scrollTrack('track-2026', 1)">›</button>
+      </div>
     </div>
   </div>
 </section>
 
 <script>
-  console.log('Гибридная галерея загружена ✅');
+  console.log('Галерея со скроллом загружена ✅');
 
   const images2025 = [
     'Задний_бампер_снегохода_RM_FRONTIER',
@@ -1250,22 +1216,6 @@
     console.log('Скролл', trackId, 'заполнен!');
   }
 
-  function populateGrid(containerId, imageList, year) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-    container.innerHTML = '';
-    imageList.forEach(name => {
-      const item = document.createElement('div');
-      item.className = 'grid-item';
-      const caption = name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-      item.innerHTML = `
-        <img src="${year}/${name}.png" alt="${caption}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwY2VmMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNkMWY2ZCI+5L2g55WZ5r2uPC90ZXh0Pjwvc3ZnPg=='">
-        <div class="caption">${caption}</div>
-      `;
-      container.appendChild(item);
-    });
-  }
-
   function scrollTrack(trackId, direction) {
     const track = document.getElementById(trackId);
     if (!track) return;
@@ -1276,7 +1226,7 @@
   // === ЗАПОЛНЯЕМ ОБА ГОДА ПРИ ЗАГРУЗКЕ ===
   window.addEventListener('load', function() {
     populateScroll('track-2025', images2025, '2025');
-    populateGrid('grid-2026', images2026, '2026');
+    populateScroll('track-2026', images2026, '2026');
   });
 </script>
 
