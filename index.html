@@ -1030,90 +1030,113 @@
   </div>
 </section>
   
-<!-- ==================== ГАЛЕРЕЯ РАБОТ ПО ГОДАМ (СЕТКА) ==================== -->
+<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (бесконечная карусель 2025) ==================== -->
 <style>
-  .gallery-grid {
+  .infinite-carousel {
     padding-top: 5rem;
     padding-bottom: 5rem;
     background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
     text-align: center;
+    overflow: hidden;
   }
-  .gallery-grid h2 {
+  .infinite-carousel h2 {
     color: #1a0b2e;
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 3rem;
   }
-  .gallery-grid .year-row {
+  .infinite-carousel .year-row {
     margin-bottom: 4rem;
   }
-  .gallery-grid .year-row h3 {
+  .infinite-carousel .year-row h3 {
     font-size: 2rem;
     color: #1a0b2e;
     margin-bottom: 1.5rem;
     font-weight: 600;
   }
-  .gallery-grid .grid-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+  .infinite-carousel .carousel-track {
+    display: flex;
     gap: 1.5rem;
-    max-width: 1000px;
-    margin: 0 auto;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    white-space: nowrap;
   }
-  .gallery-grid .grid-item {
+  .infinite-carousel .carousel-track-inner {
+    display: flex;
+    gap: 1.5rem;
+    animation: scroll-right-to-left 30s linear infinite;
+  }
+  /* Ключевые кадры для прокрутки справа налево */
+  @keyframes scroll-right-to-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  .infinite-carousel .carousel-item {
+    flex: 0 0 auto;
+    width: 220px;
+    text-align: center;
     background: rgba(255,255,255,0.6);
     border-radius: 1rem;
     padding: 0.5rem;
     backdrop-filter: blur(4px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    text-align: center;
   }
-  .gallery-grid .grid-item img {
+  .infinite-carousel .carousel-item img {
     width: 100%;
     height: 160px;
     object-fit: cover;
     border-radius: 0.5rem;
     display: block;
   }
-  .gallery-grid .grid-item .caption {
+  .infinite-carousel .carousel-item .caption {
     margin-top: 0.5rem;
     font-size: 0.9rem;
     font-weight: 500;
     color: #1a0b2e;
   }
   @media (max-width: 768px) {
-    .gallery-grid .grid-container {
-      grid-template-columns: repeat(2, 1fr);
+    .infinite-carousel .carousel-item {
+      width: 160px;
     }
-  }
-  @media (max-width: 480px) {
-    .gallery-grid .grid-container {
-      grid-template-columns: 1fr;
+    .infinite-carousel .carousel-item img {
+      height: 120px;
     }
   }
 </style>
 
-<section class="gallery-grid" id="projects">
+<section class="infinite-carousel" id="projects">
   <div class="container">
     <h2>Мои работы по годам</h2>
 
-    <!-- 2025 -->
+    <!-- 2025 (бесконечная прокрутка справа налево) -->
     <div class="year-row">
       <h3>2025</h3>
-      <div class="grid-container" id="grid-2025"></div>
+      <div class="carousel-track">
+        <div class="carousel-track-inner" id="carousel-2025">
+          <!-- Картинки будут вставлены скриптом -->
+        </div>
+      </div>
     </div>
 
-    <!-- 2026 -->
-    <div class="year-row">
+    <!-- 2026 (оставим как есть или позже доработаем) -->
+    <div class="year-row" style="margin-top: 3rem;">
       <h3>2026</h3>
-      <div class="grid-container" id="grid-2026"></div>
+      <div class="carousel-track">
+        <div class="carousel-track-inner" id="carousel-2026">
+          <!-- Картинки будут вставлены скриптом -->
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <script>
-  console.log('Скрипт сетки загружен ✅');
-
+  // === НАСТРОЙТЕ СПИСОК ФАЙЛОВ ДЛЯ КАЖДОГО ГОДА ===
   const images2025 = [
     'Задний_бампер_снегохода_RM_FRONTIER',
     'Передний_бампер_квадроцикла_Loncin_Xolf_700i',
@@ -1140,18 +1163,13 @@
     'Корзина_багажная_для_лодки'
   ];
 
-  function populateGrid(containerId, imageList, year) {
-    console.log('▶ Заполняем сетку:', containerId, 'год:', year);
+  function populateInfiniteCarousel(containerId, imageList, year) {
     const container = document.getElementById(containerId);
-    if (!container) {
-      console.error('❌ Контейнер не найден! Проверьте id в HTML.');
-      return;
-    }
+    if (!container) return;
     container.innerHTML = '';
-    imageList.forEach((name, index) => {
-      console.log(`🖼️ Добавляем фото #${index + 1}:`, name);
+    imageList.forEach(name => {
       const item = document.createElement('div');
-      item.className = 'grid-item';
+      item.className = 'carousel-item';
       const caption = name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
       item.innerHTML = `
         <img src="https://kopilovsergey.github.io/${year}/${name}.png" alt="${caption}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwY2VmMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNkMWY2ZCI+5L2g55WZ5r2uPC90ZXh0Pjwvc3ZnPg=='">
@@ -1159,14 +1177,14 @@
       `;
       container.appendChild(item);
     });
-    console.log('✅ Сетка', containerId, 'заполнена полностью!');
+    // Дублируем содержимое для бесконечной прокрутки
+    const clone = container.cloneNode(true);
+    container.parentNode.appendChild(clone);
   }
 
   window.addEventListener('load', function() {
-    console.log('🟡 Страница полностью загружена, заполняем сетки...');
-    populateGrid('grid-2025', images2025, '2025');
-    populateGrid('grid-2026', images2026, '2026');
-    console.log('🟢 Сетки заполнены!');
+    populateInfiniteCarousel('carousel-2025', images2025, '2025');
+    populateInfiniteCarousel('carousel-2026', images2026, '2026');
   });
 </script>
   
