@@ -1189,18 +1189,10 @@
   ];
 
   function populateCarousel(containerId, imageList, year) {
-    console.log('▶ ПОПЫТКА: ищем контейнер с id =', containerId);
     const container = document.getElementById(containerId);
-    console.log('▶ Результат поиска:', container);
-    if (!container) {
-      console.error('❌ Контейнер НЕ НАЙДЕН! Проверьте id в HTML.');
-      return;
-    }
-    console.log('✅ Контейнер найден, начинаем заполнение...');
+    if (!container) return;
     container.innerHTML = '';
-    console.log('▶ Количество картинок для вставки:', imageList.length);
-    imageList.forEach((name, index) => {
-      console.log(`▶ Вставляем #${index + 1}:`, name);
+    imageList.forEach(name => {
       const item = document.createElement('div');
       item.className = 'carousel-item';
       const caption = name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
@@ -1210,11 +1202,10 @@
       `;
       container.appendChild(item);
     });
-    console.log('✅ Карусель заполнена! Теперь детей в контейнере:', container.children.length);
     // Дублируем содержимое для бесконечной прокрутки
     const clone = container.cloneNode(true);
     clone.removeAttribute('id');
-    container.parentNode.appendChild(clone);
+    container.appendChild(clone); // <--- ИЗМЕНЕНИЕ: вставляем внутрь контейнера
     console.log('✅ Дубликат создан и вставлен.');
   }
 
