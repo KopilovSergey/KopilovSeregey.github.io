@@ -1422,7 +1422,7 @@
 
 <!-- ВСТАВИТЬ СКРИПТ СЮДА -->
 <script>
-  // Единая плавная прокрутка для всех якорных ссылок с контролируемой скоростью
+  // Быстрая, но плавная прокрутка для всех якорных ссылок
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -1430,14 +1430,14 @@
       if (target) {
         const start = window.pageYOffset;
         const end = target.getBoundingClientRect().top + window.pageYOffset;
-        const duration = 1800; // скорость в миллисекундах (1800 = 1.8 сек)
+        const duration = 600; // 0.6 секунды — быстро, но плавно
         const startTime = performance.now();
 
         function scrollAnimation(currentTime) {
           const timeElapsed = currentTime - startTime;
           const progress = Math.min(timeElapsed / duration, 1);
-          // easing функция — плавное замедление в начале и конце
-          const ease = 1 - Math.pow(1 - progress, 3);
+          // Более линейный easing (без резких скачков)
+          const ease = progress < 0.5 ? 2 * progress * progress : -1 + (4 - 2 * progress) * progress;
           window.scrollTo(0, start + (end - start) * ease);
           if (timeElapsed < duration) {
             requestAnimationFrame(scrollAnimation);
