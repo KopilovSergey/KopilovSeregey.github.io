@@ -1086,7 +1086,6 @@
   .gallery-mixed .carousel-track {
     display: flex;
     gap: 1.5rem;
-    overflow: hidden;
     width: 100%;
     position: relative;
   }
@@ -1205,8 +1204,7 @@
     // Дублируем содержимое для бесконечной прокрутки
     const clone = container.cloneNode(true);
     clone.removeAttribute('id');
-    container.appendChild(clone); // <--- ИЗМЕНЕНИЕ: вставляем внутрь контейнера
-    console.log('✅ Дубликат создан и вставлен.');
+    container.appendChild(clone);
   }
 
   function populateGrid(containerId, imageList, year) {
