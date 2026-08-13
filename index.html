@@ -1420,21 +1420,34 @@
   })();
 </script>
 
-  <script>
-  // Плавная прокрутка для всех якорных ссылок
+<!-- ВСТАВИТЬ СКРИПТ СЮДА -->
+<script>
+  // Единая плавная прокрутка для всех якорных ссылок с контролируемой скоростью
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+        const start = window.pageYOffset;
+        const end = target.getBoundingClientRect().top + window.pageYOffset;
+        const duration = 1800; // скорость в миллисекундах (1800 = 1.8 сек)
+        const startTime = performance.now();
+
+        function scrollAnimation(currentTime) {
+          const timeElapsed = currentTime - startTime;
+          const progress = Math.min(timeElapsed / duration, 1);
+          // easing функция — плавное замедление в начале и конце
+          const ease = 1 - Math.pow(1 - progress, 3);
+          window.scrollTo(0, start + (end - start) * ease);
+          if (timeElapsed < duration) {
+            requestAnimationFrame(scrollAnimation);
+          }
+        }
+        requestAnimationFrame(scrollAnimation);
       }
     });
   });
 </script>
-  
+
 </body>
 </html>
