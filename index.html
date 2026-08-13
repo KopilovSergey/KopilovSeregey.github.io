@@ -1333,21 +1333,35 @@
     font-size: 1.1rem;
     font-weight: 500;
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
     border: none;
     text-decoration: none;
+    text-align: center;
+    min-width: 180px;
   }
   .contacts-oval .oval-item:hover {
     transform: translateY(-3px);
   }
-  .contacts-oval .oval-item a {
+  .contacts-oval .oval-item .label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #3d1f6d;
+    margin-bottom: 0.3rem;
+  }
+  .contacts-oval .oval-item .value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000000;
+  }
+  .contacts-oval .oval-item .value a {
     color: #000000;
     text-decoration: none;
   }
-  .contacts-oval .oval-item a:hover {
+  .contacts-oval .oval-item .value a:hover {
     text-decoration: underline;
   }
   @media (max-width: 600px) {
@@ -1357,6 +1371,7 @@
     .contacts-oval .oval-item {
       padding: 0.8rem 1.8rem;
       font-size: 1rem;
+      min-width: 140px;
     }
   }
 </style>
@@ -1366,13 +1381,16 @@
     <h2>Контакты</h2>
     <div class="oval-wrapper">
       <div class="oval-item">
-        ✉️ <a href="mailto:XXXXX@yandex.ru">XXXXX@yandex.ru</a>
+        <div class="label">Email</div>
+        <div class="value"><a href="mailto:XXXXX@yandex.ru">XXXXX@yandex.ru</a></div>
       </div>
       <div class="oval-item">
-        📤 <a href="https://t.me/XXXXX">@XXXXX</a>
+        <div class="label">Telegram</div>
+        <div class="value"><a href="https://t.me/XXXXX">@XXXXX</a></div>
       </div>
       <div class="oval-item">
-        📞 <a href="tel:X-XXX-XXX-XXX">X-XXX-XXX-XXX</a>
+        <div class="label">Телефон</div>
+        <div class="value"><a href="tel:X-XXX-XXX-XXX">X-XXX-XXX-XXX</a></div>
       </div>
     </div>
   </div>
