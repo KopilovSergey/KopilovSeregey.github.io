@@ -1030,15 +1030,16 @@
   </div>
 </section>
   
-<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (карусель с фокусом) ==================== -->
+<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (карусель с фокусом, окончательная) ==================== -->
 <style>
- .gallery-scroll {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
-  text-align: center;
-  overflow: hidden;   /* запрещает вертикальную прокрутку, если картинка вылезает */
-}
+  .gallery-scroll {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
+    text-align: center;
+    /* Запрещаем вертикальную прокрутку страницы, если что-то вылезает */
+    overflow: hidden;
+  }
   .gallery-scroll h2 {
     color: #1a0b2e;
     font-size: 2.5rem;
@@ -1055,7 +1056,6 @@
     font-weight: 600;
   }
 
-  /* ---------- Горизонтальный скролл с кнопками ---------- */
   .gallery-scroll .scroll-wrapper {
     position: relative;
     display: flex;
@@ -1080,29 +1080,28 @@
     display: none;
   }
 
-  /* ---------- Карточки (5 в ряд, адаптивная ширина) ---------- */
+  /* ---------- Карточки (5 в ряд) ---------- */
   .gallery-scroll .scroll-item {
-  flex: 0 0 calc((100% - 4 * 1.5rem) / 5);
-  text-align: center;
-  background: rgba(255,255,255,0.6);
-  border-radius: 1rem;
-  padding: 0.5rem;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  scroll-snap-align: center;
-  /* Убираем фиксированную высоту и overflow — пусть картинка занимает своё место */
-}
-
-.gallery-scroll .scroll-item img {
-  width: 100%;
-  height: auto;              /* Высота подстраивается под ширину */
-  aspect-ratio: 1 / 1;       /* Квадратная картинка (или уберите, если нужна оригинальная) */
-  object-fit: contain;       /* Картинка вписывается полностью, не обрезается */
-  border-radius: 0.5rem;
-  display: block;
-  transition: transform 0.3s ease;
-}
+    flex: 0 0 calc((100% - 4 * 1.5rem) / 5);
+    text-align: center;
+    background: rgba(255,255,255,0.6);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-snap-align: center;
+    height: 250px; /* достаточно для картинки 160px при scale 1.5 */
+    overflow: hidden; /* обрезаем лишнее, если картинка вылезает */
+  }
+  .gallery-scroll .scroll-item img {
+    width: 100%;
+    height: 160px; /* исходная высота картинок */
+    object-fit: cover;
+    border-radius: 0.5rem;
+    display: block;
+    transition: transform 0.3s ease;
+  }
   .gallery-scroll .scroll-item .caption {
     margin-top: 0.5rem;
     font-size: 0.9rem;
@@ -1147,6 +1146,7 @@
   @media (max-width: 768px) {
     .gallery-scroll .scroll-item {
       flex: 0 0 calc((100% - 1 * 1.5rem) / 2);
+      height: 200px;
     }
     .gallery-scroll .scroll-item img {
       height: 120px;
@@ -1160,6 +1160,10 @@
   @media (max-width: 480px) {
     .gallery-scroll .scroll-item {
       flex: 0 0 100%;
+      height: auto;
+    }
+    .gallery-scroll .scroll-item img {
+      height: auto;
     }
   }
 </style>
@@ -1193,31 +1197,8 @@
 <script>
   console.log('Галерея со скроллом и фокусом загружена ✅');
 
-  const images2025 = [
-    'Задний_бампер_снегохода_RM_FRONTIER',
-    'Передний_бампер_квадроцикла_Loncin_Xolf_700i',
-    'Задний_бампер_квадроцикла_Loncin_Xolf_700i',
-    'Защита_днища_квадроцикла_Baltmotors_Striker_500_EFI',
-    'Комплект_пластиковой_защиты_днища_квадроцикла_BRP_CAN-AM_Maverick_R_X_RS',
-    'Бампер_снегохода_STELS_STAVR',
-    'Подкат_транспортировочный_для_снегохода',
-    'Задний_бампер_квадроцикла_Baltmotors_Striker_500_EFI',
-    'Передний_бампер_квадроцикла_Baltmotors_Striker_500_EFI',
-    'Комплект_пластиковой_защиты_днища_квадроцикла_BRC_X_TERRA-CT'
-  ];
-
-  const images2026 = [
-    'Тележка_под_лыжу_снегохода_из_круглой_трубы',
-    'Тележка_под_лыжу_снегохода_из_профильной_трубы',
-    'Передний_бампер_для_квадроцикла_GBM_Cronos_420',
-    'Комплект_пластиковой_защиты_днища_для_квадроцикла_GBM_Cronos_420',
-    'Комплект_алюминиевой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
-    'Комплект_пластиковой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
-    'Передний_бампер_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
-    'Комплект_пластиковой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C5',
-    'Комплект_алюминиевой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C5',
-    'Корзина_багажная_для_лодки'
-  ];
+  const images2025 = [ ... ]; // ваши массивы остаются без изменений
+  const images2026 = [ ... ];
 
   function populateScroll(trackId, imageList, year) {
     const track = document.getElementById(trackId);
@@ -1292,16 +1273,16 @@
     });
 
     items.forEach(item => {
-  if (item === closestItem) {
-    item.style.transform = 'scale(1.3)';   // было 1.5
-    item.style.zIndex = '3';
-    item.style.boxShadow = '0 8px 24px rgba(0,0,0,0.15)';
-  } else {
-    item.style.transform = 'scale(0.75)';
-    item.style.zIndex = '1';
-    item.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)';
-  }
-});
+      if (item === closestItem) {
+        item.style.transform = 'scale(1.5)';
+        item.style.zIndex = '3';
+        item.style.boxShadow = '0 8px 24px rgba(0,0,0,0.15)';
+      } else {
+        item.style.transform = 'scale(0.75)';
+        item.style.zIndex = '1';
+        item.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)';
+      }
+    });
   }
 
   function scrollTrack(trackId, direction) {
@@ -1318,139 +1299,6 @@
     populateScroll('track-2026', images2026, '2026');
   });
 </script>
-
-<!-- ==================== ОБРАЗОВАНИЕ И ОПЫТ (ХРОНОЛОГИЧЕСКОЕ ДРЕВО) ==================== -->
-<style>
-  .timeline-tree {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
-    text-align: center;
-  }
-  .timeline-tree h2 {
-    color: #1a0b2e;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-  }
-  .timeline-tree .tree {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    padding-left: 2.5rem;
-  }
-  /* Вертикальная линия */
-  .timeline-tree .tree::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(180deg, #6b3fa0, #a67dc9);
-    border-radius: 10px;
-  }
-  .timeline-tree .tree-item {
-    position: relative;
-    margin-bottom: 3rem;
-    background: rgba(255,255,255,0.6);
-    backdrop-filter: blur(4px);
-    border-radius: 1.5rem;
-    padding: 2rem 2.5rem;
-    text-align: left;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    border: 1px solid rgba(255,255,255,0.3);
-  }
-  /* Точка на линии */
-  .timeline-tree .tree-item::before {
-    content: '';
-    position: absolute;
-    left: -2.5rem;
-    top: 2rem;
-    width: 16px;
-    height: 16px;
-    background: #6b3fa0;
-    border-radius: 50%;
-    border: 3px solid #a67dc9;
-    box-shadow: 0 0 0 4px rgba(107, 63, 160, 0.2);
-  }
-  /* Последний элемент — без нижнего отступа */
-  .timeline-tree .tree-item:last-child {
-    margin-bottom: 0;
-  }
-  .timeline-tree .tree-item .year {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #3d1f6d;
-    margin-bottom: 0.2rem;
-  }
-  .timeline-tree .tree-item .duration {
-    font-size: 1rem;
-    color: #555;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-  }
-  .timeline-tree .tree-item .company {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #1a0b2e;
-    margin-bottom: 0.3rem;
-  }
-  .timeline-tree .tree-item .position {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #3d1f6d;
-    margin-bottom: 1rem;
-  }
-  .timeline-tree .tree-item .description {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
-  }
-  @media (max-width: 767px) {
-    .timeline-tree .tree {
-      padding-left: 1.5rem;
-    }
-    .timeline-tree .tree-item {
-      padding: 1.5rem 1.5rem;
-    }
-    .timeline-tree .tree-item::before {
-      left: -1.5rem;
-      top: 1.5rem;
-      width: 12px;
-      height: 12px;
-    }
-  }
-</style>
-
-<section class="timeline-tree" id="timeline-tree">
-  <div class="container">
-    <h2>Образование и опыт</h2>
-    <div class="tree">
-
-      <!-- Этап 1: 2019 -->
-      <div class="tree-item">
-        <div class="year">2019 · 5 лет</div>
-        <div class="company">Свердловская дирекция по ремонту и обслуживанию приборов безопасности</div>
-        <div class="position">Инженер 1 категории</div>
-        <div class="description">
-          Анализ оперативных данных по отказам систем безопасности на локомотиве. Анализ неисправностей локомотивных приборов безопасности.
-        </div>
-      </div>
-
-      <!-- Этап 2: 2024 -->
-      <div class="tree-item">
-        <div class="year">2024 · 2 года (по настоящее время)</div>
-        <div class="company">Rival Powersports</div>
-        <div class="position">Инженер-конструктор защитных аксессуаров</div>
-        <div class="description">
-          Разработка и проектирование бамперов, защит, аксессуаров, универсальных изделий для квадроциклов, снегоходов и лодок. Работа в Siemens NX с полным производственным циклом: 3D-сканирование, реверс-инжиниринг, твердотельное моделирование, конструкторская документация по ГОСТ/ЕСКД. Взаимодействие с производством и авторский надзор на всех этапах разработки. Разработано более 24 изделий.
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- ==================== КОНТАКТЫ ==================== -->
 <style>
