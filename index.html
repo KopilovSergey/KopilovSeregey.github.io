@@ -1032,12 +1032,13 @@
   
 <!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (карусель с фокусом) ==================== -->
 <style>
-  .gallery-scroll {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
-    text-align: center;
-  }
+ .gallery-scroll {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
+  text-align: center;
+  overflow: hidden;   /* запрещает вертикальную прокрутку, если картинка вылезает */
+}
   .gallery-scroll h2 {
     color: #1a0b2e;
     font-size: 2.5rem;
@@ -1090,17 +1091,18 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   scroll-snap-align: center;
-  overflow: hidden;          /* обрезаем всё, что вылезает */
-  height: 220px;             /* фиксируем высоту, чтобы масштаб не менял размер контейнера */
+  /* Убираем фиксированную высоту и overflow — пусть картинка занимает своё место */
 }
-  .gallery-scroll .scroll-item img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 0.5rem;
-    display: block;
-    transition: transform 0.3s ease;
-  }
+
+.gallery-scroll .scroll-item img {
+  width: 100%;
+  height: auto;              /* Высота подстраивается под ширину */
+  aspect-ratio: 1 / 1;       /* Квадратная картинка (или уберите, если нужна оригинальная) */
+  object-fit: contain;       /* Картинка вписывается полностью, не обрезается */
+  border-radius: 0.5rem;
+  display: block;
+  transition: transform 0.3s ease;
+}
   .gallery-scroll .scroll-item .caption {
     margin-top: 0.5rem;
     font-size: 0.9rem;
@@ -1290,16 +1292,16 @@
     });
 
     items.forEach(item => {
-      if (item === closestItem) {
-        item.style.transform = 'scale(1.5)';
-        item.style.zIndex = '3';
-        item.style.boxShadow = '0 8px 24px rgba(0,0,0,0.15)';
-      } else {
-        item.style.transform = 'scale(0.75)';
-        item.style.zIndex = '1';
-        item.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)';
-      }
-    });
+  if (item === closestItem) {
+    item.style.transform = 'scale(1.3)';   // было 1.5
+    item.style.zIndex = '3';
+    item.style.boxShadow = '0 8px 24px rgba(0,0,0,0.15)';
+  } else {
+    item.style.transform = 'scale(0.75)';
+    item.style.zIndex = '1';
+    item.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)';
+  }
+});
   }
 
   function scrollTrack(trackId, direction) {
