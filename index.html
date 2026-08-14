@@ -14,6 +14,16 @@
   <meta name="description" content="Портфолио инженера-конструктора. Проектирование защитных аксессуаров для квадроциклов и снегоходов из стали, алюминия и ПЭНД.">
   <title>Копылов Сергей - инженер-конструктор</title>
 
+  <!-- Preconnect для ускорения загрузки шрифтов и внешних ресурсов -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://ai.mobirise.com">
+  <link rel="dns-prefetch" href="https://ai-builder.mobirise.com">
+
+  <!-- Кеширование -->
+  <meta http-equiv="Cache-Control" content="public, max-age=604800, immutable">
+
   <!-- Внешние стили Mobirise -->
   <link rel="stylesheet" href="https://ai.mobirise.com/assets/startm5/web/assets/mobirise-icons2/mobirise2.css?v=m3frcrn2">
   <link rel="stylesheet" href="https://ai.mobirise.com/assets/startm5/parallax/jarallax.css?v=m3frcrn2">
@@ -26,8 +36,6 @@
   <link rel="stylesheet" href="https://ai.mobirise.com/assets/startm5/theme/css/style.css?v=m3frcrn2">
 
   <!-- Шрифт Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Дополнительный CSS от Mobirise -->
@@ -38,6 +46,46 @@
   <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=bgZiF6BnAZUMyif0JkpyYpTIHotbkL-ZVlCru5Mqp0IerVyQR-4jaGhA10fDVURce4J0yQn_wgA6-dsp3NlmJbwiNSr7pkTlyef72w_LyHw" charset="UTF-8"></script>
 </head>
 <body>
+
+<!-- ==================== СПИННЕР ЗАГРУЗКИ ==================== -->
+<style>
+  #loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #b88cd4 0%, #a06bc9 25%, #8a4fc9 50%, #a06bc9 75%, #c79ae8 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease;
+  }
+  #loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  #loader .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top: 5px solid #f59f00;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+</style>
+<div id="loader"><div class="spinner"></div></div>
+<script>
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      document.getElementById('loader').classList.add('hidden');
+    }, 300);
+  });
+</script>
 
 <!-- ==================== НАВИГАЦИЯ (МЕНЮ) ==================== -->
 <style>
@@ -818,7 +866,7 @@
 <!-- ==================== ОБО МНЕ (текст) ==================== -->
 <style>
 .cid-vrMAloTPui {
-  padding-top: 0.5rem; /* уменьшен отступ, чтобы поднять блок выше */
+  padding-top: 0.5rem;
   padding-bottom: 5rem;
   background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
 }
@@ -1080,7 +1128,7 @@
     width: 100%;
     height: auto;
     max-height: 300px;
-    min-height: 200px;     /* минимальная высота для контейнера */
+    min-height: 200px;
     text-decoration: none;
     margin: 0;
     padding: 0;
@@ -1097,14 +1145,13 @@
     object-fit: contain;
     border-radius: 0.5rem;
     display: block;
-    margin: auto;          /* центрирование по горизонтали и вертикали */
+    margin: auto;
     padding: 0;
     transition: transform 0.3s ease;
     position: relative;
-    top: 50%;              /* центрирование по вертикали */
-    transform: translateY(-50%); /* точное выравнивание по центру */
+    top: 50%;
+    transform: translateY(-50%);
   }
-  /* Отменяем transform для hover, чтобы не было скачков */
   .gallery-grid .grid-item img:hover {
     transform: translateY(-50%) scale(1.02);
   }
@@ -1435,11 +1482,15 @@
   @media (max-width: 600px) {
     .contacts-oval .oval-wrapper {
       gap: 1rem;
+      flex-direction: column;
+      align-items: center;
     }
     .contacts-oval .oval-item {
       padding: 0.8rem 1.8rem;
       font-size: 1rem;
-      min-width: 140px;
+      min-width: unset;
+      width: 100%;
+      max-width: 280px;
     }
   }
 </style>
@@ -1469,16 +1520,16 @@
   Сергей Копылов <span style="color: #ffffff; font-size: 0.7rem; margin: 0 0.5rem;">|</span> © 2026 Все права защищены
 </div>
 
-<!-- ==================== СКРИПТЫ ==================== -->
-<script src="https://ai.mobirise.com/assets/startm5/parallax/jarallax.js?v=m3frcrn2"></script>
-<script src="https://ai.mobirise.com/assets/startm5/bootstrap/js/bootstrap.bundle.min.js?v=m3frcrn2"></script>
-<script src="https://ai.mobirise.com/assets/startm5/dropdown/js/navbar-dropdown.js?v=m3frcrn2"></script>
-<script src="https://ai.mobirise.com/assets/startm5/scrollgallery/scroll-gallery.js?v=m3frcrn2"></script>
-<script src="https://ai.mobirise.com/assets/startm5/smoothscroll/smooth-scroll.js?v=m3frcrn2"></script>
-<script src="https://ai.mobirise.com/assets/startm5/ytplayer/index.js?v=m3frcrn2"></script>
-<script src="https://ai.mobirise.com/assets/startm5/theme/js/script.js?v=m3frcrn2"></script>
-<script src="https://ai.mobirise.com/assets/startm5/formoid/formoid.min.js?v=m3frcrn2"></script>
-<script src="https://ai.mobirise.com/assets/preview.js"></script>
+<!-- ==================== СКРИПТЫ (с отложенной загрузкой) ==================== -->
+<script src="https://ai.mobirise.com/assets/startm5/parallax/jarallax.js?v=m3frcrn2" defer></script>
+<script src="https://ai.mobirise.com/assets/startm5/bootstrap/js/bootstrap.bundle.min.js?v=m3frcrn2" defer></script>
+<script src="https://ai.mobirise.com/assets/startm5/dropdown/js/navbar-dropdown.js?v=m3frcrn2" defer></script>
+<script src="https://ai.mobirise.com/assets/startm5/scrollgallery/scroll-gallery.js?v=m3frcrn2" defer></script>
+<script src="https://ai.mobirise.com/assets/startm5/smoothscroll/smooth-scroll.js?v=m3frcrn2" defer></script>
+<script src="https://ai.mobirise.com/assets/startm5/ytplayer/index.js?v=m3frcrn2" defer></script>
+<script src="https://ai.mobirise.com/assets/startm5/theme/js/script.js?v=m3frcrn2" defer></script>
+<script src="https://ai.mobirise.com/assets/startm5/formoid/formoid.min.js?v=m3frcrn2" defer></script>
+<script src="https://ai.mobirise.com/assets/preview.js" defer></script>
 <script>
   (function(){
     var animationInput = document.createElement('input');
