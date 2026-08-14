@@ -18,12 +18,23 @@ img,
   overflow: hidden;
 }
 
-/* ===== ГРАДИЕНТНЫЕ ФОНЫ ===== */
+/* ===== ГРАДИЕНТНЫЕ ФОНЫ С ВОЛНАМИ ===== */
 body {
-  background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
-}
-.is-builder .template {
-  background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
+  /* Многослойный градиент с волнами */
+  background: 
+    linear-gradient(135deg, 
+      rgba(161, 123, 199, 0.6) 0%, 
+      rgba(200, 177, 228, 0.4) 20%,
+      rgba(150, 200, 250, 0.2) 40%,
+      rgba(200, 220, 255, 0.3) 60%,
+      rgba(230, 200, 240, 0.5) 80%,
+      rgba(245, 230, 250, 0.8) 100%
+    ),
+    radial-gradient(circle at 0% 0%, rgba(100, 150, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(200, 150, 255, 0.15) 0%, transparent 60%),
+    linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
+  background-blend-mode: overlay, normal, normal, normal;
+  min-height: 100vh;
 }
 
 /* ===== ШРИФТ INTER ===== */
@@ -1202,103 +1213,5 @@ a { transition: color 0.6s; }
 @media (max-width: 991px) {
   .cid-vrMAloU6ia .copyright {
     text-align: center;
-  }
-}
-
-/* ---------- Стили для галереи-микс (2025 карусель, 2026 сетка) ---------- */
-.gallery-mixed .carousel-track {
-  display: flex;
-  gap: 1.5rem;
-  width: 100%;
-  position: relative;
-  overflow: hidden; /* фикс: чтобы картинки не вылезали */
-}
-
-.gallery-mixed .carousel-track-inner {
-  display: flex;
-  gap: 1.5rem;
-  animation: scroll-right-to-left 30s linear infinite;
-  will-change: transform;
-}
-
-@keyframes scroll-right-to-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.gallery-mixed .carousel-item {
-  flex: 0 0 auto;
-  width: 220px;
-  text-align: center;
-  background: rgba(255,255,255,0.6);
-  border-radius: 1rem;
-  padding: 0.5rem;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.gallery-mixed .carousel-item img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  display: block;
-}
-
-.gallery-mixed .carousel-item .caption {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #1a0b2e;
-}
-
-/* Сетка для 2026 */
-.gallery-mixed .grid-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.gallery-mixed .grid-item {
-  background: rgba(255,255,255,0.6);
-  border-radius: 1rem;
-  padding: 0.5rem;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  text-align: center;
-}
-
-.gallery-mixed .grid-item img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  display: block;
-}
-
-.gallery-mixed .grid-item .caption {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #1a0b2e;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .gallery-mixed .grid-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .gallery-mixed .carousel-item {
-    width: 160px;
-  }
-  .gallery-mixed .carousel-item img {
-    height: 120px;
-  }
-}
-@media (max-width: 480px) {
-  .gallery-mixed .grid-container {
-    grid-template-columns: 1fr;
   }
 }
