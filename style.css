@@ -744,17 +744,12 @@ a { transition: color 0.6s; }
   .container-fluid { padding-left: 16px; padding-right: 16px; }
 }
 
-/* ===== ГАЛЕРЕЯ (принудительно широкая) ===== */
+/* ===== ГАЛЕРЕЯ (фиксированная ширина картинок) ===== */
 .gallery-grid {
   padding-top: 5rem;
   padding-bottom: 5rem;
   text-align: center;
-  width: 100vw !important;          /* принудительно на всю ширину окна */
-  max-width: 100% !important;       /* убираем любые ограничения */
-  margin: 0 !important;             /* убираем отступы */
-  left: 0;                          /* прижимаем к левому краю */
-  position: relative;
-  overflow-x: hidden;               /* скрываем горизонтальный скролл, если вылезет */
+  width: 100%;
 }
 .gallery-grid h2 {
   color: #1a0b2e;
@@ -772,13 +767,12 @@ a { transition: color 0.6s; }
   font-weight: 600;
 }
 .gallery-grid .grid-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 8rem;
-  width: 100% !important;           /* растягиваем на всю ширину */
-  max-width: 100% !important;       /* убираем любые ограничения */
-  margin: 0 !important;             /* убираем авто-отступы */
-  padding: 0 2rem;                  /* только внутренние отступы */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+  width: 100%;
+  padding: 0 2rem;
 }
 .gallery-grid .grid-item {
   background: transparent !important;
@@ -789,8 +783,8 @@ a { transition: color 0.6s; }
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 350px;          /* фиксированная ширина, меняйте на свой вкус */
   height: 600px;
-  width: 100%;
 }
 .gallery-grid .grid-item a {
   display: block;
@@ -824,11 +818,11 @@ a { transition: color 0.6s; }
 }
 @media (max-width: 768px) {
   .gallery-grid .grid-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
+    gap: 2rem;
     padding: 0 1rem;
   }
   .gallery-grid .grid-item {
+    width: 280px;
     height: 400px;
   }
   .gallery-grid .grid-item img {
@@ -836,10 +830,8 @@ a { transition: color 0.6s; }
   }
 }
 @media (max-width: 480px) {
-  .gallery-grid .grid-container {
-    grid-template-columns: 1fr;
-  }
   .gallery-grid .grid-item {
+    width: 100%;
     height: auto;
   }
   .gallery-grid .grid-item img {
