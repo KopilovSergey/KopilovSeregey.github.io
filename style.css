@@ -744,7 +744,7 @@ a { transition: color 0.6s; }
   .container-fluid { padding-left: 16px; padding-right: 16px; }
 }
 
-/* ===== ГАЛЕРЕЯ (ещё более увеличенные отступы) ===== */
+/* ===== ГАЛЕРЕЯ (полная ширина, большие отступы) ===== */
 .gallery-grid {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -757,7 +757,7 @@ a { transition: color 0.6s; }
   margin-bottom: 3rem;
 }
 .gallery-grid .year-row {
-  margin-bottom: 20rem; /* увеличено с 10rem до 20rem */
+  margin-bottom: 20rem;
 }
 .gallery-grid .year-row h3 {
   font-size: 2rem;
@@ -768,8 +768,8 @@ a { transition: color 0.6s; }
 .gallery-grid .grid-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 10rem; /* увеличено с 5rem до 10rem */
-  max-width: 1000px;
+  gap: 6rem;
+  /* Убрали max-width: 1000px — теперь картинки занимают всю ширину */
   margin: 0 auto;
 }
 .gallery-grid .grid-item {
@@ -810,7 +810,7 @@ a { transition: color 0.6s; }
 @media (max-width: 768px) {
   .gallery-grid .grid-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+    gap: 2rem;
   }
   .gallery-grid .grid-item img {
     height: 160px;
