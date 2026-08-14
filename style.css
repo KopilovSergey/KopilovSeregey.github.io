@@ -18,14 +18,14 @@ img,
   overflow: hidden;
 }
 
-/* ===== ЕДИНЫЙ ГРАДИЕНТНЫЙ ФОН С ВОЛНАМИ (на весь сайт) ===== */
+/* ===== ЕДИНЫЙ ГРАДИЕНТНЫЙ ФОН С ВОЛНАМИ (в точности как в Hero) ===== */
 body {
   background:
-    /* Волны — мягкие сине-голубые градиенты из левого верхнего угла */
-    radial-gradient(circle at 0% 0%, rgba(120, 180, 255, 0.15) 0%, transparent 60%),
-    radial-gradient(circle at 100% 100%, rgba(200, 180, 255, 0.2) 0%, transparent 60%),
-    radial-gradient(circle at 30% 70%, rgba(180, 200, 255, 0.1) 0%, transparent 50%),
-    /* Основной градиент — от тёмного фиолетового к светлому пурпурному */
+    /* Волны — мягкие сине-голубые градиенты из левого верхнего угла к правому нижнему */
+    radial-gradient(circle at 0% 0%, rgba(120, 180, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(200, 180, 255, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 30% 70%, rgba(180, 200, 255, 0.08) 0%, transparent 50%),
+    /* Основной градиент — точно как в Hero, растянут на весь сайт */
     linear-gradient(135deg,
       #1a0b2e 0%,
       #3d1f6d 30%,
@@ -33,13 +33,13 @@ body {
       #a67dc9 85%,
       #d4bce6 100%
     ),
-    /* Дополнительный светлый слой для мягкости внизу */
-    linear-gradient(180deg, rgba(245, 230, 250, 0.05) 0%, rgba(255, 255, 255, 0.2) 100%);
+    /* Лёгкий светлый слой для плавности внизу */
+    linear-gradient(180deg, rgba(245, 230, 250, 0.02) 0%, rgba(255, 255, 255, 0.1) 100%);
   background-blend-mode: overlay, overlay, overlay, normal, normal;
   min-height: 100vh;
 }
 
-/* Убираем локальные фоны у всех секций, чтобы не перебивать общий фон */
+/* Убираем локальные фоны у всех секций, чтобы не перебивать общий градиент */
 .cid-vrMAloTZwZ,
 .cid-vrMAloTRc6,
 .cid-vrMAloTPui,
