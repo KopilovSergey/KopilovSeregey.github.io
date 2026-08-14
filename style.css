@@ -744,12 +744,17 @@ a { transition: color 0.6s; }
   .container-fluid { padding-left: 16px; padding-right: 16px; }
 }
 
-/* ===== ГАЛЕРЕЯ (ещё более крупные контейнеры) ===== */
+/* ===== ГАЛЕРЕЯ (принудительно широкая) ===== */
 .gallery-grid {
   padding-top: 5rem;
   padding-bottom: 5rem;
   text-align: center;
-  width: 100%;
+  width: 100vw !important;          /* принудительно на всю ширину окна */
+  max-width: 100% !important;       /* убираем любые ограничения */
+  margin: 0 !important;             /* убираем отступы */
+  left: 0;                          /* прижимаем к левому краю */
+  position: relative;
+  overflow-x: hidden;               /* скрываем горизонтальный скролл, если вылезет */
 }
 .gallery-grid h2 {
   color: #1a0b2e;
@@ -769,11 +774,11 @@ a { transition: color 0.6s; }
 .gallery-grid .grid-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 8rem; /* ещё больше отступы */
-  width: 100%;
-  max-width: 2000px; /* шире, чтобы картинкам было куда расти */
-  margin: 0 auto;
-  padding: 0 2rem;
+  gap: 8rem;
+  width: 100% !important;           /* растягиваем на всю ширину */
+  max-width: 100% !important;       /* убираем любые ограничения */
+  margin: 0 !important;             /* убираем авто-отступы */
+  padding: 0 2rem;                  /* только внутренние отступы */
 }
 .gallery-grid .grid-item {
   background: transparent !important;
@@ -784,7 +789,7 @@ a { transition: color 0.6s; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 600px; /* очень большой контейнер */
+  height: 600px;
   width: 100%;
 }
 .gallery-grid .grid-item a {
