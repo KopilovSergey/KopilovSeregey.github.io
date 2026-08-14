@@ -744,7 +744,7 @@ a { transition: color 0.6s; }
   .container-fluid { padding-left: 16px; padding-right: 16px; }
 }
 
-/* ===== ГАЛЕРЕЯ (фиксированная ширина картинок) ===== */
+/* ===== ГАЛЕРЕЯ (компактная, без пустот) ===== */
 .gallery-grid {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -770,7 +770,7 @@ a { transition: color 0.6s; }
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 4rem;
+  gap: 2rem;               /* уменьшено с 4rem до 2rem */
   width: 100%;
   padding: 0 2rem;
 }
@@ -783,8 +783,8 @@ a { transition: color 0.6s; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 350px;          /* фиксированная ширина, меняйте на свой вкус */
-  height: 600px;
+  width: 280px;            /* уменьшено с 350px до 280px */
+  height: 400px;           /* уменьшено с 600px до 400px */
 }
 .gallery-grid .grid-item a {
   display: block;
@@ -798,12 +798,12 @@ a { transition: color 0.6s; }
 .gallery-grid .grid-item img {
   width: 100%;
   height: 100%;
-  object-fit: contain;   /* вместо cover — картинка вписывается целиком */
+  object-fit: cover;       /* вернули cover, чтобы не было пустот */
   border-radius: 0.5rem;
   display: block;
   margin: 0;
   padding: 0;
-  transform: scale(1.2);
+  transform: scale(1.2);   /* увеличение на 20% */
   transition: transform 0.3s ease;
 }
 .gallery-grid .grid-item .caption {
@@ -818,12 +818,12 @@ a { transition: color 0.6s; }
 }
 @media (max-width: 768px) {
   .gallery-grid .grid-container {
-    gap: 2rem;
+    gap: 1.5rem;
     padding: 0 1rem;
   }
   .gallery-grid .grid-item {
-    width: 280px;
-    height: 400px;
+    width: 220px;
+    height: 300px;
   }
   .gallery-grid .grid-item img {
     transform: scale(1.2);
