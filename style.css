@@ -840,3 +840,152 @@ a { transition: color 0.6s; }
     }
   }
 </style>
+
+/* ===== ГРАДИЕНТНЫЙ ФОН ВСЕГО САЙТА ===== */
+html {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(135deg, #1a0b2e 0%, #2d1b4e 20%, #4a2a7a 40%, #7b4fa0 60%, #b388d9 80%, #d4bce6 100%) !important;
+  background-attachment: fixed !important; /* чтобы градиент не прокручивался */
+  background-size: cover !important;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Убираем все локальные фоны у секций, чтобы был виден общий градиент */
+.cid-vrMAloTZwZ,
+.cid-vrMAloTRc6,
+.cid-vrMAloTPui,
+.cid-vrMAloT6q9,
+.cid-vrMAloTIUh,
+.cid-vrMAloTfrv,
+.cid-vrMAloU7Ca,
+.cid-vrMAloUSbY,
+.cid-vrMAloULm6,
+.cid-vrMAloUFQJ,
+.cid-vrMAloUu9O .item-wrapper,
+.skills-section,
+.gallery-grid,
+.timeline-tree,
+.contacts-oval,
+.cid-vrMAloTEiy {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* Для секций, которым нужна прозрачность — оставляем их с фоном, но делаем прозрачными */
+.skills-section .equipment-info {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-tree .tree-item {
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contacts-oval .oval-item {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gallery-grid .grid-item a {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Навигация — делаем более прозрачной */
+.cid-vrMAloSBlR .container {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Текст — делаем белым или светлым для читаемости на тёмном фоне */
+.cid-vrMAloTEiy .mbr-section-title,
+.cid-vrMAloTEiy .mbr-text {
+  color: #ffffff !important;
+}
+
+.skills-section .section-title,
+.gallery-grid h2,
+.gallery-grid .year-row h3,
+.timeline-tree h2,
+.contacts-oval h2,
+.gallery-grid .grid-item .caption,
+.timeline-tree .tree-item .company,
+.timeline-tree .tree-item .position,
+.timeline-tree .tree-item .description,
+.contacts-oval .oval-item .value,
+.contacts-oval .oval-item .label {
+  color: #ffffff !important;
+}
+
+.skills-section .skill-name,
+.skills-section .skill-level-text,
+.skills-section .equipment-info p,
+.timeline-tree .tree-item .year,
+.timeline-tree .tree-item .duration {
+  color: #f0e6ff !important;
+}
+
+/* Метрики — оставляем белым */
+.cid-vrMAloT6q9 .num,
+.cid-vrMAloT6q9 .card-title {
+  color: #ffffff !important;
+}
+
+/* Подписи к фото — делаем белыми */
+.gallery-grid .grid-item .caption {
+  color: #ffffff !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Кнопки */
+.btn-primary-outline {
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+.btn-primary-outline:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* Меню — текст белый */
+.cid-vrMAloSBlR .navbar-caption,
+.cid-vrMAloSBlR .nav-link {
+  color: #ffffff !important;
+}
+.cid-vrMAloSBlR .navbar-caption:hover,
+.cid-vrMAloSBlR .nav-link:hover {
+  color: #d4bce6 !important;
+}
+
+/* Кнопка "Связаться" — перекрашиваем */
+.cid-vrMAloSBlR .navbar-buttons .btn {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff !important;
+}
+.cid-vrMAloSBlR .navbar-buttons .btn:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Бургер-меню (гамбургер) — делаем белым */
+.cid-vrMAloSBlR button.navbar-toggler .hamburger span {
+  background-color: #ffffff !important;
+}
+
+/* Футер */
+div[style*="background-color: #000000"] {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(4px);
+}
