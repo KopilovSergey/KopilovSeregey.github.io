@@ -861,28 +861,28 @@ div[style*="background-color: #000000"] {
   background-color: #000000 !important;
 }
 
-/* ===== ОРАНЖЕВЫЙ ГРАДИЕНТ (НАСЫЩЕННЫЙ) ===== */
+/* ===== ОРАНЖЕВЫЙ ГРАДИЕНТ (ЯРКИЙ) ===== */
 
 /* Кнопка "Связаться" в меню */
 .cid-vrMAloSBlR .navbar-buttons .btn {
-  background: linear-gradient(135deg, #f5a623 0%, #f7c948 40%, #f5d76e 100%) !important;
+  background: linear-gradient(135deg, #f59f00 0%, #fcc419 40%, #ffd43b 100%) !important;
   border: none !important;
   color: #000000 !important;
-  box-shadow: 0 4px 15px rgba(245, 166, 35, 0.3);
+  box-shadow: 0 4px 15px rgba(245, 159, 0, 0.35);
   transition: all 0.3s ease;
 }
 .cid-vrMAloSBlR .navbar-buttons .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(245, 166, 35, 0.5);
+  box-shadow: 0 6px 25px rgba(245, 159, 0, 0.55);
 }
 
 /* Контакты — овалы */
 section.contacts-oval .oval-wrapper .oval-item {
-  background: linear-gradient(135deg, #f5a623 0%, #f7c948 40%, #f5d76e 100%) !important;
+  background: linear-gradient(135deg, #f59f00 0%, #fcc419 40%, #ffd43b 100%) !important;
   border: none !important;
   border-radius: 100px !important;
   color: #000000 !important;
-  box-shadow: 0 4px 15px rgba(245, 166, 35, 0.25) !important;
+  box-shadow: 0 4px 15px rgba(245, 159, 0, 0.3) !important;
   transition: all 0.3s ease;
   padding: 1.2rem 2.5rem !important;
   min-width: 180px !important;
@@ -890,7 +890,7 @@ section.contacts-oval .oval-wrapper .oval-item {
 
 section.contacts-oval .oval-wrapper .oval-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 25px rgba(245, 166, 35, 0.4) !important;
+  box-shadow: 0 6px 25px rgba(245, 159, 0, 0.45) !important;
 }
 
 section.contacts-oval .oval-wrapper .oval-item .label {
