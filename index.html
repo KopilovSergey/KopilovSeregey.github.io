@@ -1081,6 +1081,7 @@
     width: 100%;
     height: auto;
     max-height: 300px;
+    min-height: 200px;     /* минимальная высота для контейнера */
     text-decoration: none;
     margin: 0;
     padding: 0;
@@ -1092,14 +1093,21 @@
   .gallery-grid .grid-item img {
     width: auto;
     height: auto;
-    max-width: 96%;        /* всего на 4% меньше контейнера */
-    max-height: 96%;       /* всего на 4% меньше контейнера */
+    max-width: 96%;
+    max-height: 96%;
     object-fit: contain;
     border-radius: 0.5rem;
     display: block;
-    margin: 0;
+    margin: auto;          /* центрирование по горизонтали и вертикали */
     padding: 0;
     transition: transform 0.3s ease;
+    position: relative;
+    top: 50%;              /* центрирование по вертикали */
+    transform: translateY(-50%); /* точное выравнивание по центру */
+  }
+  /* Отменяем transform для hover, чтобы не было скачков */
+  .gallery-grid .grid-item img:hover {
+    transform: translateY(-50%) scale(1.02);
   }
   .gallery-grid .grid-item .caption {
     margin-top: 0.6rem;
@@ -1128,6 +1136,7 @@
     }
     .gallery-grid .grid-item a {
       max-height: 250px;
+      min-height: 160px;
     }
     .gallery-grid .grid-item img {
       max-width: 94%;
@@ -1143,6 +1152,7 @@
     }
     .gallery-grid .grid-item a {
       max-height: 280px;
+      min-height: 180px;
     }
     .gallery-grid .grid-item img {
       max-width: 96%;
