@@ -1030,14 +1030,14 @@
   </div>
 </section>
   
-<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (карусель с фокусом) ==================== -->
+<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (карусель с фокусом, финал) ==================== -->
 <style>
   .gallery-scroll {
     padding-top: 5rem;
     padding-bottom: 5rem;
     background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
     text-align: center;
-    overflow: hidden;
+    /* Убираем overflow: hidden, чтобы увеличенные картинки не обрезались */
   }
   .gallery-scroll h2 {
     color: #1a0b2e;
@@ -1063,11 +1063,11 @@
     gap: 1rem;
     max-width: 1000px;
     margin: 0 auto;
-    overflow: hidden;
+    /* Здесь можно добавить overflow: hidden, если картинки вылезают за пределы карусели */
   }
   .gallery-scroll .scroll-track {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;           /* увеличен отступ между карточками */
     overflow-x: auto;
     scroll-behavior: smooth;
     padding: 1rem 0.5rem;
@@ -1080,32 +1080,33 @@
   }
 
   .gallery-scroll .scroll-item {
-    flex: 0 0 calc((100% - 4 * 1.5rem) / 5);
+    flex: 0 0 calc((100% - 4 * 2rem) / 5); /* 5 картинок с gap 2rem */
     text-align: center;
     background: rgba(255,255,255,0.6);
     border-radius: 1rem;
-    padding: 0.5rem;
+    padding: 1rem;        /* увеличен padding */
     backdrop-filter: blur(4px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     scroll-snap-align: center;
-    height: 380px;
-    overflow: hidden;
+    height: 500px;        /* достаточно для картинки 160px при scale 1.5 */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* убираем overflow: hidden, чтобы ничего не обрезалось */
   }
   .gallery-scroll .scroll-item img {
     width: 100%;
-    height: 160px;
-    object-fit: cover;
+    height: auto;
+    aspect-ratio: 1 / 1;   /* квадратные картинки (можно убрать, если нужны разные пропорции) */
+    object-fit: contain;   /* картинка вписывается целиком, не искажается */
     border-radius: 0.5rem;
     display: block;
     transition: transform 0.3s ease;
   }
   .gallery-scroll .scroll-item .caption {
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
     font-size: 0.9rem;
     font-weight: 500;
     color: #1a0b2e;
@@ -1145,11 +1146,13 @@
 
   @media (max-width: 768px) {
     .gallery-scroll .scroll-item {
-      flex: 0 0 calc((100% - 1 * 1.5rem) / 2);
-      height: 300px;
+      flex: 0 0 calc((100% - 1 * 2rem) / 2);
+      height: 400px;
+      padding: 0.8rem;
     }
     .gallery-scroll .scroll-item img {
-      height: 120px;
+      height: auto;
+      aspect-ratio: 1 / 1;
     }
     .gallery-scroll .scroll-btn {
       width: 36px;
@@ -1159,14 +1162,19 @@
     .gallery-scroll .year-row h3 {
       margin-bottom: 2rem;
     }
+    .gallery-scroll .scroll-track {
+      gap: 1.5rem;
+    }
   }
   @media (max-width: 480px) {
     .gallery-scroll .scroll-item {
       flex: 0 0 100%;
       height: auto;
+      padding: 0.5rem;
     }
     .gallery-scroll .scroll-item img {
       height: auto;
+      aspect-ratio: 1 / 1;
     }
   }
 </style>
@@ -1198,7 +1206,7 @@
 </section>
 
 <script>
-  console.log('Галерея со скроллом и фокусом загружена ✅');
+  console.log('Галерея со скроллом и фокусом (финал) загружена ✅');
 
   const images2025 = [
     'Задний_бампер_снегохода_RM_FRONTIER',
@@ -1316,7 +1324,7 @@
     if (!track) return;
     const items = track.querySelectorAll('.scroll-item');
     if (!items.length) return;
-    const itemWidth = items[0].offsetWidth + 24;
+    const itemWidth = items[0].offsetWidth + 32; // учёт gap 2rem = 32px
     track.scrollBy({ left: direction * itemWidth, behavior: 'smooth' });
   }
 
