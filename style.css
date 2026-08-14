@@ -18,21 +18,24 @@ img,
   overflow: hidden;
 }
 
-/* ===== ГРАДИЕНТНЫЕ ФОНЫ С ВОЛНАМИ ===== */
+/* ===== ГРАДИЕНТНЫЙ ФОН С ВОЛНАМИ ===== */
 body {
   background:
+    /* Волны — мягкие сине-голубые градиенты */
+    radial-gradient(circle at 0% 0%, rgba(120, 180, 255, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(200, 180, 255, 0.2) 0%, transparent 60%),
+    radial-gradient(circle at 30% 70%, rgba(180, 200, 255, 0.1) 0%, transparent 50%),
+    /* Основной градиент — от тёмного фиолетового к светлому пурпурному */
     linear-gradient(135deg,
-      rgba(161, 123, 199, 0.6) 0%,
-      rgba(200, 177, 228, 0.4) 20%,
-      rgba(150, 200, 250, 0.2) 40%,
-      rgba(200, 220, 255, 0.3) 60%,
-      rgba(230, 200, 240, 0.5) 80%,
-      rgba(245, 230, 250, 0.8) 100%
+      #1a0b2e 0%,
+      #3d1f6d 30%,
+      #6b3fa0 60%,
+      #a67dc9 85%,
+      #d4bce6 100%
     ),
-    radial-gradient(circle at 0% 0%, rgba(100, 150, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 100% 100%, rgba(200, 150, 255, 0.15) 0%, transparent 60%),
-    linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
-  background-blend-mode: overlay, normal, normal, normal;
+    /* Фон с прозрачностью для плавного перехода */
+    linear-gradient(135deg, rgba(245, 230, 250, 0.1) 0%, rgba(255, 255, 255, 0.3) 100%);
+  background-blend-mode: overlay, overlay, overlay, normal, normal;
   min-height: 100vh;
 }
 
