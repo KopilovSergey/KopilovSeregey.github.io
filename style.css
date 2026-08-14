@@ -1006,23 +1006,32 @@ div[style*="background-color: #000000"] {
   }
 }
 
-/* ===== КОНТАКТЫ — ОРАНЖЕВЫЙ ГРАДИЕНТ ===== */
-.contacts-oval .oval-item {
+/* ===== КОНТАКТЫ — ОРАНЖЕВЫЙ ГРАДИЕНТ (МАКСИМАЛЬНАЯ СПЕЦИФИЧНОСТЬ) ===== */
+#contacts .contacts-oval .oval-wrapper .oval-item,
+.contacts-oval .oval-wrapper .oval-item,
+section.contacts-oval .oval-wrapper .oval-item {
   background: linear-gradient(135deg, #f5a623 0%, #f7c948 40%, #f5d76e 100%) !important;
   border: none !important;
-  color: #000000 !important;
-  box-shadow: 0 4px 15px rgba(245, 166, 35, 0.25);
+  border-radius: 100px !important;
+  box-shadow: 0 4px 15px rgba(245, 166, 35, 0.25) !important;
   transition: all 0.3s ease;
 }
-.contacts-oval .oval-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 25px rgba(245, 166, 35, 0.4);
+
+#contacts .contacts-oval .oval-wrapper .oval-item:hover,
+.contacts-oval .oval-wrapper .oval-item:hover,
+section.contacts-oval .oval-wrapper .oval-item:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 25px rgba(245, 166, 35, 0.4) !important;
 }
-.contacts-oval .oval-item .label {
+
+#contacts .contacts-oval .oval-wrapper .oval-item .label,
+.contacts-oval .oval-wrapper .oval-item .label {
   color: #5a3a00 !important;
-  font-weight: 600;
+  font-weight: 600 !important;
 }
-.contacts-oval .oval-item .value {
+
+#contacts .contacts-oval .oval-wrapper .oval-item .value,
+.contacts-oval .oval-wrapper .oval-item .value {
   color: #000000 !important;
-  font-weight: 500;
+  font-weight: 500 !important;
 }
