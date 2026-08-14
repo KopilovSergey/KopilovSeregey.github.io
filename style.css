@@ -744,7 +744,7 @@ a { transition: color 0.6s; }
   .container-fluid { padding-left: 16px; padding-right: 16px; }
 }
 
-/* ===== ГАЛЕРЕЯ (большие контейнеры + увеличенные фото) ===== */
+/* ===== ГАЛЕРЕЯ (ещё более крупные контейнеры) ===== */
 .gallery-grid {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -769,9 +769,9 @@ a { transition: color 0.6s; }
 .gallery-grid .grid-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 6rem;
+  gap: 8rem; /* ещё больше отступы */
   width: 100%;
-  max-width: 1600px; /* шире, чтобы картинкам было куда расти */
+  max-width: 2000px; /* шире, чтобы картинкам было куда расти */
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -784,7 +784,7 @@ a { transition: color 0.6s; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 400px; /* большой контейнер для фото */
+  height: 600px; /* очень большой контейнер */
   width: 100%;
 }
 .gallery-grid .grid-item a {
@@ -804,7 +804,7 @@ a { transition: color 0.6s; }
   display: block;
   margin: 0;
   padding: 0;
-  transform: scale(1.2); /* увеличение фото внутри контейнера */
+  transform: scale(1.2);
   transition: transform 0.3s ease;
 }
 .gallery-grid .grid-item .caption {
@@ -820,11 +820,11 @@ a { transition: color 0.6s; }
 @media (max-width: 768px) {
   .gallery-grid .grid-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+    gap: 3rem;
     padding: 0 1rem;
   }
   .gallery-grid .grid-item {
-    height: 300px;
+    height: 400px;
   }
   .gallery-grid .grid-item img {
     transform: scale(1.2);
