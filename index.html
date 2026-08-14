@@ -818,7 +818,7 @@
 <!-- ==================== ОБО МНЕ (текст) ==================== -->
 <style>
 .cid-vrMAloTPui {
-  padding-top: 0.5rem; /* уменьшен отступ, чтобы поднять блок выше */
+  padding-top: 0.5rem;
   padding-bottom: 5rem;
   background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
 }
@@ -1070,7 +1070,7 @@
   }
   .gallery-grid .grid-item img {
     width: 100%;
-    height: 160px;
+    height: 220px;            /* увеличено с 160px до 220px */
     object-fit: cover;
     border-radius: 0.5rem;
     display: block;
@@ -1085,10 +1085,16 @@
     .gallery-grid .grid-container {
       grid-template-columns: repeat(2, 1fr);
     }
+    .gallery-grid .grid-item img {
+      height: 160px;
+    }
   }
   @media (max-width: 480px) {
     .gallery-grid .grid-container {
       grid-template-columns: 1fr;
+    }
+    .gallery-grid .grid-item img {
+      height: auto;
     }
   }
 </style>
@@ -1151,8 +1157,11 @@
       const item = document.createElement('div');
       item.className = 'grid-item';
       const caption = name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+      const imgSrc = `${year}/${name}.png`;
       item.innerHTML = `
-        <img src="${year}/${name}.png" alt="${caption}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwY2VmMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNkMWY2ZCI+5L2g55WZ5r2uPC90ZXh0Pjwvc3ZnPg=='">
+        <a href="${imgSrc}" target="_blank" style="display:block; text-decoration:none; width:100%; height:100%;">
+          <img src="${imgSrc}" alt="${caption}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwY2VmMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNkMWY2ZCI+5L2g55WZ5r2uPC90ZXh0Pjwvc3ZnPg=='">
+        </a>
         <div class="caption">${caption}</div>
       `;
       container.appendChild(item);
