@@ -744,7 +744,7 @@ a { transition: color 0.6s; }
   .container-fluid { padding-left: 16px; padding-right: 16px; }
 }
 
-/* ===== ГАЛЕРЕЯ (увеличенные отступы) ===== */
+/* ===== ГАЛЕРЕЯ (ещё более увеличенные отступы) ===== */
 .gallery-grid {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -757,7 +757,7 @@ a { transition: color 0.6s; }
   margin-bottom: 3rem;
 }
 .gallery-grid .year-row {
-  margin-bottom: 10rem; /* увеличено с 6rem до 10rem */
+  margin-bottom: 20rem; /* увеличено с 10rem до 20rem */
 }
 .gallery-grid .year-row h3 {
   font-size: 2rem;
@@ -768,7 +768,7 @@ a { transition: color 0.6s; }
 .gallery-grid .grid-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 5rem; /* увеличено с 2.5rem до 5rem */
+  gap: 10rem; /* увеличено с 5rem до 10rem */
   max-width: 1000px;
   margin: 0 auto;
 }
