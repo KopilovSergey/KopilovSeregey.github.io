@@ -1030,7 +1030,7 @@
   </div>
 </section>
 
-<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (сетка 5 в ряд, без рамок) ==================== -->
+<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ ==================== -->
 <style>
   .gallery-grid {
     padding-top: 5rem;
@@ -1065,6 +1065,17 @@
     padding: 0 !important;
     box-shadow: none !important;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .gallery-grid .grid-item a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
   }
   .gallery-grid .grid-item img {
     width: 100%;
@@ -1072,12 +1083,16 @@
     object-fit: cover;
     border-radius: 0.5rem;
     display: block;
+    margin: 0;
+    padding: 0;
   }
   .gallery-grid .grid-item .caption {
-    margin-top: 0.3rem;
+    margin-top: 0.1rem; /* минимальный отступ */
     font-size: 0.9rem;
     font-weight: 500;
     color: #1a0b2e;
+    padding: 0;
+    line-height: 1.2;
   }
   @media (max-width: 768px) {
     .gallery-grid .grid-container {
