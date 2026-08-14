@@ -744,7 +744,7 @@ a { transition: color 0.6s; }
   .container-fluid { padding-left: 16px; padding-right: 16px; }
 }
 
-/* ===== ГАЛЕРЕЯ (фото увеличены на 20% через scale) ===== */
+/* ===== ГАЛЕРЕЯ (большие контейнеры + увеличенные фото) ===== */
 .gallery-grid {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -771,7 +771,7 @@ a { transition: color 0.6s; }
   grid-template-columns: repeat(5, 1fr);
   gap: 6rem;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px; /* шире, чтобы картинкам было куда расти */
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -784,10 +784,13 @@ a { transition: color 0.6s; }
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 400px; /* большой контейнер для фото */
+  width: 100%;
 }
 .gallery-grid .grid-item a {
   display: block;
   width: 100%;
+  height: 100%;
   text-decoration: none;
   margin: 0;
   padding: 0;
@@ -795,14 +798,13 @@ a { transition: color 0.6s; }
 }
 .gallery-grid .grid-item img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
+  height: 100%;
   object-fit: cover;
   border-radius: 0.5rem;
   display: block;
   margin: 0;
   padding: 0;
-  transform: scale(1.2);      /* увеличение на 20% */
+  transform: scale(1.2); /* увеличение фото внутри контейнера */
   transition: transform 0.3s ease;
 }
 .gallery-grid .grid-item .caption {
@@ -812,6 +814,8 @@ a { transition: color 0.6s; }
   color: #1a0b2e;
   padding: 0;
   line-height: 1.2;
+  position: relative;
+  z-index: 2;
 }
 @media (max-width: 768px) {
   .gallery-grid .grid-container {
@@ -819,15 +823,22 @@ a { transition: color 0.6s; }
     gap: 2.5rem;
     padding: 0 1rem;
   }
+  .gallery-grid .grid-item {
+    height: 300px;
+  }
   .gallery-grid .grid-item img {
-    transform: scale(1.2);      /* увеличение на 20% на планшетах */
+    transform: scale(1.2);
   }
 }
 @media (max-width: 480px) {
   .gallery-grid .grid-container {
     grid-template-columns: 1fr;
   }
+  .gallery-grid .grid-item {
+    height: auto;
+  }
   .gallery-grid .grid-item img {
-    transform: scale(1.2);      /* увеличение на 20% на мобильных */
+    transform: scale(1.2);
+    height: auto;
   }
 }
