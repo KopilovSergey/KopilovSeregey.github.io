@@ -668,8 +668,8 @@
     justify-content: center;
   }
   .cid-vrMAloTEiy .content-wrap {
-  padding: 0 !important;
-}
+    padding: 1rem 3rem;
+  }
 }
 @media (max-width: 991px) and (min-width: 768px) {
   .cid-vrMAloTEiy .content-wrap {
@@ -817,7 +817,7 @@
 <!-- ==================== ОБО МНЕ (текст) ==================== -->
 <style>
 .cid-vrMAloTPui {
-  padding-top: 0,5rem;
+  padding-top: 0.5rem; /* уменьшен отступ, чтобы поднять блок выше */
   padding-bottom: 5rem;
   background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
 }
@@ -1028,13 +1028,12 @@
     </div>
   </div>
 </section>
-  
-<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (сетка 5 в ряд, увеличенные отступы) ==================== -->
+
+<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (сетка 5 в ряд, без рамок) ==================== -->
 <style>
   .gallery-grid {
     padding-top: 5rem;
     padding-bottom: 5rem;
-    background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
     text-align: center;
   }
   .gallery-grid h2 {
@@ -1044,7 +1043,7 @@
     margin-bottom: 3rem;
   }
   .gallery-grid .year-row {
-    margin-bottom: 6rem;      /* увеличено с 4rem до 6rem */
+    margin-bottom: 6rem;
   }
   .gallery-grid .year-row h3 {
     font-size: 2rem;
@@ -1055,16 +1054,15 @@
   .gallery-grid .grid-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 2.5rem;              /* увеличено с 1.5rem до 2.5rem */
+    gap: 2.5rem;
     max-width: 1000px;
     margin: 0 auto;
   }
   .gallery-grid .grid-item {
-    background: rgba(255,255,255,0.6);
-    border-radius: 1rem;
-    padding: 0.5rem;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    background: transparent !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
     text-align: center;
   }
   .gallery-grid .grid-item img {
@@ -1075,7 +1073,7 @@
     display: block;
   }
   .gallery-grid .grid-item .caption {
-    margin-top: 0.5rem;
+    margin-top: 0.3rem;
     font-size: 0.9rem;
     font-weight: 500;
     color: #1a0b2e;
