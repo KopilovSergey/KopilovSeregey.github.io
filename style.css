@@ -1005,3 +1005,24 @@ div[style*="background-color: #000000"] {
     min-height: 2rem;
   }
 }
+
+/* ===== КОНТАКТЫ — ОРАНЖЕВЫЙ ГРАДИЕНТ ===== */
+.contacts-oval .oval-item {
+  background: linear-gradient(135deg, #f5a623 0%, #f7c948 40%, #f5d76e 100%) !important;
+  border: none !important;
+  color: #000000 !important;
+  box-shadow: 0 4px 15px rgba(245, 166, 35, 0.25);
+  transition: all 0.3s ease;
+}
+.contacts-oval .oval-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(245, 166, 35, 0.4);
+}
+.contacts-oval .oval-item .label {
+  color: #5a3a00 !important;
+  font-weight: 600;
+}
+.contacts-oval .oval-item .value {
+  color: #000000 !important;
+  font-weight: 500;
+}
