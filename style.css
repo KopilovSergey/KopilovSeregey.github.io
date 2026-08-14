@@ -18,13 +18,13 @@ img,
   overflow: hidden;
 }
 
-/* ===== ГРАДИЕНТНЫЙ ФОН ВСЕГО САЙТА ===== */
+/* ===== ГРАДИЕНТНЫЙ ФОН ВСЕГО САЙТА (СВЕТЛЫЙ) ===== */
 html {
   height: 100%;
 }
 
 body {
-  background: linear-gradient(135deg, #1a0b2e 0%, #2d1b4e 20%, #4a2a7a 40%, #7b4fa0 60%, #b388d9 80%, #d4bce6 100%) !important;
+  background: linear-gradient(135deg, #d4bce6 0%, #c8a8dd 20%, #b88cd4 40%, #c79ae8 60%, #d9b0f0 80%, #e8c8f5 100%) !important;
   background-attachment: fixed !important;
   background-size: cover !important;
   min-height: 100vh;
@@ -55,25 +55,25 @@ body {
 
 /* Прозрачные карточки с эффектом стекла */
 .skills-section .equipment-info {
-  background: rgba(255, 255, 255, 0.15) !important;
+  background: rgba(255, 255, 255, 0.4) !important;
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .timeline-tree .tree-item {
-  background: rgba(255, 255, 255, 0.12) !important;
+  background: rgba(255, 255, 255, 0.4) !important;
   backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .contacts-oval .oval-item {
-  background: rgba(255, 255, 255, 0.15) !important;
+  background: rgba(255, 255, 255, 0.4) !important;
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .gallery-grid .grid-item a {
-  background: rgba(255, 255, 255, 0.05) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* ===== ШРИФТ INTER ===== */
@@ -861,17 +861,57 @@ div[style*="background-color: #000000"] {
   background-color: #000000 !important;
 }
 
-/* Кнопка "Связаться" — ОРАНЖЕВЫЙ ГРАДИЕНТ */
+/* ===== ОРАНЖЕВЫЙ ГРАДИЕНТ (СВЕТЛЫЙ) ===== */
+
+/* Кнопка "Связаться" в меню */
 .cid-vrMAloSBlR .navbar-buttons .btn {
-  background: linear-gradient(135deg, #f5a623 0%, #f7c948 40%, #f5d76e 100%) !important;
+  background: linear-gradient(135deg, #fce4b8 0%, #fde8c8 40%, #ffedc7 100%) !important;
   border: none !important;
   color: #000000 !important;
-  box-shadow: 0 4px 15px rgba(245, 166, 35, 0.3);
+  box-shadow: 0 4px 15px rgba(252, 228, 184, 0.3);
   transition: all 0.3s ease;
 }
 .cid-vrMAloSBlR .navbar-buttons .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(245, 166, 35, 0.5);
+  box-shadow: 0 6px 25px rgba(252, 228, 184, 0.5);
+}
+
+/* Контакты — овалы */
+section.contacts-oval .oval-wrapper .oval-item {
+  background: linear-gradient(135deg, #fce4b8 0%, #fde8c8 40%, #ffedc7 100%) !important;
+  border: none !important;
+  border-radius: 100px !important;
+  color: #000000 !important;
+  box-shadow: 0 4px 15px rgba(252, 228, 184, 0.25) !important;
+  transition: all 0.3s ease;
+  padding: 1.2rem 2.5rem !important;
+  min-width: 180px !important;
+}
+
+section.contacts-oval .oval-wrapper .oval-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(252, 228, 184, 0.4) !important;
+}
+
+section.contacts-oval .oval-wrapper .oval-item .label {
+  color: #5a3a00 !important;
+  font-weight: 600 !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+}
+
+section.contacts-oval .oval-wrapper .oval-item .value {
+  color: #000000 !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+}
+
+@media (max-width: 600px) {
+  section.contacts-oval .oval-wrapper .oval-item {
+    padding: 0.8rem 1.8rem !important;
+    min-width: 140px !important;
+  }
 }
 
 /* ===== МОИ РАБОТЫ ПО ГОДАМ (4 в ряд, крупные контейнеры) ===== */
@@ -1004,34 +1044,4 @@ div[style*="background-color: #000000"] {
   .gallery-grid .grid-item .caption {
     min-height: 2rem;
   }
-}
-
-/* ===== КОНТАКТЫ — ОРАНЖЕВЫЙ ГРАДИЕНТ (МАКСИМАЛЬНАЯ СПЕЦИФИЧНОСТЬ) ===== */
-#contacts .contacts-oval .oval-wrapper .oval-item,
-.contacts-oval .oval-wrapper .oval-item,
-section.contacts-oval .oval-wrapper .oval-item {
-  background: linear-gradient(135deg, #f5a623 0%, #f7c948 40%, #f5d76e 100%) !important;
-  border: none !important;
-  border-radius: 100px !important;
-  box-shadow: 0 4px 15px rgba(245, 166, 35, 0.25) !important;
-  transition: all 0.3s ease;
-}
-
-#contacts .contacts-oval .oval-wrapper .oval-item:hover,
-.contacts-oval .oval-wrapper .oval-item:hover,
-section.contacts-oval .oval-wrapper .oval-item:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 6px 25px rgba(245, 166, 35, 0.4) !important;
-}
-
-#contacts .contacts-oval .oval-wrapper .oval-item .label,
-.contacts-oval .oval-wrapper .oval-item .label {
-  color: #5a3a00 !important;
-  font-weight: 600 !important;
-}
-
-#contacts .contacts-oval .oval-wrapper .oval-item .value,
-.contacts-oval .oval-wrapper .oval-item .value {
-  color: #000000 !important;
-  font-weight: 500 !important;
 }
