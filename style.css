@@ -18,16 +18,21 @@ img,
   overflow: hidden;
 }
 
-/* ===== БЕЛЫЙ ФОН ВМЕСТО ГРАДИЕНТА ===== */
+/* ===== ГРАДИЕНТНЫЙ ФОН ВСЕГО САЙТА ===== */
+html {
+  height: 100%;
+}
+
 body {
-  background-color: #ffffff !important;
-  background-image: none !important;
+  background: linear-gradient(135deg, #1a0b2e 0%, #2d1b4e 20%, #4a2a7a 40%, #7b4fa0 60%, #b388d9 80%, #d4bce6 100%) !important;
+  background-attachment: fixed !important;
+  background-size: cover !important;
   min-height: 100vh;
   margin: 0;
   padding: 0;
 }
 
-/* Убираем любые локальные фоны у всех секций */
+/* Убираем все локальные фоны у секций */
 .cid-vrMAloTZwZ,
 .cid-vrMAloTRc6,
 .cid-vrMAloTPui,
@@ -42,8 +47,33 @@ body {
 .skills-section,
 .gallery-grid,
 .timeline-tree,
-.contacts-oval {
+.contacts-oval,
+.cid-vrMAloTEiy {
   background: transparent !important;
+  background-image: none !important;
+}
+
+/* Прозрачные карточки с эффектом стекла */
+.skills-section .equipment-info {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-tree .tree-item {
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contacts-oval .oval-item {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gallery-grid .grid-item a {
+  background: rgba(255, 255, 255, 0.05) !important;
 }
 
 /* ===== ШРИФТ INTER ===== */
@@ -744,168 +774,7 @@ a { transition: color 0.6s; }
   .container-fluid { padding-left: 16px; padding-right: 16px; }
 }
 
-<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (4 в ряд, крупные контейнеры) ==================== -->
-<style>
-  .gallery-grid {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    text-align: center;
-    width: 100%;
-  }
-  .gallery-grid h2 {
-    color: #1a0b2e;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-  }
-  .gallery-grid .year-row {
-    margin-bottom: 20rem;
-  }
-  .gallery-grid .year-row h3 {
-    font-size: 2rem;
-    color: #1a0b2e;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-  }
-  .gallery-grid .grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* ровно 4 колонки */
-    gap: 3rem;
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-  .gallery-grid .grid-item {
-    background: transparent !important;
-    border-radius: 0 !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 450px;          /* увеличенный контейнер */
-  }
-  .gallery-grid .grid-item a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-    line-height: 0;
-  }
-  .gallery-grid .grid-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;   /* фото не обрезается */
-    border-radius: 0.5rem;
-    display: block;
-    margin: 0;
-    padding: 0;
-    transform: scale(1.2); /* фото внутри крупнее */
-    transition: transform 0.3s ease;
-  }
-  .gallery-grid .grid-item .caption {
-    margin-top: 0.1rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #1a0b2e;
-    padding: 0;
-    line-height: 1.2;
-    position: relative;
-    z-index: 2;
-  }
-  @media (max-width: 1200px) {
-    .gallery-grid .grid-container {
-      grid-template-columns: repeat(3, 1fr); /* 3 на средних экранах */
-    }
-  }
-  @media (max-width: 992px) {
-    .gallery-grid .grid-container {
-      grid-template-columns: repeat(2, 1fr); /* 2 на планшетах */
-      gap: 2rem;
-    }
-    .gallery-grid .grid-item {
-      height: 350px;
-    }
-  }
-  @media (max-width: 600px) {
-    .gallery-grid .grid-container {
-      grid-template-columns: 1fr; /* 1 на телефонах */
-    }
-    .gallery-grid .grid-item {
-      height: auto;
-    }
-  }
-</style>
-
-/* ===== ГРАДИЕНТНЫЙ ФОН ВСЕГО САЙТА ===== */
-html {
-  height: 100%;
-}
-
-body {
-  background: linear-gradient(135deg, #1a0b2e 0%, #2d1b4e 20%, #4a2a7a 40%, #7b4fa0 60%, #b388d9 80%, #d4bce6 100%) !important;
-  background-attachment: fixed !important; /* чтобы градиент не прокручивался */
-  background-size: cover !important;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-/* Убираем все локальные фоны у секций, чтобы был виден общий градиент */
-.cid-vrMAloTZwZ,
-.cid-vrMAloTRc6,
-.cid-vrMAloTPui,
-.cid-vrMAloT6q9,
-.cid-vrMAloTIUh,
-.cid-vrMAloTfrv,
-.cid-vrMAloU7Ca,
-.cid-vrMAloUSbY,
-.cid-vrMAloULm6,
-.cid-vrMAloUFQJ,
-.cid-vrMAloUu9O .item-wrapper,
-.skills-section,
-.gallery-grid,
-.timeline-tree,
-.contacts-oval,
-.cid-vrMAloTEiy {
-  background: transparent !important;
-  background-image: none !important;
-}
-
-/* Для секций, которым нужна прозрачность — оставляем их с фоном, но делаем прозрачными */
-.skills-section .equipment-info {
-  background: rgba(255, 255, 255, 0.15) !important;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.timeline-tree .tree-item {
-  background: rgba(255, 255, 255, 0.12) !important;
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.contacts-oval .oval-item {
-  background: rgba(255, 255, 255, 0.15) !important;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.gallery-grid .grid-item a {
-  background: rgba(255, 255, 255, 0.05) !important;
-}
-
-/* Навигация — делаем более прозрачной */
-.cid-vrMAloSBlR .container {
-  background: rgba(255, 255, 255, 0.15) !important;
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
-}
+/* ===== ТЕКСТ НА ГРАДИЕНТНОМ ФОНЕ ===== */
 
 /* Текст — делаем белым или светлым для читаемости на тёмном фоне */
 .cid-vrMAloTEiy .mbr-section-title,
@@ -958,34 +827,177 @@ body {
   color: #ffffff !important;
 }
 
-/* Меню — текст белый */
-.cid-vrMAloSBlR .navbar-caption,
-.cid-vrMAloSBlR .nav-link {
-  color: #ffffff !important;
-}
-.cid-vrMAloSBlR .navbar-caption:hover,
-.cid-vrMAloSBlR .nav-link:hover {
-  color: #d4bce6 !important;
-}
-
-/* Кнопка "Связаться" — перекрашиваем */
-.cid-vrMAloSBlR .navbar-buttons .btn {
-  background: rgba(255, 255, 255, 0.15) !important;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #ffffff !important;
-}
-.cid-vrMAloSBlR .navbar-buttons .btn:hover {
-  background: rgba(255, 255, 255, 0.25) !important;
-}
-
-/* Бургер-меню (гамбургер) — делаем белым */
-.cid-vrMAloSBlR button.navbar-toggler .hamburger span {
-  background-color: #ffffff !important;
-}
-
 /* Футер */
 div[style*="background-color: #000000"] {
   background-color: rgba(0, 0, 0, 0.5) !important;
   backdrop-filter: blur(4px);
+}
+
+/* ===== НАВИГАЦИЯ (МЕНЮ) — ЧЁРНЫЙ ТЕКСТ И КНОПКА ===== */
+
+/* Меню — текст чёрный */
+.cid-vrMAloSBlR .navbar-caption,
+.cid-vrMAloSBlR .nav-link {
+  color: #000000 !important;
+}
+.cid-vrMAloSBlR .navbar-caption:hover,
+.cid-vrMAloSBlR .nav-link:hover {
+  color: #532B88 !important;
+}
+
+/* Контейнер меню — прозрачный фон */
+.cid-vrMAloSBlR .container {
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.08);
+}
+
+/* Бургер-меню (гамбургер) — чёрный */
+.cid-vrMAloSBlR button.navbar-toggler .hamburger span {
+  background-color: #000000 !important;
+}
+
+/* Кнопка "Связаться" — ГРАДИЕНТНАЯ ЗАЛИВКА */
+.cid-vrMAloSBlR .navbar-buttons .btn {
+  background: linear-gradient(135deg, #fce4c8 0%, #f8d5a3 50%, #f0c27a 100%) !important;
+  border: none !important;
+  color: #000000 !important;
+  box-shadow: 0 4px 15px rgba(240, 194, 122, 0.3);
+  transition: all 0.3s ease;
+}
+.cid-vrMAloSBlR .navbar-buttons .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(240, 194, 122, 0.5);
+}
+
+/* ===== МОИ РАБОТЫ ПО ГОДАМ (4 в ряд, крупные контейнеры) ===== */
+.gallery-grid {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  text-align: center;
+  width: 100%;
+}
+.gallery-grid h2 {
+  color: #1a0b2e;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.gallery-grid .year-row {
+  margin-bottom: 5rem;
+}
+.gallery-grid .year-row h3 {
+  font-size: 2rem;
+  color: #1a0b2e;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+.gallery-grid .grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.gallery-grid .grid-item {
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+}
+.gallery-grid .grid-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  min-height: 200px;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background: rgba(200, 177, 228, 0.05);
+}
+.gallery-grid .grid-item img {
+  width: auto;
+  height: auto;
+  max-width: 96%;
+  max-height: 96%;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  display: block;
+  margin: auto;
+  padding: 0;
+  transition: transform 0.3s ease;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.gallery-grid .grid-item img:hover {
+  transform: translateY(-50%) scale(1.02);
+}
+.gallery-grid .grid-item .caption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #1a0b2e;
+  padding: 0 0.5rem;
+  line-height: 1.3;
+  position: relative;
+  z-index: 2;
+  min-height: 2.5rem;
+  word-wrap: break-word;
+}
+@media (max-width: 1200px) {
+  .gallery-grid .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 992px) {
+  .gallery-grid .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .gallery-grid .grid-item {
+    max-height: 320px;
+  }
+  .gallery-grid .grid-item a {
+    max-height: 250px;
+    min-height: 160px;
+  }
+  .gallery-grid .grid-item img {
+    max-width: 94%;
+    max-height: 94%;
+  }
+}
+@media (max-width: 600px) {
+  .gallery-grid .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .gallery-grid .grid-item {
+    max-height: none;
+  }
+  .gallery-grid .grid-item a {
+    max-height: 280px;
+    min-height: 180px;
+  }
+  .gallery-grid .grid-item img {
+    max-width: 96%;
+    max-height: 96%;
+  }
+  .gallery-grid .grid-item .caption {
+    min-height: 2rem;
+  }
 }
