@@ -1030,7 +1030,7 @@
   </div>
 </section>
   
-<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (компактная, без пустот) ==================== -->
+<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (финальная версия, без пустот и наездов) ==================== -->
 <style>
   .gallery-scroll {
     padding-top: 5rem;
@@ -1083,25 +1083,25 @@
     text-align: center;
     background: rgba(255,255,255,0.6);
     border-radius: 1rem;
-    padding: 0.8rem 0.8rem 0.5rem 0.8rem; /* уменьшили отступы */
+    padding: 0.8rem 0.8rem 0.5rem 0.8rem;
     backdrop-filter: blur(4px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     scroll-snap-align: center;
-    height: 260px; /* уменьшили высоту */
+    height: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end; /* подпись прижимается к низу */
+    justify-content: flex-end;
   }
   .gallery-scroll .scroll-item img {
     width: 100%;
-    height: 160px;           /* картинка занимает почти всю рамку */
-    object-fit: cover;       /* без пустых полей */
+    height: 160px;
+    object-fit: cover;
     border-radius: 0.5rem;
     display: block;
     transition: transform 0.3s ease;
-    margin-bottom: auto;     /* отталкивает подпись вниз */
+    margin-bottom: auto;
   }
   .gallery-scroll .scroll-item .caption {
     margin-top: 0.4rem;
@@ -1200,14 +1200,40 @@
 </section>
 
 <script>
-  console.log('Галерея со скроллом и фокусом (компактная) загружена ✅');
+  console.log('Галерея со скроллом и фокусом (финальная) загружена ✅');
 
-  const images2025 = [ ... ]; // ваши массивы, не трогайте
-  const images2026 = [ ... ];
+  const images2025 = [
+    'Задний_бампер_снегохода_RM_FRONTIER',
+    'Передний_бампер_квадроцикла_Loncin_Xolf_700i',
+    'Задний_бампер_квадроцикла_Loncin_Xolf_700i',
+    'Защита_днища_квадроцикла_Baltmotors_Striker_500_EFI',
+    'Комплект_пластиковой_защиты_днища_квадроцикла_BRP_CAN-AM_Maverick_R_X_RS',
+    'Бампер_снегохода_STELS_STAVR',
+    'Подкат_транспортировочный_для_снегохода',
+    'Задний_бампер_квадроцикла_Baltmotors_Striker_500_EFI',
+    'Передний_бампер_квадроцикла_Baltmotors_Striker_500_EFI',
+    'Комплект_пластиковой_защиты_днища_квадроцикла_BRC_X_TERRA-CT'
+  ];
+
+  const images2026 = [
+    'Тележка_под_лыжу_снегохода_из_круглой_трубы',
+    'Тележка_под_лыжу_снегохода_из_профильной_трубы',
+    'Передний_бампер_для_квадроцикла_GBM_Cronos_420',
+    'Комплект_пластиковой_защиты_днища_для_квадроцикла_GBM_Cronos_420',
+    'Комплект_алюминиевой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
+    'Комплект_пластиковой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
+    'Передний_бампер_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
+    'Комплект_пластиковой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C5',
+    'Комплект_алюминиевой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C5',
+    'Корзина_багажная_для_лодки'
+  ];
 
   function populateScroll(trackId, imageList, year) {
     const track = document.getElementById(trackId);
-    if (!track) return;
+    if (!track) {
+      console.error('Трек не найден:', trackId);
+      return;
+    }
     track.innerHTML = '';
     imageList.forEach(name => {
       const item = document.createElement('div');
@@ -1229,9 +1255,77 @@
     });
   }
 
-  // Функции updateButtons, updateFocus, scrollTrack, window.addEventListener оставляем без изменений
-  // Единственное, что я рекомендую поправить внутри updateFocus:
-  // замените scale(1.5) на scale(1.3), чтобы центральная картинка не так сильно наезжала.
+  function updateButtons(trackId) {
+    const track = document.getElementById(trackId);
+    if (!track) return;
+    const prevBtn = document.getElementById(trackId.replace('track', 'btn') + '-prev');
+    const nextBtn = document.getElementById(trackId.replace('track', 'btn') + '-next');
+    if (!prevBtn || !nextBtn) return;
+
+    const scrollLeft = track.scrollLeft;
+    const scrollWidth = track.scrollWidth;
+    const clientWidth = track.clientWidth;
+
+    if (scrollLeft < 5) {
+      prevBtn.classList.add('hidden');
+    } else {
+      prevBtn.classList.remove('hidden');
+    }
+
+    if (scrollLeft + clientWidth >= scrollWidth - 5) {
+      nextBtn.classList.add('hidden');
+    } else {
+      nextBtn.classList.remove('hidden');
+    }
+  }
+
+  function updateFocus(trackId) {
+    const track = document.getElementById(trackId);
+    if (!track) return;
+    const items = track.querySelectorAll('.scroll-item');
+    if (!items.length) return;
+
+    const trackRect = track.getBoundingClientRect();
+    const centerX = trackRect.left + trackRect.width / 2;
+
+    let closestItem = null;
+    let closestDist = Infinity;
+    items.forEach(item => {
+      const rect = item.getBoundingClientRect();
+      const itemCenter = rect.left + rect.width / 2;
+      const dist = Math.abs(centerX - itemCenter);
+      if (dist < closestDist) {
+        closestDist = dist;
+        closestItem = item;
+      }
+    });
+
+    items.forEach(item => {
+      if (item === closestItem) {
+        item.style.transform = 'scale(1.3)'; // уменьшен масштаб, чтобы не наезжать
+        item.style.zIndex = '3';
+        item.style.boxShadow = '0 8px 24px rgba(0,0,0,0.15)';
+      } else {
+        item.style.transform = 'scale(0.75)';
+        item.style.zIndex = '1';
+        item.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)';
+      }
+    });
+  }
+
+  function scrollTrack(trackId, direction) {
+    const track = document.getElementById(trackId);
+    if (!track) return;
+    const items = track.querySelectorAll('.scroll-item');
+    if (!items.length) return;
+    const itemWidth = items[0].offsetWidth + 24;
+    track.scrollBy({ left: direction * itemWidth, behavior: 'smooth' });
+  }
+
+  window.addEventListener('load', function() {
+    populateScroll('track-2025', images2025, '2025');
+    populateScroll('track-2026', images2026, '2026');
+  });
 </script>
   
 <!-- ==================== КОНТАКТЫ ==================== -->
