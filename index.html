@@ -43,6 +43,23 @@
 
   <link rel="stylesheet" href="style.css">
 
+  <!-- Оптимизация загрузки на мобильных -->
+<script>
+  // Отключаем анимации и параллакс на мобильных устройствах
+  if (window.innerWidth < 768) {
+    document.addEventListener('DOMContentLoaded', function() {
+      // Отключаем параллакс
+      document.querySelectorAll('[data-jarallax]').forEach(function(el) {
+        el.removeAttribute('data-jarallax');
+      });
+      // Отключаем анимации
+      document.querySelectorAll('.mbr-parallax-background').forEach(function(el) {
+        el.classList.remove('mbr-parallax-background');
+      });
+    });
+  }
+</script>
+
   <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=bgZiF6BnAZUMyif0JkpyYpTIHotbkL-ZVlCru5Mqp0IerVyQR-4jaGhA10fDVURce4J0yQn_wgA6-dsp3NlmJbwiNSr7pkTlyef72w_LyHw" charset="UTF-8"></script>
 </head>
 <body>
