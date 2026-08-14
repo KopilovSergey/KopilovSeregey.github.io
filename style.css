@@ -935,6 +935,257 @@ section.contacts-oval .oval-wrapper .oval-item .value {
   box-shadow: 0 2px 25px rgba(245, 159, 0, 0.4);
 }
 
+/* ===== МОБИЛЬНАЯ ОПТИМИЗАЦИЯ ===== */
+
+/* --- Мобильные отступы для всех секций --- */
+@media (max-width: 768px) {
+  .gallery-grid,
+  .skills-section,
+  .timeline-tree,
+  .contacts-oval {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  
+  .gallery-grid h2,
+  .skills-section .section-title,
+  .timeline-tree h2,
+  .contacts-oval h2 {
+    font-size: 1.8rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .gallery-grid .year-row h3 {
+    font-size: 1.4rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .gallery-grid .year-row {
+    margin-bottom: 2.5rem !important;
+  }
+  
+  /* Текст "По каждой фотографии..." */
+  .gallery-grid > div:last-child p {
+    font-size: 1.1rem !important;
+    padding: 0 0.5rem !important;
+  }
+}
+
+/* --- HERO-СЕКЦИЯ НА МОБИЛЬНЫХ --- */
+@media (max-width: 768px) {
+  .cid-vrMAloTEiy .content-wrap {
+    padding: 0 1rem !important;
+  }
+  
+  .cid-vrMAloTEiy .mbr-section-title {
+    font-size: 2.2rem !important;
+  }
+  
+  .cid-vrMAloTEiy .mbr-text {
+    font-size: 1.2rem !important;
+  }
+  
+  .cid-vrMAloTEiy .mbr-section-btn .btn {
+    font-size: 1rem !important;
+    padding: 0.6rem 1.8rem !important;
+  }
+  
+  .cid-vrMAloTEiy [style*="border: 2px solid"] {
+    font-size: 0.8rem !important;
+    padding: 0.2rem 1.5rem !important;
+    white-space: normal !important;
+  }
+}
+
+/* --- МЕТРИКИ НА МОБИЛЬНЫХ --- */
+@media (max-width: 768px) {
+  .cid-vrMAloT6q9 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  .cid-vrMAloT6q9 .item-wrapper .num {
+    font-size: 2rem !important;
+  }
+  
+  .cid-vrMAloT6q9 .item-wrapper .card-title {
+    font-size: 1.2rem !important;
+    white-space: normal !important;
+  }
+  
+  .cid-vrMAloT6q9 .item-mb {
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* --- ГАЛЕРЕЯ НА МОБИЛЬНЫХ --- */
+@media (max-width: 600px) {
+  .gallery-grid .grid-container {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: 0 1rem !important;
+  }
+  
+  .gallery-grid .grid-item {
+    max-height: none !important;
+  }
+  
+  .gallery-grid .grid-item a {
+    max-height: 280px !important;
+    min-height: 180px !important;
+  }
+  
+  .gallery-grid .grid-item img {
+    max-width: 96% !important;
+    max-height: 96% !important;
+  }
+  
+  .gallery-grid .grid-item .caption {
+    font-size: 0.8rem !important;
+    min-height: 2rem !important;
+  }
+}
+
+/* --- ОБО МНЕ НА МОБИЛЬНЫХ --- */
+@media (max-width: 768px) {
+  .cid-vrMAloTPui {
+    padding-top: 1rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .cid-vrMAloTPui .mbr-section-title {
+    font-size: 2rem !important;
+  }
+  
+  .cid-vrMAloTPui .mbr-section-subtitle {
+    font-size: 1.2rem !important;
+  }
+  
+  .cid-vrMAloTPui .mbr-text {
+    font-size: 1rem !important;
+    padding: 0 0.5rem !important;
+  }
+}
+
+/* --- НАВЫКИ НА МОБИЛЬНЫХ --- */
+@media (max-width: 768px) {
+  .skills-section .skill-name {
+    font-size: 0.95rem !important;
+  }
+  
+  .skills-section .skill-level-text {
+    font-size: 0.8rem !important;
+  }
+  
+  .skills-section .skill-bar {
+    height: 10px !important;
+  }
+  
+  .skills-section .equipment-info p {
+    font-size: 0.9rem !important;
+  }
+  
+  .skills-section .tag {
+    font-size: 0.75rem !important;
+    padding: 0.3rem 0.8rem !important;
+  }
+}
+
+/* --- ОБРАЗОВАНИЕ НА МОБИЛЬНЫХ --- */
+@media (max-width: 768px) {
+  .timeline-tree .tree {
+    padding-left: 1.5rem !important;
+  }
+  
+  .timeline-tree .tree-item {
+    padding: 1.2rem 1.2rem !important;
+  }
+  
+  .timeline-tree .tree-item .year {
+    font-size: 1.3rem !important;
+  }
+  
+  .timeline-tree .tree-item .company {
+    font-size: 1.1rem !important;
+  }
+  
+  .timeline-tree .tree-item .position {
+    font-size: 0.95rem !important;
+  }
+  
+  .timeline-tree .tree-item .description {
+    font-size: 0.9rem !important;
+  }
+  
+  .timeline-tree .tree-item::before {
+    left: -1.5rem !important;
+    top: 1.2rem !important;
+    width: 12px !important;
+    height: 12px !important;
+  }
+}
+
+/* --- КОНТАКТЫ НА МОБИЛЬНЫХ --- */
+@media (max-width: 600px) {
+  .contacts-oval .oval-wrapper {
+    gap: 0.8rem !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .contacts-oval .oval-item {
+    width: 100% !important;
+    max-width: 280px !important;
+    padding: 0.8rem 1.5rem !important;
+    min-width: unset !important;
+  }
+  
+  .contacts-oval .oval-item .label {
+    font-size: 0.7rem !important;
+  }
+  
+  .contacts-oval .oval-item .value {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* --- МЕНЮ НА МОБИЛЬНЫХ --- */
+@media (max-width: 768px) {
+  .cid-vrMAloSBlR .container {
+    height: 56px !important;
+    padding: 0.3rem 0.8rem !important;
+    margin-top: 0.5rem !important;
+    width: 95% !important;
+  }
+  
+  .cid-vrMAloSBlR .navbar-caption {
+    font-size: 1rem !important;
+    padding-left: 0.5rem !important;
+  }
+  
+  .cid-vrMAloSBlR .navbar-buttons .btn {
+    font-size: 0.8rem !important;
+    padding: 0.3rem 1rem !important;
+  }
+  
+  .cid-vrMAloSBlR .navbar-collapse {
+    padding: 0.8rem !important;
+  }
+  
+  .cid-vrMAloSBlR .navbar-nav .nav-item .nav-link {
+    padding: 10px !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* --- ФУТЕР НА МОБИЛЬНЫХ --- */
+@media (max-width: 768px) {
+  div[style*="background-color: #000000"] {
+    font-size: 0.6rem !important;
+    padding: 1rem 0 !important;
+  }
+}
+
 /* ===== МОИ РАБОТЫ ПО ГОДАМ (4 в ряд, крупные контейнеры) ===== */
 .gallery-grid {
   padding-top: 5rem;
