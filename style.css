@@ -1045,3 +1045,24 @@ section.contacts-oval .oval-wrapper .oval-item .value {
     min-height: 2rem;
   }
 }
+
+/* ===== ШКАЛЫ НАВЫКОВ — ОРАНЖЕВЫЙ ГРАДИЕНТ ===== */
+.skills-section .skill-fill {
+  background: linear-gradient(90deg, #f59f00 0%, #fcc419 50%, #ffd43b 100%) !important;
+  border-radius: 50px !important;
+  height: 100%;
+  transition: width 0.8s ease;
+}
+
+/* Также можно добавить эффект свечения для шкалы */
+.skills-section .skill-bar {
+  background: rgba(255, 255, 255, 0.3) !important;
+  border-radius: 50px !important;
+  height: 12px !important;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.skills-section .skill-fill {
+  box-shadow: 0 0 15px rgba(245, 159, 0, 0.3);
+}
