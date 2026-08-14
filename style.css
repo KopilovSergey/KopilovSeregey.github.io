@@ -744,7 +744,7 @@ a { transition: color 0.6s; }
   .container-fluid { padding-left: 16px; padding-right: 16px; }
 }
 
-/* ===== ГАЛЕРЕЯ (подписи вплотную к фото) ===== */
+/* ===== ГАЛЕРЕЯ (увеличенные отступы) ===== */
 .gallery-grid {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -757,7 +757,7 @@ a { transition: color 0.6s; }
   margin-bottom: 3rem;
 }
 .gallery-grid .year-row {
-  margin-bottom: 6rem;
+  margin-bottom: 10rem; /* увеличено с 6rem до 10rem */
 }
 .gallery-grid .year-row h3 {
   font-size: 2rem;
@@ -768,7 +768,7 @@ a { transition: color 0.6s; }
 .gallery-grid .grid-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 2.5rem;
+  gap: 5rem; /* увеличено с 2.5rem до 5rem */
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -800,7 +800,7 @@ a { transition: color 0.6s; }
   padding: 0;
 }
 .gallery-grid .grid-item .caption {
-  margin-top: 0.1rem; /* минимальный отступ, буквально вплотную */
+  margin-top: 0.1rem;
   font-size: 0.9rem;
   font-weight: 500;
   color: #1a0b2e;
@@ -810,7 +810,7 @@ a { transition: color 0.6s; }
 @media (max-width: 768px) {
   .gallery-grid .grid-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 2.5rem;
   }
   .gallery-grid .grid-item img {
     height: 160px;
