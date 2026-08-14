@@ -1030,12 +1030,13 @@
   </div>
 </section>
 
-<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ ==================== -->
+<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (без container, увеличенные отступы) ==================== -->
 <style>
   .gallery-grid {
     padding-top: 5rem;
     padding-bottom: 5rem;
     text-align: center;
+    width: 100%;
   }
   .gallery-grid h2 {
     color: #1a0b2e;
@@ -1044,7 +1045,7 @@
     margin-bottom: 3rem;
   }
   .gallery-grid .year-row {
-    margin-bottom: 6rem;
+    margin-bottom: 20rem;
   }
   .gallery-grid .year-row h3 {
     font-size: 2rem;
@@ -1055,9 +1056,11 @@
   .gallery-grid .grid-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 2.5rem;
-    max-width: 1000px;
+    gap: 6rem;
+    width: 100%;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 2rem;
   }
   .gallery-grid .grid-item {
     background: transparent !important;
@@ -1087,7 +1090,7 @@
     padding: 0;
   }
   .gallery-grid .grid-item .caption {
-    margin-top: 0.1rem; /* минимальный отступ */
+    margin-top: 0.1rem;
     font-size: 0.9rem;
     font-weight: 500;
     color: #1a0b2e;
@@ -1097,7 +1100,8 @@
   @media (max-width: 768px) {
     .gallery-grid .grid-container {
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
+      gap: 2.5rem;
+      padding: 0 1rem;
     }
     .gallery-grid .grid-item img {
       height: 160px;
@@ -1114,20 +1118,18 @@
 </style>
 
 <section class="gallery-grid" id="projects">
-  <div class="container">
-    <h2>Мои работы по годам</h2>
+  <h2>Мои работы по годам</h2>
 
-    <!-- 2025 -->
-    <div class="year-row">
-      <h3>2025</h3>
-      <div class="grid-container" id="grid-2025"></div>
-    </div>
+  <!-- 2025 -->
+  <div class="year-row">
+    <h3>2025</h3>
+    <div class="grid-container" id="grid-2025"></div>
+  </div>
 
-    <!-- 2026 -->
-    <div class="year-row">
-      <h3>2026</h3>
-      <div class="grid-container" id="grid-2026"></div>
-    </div>
+  <!-- 2026 -->
+  <div class="year-row">
+    <h3>2026</h3>
+    <div class="grid-container" id="grid-2026"></div>
   </div>
 </section>
 
