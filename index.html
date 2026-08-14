@@ -1030,7 +1030,7 @@
   </div>
 </section>
 
-<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (без container, увеличенные отступы) ==================== -->
+<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (финальная версия) ==================== -->
 <style>
   .gallery-grid {
     padding-top: 5rem;
@@ -1054,12 +1054,11 @@
     font-weight: 600;
   }
   .gallery-grid .grid-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
     width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
     padding: 0 2rem;
   }
   .gallery-grid .grid-item {
@@ -1071,10 +1070,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 280px;
+    height: 400px;
   }
   .gallery-grid .grid-item a {
     display: block;
     width: 100%;
+    height: 100%;
     text-decoration: none;
     margin: 0;
     padding: 0;
@@ -1082,12 +1084,14 @@
   }
   .gallery-grid .grid-item img {
     width: 100%;
-    height: 220px;
+    height: 100%;
     object-fit: cover;
     border-radius: 0.5rem;
     display: block;
     margin: 0;
     padding: 0;
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
   }
   .gallery-grid .grid-item .caption {
     margin-top: 0.1rem;
@@ -1096,22 +1100,29 @@
     color: #1a0b2e;
     padding: 0;
     line-height: 1.2;
+    position: relative;
+    z-index: 2;
   }
   @media (max-width: 768px) {
     .gallery-grid .grid-container {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2.5rem;
+      gap: 1.5rem;
       padding: 0 1rem;
     }
+    .gallery-grid .grid-item {
+      width: 220px;
+      height: 300px;
+    }
     .gallery-grid .grid-item img {
-      height: 160px;
+      transform: scale(1.2);
     }
   }
   @media (max-width: 480px) {
-    .gallery-grid .grid-container {
-      grid-template-columns: 1fr;
+    .gallery-grid .grid-item {
+      width: 100%;
+      height: auto;
     }
     .gallery-grid .grid-item img {
+      transform: scale(1.2);
       height: auto;
     }
   }
