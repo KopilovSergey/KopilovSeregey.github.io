@@ -18,13 +18,13 @@ img,
   overflow: hidden;
 }
 
-/* ===== ГРАДИЕНТНЫЙ ФОН ВСЕГО САЙТА (СВЕТЛЫЙ) ===== */
+/* ===== ГРАДИЕНТНЫЙ ФОН ВСЕГО САЙТА (НАСЫЩЕННЫЙ) ===== */
 html {
   height: 100%;
 }
 
 body {
-  background: linear-gradient(135deg, #d4bce6 0%, #c8a8dd 20%, #b88cd4 40%, #c79ae8 60%, #d9b0f0 80%, #e8c8f5 100%) !important;
+  background: linear-gradient(135deg, #c9a8e0 0%, #b88cd4 20%, #a875c8 40%, #b88cd4 60%, #c9a8e0 80%, #dbbdf2 100%) !important;
   background-attachment: fixed !important;
   background-size: cover !important;
   min-height: 100vh;
@@ -861,28 +861,28 @@ div[style*="background-color: #000000"] {
   background-color: #000000 !important;
 }
 
-/* ===== ОРАНЖЕВЫЙ ГРАДИЕНТ (СВЕТЛЫЙ) ===== */
+/* ===== ОРАНЖЕВЫЙ ГРАДИЕНТ (НАСЫЩЕННЫЙ) ===== */
 
 /* Кнопка "Связаться" в меню */
 .cid-vrMAloSBlR .navbar-buttons .btn {
-  background: linear-gradient(135deg, #fce4b8 0%, #fde8c8 40%, #ffedc7 100%) !important;
+  background: linear-gradient(135deg, #f5a623 0%, #f7c948 40%, #f5d76e 100%) !important;
   border: none !important;
   color: #000000 !important;
-  box-shadow: 0 4px 15px rgba(252, 228, 184, 0.3);
+  box-shadow: 0 4px 15px rgba(245, 166, 35, 0.3);
   transition: all 0.3s ease;
 }
 .cid-vrMAloSBlR .navbar-buttons .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(252, 228, 184, 0.5);
+  box-shadow: 0 6px 25px rgba(245, 166, 35, 0.5);
 }
 
 /* Контакты — овалы */
 section.contacts-oval .oval-wrapper .oval-item {
-  background: linear-gradient(135deg, #fce4b8 0%, #fde8c8 40%, #ffedc7 100%) !important;
+  background: linear-gradient(135deg, #f5a623 0%, #f7c948 40%, #f5d76e 100%) !important;
   border: none !important;
   border-radius: 100px !important;
   color: #000000 !important;
-  box-shadow: 0 4px 15px rgba(252, 228, 184, 0.25) !important;
+  box-shadow: 0 4px 15px rgba(245, 166, 35, 0.25) !important;
   transition: all 0.3s ease;
   padding: 1.2rem 2.5rem !important;
   min-width: 180px !important;
@@ -890,7 +890,7 @@ section.contacts-oval .oval-wrapper .oval-item {
 
 section.contacts-oval .oval-wrapper .oval-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 25px rgba(252, 228, 184, 0.4) !important;
+  box-shadow: 0 6px 25px rgba(245, 166, 35, 0.4) !important;
 }
 
 section.contacts-oval .oval-wrapper .oval-item .label {
