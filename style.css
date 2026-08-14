@@ -744,98 +744,99 @@ a { transition: color 0.6s; }
   .container-fluid { padding-left: 16px; padding-right: 16px; }
 }
 
-/* ===== ГАЛЕРЕЯ (компактная, без пустот) ===== */
-.gallery-grid {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  text-align: center;
-  width: 100%;
-}
-.gallery-grid h2 {
-  color: #1a0b2e;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-}
-.gallery-grid .year-row {
-  margin-bottom: 20rem;
-}
-.gallery-grid .year-row h3 {
-  font-size: 2rem;
-  color: #1a0b2e;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-}
-.gallery-grid .grid-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;               /* уменьшено с 4rem до 2rem */
-  width: 100%;
-  padding: 0 2rem;
-}
-.gallery-grid .grid-item {
-  background: transparent !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  box-shadow: none !important;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 280px;            /* уменьшено с 350px до 280px */
-  height: 400px;           /* уменьшено с 600px до 400px */
-}
-.gallery-grid .grid-item a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
-  line-height: 0;
-}
-.gallery-grid .grid-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;       /* вернули cover, чтобы не было пустот */
-  border-radius: 0.5rem;
-  display: block;
-  margin: 0;
-  padding: 0;
-  transform: scale(1.2);   /* увеличение на 20% */
-  transition: transform 0.3s ease;
-}
-.gallery-grid .grid-item .caption {
-  margin-top: 0.1rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #1a0b2e;
-  padding: 0;
-  line-height: 1.2;
-  position: relative;
-  z-index: 2;
-}
-@media (max-width: 768px) {
-  .gallery-grid .grid-container {
-    gap: 1.5rem;
-    padding: 0 1rem;
-  }
-  .gallery-grid .grid-item {
-    width: 220px;
-    height: 300px;
-  }
-  .gallery-grid .grid-item img {
-    transform: scale(1.2);
-  }
-}
-@media (max-width: 480px) {
-  .gallery-grid .grid-item {
+<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (4 в ряд, крупные контейнеры) ==================== -->
+<style>
+  .gallery-grid {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    text-align: center;
     width: 100%;
-    height: auto;
+  }
+  .gallery-grid h2 {
+    color: #1a0b2e;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+  }
+  .gallery-grid .year-row {
+    margin-bottom: 20rem;
+  }
+  .gallery-grid .year-row h3 {
+    font-size: 2rem;
+    color: #1a0b2e;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+  .gallery-grid .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* ровно 4 колонки */
+    gap: 3rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  .gallery-grid .grid-item {
+    background: transparent !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 450px;          /* увеличенный контейнер */
+  }
+  .gallery-grid .grid-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
   }
   .gallery-grid .grid-item img {
-    transform: scale(1.2);
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   /* фото не обрезается */
+    border-radius: 0.5rem;
+    display: block;
+    margin: 0;
+    padding: 0;
+    transform: scale(1.2); /* фото внутри крупнее */
+    transition: transform 0.3s ease;
   }
-}
+  .gallery-grid .grid-item .caption {
+    margin-top: 0.1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #1a0b2e;
+    padding: 0;
+    line-height: 1.2;
+    position: relative;
+    z-index: 2;
+  }
+  @media (max-width: 1200px) {
+    .gallery-grid .grid-container {
+      grid-template-columns: repeat(3, 1fr); /* 3 на средних экранах */
+    }
+  }
+  @media (max-width: 992px) {
+    .gallery-grid .grid-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 на планшетах */
+      gap: 2rem;
+    }
+    .gallery-grid .grid-item {
+      height: 350px;
+    }
+  }
+  @media (max-width: 600px) {
+    .gallery-grid .grid-container {
+      grid-template-columns: 1fr; /* 1 на телефонах */
+    }
+    .gallery-grid .grid-item {
+      height: auto;
+    }
+  }
+</style>
