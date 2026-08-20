@@ -829,13 +829,6 @@ a { transition: color 0.6s; }
   text-shadow: none;
 }
 
-/* Футер */
-div[style*="background-color: #000000"] {
-  background-color: rgba(0, 0, 0, 0.5) !important;
-  backdrop-filter: blur(4px);
-  color: #ffffff !important;
-}
-
 /* ===== НАВИГАЦИЯ (МЕНЮ) — ЧЁРНЫЙ ТЕКСТ ===== */
 
 /* Меню — текст чёрный */
@@ -907,14 +900,7 @@ section.contacts-oval .oval-wrapper .oval-item .value {
   font-size: 1rem !important;
 }
 
-@media (max-width: 600px) {
-  section.contacts-oval .oval-wrapper .oval-item {
-    padding: 0.8rem 1.8rem !important;
-    min-width: 140px !important;
-  }
-}
-
-/* ===== ШКАЛЫ НАВЫКОВ — ТОЧНО КАК КНОПКА "СВЯЗАТЬСЯ" ===== */
+/* ===== ШКАЛЫ НАВЫКОВ ===== */
 .skills-section .skill-fill {
   background: linear-gradient(90deg, #f59f00 0%, #fcc419 40%, #ffd43b 100%) !important;
   border-radius: 50px !important;
@@ -933,257 +919,6 @@ section.contacts-oval .oval-wrapper .oval-item .value {
 
 .skills-section .skill-fill:hover {
   box-shadow: 0 2px 25px rgba(245, 159, 0, 0.4);
-}
-
-/* ===== МОБИЛЬНАЯ ОПТИМИЗАЦИЯ ===== */
-
-/* --- Мобильные отступы для всех секций --- */
-@media (max-width: 768px) {
-  .gallery-grid,
-  .skills-section,
-  .timeline-tree,
-  .contacts-oval {
-    padding-top: 2.5rem !important;
-    padding-bottom: 2.5rem !important;
-  }
-  
-  .gallery-grid h2,
-  .skills-section .section-title,
-  .timeline-tree h2,
-  .contacts-oval h2 {
-    font-size: 1.8rem !important;
-    margin-bottom: 1.5rem !important;
-  }
-  
-  .gallery-grid .year-row h3 {
-    font-size: 1.4rem !important;
-    margin-bottom: 1rem !important;
-  }
-  
-  .gallery-grid .year-row {
-    margin-bottom: 2.5rem !important;
-  }
-  
-  /* Текст "По каждой фотографии..." */
-  .gallery-grid > div:last-child p {
-    font-size: 1.1rem !important;
-    padding: 0 0.5rem !important;
-  }
-}
-
-/* --- HERO-СЕКЦИЯ НА МОБИЛЬНЫХ --- */
-@media (max-width: 768px) {
-  .cid-vrMAloTEiy .content-wrap {
-    padding: 0 1rem !important;
-  }
-  
-  .cid-vrMAloTEiy .mbr-section-title {
-    font-size: 2.2rem !important;
-  }
-  
-  .cid-vrMAloTEiy .mbr-text {
-    font-size: 1.2rem !important;
-  }
-  
-  .cid-vrMAloTEiy .mbr-section-btn .btn {
-    font-size: 1rem !important;
-    padding: 0.6rem 1.8rem !important;
-  }
-  
-  .cid-vrMAloTEiy [style*="border: 2px solid"] {
-    font-size: 0.8rem !important;
-    padding: 0.2rem 1.5rem !important;
-    white-space: normal !important;
-  }
-}
-
-/* --- МЕТРИКИ НА МОБИЛЬНЫХ --- */
-@media (max-width: 768px) {
-  .cid-vrMAloT6q9 {
-    padding-top: 2.5rem !important;
-    padding-bottom: 1.5rem !important;
-  }
-  
-  .cid-vrMAloT6q9 .item-wrapper .num {
-    font-size: 2rem !important;
-  }
-  
-  .cid-vrMAloT6q9 .item-wrapper .card-title {
-    font-size: 1.2rem !important;
-    white-space: normal !important;
-  }
-  
-  .cid-vrMAloT6q9 .item-mb {
-    margin-bottom: 1rem !important;
-  }
-}
-
-/* --- ГАЛЕРЕЯ НА МОБИЛЬНЫХ --- */
-@media (max-width: 600px) {
-  .gallery-grid .grid-container {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-    padding: 0 1rem !important;
-  }
-  
-  .gallery-grid .grid-item {
-    max-height: none !important;
-  }
-  
-  .gallery-grid .grid-item a {
-    max-height: 280px !important;
-    min-height: 180px !important;
-  }
-  
-  .gallery-grid .grid-item img {
-    max-width: 96% !important;
-    max-height: 96% !important;
-  }
-  
-  .gallery-grid .grid-item .caption {
-    font-size: 0.8rem !important;
-    min-height: 2rem !important;
-  }
-}
-
-/* --- ОБО МНЕ НА МОБИЛЬНЫХ --- */
-@media (max-width: 768px) {
-  .cid-vrMAloTPui {
-    padding-top: 1rem !important;
-    padding-bottom: 2rem !important;
-  }
-  
-  .cid-vrMAloTPui .mbr-section-title {
-    font-size: 2rem !important;
-  }
-  
-  .cid-vrMAloTPui .mbr-section-subtitle {
-    font-size: 1.2rem !important;
-  }
-  
-  .cid-vrMAloTPui .mbr-text {
-    font-size: 1rem !important;
-    padding: 0 0.5rem !important;
-  }
-}
-
-/* --- НАВЫКИ НА МОБИЛЬНЫХ --- */
-@media (max-width: 768px) {
-  .skills-section .skill-name {
-    font-size: 0.95rem !important;
-  }
-  
-  .skills-section .skill-level-text {
-    font-size: 0.8rem !important;
-  }
-  
-  .skills-section .skill-bar {
-    height: 10px !important;
-  }
-  
-  .skills-section .equipment-info p {
-    font-size: 0.9rem !important;
-  }
-  
-  .skills-section .tag {
-    font-size: 0.75rem !important;
-    padding: 0.3rem 0.8rem !important;
-  }
-}
-
-/* --- ОБРАЗОВАНИЕ НА МОБИЛЬНЫХ --- */
-@media (max-width: 768px) {
-  .timeline-tree .tree {
-    padding-left: 1.5rem !important;
-  }
-  
-  .timeline-tree .tree-item {
-    padding: 1.2rem 1.2rem !important;
-  }
-  
-  .timeline-tree .tree-item .year {
-    font-size: 1.3rem !important;
-  }
-  
-  .timeline-tree .tree-item .company {
-    font-size: 1.1rem !important;
-  }
-  
-  .timeline-tree .tree-item .position {
-    font-size: 0.95rem !important;
-  }
-  
-  .timeline-tree .tree-item .description {
-    font-size: 0.9rem !important;
-  }
-  
-  .timeline-tree .tree-item::before {
-    left: -1.5rem !important;
-    top: 1.2rem !important;
-    width: 12px !important;
-    height: 12px !important;
-  }
-}
-
-/* --- КОНТАКТЫ НА МОБИЛЬНЫХ --- */
-@media (max-width: 600px) {
-  .contacts-oval .oval-wrapper {
-    gap: 0.8rem !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-  
-  .contacts-oval .oval-item {
-    width: 100% !important;
-    max-width: 280px !important;
-    padding: 0.8rem 1.5rem !important;
-    min-width: unset !important;
-  }
-  
-  .contacts-oval .oval-item .label {
-    font-size: 0.7rem !important;
-  }
-  
-  .contacts-oval .oval-item .value {
-    font-size: 0.85rem !important;
-  }
-}
-
-/* --- МЕНЮ НА МОБИЛЬНЫХ --- */
-@media (max-width: 768px) {
-  .cid-vrMAloSBlR .container {
-    height: 56px !important;
-    padding: 0.3rem 0.8rem !important;
-    margin-top: 0.5rem !important;
-    width: 95% !important;
-  }
-  
-  .cid-vrMAloSBlR .navbar-caption {
-    font-size: 1rem !important;
-    padding-left: 0.5rem !important;
-  }
-  
-  .cid-vrMAloSBlR .navbar-buttons .btn {
-    font-size: 0.8rem !important;
-    padding: 0.3rem 1rem !important;
-  }
-  
-  .cid-vrMAloSBlR .navbar-collapse {
-    padding: 0.8rem !important;
-  }
-  
-  .cid-vrMAloSBlR .navbar-nav .nav-item .nav-link {
-    padding: 10px !important;
-    font-size: 1rem !important;
-  }
-}
-
-/* --- ФУТЕР НА МОБИЛЬНЫХ --- */
-@media (max-width: 768px) {
-  div[style*="background-color: #000000"] {
-    font-size: 0.6rem !important;
-    padding: 1rem 0 !important;
-  }
 }
 
 /* ===== МОИ РАБОТЫ ПО ГОДАМ (4 в ряд, крупные контейнеры) ===== */
@@ -1298,25 +1033,6 @@ section.contacts-oval .oval-wrapper .oval-item .value {
     max-height: 94%;
   }
 }
-@media (max-width: 600px) {
-  .gallery-grid .grid-container {
-    grid-template-columns: 1fr;
-  }
-  .gallery-grid .grid-item {
-    max-height: none;
-  }
-  .gallery-grid .grid-item a {
-    max-height: 280px;
-    min-height: 180px;
-  }
-  .gallery-grid .grid-item img {
-    max-width: 96%;
-    max-height: 96%;
-  }
-  .gallery-grid .grid-item .caption {
-    min-height: 2rem;
-  }
-}
 
 
 /* ================================================================ */
@@ -1352,15 +1068,15 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
 
 
 /* ================================================================ */
-/* ===== МОБИЛЬНАЯ ВЕРСИЯ - ПОЛНОСТЬЮ ПЕРЕОПРЕДЕЛЯЕМ ===== */
+/* ===== ТОЛЬКО ДЛЯ ТЕЛЕФОНОВ (ширина до 768px) ===== */
 /* ================================================================ */
 
 @media (max-width: 768px) {
 
   /* --- УБИРАЕМ ВСЕ ОТСТУПЫ И ДЕЛАЕМ НА ВСЮ ШИРИНУ --- */
   .container, .container-fluid {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
     max-width: 100% !important;
   }
   .row {
@@ -1368,8 +1084,8 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     margin-right: 0 !important;
   }
   .col-12, .col-md-10, .col-lg-6, .col-lg-4 {
-    padding-left: 5px !important;
-    padding-right: 5px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
   }
 
   /* --- ТЕКСТ - КРУПНЫЙ И ЧИТАЕМЫЙ --- */
@@ -1381,7 +1097,7 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     font-size: 1rem !important;
   }
   .display-1 {
-    font-size: 2.8rem !important;
+    font-size: 2.6rem !important;
     line-height: 1.2 !important;
   }
   .display-2 {
@@ -1402,23 +1118,23 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     justify-content: center !important;
   }
   .cid-vrMAloTEiy .content-wrap {
-    padding: 0 1rem !important;
+    padding: 0 0.5rem !important;
     width: 100% !important;
   }
   .cid-vrMAloTEiy .mbr-section-title {
-    font-size: 2.6rem !important;
+    font-size: 2.4rem !important;
   }
   .cid-vrMAloTEiy .mbr-text {
-    font-size: 1.3rem !important;
+    font-size: 1.2rem !important;
   }
   .cid-vrMAloTEiy [style*="border: 2px solid"] {
-    font-size: 0.75rem !important;
-    padding: 0.3rem 1rem !important;
+    font-size: 0.7rem !important;
+    padding: 0.2rem 1rem !important;
     white-space: normal !important;
   }
   .cid-vrMAloTEiy .btn-white-outline {
     font-size: 1rem !important;
-    padding: 0.7rem 2rem !important;
+    padding: 0.6rem 1.8rem !important;
   }
 
   /* --- МЕТРИКИ - 3 КОЛОНКИ В РЯД --- */
@@ -1436,21 +1152,21 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     flex: 0 0 33.333% !important;
     max-width: 33.333% !important;
     margin-bottom: 0.5rem !important;
-    padding: 0 3px !important;
+    padding: 0 2px !important;
   }
   .cid-vrMAloT6q9 .item-wrapper .num {
     font-size: 2rem !important;
   }
   .cid-vrMAloT6q9 .item-wrapper .card-title {
-    font-size: 0.65rem !important;
+    font-size: 0.6rem !important;
     white-space: normal !important;
     line-height: 1.2 !important;
   }
 
   /* --- ОБО МНЕ --- */
   .cid-vrMAloTPui {
-    padding-top: 1.5rem !important;
-    padding-bottom: 2rem !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1.5rem !important;
   }
   .cid-vrMAloTPui .mbr-section-title {
     font-size: 2rem !important;
@@ -1459,75 +1175,75 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     font-size: 1.3rem !important;
   }
   .cid-vrMAloTPui .mbr-text {
-    font-size: 1.05rem !important;
+    font-size: 1rem !important;
   }
 
   /* --- НАВЫКИ --- */
   .skills-section {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
   }
   .skills-section .section-title {
     font-size: 2rem !important;
     margin-bottom: 1.5rem !important;
   }
   .skills-section .skill-name {
-    font-size: 0.95rem !important;
-  }
-  .skills-section .skill-level-text {
-    font-size: 0.8rem !important;
-  }
-  .skills-section .skill-bar {
-    height: 10px !important;
-  }
-  .skills-section .equipment-info p {
     font-size: 0.9rem !important;
   }
+  .skills-section .skill-level-text {
+    font-size: 0.75rem !important;
+  }
+  .skills-section .skill-bar {
+    height: 8px !important;
+  }
+  .skills-section .equipment-info p {
+    font-size: 0.85rem !important;
+  }
   .skills-section .tag {
-    font-size: 0.7rem !important;
-    padding: 0.25rem 0.8rem !important;
+    font-size: 0.65rem !important;
+    padding: 0.2rem 0.7rem !important;
   }
   .skills-section .col-lg-6 {
-    padding: 0 5px !important;
+    padding: 0 4px !important;
   }
 
   /* --- ГАЛЕРЕЯ - 1 КОЛОНКА, БОЛЬШИЕ КАРТИНКИ --- */
   .gallery-grid {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
   }
   .gallery-grid h2 {
     font-size: 2rem !important;
     margin-bottom: 1.5rem !important;
   }
   .gallery-grid .year-row h3 {
-    font-size: 1.4rem !important;
-    margin-bottom: 1rem !important;
+    font-size: 1.3rem !important;
+    margin-bottom: 0.8rem !important;
   }
   .gallery-grid .year-row {
     margin-bottom: 2rem !important;
   }
   .gallery-grid .grid-container {
     grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-    padding: 0 0.5rem !important;
+    gap: 1.2rem !important;
+    padding: 0 0.3rem !important;
   }
   .gallery-grid .grid-item {
     max-height: none !important;
   }
   .gallery-grid .grid-item a {
-    max-height: 320px !important;
-    min-height: 220px !important;
+    max-height: 300px !important;
+    min-height: 200px !important;
   }
   .gallery-grid .grid-item img {
     max-width: 96% !important;
     max-height: 96% !important;
-    min-height: 140px !important;
-    min-width: 140px !important;
+    min-height: 120px !important;
+    min-width: 120px !important;
   }
   .gallery-grid .grid-item .caption {
-    font-size: 0.85rem !important;
-    min-height: 2.2rem !important;
+    font-size: 0.8rem !important;
+    min-height: 2rem !important;
   }
   .gallery-grid > div:last-child p {
     font-size: 1rem !important;
@@ -1537,50 +1253,50 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
 
   /* --- ТАЙМЛАЙН --- */
   .timeline-tree {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
   }
   .timeline-tree h2 {
     font-size: 2rem !important;
     margin-bottom: 1.5rem !important;
   }
   .timeline-tree .tree {
-    padding-left: 1.2rem !important;
+    padding-left: 1rem !important;
     padding-right: 0.5rem !important;
   }
   .timeline-tree .tree-item {
-    padding: 1.2rem 1rem !important;
-    margin-bottom: 1.5rem !important;
-    border-radius: 1rem !important;
+    padding: 1rem 0.8rem !important;
+    margin-bottom: 1.2rem !important;
+    border-radius: 0.8rem !important;
   }
   .timeline-tree .tree-item::before {
-    left: -1.2rem !important;
-    top: 1.2rem !important;
-    width: 12px !important;
-    height: 12px !important;
+    left: -1rem !important;
+    top: 1rem !important;
+    width: 10px !important;
+    height: 10px !important;
     border-width: 2px !important;
   }
   .timeline-tree .tree::before {
     width: 2px !important;
   }
   .timeline-tree .tree-item .year {
-    font-size: 1.1rem !important;
-  }
-  .timeline-tree .tree-item .company {
     font-size: 1rem !important;
   }
+  .timeline-tree .tree-item .company {
+    font-size: 0.95rem !important;
+  }
   .timeline-tree .tree-item .position {
-    font-size: 0.9rem !important;
+    font-size: 0.85rem !important;
   }
   .timeline-tree .tree-item .description {
-    font-size: 0.85rem !important;
-    line-height: 1.5 !important;
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
   }
 
   /* --- КОНТАКТЫ - ОВАЛЫ В КОЛОНКУ --- */
   .contacts-oval {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
   }
   .contacts-oval h2 {
     font-size: 2rem !important;
@@ -1589,83 +1305,83 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
   .contacts-oval .oval-wrapper {
     flex-direction: column !important;
     align-items: center !important;
-    gap: 0.8rem !important;
+    gap: 0.6rem !important;
   }
   .contacts-oval .oval-item {
     width: 100% !important;
-    max-width: 300px !important;
-    padding: 0.8rem 1.5rem !important;
+    max-width: 280px !important;
+    padding: 0.7rem 1.2rem !important;
     min-width: unset !important;
     border-radius: 50px !important;
   }
   .contacts-oval .oval-item .label {
-    font-size: 0.7rem !important;
+    font-size: 0.65rem !important;
   }
   .contacts-oval .oval-item .value {
-    font-size: 0.9rem !important;
+    font-size: 0.85rem !important;
   }
 
   /* --- МЕНЮ --- */
   .cid-vrMAloSBlR .container {
-    height: 50px !important;
-    padding: 0.2rem 0.6rem !important;
-    margin-top: 0.5rem !important;
+    height: 48px !important;
+    padding: 0.2rem 0.5rem !important;
+    margin-top: 0.4rem !important;
     width: 96% !important;
     border-radius: 50px !important;
   }
   .cid-vrMAloSBlR .navbar-caption {
-    font-size: 0.95rem !important;
-    padding-left: 0.3rem !important;
+    font-size: 0.9rem !important;
+    padding-left: 0.2rem !important;
   }
   .cid-vrMAloSBlR .navbar-buttons .btn {
-    font-size: 0.7rem !important;
-    padding: 0.25rem 0.9rem !important;
+    font-size: 0.65rem !important;
+    padding: 0.2rem 0.8rem !important;
     border-radius: 50px !important;
   }
   .cid-vrMAloSBlR .navbar-toggler {
-    transform: scale(0.7) !important;
-    margin-left: 4px !important;
+    transform: scale(0.65) !important;
+    margin-left: 2px !important;
     margin-right: 0 !important;
   }
   .cid-vrMAloSBlR .navbar-collapse {
-    padding: 0.8rem !important;
-    border-radius: 1.2rem !important;
+    padding: 0.6rem !important;
+    border-radius: 1rem !important;
     top: 115% !important;
   }
   .cid-vrMAloSBlR .navbar-nav .nav-item .nav-link {
-    padding: 10px !important;
-    font-size: 1rem !important;
+    padding: 8px !important;
+    font-size: 0.9rem !important;
   }
 
   /* --- ГАМБУРГЕР --- */
   .cid-vrMAloSBlR .navbar-toggler .hamburger span {
-    width: 24px !important;
+    width: 20px !important;
     height: 2px !important;
   }
   .cid-vrMAloSBlR .navbar-toggler .hamburger span:nth-child(2),
   .cid-vrMAloSBlR .navbar-toggler .hamburger span:nth-child(3) {
-    top: 6px !important;
+    top: 5px !important;
   }
   .cid-vrMAloSBlR .navbar-toggler .hamburger span:nth-child(4) {
-    top: 12px !important;
+    top: 10px !important;
   }
   .cid-vrMAloSBlR nav.opened .hamburger span:nth-child(1),
   .cid-vrMAloSBlR nav.opened .hamburger span:nth-child(4) {
-    top: 6px !important;
+    top: 5px !important;
   }
 
   /* --- ФУТЕР --- */
   .footer-dark,
   div[style*="background-color: #000000"] {
-    font-size: 0.55rem !important;
-    padding: 0.8rem 0 !important;
-    letter-spacing: 0.3px !important;
+    font-size: 0.5rem !important;
+    padding: 0.6rem 0 !important;
+    letter-spacing: 0.2px !important;
   }
 
   /* --- КНОПКИ --- */
   .mbr-section-btn .btn {
-    padding: 0.7rem 1.8rem !important;
-    font-size: 1rem !important;
+    padding: 0.6rem 1.5rem !important;
+    font-size: 0.95rem !important;
     border-radius: 50px !important;
   }
 
@@ -1681,5 +1397,24 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
   section {
     padding-left: 0 !important;
     padding-right: 0 !important;
+  }
+}
+
+/* ===== ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ (ДО 400px) ===== */
+@media (max-width: 400px) {
+  .cid-vrMAloT6q9 .item-mb {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  .cid-vrMAloT6q9 .item-wrapper .num {
+    font-size: 2.2rem !important;
+  }
+  .cid-vrMAloT6q9 .item-wrapper .card-title {
+    font-size: 0.8rem !important;
+  }
+  .display-1 { font-size: 2.2rem !important; }
+  .display-2 { font-size: 1.8rem !important; }
+  .cid-vrMAloTEiy .mbr-section-title {
+    font-size: 2rem !important;
   }
 }
