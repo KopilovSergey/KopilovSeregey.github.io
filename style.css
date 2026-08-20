@@ -158,20 +158,25 @@ body {
   box-shadow: none;
 }
 
+/* ===== КНОПКА "ПРОЕКТЫ" В HERO — ОВАЛЬНАЯ ===== */
 .btn-white-outline,
 .btn-white-outline:active {
   background-color: transparent !important;
-  border-color: #fafafa;
-  color: #fafafa;
+  border-color: #fafafa !important;
+  color: #fafafa !important;
+  border-radius: 100px !important;
+  padding: 0.7rem 2.5rem !important;
+  border-width: 2px !important;
 }
 .btn-white-outline:hover,
 .btn-white-outline:focus,
 .btn-white-outline.focus,
 .btn-white-outline.active {
   color: #cfcfcf !important;
-  background-color: transparent !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
   border-color: #cfcfcf !important;
   box-shadow: none !important;
+  border-radius: 100px !important;
 }
 
 /* ===== ЦВЕТОВЫЕ КЛАССЫ ДЛЯ ТЕКСТА ===== */
@@ -270,6 +275,7 @@ a { transition: color 0.6s; }
   color: #000000 !important;
   box-shadow: 0 4px 15px rgba(245, 159, 0, 0.35);
   transition: all 0.3s ease;
+  border-radius: 100px !important;
 }
 
 /* ===== ОРАНЖЕВЫЙ ГРАДИЕНТ ===== */
@@ -443,25 +449,25 @@ section.contacts-oval .oval-wrapper .oval-item .value {
 }
 
 /* ================================================================ */
-/* ===== ТОЛЬКО ДЛЯ ТЕЛЕФОНОВ (ДО 768px) ===== */
+/* ===== ПОЛНОСТЬЮ МОБИЛЬНАЯ ВЕРСИЯ (ДО 768px) ===== */
 /* ================================================================ */
 
 @media (max-width: 768px) {
 
-  /* --- МЕНЮ - ДЕЛАЕМ ПРОЗРАЧНЫМ, УБИРАЕМ ЧЁРНЫЙ ФОН --- */
+  /* --- МЕНЮ --- */
   .cid-vrMAloSBlR .container {
-    background: rgba(255, 255, 255, 0.7) !important;
+    background: rgba(255, 255, 255, 0.85) !important;
     backdrop-filter: blur(16px) !important;
     border: 1px solid rgba(255, 255, 255, 0.3) !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
-    height: 54px !important;
+    height: 50px !important;
     padding: 0.2rem 0.6rem !important;
     margin-top: 0.4rem !important;
     width: 96% !important;
     border-radius: 50px !important;
   }
   .cid-vrMAloSBlR .navbar-caption {
-    font-size: 1rem !important;
+    font-size: 0.95rem !important;
     padding-left: 0.3rem !important;
   }
   .cid-vrMAloSBlR .navbar-buttons .btn {
@@ -483,12 +489,11 @@ section.contacts-oval .oval-wrapper .oval-item .value {
   }
   .cid-vrMAloSBlR .navbar-nav .nav-item .nav-link {
     padding: 10px !important;
-    font-size: 1rem !important;
+    font-size: 0.95rem !important;
   }
 
-  /* --- ГАМБУРГЕР --- */
   .cid-vrMAloSBlR .navbar-toggler .hamburger span {
-    width: 24px !important;
+    width: 22px !important;
     height: 2px !important;
     background-color: #000000 !important;
   }
@@ -504,10 +509,10 @@ section.contacts-oval .oval-wrapper .oval-item .value {
     top: 6px !important;
   }
 
-  /* --- УБИРАЕМ ВСЕ ОТСТУПЫ --- */
+  /* --- ВСЕ КОНТЕЙНЕРЫ НА ВСЮ ШИРИНУ --- */
   .container, .container-fluid {
-    padding-left: 8px !important;
-    padding-right: 8px !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
     max-width: 100% !important;
   }
   .row {
@@ -515,32 +520,32 @@ section.contacts-oval .oval-wrapper .oval-item .value {
     margin-right: 0 !important;
   }
   .col-12, .col-md-10, .col-lg-6, .col-lg-4 {
-    padding-left: 4px !important;
-    padding-right: 4px !important;
+    padding-left: 3px !important;
+    padding-right: 3px !important;
   }
 
-  /* --- ТЕКСТ - БОЛЬШОЙ И ЧИТАЕМЫЙ --- */
+  /* --- ТЕКСТ - БОЛЬШОЙ --- */
   body, p, .mbr-text, .display-7 {
-    font-size: 1.3rem !important;
+    font-size: 1.4rem !important;
     line-height: 1.6 !important;
   }
   .display-4 {
     font-size: 1rem !important;
   }
   .display-1 {
-    font-size: 2.8rem !important;
+    font-size: 3rem !important;
     line-height: 1.2 !important;
   }
   .display-2 {
-    font-size: 2.2rem !important;
+    font-size: 2.4rem !important;
     line-height: 1.2 !important;
   }
   .display-5 {
-    font-size: 1.6rem !important;
+    font-size: 1.8rem !important;
     line-height: 1.4 !important;
   }
 
-  /* --- HERO - НА ВЕСЬ ЭКРАН --- */
+  /* --- HERO --- */
   .cid-vrMAloTEiy {
     min-height: 100vh !important;
     height: 100vh !important;
@@ -553,10 +558,10 @@ section.contacts-oval .oval-wrapper .oval-item .value {
     width: 100% !important;
   }
   .cid-vrMAloTEiy .mbr-section-title {
-    font-size: 2.6rem !important;
+    font-size: 2.8rem !important;
   }
   .cid-vrMAloTEiy .mbr-text {
-    font-size: 1.3rem !important;
+    font-size: 1.4rem !important;
   }
   .cid-vrMAloTEiy [style*="border: 2px solid"] {
     font-size: 0.8rem !important;
@@ -566,9 +571,10 @@ section.contacts-oval .oval-wrapper .oval-item .value {
   .cid-vrMAloTEiy .btn-white-outline {
     font-size: 1.1rem !important;
     padding: 0.7rem 2.2rem !important;
+    border-radius: 100px !important;
   }
 
-  /* --- МЕТРИКИ - 3 КОЛОНКИ --- */
+  /* --- МЕТРИКИ --- */
   .cid-vrMAloT6q9 {
     padding-top: 2.5rem !important;
     padding-bottom: 1.5rem !important;
@@ -586,7 +592,7 @@ section.contacts-oval .oval-wrapper .oval-item .value {
     padding: 0 2px !important;
   }
   .cid-vrMAloT6q9 .item-wrapper .num {
-    font-size: 2.2rem !important;
+    font-size: 2.4rem !important;
   }
   .cid-vrMAloT6q9 .item-wrapper .card-title {
     font-size: 0.7rem !important;
@@ -600,13 +606,13 @@ section.contacts-oval .oval-wrapper .oval-item .value {
     padding-bottom: 2rem !important;
   }
   .cid-vrMAloTPui .mbr-section-title {
-    font-size: 2.2rem !important;
+    font-size: 2.4rem !important;
   }
   .cid-vrMAloTPui .mbr-section-subtitle {
-    font-size: 1.4rem !important;
+    font-size: 1.5rem !important;
   }
   .cid-vrMAloTPui .mbr-text {
-    font-size: 1.1rem !important;
+    font-size: 1.2rem !important;
   }
 
   /* --- НАВЫКИ --- */
@@ -619,23 +625,26 @@ section.contacts-oval .oval-wrapper .oval-item .value {
     margin-bottom: 1.5rem !important;
   }
   .skills-section .skill-name {
-    font-size: 1rem !important;
+    font-size: 1.1rem !important;
   }
   .skills-section .skill-level-text {
-    font-size: 0.8rem !important;
+    font-size: 0.85rem !important;
   }
   .skills-section .skill-bar {
-    height: 10px !important;
+    height: 12px !important;
   }
   .skills-section .equipment-info p {
-    font-size: 0.95rem !important;
+    font-size: 1rem !important;
   }
   .skills-section .tag {
-    font-size: 0.7rem !important;
-    padding: 0.3rem 0.8rem !important;
+    font-size: 0.75rem !important;
+    padding: 0.3rem 0.9rem !important;
+  }
+  .skills-section .col-lg-6 {
+    padding: 0 4px !important;
   }
 
-  /* --- ГАЛЕРЕЯ - 1 КОЛОНКА, БОЛЬШИЕ КАРТИНКИ --- */
+  /* --- ГАЛЕРЕЯ - 1 КОЛОНКА --- */
   .gallery-grid {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
@@ -670,7 +679,7 @@ section.contacts-oval .oval-wrapper .oval-item .value {
     min-width: 160px !important;
   }
   .gallery-grid .grid-item .caption {
-    font-size: 0.9rem !important;
+    font-size: 0.95rem !important;
     min-height: 2.2rem !important;
   }
   .gallery-grid > div:last-child p {
@@ -721,7 +730,7 @@ section.contacts-oval .oval-wrapper .oval-item .value {
     line-height: 1.5 !important;
   }
 
-  /* --- КОНТАКТЫ - ОВАЛЫ В КОЛОНКУ --- */
+  /* --- КОНТАКТЫ --- */
   .contacts-oval {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
@@ -743,17 +752,17 @@ section.contacts-oval .oval-wrapper .oval-item .value {
     border-radius: 50px !important;
   }
   .contacts-oval .oval-item .label {
-    font-size: 0.7rem !important;
+    font-size: 0.75rem !important;
   }
   .contacts-oval .oval-item .value {
-    font-size: 0.9rem !important;
+    font-size: 0.95rem !important;
   }
 
   /* --- КНОПКИ --- */
   .mbr-section-btn .btn {
     padding: 0.8rem 2rem !important;
     font-size: 1.1rem !important;
-    border-radius: 50px !important;
+    border-radius: 100px !important;
   }
 
   /* --- ФУТЕР --- */
@@ -782,7 +791,7 @@ section.contacts-oval .oval-wrapper .oval-item .value {
     background: transparent !important;
   }
   .cid-vrMAloSBlR .container {
-    background: rgba(255, 255, 255, 0.7) !important;
+    background: rgba(255, 255, 255, 0.85) !important;
   }
   .cid-vrMAloSBlR .navbar {
     background: transparent !important;
@@ -796,15 +805,15 @@ section.contacts-oval .oval-wrapper .oval-item .value {
     max-width: 100% !important;
   }
   .cid-vrMAloT6q9 .item-wrapper .num {
-    font-size: 2.4rem !important;
+    font-size: 2.6rem !important;
   }
   .cid-vrMAloT6q9 .item-wrapper .card-title {
-    font-size: 0.8rem !important;
+    font-size: 0.85rem !important;
   }
-  .display-1 { font-size: 2.2rem !important; }
-  .display-2 { font-size: 1.8rem !important; }
+  .display-1 { font-size: 2.4rem !important; }
+  .display-2 { font-size: 2rem !important; }
   .cid-vrMAloTEiy .mbr-section-title {
-    font-size: 2rem !important;
+    font-size: 2.2rem !important;
   }
   .gallery-grid .grid-item a {
     max-height: 280px !important;
@@ -814,13 +823,16 @@ section.contacts-oval .oval-wrapper .oval-item .value {
     min-height: 120px !important;
     min-width: 120px !important;
   }
+  .contacts-oval .oval-item {
+    max-width: 260px !important;
+    padding: 0.7rem 1.2rem !important;
+  }
 }
 
 /* ================================================================ */
-/* ===== ФИКС: ПОЛНОСТЬЮ УБИРАЕМ ЧЁРНЫЙ ФОН С МЕНЮ ===== */
+/* ===== ФИКС: УБИРАЕМ ЧЁРНЫЙ ФОН У МЕНЮ НА ВСЕХ УСТРОЙСТВАХ ===== */
 /* ================================================================ */
 
-/* Принудительно делаем меню прозрачным на всех устройствах */
 .cid-vrMAloSBlR .container {
   background: rgba(255, 255, 255, 0.6) !important;
   backdrop-filter: blur(12px) !important;
@@ -834,17 +846,4 @@ section.contacts-oval .oval-wrapper .oval-item .value {
 .cid-vrMAloSBlR .navbar-collapse {
   background: transparent !important;
   background-color: transparent !important;
-}
-
-/* Убираем чёрную полосу вверху - скрываем любой div с чёрным фоном */
-body > div[style*="background-color: #000000"],
-body > div[style*="background-color:#000000"],
-body > div[style*="background-color: black"],
-body > div[style*="background-color:black"] {
-  display: none !important;
-}
-
-/* Показываем только футер */
-.footer-dark {
-  display: block !important;
 }
