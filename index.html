@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise AI v0.01, ai.mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5">
 
-  <!-- Favicon (три формата) -->
+  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -14,14 +14,11 @@
   <meta name="description" content="Портфолио инженера-конструктора. Проектирование защитных аксессуаров для квадроциклов и снегоходов из стали, алюминия и ПЭНД.">
   <title>Копылов Сергей - инженер-конструктор</title>
 
-  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://ai.mobirise.com">
-  <link rel="dns-prefetch" href="https://ai-builder.mobirise.com">
 
-  <!-- Кеширование -->
   <meta http-equiv="Cache-Control" content="public, max-age=604800, immutable">
 
   <!-- Внешние стили Mobirise -->
@@ -35,15 +32,414 @@
   <link rel="stylesheet" href="https://ai.mobirise.com/assets/startm5/animatecss/animate.css?v=m3frcrn2">
   <link rel="stylesheet" href="https://ai.mobirise.com/assets/startm5/theme/css/style.css?v=m3frcrn2">
 
-  <!-- Шрифт Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Дополнительный CSS от Mobirise -->
   <link rel="stylesheet" href="https://ai-builder.mobirise.com/api/v2/themes/startm5-next/additional.css?v=0Tg50PK5XtpL3E-AsAXeYA&backgroundColor=%23F5F1FA&primaryColor=%23C8B1E4&secondaryColor=%23532B88&successColor=%237BE7B5&infoColor=%236BE0F7&warningColor=%23FFD863&dangerColor=%23E87A85&mainFont=Inter&display1Font=Inter&display1Size=5&display2Font=Inter&display2Size=4&display5Font=Inter&display5Size=2.5&display7Font=Inter&display7Size=1.4&display4Font=Inter&display4Size=1.2&isRoundedImages=true&isRoundedButtons=true&isLargeButtons=true&isGhostButtonBorder=true&underlinedLinks=false&isAnimatedOnScroll=false&isScrollToTopButton=false" type="text/css">
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- Оптимизация загрузки на мобильных -->
+  <style>
+    /* ===== ДОПОЛНИТЕЛЬНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
+    
+    /* Убираем горизонтальный скролл */
+    html, body {
+      overflow-x: hidden !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    * {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Спиннер */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #b88cd4 0%, #a06bc9 25%, #8a4fc9 50%, #a06bc9 75%, #c79ae8 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.8s ease;
+    }
+    #loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #loader .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+      border-top: 5px solid #f59f00;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    #loader .loader-text {
+      color: rgba(255, 255, 255, 0.8);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      margin-top: 20px;
+      letter-spacing: 1px;
+    }
+
+    /* ===== МОБИЛЬНАЯ ВЕРСИЯ (ДО 768px) ===== */
+    @media (max-width: 768px) {
+
+      /* --- Общие --- */
+      .container, .container-fluid {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+      }
+      .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      .col-12, .col-md-10, .col-lg-6, .col-lg-4 {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+      }
+
+      /* --- Текст --- */
+      body, p, .mbr-text, .display-7, .display-4 {
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+      }
+      .display-1 { font-size: 2.6rem !important; line-height: 1.2 !important; }
+      .display-2 { font-size: 2.2rem !important; line-height: 1.2 !important; }
+      .display-5 { font-size: 1.5rem !important; line-height: 1.4 !important; }
+
+      /* --- HERO --- */
+      .cid-vrMAloTEiy .content-wrap {
+        padding: 0 0.5rem !important;
+      }
+      .cid-vrMAloTEiy .mbr-section-title {
+        font-size: 2.4rem !important;
+      }
+      .cid-vrMAloTEiy .mbr-text {
+        font-size: 1.2rem !important;
+      }
+      .cid-vrMAloTEiy [style*="border: 2px solid"] {
+        font-size: 0.75rem !important;
+        padding: 0.3rem 1.2rem !important;
+        white-space: normal !important;
+      }
+      .cid-vrMAloTEiy .btn-white-outline {
+        font-size: 1rem !important;
+        padding: 0.7rem 2rem !important;
+      }
+
+      /* --- Метрики (3 колонки в ряд) --- */
+      .cid-vrMAloT6q9 .item-wrapper .num {
+        font-size: 2.2rem !important;
+      }
+      .cid-vrMAloT6q9 .item-wrapper .card-title {
+        font-size: 0.85rem !important;
+        white-space: normal !important;
+      }
+      .cid-vrMAloT6q9 .row {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+      }
+      .cid-vrMAloT6q9 .item-mb {
+        flex: 0 0 33.333% !important;
+        max-width: 33.333% !important;
+        margin-bottom: 1rem !important;
+      }
+
+      /* --- Обо мне --- */
+      .cid-vrMAloTPui {
+        padding-top: 1.5rem !important;
+        padding-bottom: 2.5rem !important;
+      }
+      .cid-vrMAloTPui .mbr-section-title {
+        font-size: 2rem !important;
+      }
+      .cid-vrMAloTPui .mbr-section-subtitle {
+        font-size: 1.3rem !important;
+      }
+      .cid-vrMAloTPui .mbr-text {
+        font-size: 1rem !important;
+        padding: 0 0.2rem !important;
+      }
+
+      /* --- Навыки --- */
+      .skills-section {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+      }
+      .skills-section .section-title {
+        font-size: 2rem !important;
+      }
+      .skills-section .skill-name {
+        font-size: 0.95rem !important;
+      }
+      .skills-section .skill-level-text {
+        font-size: 0.8rem !important;
+      }
+      .skills-section .skill-bar {
+        height: 10px !important;
+      }
+      .skills-section .equipment-info p {
+        font-size: 0.9rem !important;
+      }
+      .skills-section .tag {
+        font-size: 0.7rem !important;
+        padding: 0.25rem 0.8rem !important;
+      }
+
+      /* --- Галерея --- */
+      .gallery-grid {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+      }
+      .gallery-grid h2 {
+        font-size: 2rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .gallery-grid .year-row h3 {
+        font-size: 1.5rem !important;
+        margin-bottom: 1rem !important;
+      }
+      .gallery-grid .year-row {
+        margin-bottom: 2.5rem !important;
+      }
+      .gallery-grid .grid-container {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 0 0.5rem !important;
+      }
+      .gallery-grid .grid-item {
+        max-height: none !important;
+      }
+      .gallery-grid .grid-item a {
+        max-height: 300px !important;
+        min-height: 200px !important;
+      }
+      .gallery-grid .grid-item img {
+        max-width: 96% !important;
+        max-height: 96% !important;
+        min-height: 120px !important;
+        min-width: 120px !important;
+      }
+      .gallery-grid .grid-item .caption {
+        font-size: 0.85rem !important;
+        min-height: 2rem !important;
+      }
+      .gallery-grid > div:last-child p {
+        font-size: 1.1rem !important;
+        padding: 0 0.5rem !important;
+        margin-top: -1rem !important;
+      }
+
+      /* --- Таймлайн --- */
+      .timeline-tree {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+      }
+      .timeline-tree h2 {
+        font-size: 2rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .timeline-tree .tree {
+        padding-left: 1.2rem !important;
+        padding-right: 0.5rem !important;
+      }
+      .timeline-tree .tree-item {
+        padding: 1.2rem 1rem !important;
+        margin-bottom: 1.5rem !important;
+        border-radius: 1rem !important;
+      }
+      .timeline-tree .tree-item::before {
+        left: -1.2rem !important;
+        top: 1.2rem !important;
+        width: 12px !important;
+        height: 12px !important;
+        border-width: 2px !important;
+      }
+      .timeline-tree .tree::before {
+        width: 2px !important;
+      }
+      .timeline-tree .tree-item .year {
+        font-size: 1.2rem !important;
+      }
+      .timeline-tree .tree-item .company {
+        font-size: 1.1rem !important;
+      }
+      .timeline-tree .tree-item .position {
+        font-size: 0.95rem !important;
+      }
+      .timeline-tree .tree-item .description {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+      }
+
+      /* --- Контакты --- */
+      .contacts-oval {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+      }
+      .contacts-oval h2 {
+        font-size: 2rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .contacts-oval .oval-wrapper {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.8rem !important;
+      }
+      .contacts-oval .oval-item {
+        width: 100% !important;
+        max-width: 300px !important;
+        padding: 0.8rem 1.5rem !important;
+        min-width: unset !important;
+        border-radius: 50px !important;
+      }
+      .contacts-oval .oval-item .label {
+        font-size: 0.7rem !important;
+      }
+      .contacts-oval .oval-item .value {
+        font-size: 0.9rem !important;
+      }
+
+      /* --- Меню --- */
+      .cid-vrMAloSBlR .container {
+        height: 52px !important;
+        padding: 0.3rem 0.6rem !important;
+        margin-top: 0.5rem !important;
+        width: 96% !important;
+        border-radius: 50px !important;
+      }
+      .cid-vrMAloSBlR .navbar-caption {
+        font-size: 0.95rem !important;
+        padding-left: 0.3rem !important;
+      }
+      .cid-vrMAloSBlR .navbar-buttons .btn {
+        font-size: 0.7rem !important;
+        padding: 0.25rem 0.8rem !important;
+        border-radius: 50px !important;
+      }
+      .cid-vrMAloSBlR .navbar-toggler {
+        transform: scale(0.7) !important;
+        margin-left: 4px !important;
+        margin-right: 0 !important;
+      }
+      .cid-vrMAloSBlR .navbar-collapse {
+        padding: 0.8rem !important;
+        border-radius: 1.2rem !important;
+        top: 115% !important;
+      }
+      .cid-vrMAloSBlR .navbar-nav .nav-item .nav-link {
+        padding: 10px !important;
+        font-size: 1rem !important;
+      }
+      .cid-vrMAloSBlR .navbar-nav {
+        gap: 0.3rem !important;
+      }
+
+      /* --- Футер --- */
+      div[style*="background-color: #000000"] {
+        font-size: 0.55rem !important;
+        padding: 0.8rem 0 !important;
+        letter-spacing: 0.3px !important;
+      }
+
+      /* --- Кнопки в секциях --- */
+      .mbr-section-btn .btn {
+        padding: 0.7rem 1.8rem !important;
+        font-size: 1rem !important;
+        border-radius: 50px !important;
+      }
+
+      /* --- Отступы секций --- */
+      section {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+
+      /* Исправление для мобильного меню (бургер) */
+      .cid-vrMAloSBlR .navbar-toggler .hamburger span {
+        width: 24px !important;
+        height: 2px !important;
+      }
+      .cid-vrMAloSBlR .navbar-toggler .hamburger span:nth-child(2),
+      .cid-vrMAloSBlR .navbar-toggler .hamburger span:nth-child(3) {
+        top: 6px !important;
+      }
+      .cid-vrMAloSBlR .navbar-toggler .hamburger span:nth-child(4) {
+        top: 12px !important;
+      }
+      .cid-vrMAloSBlR nav.opened .hamburger span:nth-child(1),
+      .cid-vrMAloSBlR nav.opened .hamburger span:nth-child(4) {
+        top: 6px !important;
+      }
+    }
+
+    /* ===== ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ (ДО 400px) ===== */
+    @media (max-width: 400px) {
+      .cid-vrMAloT6q9 .item-mb {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+      }
+      .cid-vrMAloT6q9 .item-wrapper .num {
+        font-size: 2rem !important;
+      }
+      .cid-vrMAloT6q9 .item-wrapper .card-title {
+        font-size: 0.9rem !important;
+      }
+      .gallery-grid .grid-item a {
+        max-height: 220px !important;
+        min-height: 150px !important;
+      }
+      .gallery-grid .grid-item img {
+        max-height: 90% !important;
+        min-height: 80px !important;
+        min-width: 80px !important;
+      }
+      .display-1 { font-size: 2.2rem !important; }
+      .display-2 { font-size: 1.8rem !important; }
+      .cid-vrMAloTEiy .mbr-section-title {
+        font-size: 2rem !important;
+      }
+    }
+
+    /* ===== ПЛАНШЕТЫ (768-992px) ===== */
+    @media (min-width: 768px) and (max-width: 992px) {
+      .gallery-grid .grid-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+      }
+      .gallery-grid .grid-item a {
+        max-height: 260px !important;
+        min-height: 170px !important;
+      }
+      .cid-vrMAloT6q9 .item-mb {
+        flex: 0 0 33.333% !important;
+        max-width: 33.333% !important;
+      }
+    }
+
+    /* ===== ОТКЛЮЧАЕМ ПАРАЛЛАКС НА МОБИЛЬНЫХ ===== */
+    @media (max-width: 768px) {
+      .mbr-parallax-background {
+        background-attachment: scroll !important;
+      }
+      [data-jarallax] {
+        transform: none !important;
+      }
+    }
+  </style>
+
   <script>
     if (window.innerWidth < 768) {
       document.addEventListener('DOMContentLoaded', function() {
@@ -59,44 +455,7 @@
 </head>
 <body>
 
-<!-- ==================== СПИННЕР ЗАГРУЗКИ ==================== -->
-<style>
-  #loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #b88cd4 0%, #a06bc9 25%, #8a4fc9 50%, #a06bc9 75%, #c79ae8 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.8s ease;
-  }
-  #loader.hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
-  #loader .spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid rgba(255, 255, 255, 0.2);
-    border-top: 5px solid #f59f00;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-  }
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
-  #loader .loader-text {
-    color: rgba(255, 255, 255, 0.8);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    margin-top: 20px;
-    letter-spacing: 1px;
-  }
-</style>
+<!-- ==================== СПИННЕР ==================== -->
 <div id="loader">
   <div class="spinner"></div>
   <div class="loader-text">Загрузка...</div>
@@ -112,14 +471,14 @@
   }, 2000);
 </script>
 
-<!-- ==================== НАВИГАЦИЯ (МЕНЮ) ==================== -->
+<!-- ==================== МЕНЮ ==================== -->
 <style>
-.cid-vrMAloSBlR  {
+.cid-vrMAloSBlR {
   z-index: 1000;
   width: 100%;
   position: relative;
 }
-.cid-vrMAloSBlR  .dropdown-item:before {
+.cid-vrMAloSBlR .dropdown-item:before {
   font-family: Moririse2 !important;
   content: "\e966";
   display: inline-block;
@@ -136,12 +495,7 @@
   transform: scale(0, 1);
   transition: all 0.25s ease-in-out;
 }
-@media (max-width: 767px) {
-  .cid-vrMAloSBlR  .navbar-toggler {
-    transform: scale(0.8);
-  }
-}
-.cid-vrMAloSBlR  .navbar-brand {
+.cid-vrMAloSBlR .navbar-brand {
   flex-shrink: 0;
   align-items: center;
   margin-right: 0;
@@ -150,322 +504,96 @@
   word-break: break-word;
   z-index: 1;
 }
-.cid-vrMAloSBlR  .navbar-brand img {
-  max-width: 100%;
-  max-height: 100%;
-}
-.cid-vrMAloSBlR  .navbar-brand .navbar-caption {
+.cid-vrMAloSBlR .navbar-brand .navbar-caption {
   line-height: inherit !important;
 }
-.cid-vrMAloSBlR  .navbar-brand .navbar-logo a {
-  outline: none;
-}
-.cid-vrMAloSBlR  .navbar-nav {
+.cid-vrMAloSBlR .navbar-nav {
   margin: auto;
-  margin-left: 0;
   margin-left: auto;
 }
-.cid-vrMAloSBlR  .navbar-nav .nav-item {
+.cid-vrMAloSBlR .navbar-nav .nav-item {
   padding: 0 !important;
   transition: 0.3s all !important;
 }
-.cid-vrMAloSBlR  .navbar-nav .nav-item .nav-link {
+.cid-vrMAloSBlR .navbar-nav .nav-item .nav-link {
   padding: 16px !important;
   margin: 0 !important;
   border-radius: 1rem !important;
   transition: 0.3s all !important;
 }
-.cid-vrMAloSBlR  .navbar-nav .nav-item .nav-link:hover {
+.cid-vrMAloSBlR .navbar-nav .nav-item .nav-link:hover {
   background-color: rgba(27, 31, 10, 0.06);
 }
-.cid-vrMAloSBlR  .navbar-nav .open .nav-link::after {
+.cid-vrMAloSBlR .navbar-nav .open .nav-link::after {
   transform: rotate(180deg);
 }
-@media (min-width: 992px) {
-  .cid-vrMAloSBlR  .navbar-nav .open .nav-link::before {
-    content: "";
-    width: 100%;
-    height: 20px;
-    top: 100%;
-    background: transparent;
-    position: absolute;
-  }
-}
-.cid-vrMAloSBlR  .navbar-nav .dropdown-item {
+.cid-vrMAloSBlR .navbar-nav .dropdown-item {
   padding: 12px !important;
   border-radius: 0.5rem !important;
   margin: 0 8px !important;
   transition: 0.3s all !important;
 }
-.cid-vrMAloSBlR  .navbar-nav .dropdown-item:hover {
+.cid-vrMAloSBlR .navbar-nav .dropdown-item:hover {
   background-color: rgba(27, 31, 10, 0.06);
 }
 @media (min-width: 992px) {
-  .cid-vrMAloSBlR  .navbar-nav {
+  .cid-vrMAloSBlR .navbar-nav {
     padding-left: 1.5rem;
   }
 }
-.cid-vrMAloSBlR  .nav-link {
+.cid-vrMAloSBlR .nav-link {
   width: fit-content;
   position: relative;
 }
-.cid-vrMAloSBlR  .navbar-logo {
-  margin: 0 !important;
-}
-@media (max-width: 767px) {
-  .cid-vrMAloSBlR  .navbar-logo {
-    padding-left: 0;
-  }
-}
-.cid-vrMAloSBlR  .navbar-caption {
+.cid-vrMAloSBlR .navbar-caption {
   padding-left: 1rem;
   padding-right: 0.5rem;
 }
-@media (max-width: 767px) {
-  .cid-vrMAloSBlR  .nav-dropdown {
-    padding-bottom: 0.5rem;
-  }
-}
-.cid-vrMAloSBlR  .nav-dropdown .link.dropdown-toggle::after {
-  margin-left: 0.5rem;
-  margin-top: 0.2rem;
-  transition: 0.3s all;
-}
-.cid-vrMAloSBlR  .container {
+.cid-vrMAloSBlR .container {
   display: flex;
   height: 90px;
   padding: 0.5rem 0.6rem;
   flex-wrap: nowrap;
-  background: rgba(255, 255, 255, 0.8) !important;
+  background: rgba(255, 255, 255, 0.6) !important;
   left: 0;
   right: 0;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: flex-end;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
   border-radius: 100vw;
   margin-top: 1rem;
   background-color: #ffffff;
   box-shadow: 0 30px 60px 0 rgba(27, 31, 10, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 @media (max-width: 992px) {
-  .cid-vrMAloSBlR  .container {
+  .cid-vrMAloSBlR .container {
     padding-right: 2rem;
   }
 }
-@media (max-width: 767px) {
-  .cid-vrMAloSBlR  .container {
-    width: 95%;
-    height: 56px !important;
-    padding-right: 1rem;
-    margin-top: 0rem;
-  }
-}
-.cid-vrMAloSBlR  .iconfont-wrapper {
+.cid-vrMAloSBlR .navbar-caption,
+.cid-vrMAloSBlR .nav-link {
   color: #000000 !important;
-  font-size: 1.5rem;
-  padding-right: 0.5rem;
 }
-.cid-vrMAloSBlR  .dropdown-menu {
-  flex-wrap: wrap;
-  flex-direction: column;
-  max-width: 100%;
-  padding: 12px 4px !important;
-  border-radius: 1.5rem;
-  transition: 0.3s all !important;
-  min-width: auto;
-  background: #ffffff;
-  background: rgba(255, 255, 255, 0.8) !important;
+.cid-vrMAloSBlR .navbar-caption:hover,
+.cid-vrMAloSBlR .nav-link:hover {
+  color: #532B88 !important;
 }
-.cid-vrMAloSBlR  .nav-item:focus,
-.cid-vrMAloSBlR  .nav-link:focus {
-  outline: none;
-}
-.cid-vrMAloSBlR  .dropdown .dropdown-menu .dropdown-item {
-  width: auto;
-  transition: all 0.25s ease-in-out;
-}
-.cid-vrMAloSBlR  .dropdown .dropdown-menu .dropdown-item::after {
-  right: 0.5rem;
-}
-.cid-vrMAloSBlR  .dropdown .dropdown-menu .dropdown-item .mbr-iconfont {
-  margin-right: 0.5rem;
-  vertical-align: sub;
-}
-.cid-vrMAloSBlR  .dropdown .dropdown-menu .dropdown-item .mbr-iconfont:before {
-  display: inline-block;
-  transform: scale(1, 1);
-  transition: all 0.25s ease-in-out;
-}
-.cid-vrMAloSBlR  .collapsed .dropdown-menu .dropdown-item:before {
-  display: none;
-}
-.cid-vrMAloSBlR  .collapsed .dropdown .dropdown-menu .dropdown-item {
-  padding: 0.235em 1.5em 0.235em 1.5em !important;
-  transition: none;
-  margin: 0 !important;
-}
-.cid-vrMAloSBlR  .navbar {
-  min-height: 90px;
-  transition: all 0.3s;
-  border-bottom: 1px solid transparent;
-  background: transparent !important;
-  padding: 0 !important;
+.cid-vrMAloSBlR .navbar-buttons .btn {
+  background: linear-gradient(135deg, #f59f00 0%, #fcc419 40%, #ffd43b 100%) !important;
   border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
+  color: #000000 !important;
+  box-shadow: 0 4px 15px rgba(245, 159, 0, 0.35);
+  transition: all 0.3s ease;
+  border-radius: 100px;
+  padding: 0.4rem 1.8rem;
+  white-space: nowrap;
 }
-.cid-vrMAloSBlR  .navbar.opened {
-  transition: all 0.3s;
+.cid-vrMAloSBlR .navbar-buttons .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(245, 159, 0, 0.55);
 }
-.cid-vrMAloSBlR  .navbar .dropdown-item {
-  padding: 0.5rem 1.8rem;
-}
-.cid-vrMAloSBlR  .navbar .navbar-logo img {
-  min-width: 6rem;
-  object-fit: cover;
-}
-.cid-vrMAloSBlR  .navbar .navbar-collapse {
-  z-index: 1;
-  justify-content: flex-end;
-}
-.cid-vrMAloSBlR  .navbar.collapsed {
-  justify-content: center;
-}
-.cid-vrMAloSBlR  .navbar.collapsed .nav-item .nav-link::before {
-  display: none;
-}
-.cid-vrMAloSBlR  .navbar.collapsed.opened .dropdown-menu {
-  top: 0;
-}
-@media (min-width: 992px) {
-  .cid-vrMAloSBlR  .navbar.collapsed.opened:not(.navbar-short) .navbar-collapse {
-    max-height: calc(98.5vh - 3rem);
-  }
-}
-.cid-vrMAloSBlR  .navbar.collapsed .dropdown-menu .dropdown-submenu {
-  left: 0 !important;
-}
-.cid-vrMAloSBlR  .navbar.collapsed .dropdown-menu .dropdown-item:after {
-  right: auto;
-}
-.cid-vrMAloSBlR  .navbar.collapsed .dropdown-menu .dropdown-toggle[data-toggle="dropdown-submenu"]:after {
-  margin-left: 0.5rem;
-  margin-top: 0.2rem;
-  border-top: 0.35em solid;
-  border-right: 0.35em solid transparent;
-  border-left: 0.35em solid transparent;
-  border-bottom: 0;
-  top: 41%;
-}
-.cid-vrMAloSBlR  .navbar.collapsed ul.navbar-nav li {
-  margin: auto;
-}
-.cid-vrMAloSBlR  .navbar.collapsed .dropdown-menu .dropdown-item {
-  padding: 0.25rem 1.5rem;
-  text-align: center;
-}
-.cid-vrMAloSBlR  .navbar.collapsed .icons-menu {
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-@media (max-width: 767px) {
-  .cid-vrMAloSBlR  .navbar {
-    min-height: 72px;
-  }
-  .cid-vrMAloSBlR  .navbar .navbar-logo img {
-    height: 2.5rem !important;
-    min-width: 2.5rem !important;
-  }
-}
-@media (max-width: 991px) {
-  .cid-vrMAloSBlR  .navbar .nav-item .nav-link::before {
-    display: none;
-  }
-  .cid-vrMAloSBlR  .navbar.opened .dropdown-menu {
-    top: 0;
-  }
-  .cid-vrMAloSBlR  .navbar .dropdown-menu .dropdown-submenu {
-    left: 0 !important;
-  }
-  .cid-vrMAloSBlR  .navbar .dropdown-menu .dropdown-item:after {
-    right: auto;
-  }
-  .cid-vrMAloSBlR  .navbar .dropdown-menu .dropdown-toggle[data-toggle="dropdown-submenu"]:after {
-    margin-left: 0.5rem;
-    margin-top: 0.2rem;
-    border-top: 0.35em solid;
-    border-right: 0.35em solid transparent;
-    border-left: 0.35em solid transparent;
-    border-bottom: 0;
-    top: 40%;
-  }
-  .cid-vrMAloSBlR  .navbar .dropdown-menu .dropdown-item {
-    padding: 0.25rem 1.5rem !important;
-    text-align: center;
-  }
-  .cid-vrMAloSBlR  .navbar .navbar-brand {
-    flex-shrink: initial;
-    flex-basis: auto;
-    word-break: break-word;
-    padding-right: 10px;
-  }
-  .cid-vrMAloSBlR  .navbar .navbar-toggler {
-    flex-basis: auto;
-  }
-  .cid-vrMAloSBlR  .navbar .icons-menu {
-    padding-left: 0;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-}
-.cid-vrMAloSBlR  .navbar.navbar-short .navbar-logo img {
-  height: 2rem;
-}
-.cid-vrMAloSBlR  .dropdown-item.active,
-.cid-vrMAloSBlR  .dropdown-item:active {
-  background-color: transparent;
-}
-.cid-vrMAloSBlR  .navbar-expand-lg .navbar-nav .nav-link {
-  padding: 0;
-}
-.cid-vrMAloSBlR  .nav-dropdown .link.dropdown-toggle {
-  margin-right: 1.667em;
-}
-.cid-vrMAloSBlR  .nav-dropdown .link.dropdown-toggle[aria-expanded="true"] {
-  margin-right: 0;
-  padding: 0.667em 1.667em;
-}
-.cid-vrMAloSBlR  .navbar.navbar-expand-lg .dropdown .dropdown-menu {
-  background: #ffffff;
-}
-.cid-vrMAloSBlR  .navbar.navbar-expand-lg .dropdown .dropdown-menu .dropdown-submenu {
-  margin: 0;
-  left: 105%;
-  transform: none;
-  top: -12px;
-}
-.cid-vrMAloSBlR  .navbar .dropdown.open > .dropdown-menu {
-  display: flex;
-}
-.cid-vrMAloSBlR  ul.navbar-nav {
-  flex-wrap: wrap;
-}
-.cid-vrMAloSBlR  .navbar-buttons {
-  text-align: center;
-  min-width: 140px;
-}
-@media (max-width: 992px) {
-  .cid-vrMAloSBlR  .navbar-buttons {
-    text-align: left;
-  }
-}
-.cid-vrMAloSBlR  button.navbar-toggler {
+.cid-vrMAloSBlR button.navbar-toggler {
   outline: none;
   width: 31px;
   height: 20px;
@@ -474,7 +602,7 @@
   position: relative;
   align-self: center;
 }
-.cid-vrMAloSBlR  button.navbar-toggler .hamburger span {
+.cid-vrMAloSBlR button.navbar-toggler .hamburger span {
   position: absolute;
   right: 0;
   width: 30px;
@@ -482,123 +610,19 @@
   border-right: 5px;
   background-color: #000000;
 }
-.cid-vrMAloSBlR  button.navbar-toggler .hamburger span:nth-child(1) {
-  top: 0;
-  transition: all 0.2s;
-}
-.cid-vrMAloSBlR  button.navbar-toggler .hamburger span:nth-child(2) {
-  top: 8px;
-  transition: all 0.15s;
-}
-.cid-vrMAloSBlR  button.navbar-toggler .hamburger span:nth-child(3) {
-  top: 8px;
-  transition: all 0.15s;
-}
-.cid-vrMAloSBlR  button.navbar-toggler .hamburger span:nth-child(4) {
-  top: 16px;
-  transition: all 0.2s;
-}
-.cid-vrMAloSBlR  nav.opened .hamburger span:nth-child(1) {
-  top: 8px;
-  width: 0;
-  opacity: 0;
-  right: 50%;
-  transition: all 0.2s;
-}
-.cid-vrMAloSBlR  nav.opened .hamburger span:nth-child(2) {
-  transform: rotate(45deg);
-  transition: all 0.25s;
-}
-.cid-vrMAloSBlR  nav.opened .hamburger span:nth-child(3) {
-  transform: rotate(-45deg);
-  transition: all 0.25s;
-}
-.cid-vrMAloSBlR  nav.opened .hamburger span:nth-child(4) {
-  top: 8px;
-  width: 0;
-  opacity: 0;
-  right: 50%;
-  transition: all 0.2s;
-}
-.cid-vrMAloSBlR  .navbar-dropdown {
-  padding: 0 1rem;
-}
-.cid-vrMAloSBlR  a.nav-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.cid-vrMAloSBlR  .icons-menu {
-  flex-wrap: nowrap;
-  display: flex;
-  justify-content: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.3rem;
-  text-align: center;
-}
-@media (max-width: 992px) {
-  .cid-vrMAloSBlR  .icons-menu {
-    justify-content: flex-start;
-    margin-bottom: 0.5rem;
-  }
-}
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .cid-vrMAloSBlR  .navbar {
-    height: 70px;
-  }
-  .cid-vrMAloSBlR  .navbar.opened {
-    height: auto;
-  }
-  .cid-vrMAloSBlR  .nav-item .nav-link:hover::before {
-    width: 175%;
-    max-width: calc(100% + 2rem);
-    left: -1rem;
-  }
-}
-.cid-vrMAloSBlR  .navbar .dropdown > .dropdown-menu {
-  display: none;
-  width: max-content;
-  max-width: 500px !important;
-  transform: translateX(-50%);
-  top: calc(100% + 20px);
-  left: 50%;
-}
-.cid-vrMAloSBlR  .navbar .dropdown > .dropdown-menu .dropdown-item {
-  line-height: 1 !important;
-}
-.cid-vrMAloSBlR  .navbar .dropdown > .dropdown-menu .dropdown .dropdown-item {
-  align-items: center;
-  display: flex;
-  height: max-content !important;
-  min-height: max-content !important;
-}
-.cid-vrMAloSBlR  .navbar .dropdown > .dropdown-menu .dropdown .dropdown-item::after {
-  display: inline-block;
-  position: static;
-  margin-left: 0.5rem;
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 0;
-  transition: 0.3s all;
-  transform: rotate(-90deg);
-}
-.cid-vrMAloSBlR  .navbar .dropdown > .dropdown-menu .dropdown.open .dropdown-item::after {
-  transform: rotate(0deg);
-}
-.cid-vrMAloSBlR  .mbr-section-btn {
-  margin: -0.6rem -0.6rem;
-}
-.cid-vrMAloSBlR  .navbar-toggler {
-  margin-left: 12px;
-  margin-right: 8px;
-  order: 1000;
-}
+.cid-vrMAloSBlR button.navbar-toggler .hamburger span:nth-child(1) { top: 0; transition: all 0.2s; }
+.cid-vrMAloSBlR button.navbar-toggler .hamburger span:nth-child(2) { top: 8px; transition: all 0.15s; }
+.cid-vrMAloSBlR button.navbar-toggler .hamburger span:nth-child(3) { top: 8px; transition: all 0.15s; }
+.cid-vrMAloSBlR button.navbar-toggler .hamburger span:nth-child(4) { top: 16px; transition: all 0.2s; }
+.cid-vrMAloSBlR nav.opened .hamburger span:nth-child(1) { top: 8px; width: 0; opacity: 0; right: 50%; transition: all 0.2s; }
+.cid-vrMAloSBlR nav.opened .hamburger span:nth-child(2) { transform: rotate(45deg); transition: all 0.25s; }
+.cid-vrMAloSBlR nav.opened .hamburger span:nth-child(3) { transform: rotate(-45deg); transition: all 0.25s; }
+.cid-vrMAloSBlR nav.opened .hamburger span:nth-child(4) { top: 8px; width: 0; opacity: 0; right: 50%; transition: all 0.2s; }
 @media (max-width: 991px) {
-  .cid-vrMAloSBlR  .navbar-brand {
+  .cid-vrMAloSBlR .navbar-brand {
     margin-right: auto;
   }
-  .cid-vrMAloSBlR  .navbar-collapse {
+  .cid-vrMAloSBlR .navbar-collapse {
     z-index: -1 !important;
     position: absolute;
     top: 110%;
@@ -606,19 +630,13 @@
     width: 100%;
     padding: 1rem;
     border-radius: 1.5rem;
-    background: #ffffff;
-    opacity: 1;
-    border-color: rgba(255, 255, 255, 0.8) !important;
     background: rgba(255, 255, 255, 0.8) !important;
     backdrop-filter: blur(8px);
   }
-  .cid-vrMAloSBlR  .navbar-nav .nav-item .nav-link::after {
+  .cid-vrMAloSBlR .navbar-nav .nav-item .nav-link::after {
     margin-left: 10px;
   }
-  .cid-vrMAloSBlR  .navbar-nav .dropdown-item:hover {
-    background-color: rgba(27, 31, 10, 0.06);
-  }
-  .cid-vrMAloSBlR  .navbar .dropdown > .dropdown-menu {
+  .cid-vrMAloSBlR .navbar .dropdown > .dropdown-menu {
     max-width: 100% !important;
     transform: translateX(0);
     top: 10px;
@@ -627,49 +645,14 @@
     border-radius: 1rem;
     background-color: rgba(27, 31, 10, 0.04) !important;
   }
-  .cid-vrMAloSBlR  .navbar .dropdown > .dropdown-menu .dropdown-item {
+  .cid-vrMAloSBlR .navbar .dropdown > .dropdown-menu .dropdown-item {
     padding: 8px !important;
     line-height: 1 !important;
     margin-bottom: 4px !important;
   }
-  .cid-vrMAloSBlR  .navbar .dropdown > .dropdown-menu .dropdown .dropdown-item {
-    align-items: center;
-    display: flex;
-    height: max-content !important;
-    min-height: max-content !important;
-  }
-  .cid-vrMAloSBlR  .navbar .dropdown > .dropdown-menu .dropdown .dropdown-item::after {
-    display: inline-block;
-    position: static;
-    margin-left: 0.5rem;
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    transition: 0.3s all;
-    transform: rotate(0deg);
-  }
-  .cid-vrMAloSBlR  .navbar .dropdown > .dropdown-menu .dropdown.open .dropdown-item::after {
-    transform: rotate(180deg);
-  }
-  .cid-vrMAloSBlR  .navbar .dropdown > .dropdown-menu .dropdown-submenu {
-    position: static;
-    width: 100%;
-    max-width: 100% !important;
-    transform: translateX(0) !important;
-    top: 0;
-    left: 0;
-    padding: 8px !important;
-    border-radius: 1rem;
-    background-color: rgba(27, 31, 10, 0.04) !important;
-  }
-  .cid-vrMAloSBlR  .navbar .dropdown.open > .dropdown-menu {
-    display: flex !important;
-    flex-direction: column;
-    align-items: flex-start;
-  }
 }
 @media (max-width: 575px) {
-  .cid-vrMAloSBlR  .navbar-collapse {
+  .cid-vrMAloSBlR .navbar-collapse {
     padding: 1rem;
   }
 }
@@ -697,33 +680,19 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-          <li class="nav-item">
-            <a class="nav-link link text-black display-4" href="#about">О себе</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link link text-black display-4" href="#contacts" aria-expanded="false">Контакты</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link link text-black display-4" href="#projects">Проекты</a>
-          </li>
+          <li class="nav-item"><a class="nav-link link text-black display-4" href="#about">О себе</a></li>
+          <li class="nav-item"><a class="nav-link link text-black display-4" href="#contacts">Контакты</a></li>
+          <li class="nav-item"><a class="nav-link link text-black display-4" href="#projects">Проекты</a></li>
         </ul>
-        <div class="navbar-buttons mbr-section-btn" style="position: relative; display: inline-block;">
-          <a class="btn display-4" href="#contacts" style="
-            border-radius: 100px;
-            padding: 0.4rem 1.8rem;
-            color: #000000;
-            background: linear-gradient(135deg, #fce4c8 0%, #f8d5a3 50%, #f0c27a 100%);
-            border: none;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-          ">Связаться</a>
+        <div class="navbar-buttons mbr-section-btn">
+          <a class="btn display-4" href="#contacts">Связаться</a>
         </div>
       </div>
     </div>
   </nav>
 </section>
 
-<!-- ==================== HERO-СЕКЦИЯ ==================== -->
+<!-- ==================== HERO ==================== -->
 <style>
 .cid-vrMAloTEiy {
   display: flex;
@@ -745,51 +714,42 @@
     padding: 1rem 3rem;
   }
 }
-@media (max-width: 991px) and (min-width: 768px) {
-  .cid-vrMAloTEiy .content-wrap {
-    min-width: 50%;
-  }
-}
 @media (max-width: 767px) {
   .cid-vrMAloTEiy {
-    -webkit-align-items: center;
     align-items: center;
-  }
-  .cid-vrMAloTEiy .mbr-row {
-    -webkit-justify-content: center;
-    justify-content: center;
   }
   .cid-vrMAloTEiy .content-wrap {
     width: 100%;
+    padding: 0 1rem !important;
   }
 }
 .cid-vrMAloTEiy .mbr-section-title,
-.cid-vrMAloTEiy .mbr-section-subtitle {
-  text-align: center;
-}
 .cid-vrMAloTEiy .mbr-text,
-.cid-vrMAloTEiy .mbr-section-btn {
-  text-align: center;
+.cid-vrMAloTEiy .mbr-section-btn .btn {
+  color: #ffffff !important;
+}
+.cid-vrMAloTEiy .btn-white-outline {
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+.cid-vrMAloTEiy .btn-white-outline:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
 }
 </style>
-<section class="header16 cid-vrMAloTEiy mbr-fullscreen mbr-parallax-background" id="hero-17-vrMAloTEiy">
+<section class="header16 cid-vrMAloTEiy mbr-fullscreen" id="hero-17-vrMAloTEiy">
   <div class="mbr-overlay" style="opacity: 0; background-color: transparent;"></div>
   <div class="container-fluid">
     <div class="row">
       <div class="content-wrap col-12 col-md-10">
-        <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4" style="font-size: calc(5rem / 1.5); text-align: center;">
-          ИНЖЕНЕР-КОНСТРУКТОР
-        </h1>
-        <p class="mbr-fonts-style mbr-text mbr-white mb-4" style="font-size: calc(2.5rem / 1.5); text-align: center;">
-          ЗАЩИТНЫЕ АКСЕССУАРЫ·POWERSPORTS
-        </p>
+        <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4" style="text-align: center;">ИНЖЕНЕР-КОНСТРУКТОР</h1>
+        <p class="mbr-fonts-style mbr-text mbr-white mb-4" style="text-align: center;">ЗАЩИТНЫЕ АКСЕССУАРЫ·POWERSPORTS</p>
         <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
-          <span style="display: inline-block; border: 2px solid rgba(255,255,255,0.8); border-radius: 100px; padding: 0.3rem 2.8rem; font-size: calc(1.2rem / 1.5); color: #ffffff; text-align: center; white-space: nowrap; background: rgba(0,0,0,0.2); cursor: default; pointer-events: none; user-select: none; box-shadow: none; transition: none;">
+          <span style="display: inline-block; border: 2px solid rgba(255,255,255,0.8); border-radius: 100px; padding: 0.3rem 2.8rem; color: #ffffff; text-align: center; background: rgba(0,0,0,0.2); cursor: default; pointer-events: none; user-select: none;">
             Алюминий · Сталь · ПЭНД
           </span>
         </div>
-        <div class="mbr-section-btn" style="margin-top: 0.5rem;">
-          <a class="btn btn-white-outline display-7" href="#projects" style="font-size: calc(1.4rem / 1.5);">ПРОЕКТЫ</a>
+        <div class="mbr-section-btn" style="margin-top: 0.5rem; text-align: center;">
+          <a class="btn btn-white-outline display-7" href="#projects">ПРОЕКТЫ</a>
         </div>
       </div>
     </div>
@@ -803,48 +763,19 @@
   padding-bottom: 3rem;
   background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
 }
-.cid-vrMAloT6q9 .mbr-fallback-image.disabled {
-  display: none;
-}
-.cid-vrMAloT6q9 .mbr-fallback-image {
-  display: block;
-  background-size: cover;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-}
 .cid-vrMAloT6q9 .title .num {
   width: 100%;
   display: block;
 }
-.cid-vrMAloT6q9 .title .card-title {
-  z-index: 1;
-}
 .cid-vrMAloT6q9 .num {
-  color: var(--primary-color, #9fe870);
+  color: #ffffff !important;
   text-align: center;
 }
 .cid-vrMAloT6q9 .item-mb {
   margin-bottom: 2rem;
 }
-@media (max-width: 767px) {
-  .cid-vrMAloT6q9 * {
-    text-align: center !important;
-  }
-  .cid-vrMAloT6q9 .content-column {
-    margin-bottom: 2rem;
-  }
-}
-.cid-vrMAloT6q9 .content-head {
-  max-width: 800px;
-}
-.cid-vrMAloT6q9 .card-text {
-  text-align: center;
-}
-.cid-vrMAloT6q9 .card-title,
-.cid-vrMAloT6q9 .card-img {
+.cid-vrMAloT6q9 .card-title {
+  color: #ffffff !important;
   text-align: center;
 }
 </style>
@@ -854,37 +785,31 @@
             <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
                 <div class="item-wrapper" style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%;">
                     <div class="title mb-2 mb-md-3" style="width: 100%; text-align: center;">
-                        <span class="num mbr-fonts-style" style="font-size: 2.5rem; color: #ffffff !important; display: block; text-align: center;"><strong>24</strong></span>
+                        <span class="num mbr-fonts-style" style="font-size: 2.5rem; display: block; text-align: center;"><strong>24</strong></span>
                     </div>
-                    <h4 class="card-title mbr-fonts-style" style="color: #ffffff !important; white-space: nowrap; text-align: center; width: 100%; font-size: 1.875rem;">
-                        <strong>Изделия спроектировано</strong>
-                    </h4>
+                    <h4 class="card-title mbr-fonts-style" style="font-size: 1.1rem;"><strong>Изделий спроектировано</strong></h4>
                 </div>
             </div>
             <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
                 <div class="item-wrapper" style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%;">
                     <div class="title mb-2 mb-md-3" style="width: 100%; text-align: center;">
-                        <span class="num mbr-fonts-style" style="font-size: 2.5rem; color: #ffffff !important; display: block; text-align: center;"><strong>2+</strong></span>
+                        <span class="num mbr-fonts-style" style="font-size: 2.5rem; display: block; text-align: center;"><strong>2+</strong></span>
                     </div>
-                    <h4 class="card-title mbr-fonts-style" style="color: #ffffff !important; white-space: nowrap; text-align: center; width: 100%; font-size: 1.875rem;">
-                        <strong>Года коммерческого опыта</strong>
-                    </h4>
+                    <h4 class="card-title mbr-fonts-style" style="font-size: 1.1rem;"><strong>Года коммерческого опыта</strong></h4>
                 </div>
             </div>
             <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
                 <div class="item-wrapper" style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%;">
                     <div class="title mb-2 mb-md-3" style="width: 100%; text-align: center;">
-                        <span class="num mbr-fonts-style" style="font-size: 2.5rem; color: #ffffff !important; display: block; text-align: center;"><strong>6</strong></span>
+                        <span class="num mbr-fonts-style" style="font-size: 2.5rem; display: block; text-align: center;"><strong>6</strong></span>
                     </div>
-                    <h4 class="card-title mbr-fonts-style" style="color: #ffffff !important; white-space: nowrap; text-align: center; width: 100%; font-size: 1.875rem;">
-                        <strong>CAD/3D инструментов</strong>
-                    </h4>
+                    <h4 class="card-title mbr-fonts-style" style="font-size: 1.1rem;"><strong>CAD/3D инструментов</strong></h4>
                 </div>
             </div>
         </div>
     </div>
 </section>
-  
+
 <!-- ==================== ОБО МНЕ ==================== -->
 <style>
 .cid-vrMAloTPui {
@@ -892,12 +817,8 @@
   padding-bottom: 5rem;
   background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
 }
-.cid-vrMAloTPui .mbr-text {
-  color: #000000;
-}
-.cid-vrMAloTPui .mbr-section-subtitle {
-  color: #000000;
-}
+.cid-vrMAloTPui .mbr-text,
+.cid-vrMAloTPui .mbr-section-subtitle,
 .cid-vrMAloTPui .mbr-section-title {
   color: #000000;
   text-align: center;
@@ -907,96 +828,81 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10">
-                <h2 class="mbr-section-title mbr-fonts-style mb-4 display-2" style="text-align: center;">
-                    <strong>О себе</strong>
-                </h2>
-                <h6 class="mbr-section-subtitle mbr-fonts-style mt-0 mb-4 display-5" style="text-align: center;">
-                    <strong>Проектирую детали, которые защищают технику.</strong>
-                </h6>
-                <p class="mbr-text mbr-fonts-style display-7" style="text-align: center;">
-                    Разрабатываю защитные, силовые, и универсальные аксессуары для квадроциклов и снегоходов из стали, алюминия и ПЭНД. Веду проект от идеи до полного комплекта серийной конструкторской документации по ГОСТ и ЕСКД.
-                </p>
-                <p class="mbr-text mbr-fonts-style display-7" style="text-align: center;">
-                    Работаю с 3D-сканированием — сканирую объекты и обрабатываю полученные данные для дальнейшего проектирования. Основной инструмент — Siemens NX. Дополнительно работаю в Blender, Компас 3D и SolidWorks. Практикую 3D-печать — дома есть собственный принтер Flaying Bear Ghost 5.
-                </p>
+                <h2 class="mbr-section-title mbr-fonts-style mb-4 display-2"><strong>О себе</strong></h2>
+                <h6 class="mbr-section-subtitle mbr-fonts-style mt-0 mb-4 display-5"><strong>Проектирую детали, которые защищают технику.</strong></h6>
+                <p class="mbr-text mbr-fonts-style display-7">Разрабатываю защитные, силовые, и универсальные аксессуары для квадроциклов и снегоходов из стали, алюминия и ПЭНД. Веду проект от идеи до полного комплекта серийной конструкторской документации по ГОСТ и ЕСКД.</p>
+                <p class="mbr-text mbr-fonts-style display-7">Работаю с 3D-сканированием — сканирую объекты и обрабатываю полученные данные для дальнейшего проектирования. Основной инструмент — Siemens NX. Дополнительно работаю в Blender, Компас 3D и SolidWorks. Практикую 3D-печать — дома есть собственный принтер Flaying Bear Ghost 5.</p>
             </div>
         </div>
     </div>
 </section>
-  
-<!-- ==================== НАВЫКИ И ПРОГРАММЫ ==================== -->
+
+<!-- ==================== НАВЫКИ ==================== -->
 <style>
-  .skills-section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
-  }
-  .skills-section .section-title {
-    text-align: center;
-    color: #1a0b2e;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-  }
-  .skills-section .skill-item {
-    margin-bottom: 1.5rem;
-  }
-  .skills-section .skill-name {
-    font-weight: 600;
-    color: #1a0b2e;
-    margin-bottom: 0.3rem;
-    display: flex;
-    justify-content: space-between;
-  }
-  .skills-section .skill-bar {
-    background: rgba(255,255,255,0.4);
-    border-radius: 50px;
-    height: 10px;
-    width: 100%;
-    overflow: hidden;
-  }
-  .skills-section .skill-fill {
-    height: 100%;
-    border-radius: 50px;
-    width: 0%;
-    transition: width 0.8s ease;
-  }
-  .skills-section .skill-level-text {
-    font-size: 0.9rem;
-    color: #555;
-  }
-  .skills-section .equipment-info {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: rgba(255,255,255,0.5);
-    border-radius: 1rem;
-    text-align: center;
-  }
-  .skills-section .tags-container {
-    margin-top: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.6rem;
-  }
-  .skills-section .tag {
-    background: rgba(200, 177, 228, 0.3);
-    padding: 0.4rem 1.2rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #3d1f6d;
-    border: 1px solid rgba(200, 177, 228, 0.4);
-    transition: background 0.3s;
-  }
-  .skills-section .tag:hover {
-    background: rgba(200, 177, 228, 0.6);
-  }
-  @media (max-width: 767px) {
-    .skills-section .skill-item {
-      margin-bottom: 1rem;
-    }
-  }
+.skills-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
+}
+.skills-section .section-title {
+  text-align: center;
+  color: #1a0b2e;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.skills-section .skill-item {
+  margin-bottom: 1.5rem;
+}
+.skills-section .skill-name {
+  font-weight: 600;
+  color: #1a0b2e;
+  margin-bottom: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+}
+.skills-section .skill-bar {
+  background: rgba(255,255,255,0.4);
+  border-radius: 50px;
+  height: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+.skills-section .skill-fill {
+  height: 100%;
+  border-radius: 50px;
+  width: 0%;
+  transition: width 0.8s ease;
+  background: linear-gradient(90deg, #f59f00 0%, #fcc419 40%, #ffd43b 100%) !important;
+  box-shadow: 0 2px 15px rgba(245, 159, 0, 0.25);
+}
+.skills-section .skill-level-text {
+  font-size: 0.9rem;
+  color: #555;
+}
+.skills-section .equipment-info {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.5);
+  border-radius: 1rem;
+  text-align: center;
+}
+.skills-section .tags-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.skills-section .tag {
+  background: rgba(200, 177, 228, 0.3);
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #3d1f6d;
+  border: 1px solid rgba(200, 177, 228, 0.4);
+}
 </style>
 
 <section class="skills-section" id="skills-section">
@@ -1009,61 +915,30 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="skill-item">
-          <div class="skill-name">
-            <span>Siemens NX</span>
-            <span class="skill-level-text">Уверенный</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" style="width: 90%;"></div>
-          </div>
+          <div class="skill-name"><span>Siemens NX</span><span class="skill-level-text">Уверенный</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-name">
-            <span>SolidWorks</span>
-            <span class="skill-level-text">Базовый</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" style="width: 50%;"></div>
-          </div>
+          <div class="skill-name"><span>SolidWorks</span><span class="skill-level-text">Базовый</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width: 50%;"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-name">
-            <span>Компас-3D</span>
-            <span class="skill-level-text">Чуть выше базового</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" style="width: 60%;"></div>
-          </div>
+          <div class="skill-name"><span>Компас-3D</span><span class="skill-level-text">Чуть выше базового</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width: 60%;"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-name">
-            <span>Blender</span>
-            <span class="skill-level-text">Базовый</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" style="width: 50%;"></div>
-          </div>
+          <div class="skill-name"><span>Blender</span><span class="skill-level-text">Базовый</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width: 50%;"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-name">
-            <span>3D-сканирование</span>
-            <span class="skill-level-text">Практический</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" style="width: 75%;"></div>
-          </div>
+          <div class="skill-name"><span>3D-сканирование</span><span class="skill-level-text">Практический</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width: 75%;"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-name">
-            <span>3D-печать</span>
-            <span class="skill-level-text">Практический</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" style="width: 75%;"></div>
-          </div>
+          <div class="skill-name"><span>3D-печать</span><span class="skill-level-text">Практический</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width: 75%;"></div></div>
         </div>
       </div>
-
       <div class="col-lg-6">
         <div class="equipment-info">
           <p style="font-weight: 500; color: #1a0b2e;">Оборудование</p>
@@ -1091,160 +966,122 @@
   </div>
 </section>
 
-<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ ==================== -->
+<!-- ==================== ГАЛЕРЕЯ ==================== -->
 <style>
-  .gallery-grid {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    text-align: center;
-    width: 100%;
-  }
-  .gallery-grid h2 {
-    color: #1a0b2e;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-  }
-  .gallery-grid .year-row {
-    margin-bottom: 5rem;
-  }
-  .gallery-grid .year-row h3 {
-    font-size: 2rem;
-    color: #1a0b2e;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-  }
-  .gallery-grid .grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-  .gallery-grid .grid-item {
-    background: transparent !important;
-    border-radius: 0 !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    max-height: 380px;
-  }
-  .gallery-grid .grid-item a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    min-height: 200px;
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-    line-height: 0;
-    overflow: hidden;
-    border-radius: 0.5rem;
-    background: rgba(200, 177, 228, 0.05);
-  }
-  .gallery-grid .grid-item img {
-    width: auto;
-    height: auto;
-    max-width: 96%;
-    max-height: 96%;
-    object-fit: contain;
-    border-radius: 0.5rem;
-    display: block;
-    margin: auto;
-    padding: 0;
-    transition: transform 0.3s ease;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    /* Плейсхолдер пока картинка не загрузилась */
-    background: rgba(200, 177, 228, 0.1);
-    min-height: 100px;
-    min-width: 100px;
-  }
-  .gallery-grid .grid-item img:hover {
-    transform: translateY(-50%) scale(1.02);
-  }
-  .gallery-grid .grid-item .caption {
-    margin-top: 0.6rem;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #1a0b2e;
-    padding: 0 0.5rem;
-    line-height: 1.3;
-    position: relative;
-    z-index: 2;
-    min-height: 2.5rem;
-    word-wrap: break-word;
-  }
-  @media (max-width: 1200px) {
-    .gallery-grid .grid-container {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  @media (max-width: 992px) {
-    .gallery-grid .grid-container {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-    .gallery-grid .grid-item {
-      max-height: 320px;
-    }
-    .gallery-grid .grid-item a {
-      max-height: 250px;
-      min-height: 160px;
-    }
-    .gallery-grid .grid-item img {
-      max-width: 94%;
-      max-height: 94%;
-      min-height: 80px;
-      min-width: 80px;
-    }
-  }
-  @media (max-width: 600px) {
-    .gallery-grid .grid-container {
-      grid-template-columns: 1fr;
-    }
-    .gallery-grid .grid-item {
-      max-height: none;
-    }
-    .gallery-grid .grid-item a {
-      max-height: 280px;
-      min-height: 180px;
-    }
-    .gallery-grid .grid-item img {
-      max-width: 96%;
-      max-height: 96%;
-      min-height: 100px;
-      min-width: 100px;
-    }
-    .gallery-grid .grid-item .caption {
-      min-height: 2rem;
-    }
-  }
+.gallery-grid {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  text-align: center;
+  width: 100%;
+}
+.gallery-grid h2 {
+  color: #1a0b2e;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.gallery-grid .year-row {
+  margin-bottom: 5rem;
+}
+.gallery-grid .year-row h3 {
+  font-size: 2rem;
+  color: #1a0b2e;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+.gallery-grid .grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.gallery-grid .grid-item {
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+}
+.gallery-grid .grid-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  min-height: 200px;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background: rgba(200, 177, 228, 0.05);
+}
+.gallery-grid .grid-item img {
+  width: auto;
+  height: auto;
+  max-width: 96%;
+  max-height: 96%;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  display: block;
+  margin: auto;
+  padding: 0;
+  transition: transform 0.3s ease;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(200, 177, 228, 0.1);
+  min-height: 100px;
+  min-width: 100px;
+}
+.gallery-grid .grid-item .caption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #1a0b2e;
+  padding: 0 0.5rem;
+  line-height: 1.3;
+  position: relative;
+  z-index: 2;
+  min-height: 2.5rem;
+  word-wrap: break-word;
+}
+@media (max-width: 1200px) {
+  .gallery-grid .grid-container { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 992px) {
+  .gallery-grid .grid-container { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .gallery-grid .grid-item { max-height: 320px; }
+  .gallery-grid .grid-item a { max-height: 250px; min-height: 160px; }
+}
+@media (max-width: 600px) {
+  .gallery-grid .grid-container { grid-template-columns: 1fr; }
+  .gallery-grid .grid-item { max-height: none; }
+  .gallery-grid .grid-item a { max-height: 280px; min-height: 180px; }
+  .gallery-grid .grid-item img { max-width: 96%; max-height: 96%; min-height: 120px; min-width: 120px; }
+}
 </style>
 
 <section class="gallery-grid" id="projects">
   <h2>Мои готовые изделия</h2>
-
   <div class="year-row">
     <h3>2025</h3>
     <div class="grid-container" id="grid-2025"></div>
   </div>
-
   <div class="year-row">
     <h3>2026</h3>
     <div class="grid-container" id="grid-2026"></div>
   </div>
-
   <div style="max-width: 900px; margin: -3rem auto 0 auto; padding: 1rem 2rem 2rem 2rem; text-align: center;">
     <p style="font-size: 1.6rem; line-height: 1.5; color: #000000; font-weight: 400;">
       По каждой фотографии имеется рендер модели, который я готов продемонстрировать при личной встрече.
@@ -1253,219 +1090,183 @@
 </section>
 
 <script>
-  const images2025 = [
-    'Задний_бампер_снегохода_RM_FRONTIER',
-    'Передний_бампер_квадроцикла_Loncin_Xolf_700i',
-    'Задний_бампер_квадроцикла_Loncin_Xolf_700i',
-    'Защита_днища_квадроцикла_Baltmotors_Striker_500_EFI',
-    'Комплект_пластиковой_защиты_днища_квадроцикла_BRP_CAN-AM_Maverick_R_X_RS',
-    'Бампер_снегохода_STELS_STAVR',
-    'Подкат_транспортировочный_для_снегохода',
-    'Задний_бампер_квадроцикла_Baltmotors_Striker_500_EFI',
-    'Передний_бампер_квадроцикла_Baltmotors_Striker_500_EFI',
-    'Комплект_пластиковой_защиты_днища_квадроцикла_BRC_X_TERRA-CT'
-  ];
+const images2025 = [
+  'Задний_бампер_снегохода_RM_FRONTIER',
+  'Передний_бампер_квадроцикла_Loncin_Xolf_700i',
+  'Задний_бампер_квадроцикла_Loncin_Xolf_700i',
+  'Защита_днища_квадроцикла_Baltmotors_Striker_500_EFI',
+  'Комплект_пластиковой_защиты_днища_квадроцикла_BRP_CAN-AM_Maverick_R_X_RS',
+  'Бампер_снегохода_STELS_STAVR',
+  'Подкат_транспортировочный_для_снегохода',
+  'Задний_бампер_квадроцикла_Baltmotors_Striker_500_EFI',
+  'Передний_бампер_квадроцикла_Baltmotors_Striker_500_EFI',
+  'Комплект_пластиковой_защиты_днища_квадроцикла_BRC_X_TERRA-CT'
+];
 
-  const images2026 = [
-    'Тележка_под_лыжу_снегохода_из_круглой_трубы',
-    'Тележка_под_лыжу_снегохода_из_профильной_трубы',
-    'Передний_бампер_для_квадроцикла_GBM_Cronos_420',
-    'Комплект_пластиковой_защиты_днища_для_квадроцикла_GBM_Cronos_420',
-    'Комплект_алюминиевой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
-    'Комплект_пластиковой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
-    'Передний_бампер_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
-    'Комплект_пластиковой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C5',
-    'Комплект_алюминиевой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C5',
-    'Корзина_багажная_для_лодки'
-  ];
+const images2026 = [
+  'Тележка_под_лыжу_снегохода_из_круглой_трубы',
+  'Тележка_под_лыжу_снегохода_из_профильной_трубы',
+  'Передний_бампер_для_квадроцикла_GBM_Cronos_420',
+  'Комплект_пластиковой_защиты_днища_для_квадроцикла_GBM_Cronos_420',
+  'Комплект_алюминиевой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
+  'Комплект_пластиковой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
+  'Передний_бампер_для_квадроцикла_CFMOTO_CFORCE_C6_PRO',
+  'Комплект_пластиковой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C5',
+  'Комплект_алюминиевой_защиты_днища_для_квадроцикла_CFMOTO_CFORCE_C5',
+  'Корзина_багажная_для_лодки'
+];
 
-  function populateGridWithObserver(containerId, imageList, year) {
-    const container = document.getElementById(containerId);
-    if (!container) {
-      console.error('Контейнер не найден:', containerId);
-      return;
-    }
-    container.innerHTML = '';
+function populateGridWithObserver(containerId, imageList, year) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = '';
 
-    // Создаём все элементы сразу, но картинки загружаем через Observer
-    imageList.forEach((name, index) => {
-      const item = document.createElement('div');
-      item.className = 'grid-item';
-      const caption = name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-      const imgSrc = `${year}/${name}.webp`;
+  imageList.forEach((name) => {
+    const item = document.createElement('div');
+    item.className = 'grid-item';
+    const caption = name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    const imgSrc = `${year}/${name}.webp`;
 
-      // Контейнер для изображения с плейсхолдером
-      const link = document.createElement('a');
-      link.href = imgSrc;
-      link.target = '_blank';
-      link.style.display = 'block';
-      link.style.textDecoration = 'none';
-      link.style.width = '100%';
-      link.style.height = '100%';
+    const link = document.createElement('a');
+    link.href = imgSrc;
+    link.target = '_blank';
+    link.style.display = 'block';
+    link.style.textDecoration = 'none';
+    link.style.width = '100%';
+    link.style.height = '100%';
 
-      const img = document.createElement('img');
-      img.alt = caption;
-      img.loading = 'lazy';
-      img.dataset.src = imgSrc;
-      img.style.width = 'auto';
-      img.style.height = 'auto';
-      img.style.maxWidth = '96%';
-      img.style.maxHeight = '96%';
-      img.style.objectFit = 'contain';
-      img.style.borderRadius = '0.5rem';
-      img.style.display = 'block';
-      img.style.margin = 'auto';
-      img.style.padding = '0';
-      img.style.transition = 'transform 0.3s ease';
-      img.style.background = 'rgba(200, 177, 228, 0.1)';
-      img.style.minHeight = '100px';
-      img.style.minWidth = '100px';
+    const img = document.createElement('img');
+    img.alt = caption;
+    img.dataset.src = imgSrc;
+    img.style.width = 'auto';
+    img.style.height = 'auto';
+    img.style.maxWidth = '96%';
+    img.style.maxHeight = '96%';
+    img.style.objectFit = 'contain';
+    img.style.borderRadius = '0.5rem';
+    img.style.display = 'block';
+    img.style.margin = 'auto';
+    img.style.padding = '0';
+    img.style.transition = 'transform 0.3s ease';
+    img.style.background = 'rgba(200, 177, 228, 0.1)';
+    img.style.minHeight = '100px';
+    img.style.minWidth = '100px';
 
-      // Обработчик ошибки
-      img.onerror = function() {
-        this.src = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwY2VmMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNkMWY2ZCI+5L2g55WZ5r2uPC90ZXh0Pjwvc3ZnPg==";
-      };
+    img.onerror = function() {
+      this.src = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwY2VmMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNkMWY2ZCI+5L2g55WZ5r2uPC90ZXh0Pjwvc3ZnPg==";
+    };
 
-      link.appendChild(img);
-      item.appendChild(link);
+    link.appendChild(img);
+    item.appendChild(link);
 
-      const captionDiv = document.createElement('div');
-      captionDiv.className = 'caption';
-      captionDiv.textContent = caption;
-      item.appendChild(captionDiv);
+    const captionDiv = document.createElement('div');
+    captionDiv.className = 'caption';
+    captionDiv.textContent = caption;
+    item.appendChild(captionDiv);
+    container.appendChild(item);
 
-      container.appendChild(item);
-
-      // Используем Intersection Observer для загрузки изображения
-      if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const imgEl = entry.target.querySelector('img');
-              if (imgEl && imgEl.dataset.src && !imgEl.src) {
-                imgEl.src = imgEl.dataset.src;
-              }
-              observer.unobserve(entry.target);
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const imgEl = entry.target.querySelector('img');
+            if (imgEl && imgEl.dataset.src && !imgEl.src) {
+              imgEl.src = imgEl.dataset.src;
             }
-          });
-        }, {
-          rootMargin: '50px', // Начинаем загрузку за 50px до появления
-          threshold: 0.01
+            observer.unobserve(entry.target);
+          }
         });
-        observer.observe(item);
-      } else {
-        // Fallback для старых браузеров
-        img.src = img.dataset.src;
-      }
-    });
-  }
-
-  // Заполняем сетки после загрузки страницы
-  window.addEventListener('load', function() {
-    populateGridWithObserver('grid-2025', images2025, '2025');
-    populateGridWithObserver('grid-2026', images2026, '2026');
+      }, { rootMargin: '50px', threshold: 0.01 });
+      observer.observe(item);
+    } else {
+      img.src = img.dataset.src;
+    }
   });
+}
+
+window.addEventListener('load', function() {
+  populateGridWithObserver('grid-2025', images2025, '2025');
+  populateGridWithObserver('grid-2026', images2026, '2026');
+});
 </script>
 
-<!-- ==================== ОБРАЗОВАНИЕ И ОПЫТ ==================== -->
+<!-- ==================== ТАЙМЛАЙН ==================== -->
 <style>
-  .timeline-tree {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
-    text-align: center;
-  }
-  .timeline-tree h2 {
-    color: #1a0b2e;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-  }
-  .timeline-tree .tree {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    padding-left: 2.5rem;
-  }
-  .timeline-tree .tree::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(180deg, #6b3fa0, #a67dc9);
-    border-radius: 10px;
-  }
-  .timeline-tree .tree-item {
-    position: relative;
-    margin-bottom: 3rem;
-    background: rgba(255,255,255,0.6);
-    backdrop-filter: blur(4px);
-    border-radius: 1.5rem;
-    padding: 2rem 2.5rem;
-    text-align: left;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    border: 1px solid rgba(255,255,255,0.3);
-  }
-  .timeline-tree .tree-item::before {
-    content: '';
-    position: absolute;
-    left: -2.5rem;
-    top: 2rem;
-    width: 16px;
-    height: 16px;
-    background: #6b3fa0;
-    border-radius: 50%;
-    border: 3px solid #a67dc9;
-    box-shadow: 0 0 0 4px rgba(107, 63, 160, 0.2);
-  }
-  .timeline-tree .tree-item:last-child {
-    margin-bottom: 0;
-  }
-  .timeline-tree .tree-item .year {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #3d1f6d;
-    margin-bottom: 0.2rem;
-  }
-  .timeline-tree .tree-item .duration {
-    font-size: 1rem;
-    color: #555;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-  }
-  .timeline-tree .tree-item .company {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #1a0b2e;
-    margin-bottom: 0.3rem;
-  }
-  .timeline-tree .tree-item .position {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #3d1f6d;
-    margin-bottom: 1rem;
-  }
-  .timeline-tree .tree-item .description {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
-  }
-  @media (max-width: 767px) {
-    .timeline-tree .tree {
-      padding-left: 1.5rem;
-    }
-    .timeline-tree .tree-item {
-      padding: 1.5rem 1.5rem;
-    }
-    .timeline-tree .tree-item::before {
-      left: -1.5rem;
-      top: 1.5rem;
-      width: 12px;
-      height: 12px;
-    }
-  }
+.timeline-tree {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
+  text-align: center;
+}
+.timeline-tree h2 {
+  color: #1a0b2e;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.timeline-tree .tree {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 2.5rem;
+}
+.timeline-tree .tree::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #6b3fa0, #a67dc9);
+  border-radius: 10px;
+}
+.timeline-tree .tree-item {
+  position: relative;
+  margin-bottom: 3rem;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(4px);
+  border-radius: 1.5rem;
+  padding: 2rem 2.5rem;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.timeline-tree .tree-item::before {
+  content: '';
+  position: absolute;
+  left: -2.5rem;
+  top: 2rem;
+  width: 16px;
+  height: 16px;
+  background: #6b3fa0;
+  border-radius: 50%;
+  border: 3px solid #a67dc9;
+  box-shadow: 0 0 0 4px rgba(107, 63, 160, 0.2);
+}
+.timeline-tree .tree-item:last-child { margin-bottom: 0; }
+.timeline-tree .tree-item .year {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #3d1f6d;
+  margin-bottom: 0.2rem;
+}
+.timeline-tree .tree-item .company {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1a0b2e;
+  margin-bottom: 0.3rem;
+}
+.timeline-tree .tree-item .position {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #3d1f6d;
+  margin-bottom: 1rem;
+}
+.timeline-tree .tree-item .description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
 </style>
 
 <section class="timeline-tree" id="timeline-tree">
@@ -1476,18 +1277,13 @@
         <div class="year">2019 · 5 лет</div>
         <div class="company">Свердловская дирекция по ремонту и обслуживанию приборов безопасности</div>
         <div class="position">Инженер 1 категории</div>
-        <div class="description">
-          Анализ оперативных данных по отказам систем безопасности на локомотиве. Анализ неисправностей локомотивных приборов безопасности.
-        </div>
+        <div class="description">Анализ оперативных данных по отказам систем безопасности на локомотиве. Анализ неисправностей локомотивных приборов безопасности.</div>
       </div>
-
       <div class="tree-item">
         <div class="year">2024 · 2 года (по настоящее время)</div>
         <div class="company">Rival Powersports</div>
         <div class="position">Инженер-конструктор защитных аксессуаров</div>
-        <div class="description">
-          Разработка и проектирование бамперов, защит, аксессуаров, универсальных изделий для квадроциклов, снегоходов и лодок. Работа в Siemens NX с полным производственным циклом: 3D-сканирование, реверс-инжиниринг, твердотельное моделирование, конструкторская документация по ГОСТ/ЕСКД. Взаимодействие с производством и авторский надзор на всех этапах разработки. Разработано более 24 изделий.
-        </div>
+        <div class="description">Разработка и проектирование бамперов, защит, аксессуаров, универсальных изделий для квадроциклов, снегоходов и лодок. Работа в Siemens NX с полным производственным циклом: 3D-сканирование, реверс-инжиниринг, твердотельное моделирование, конструкторская документация по ГОСТ/ЕСКД. Взаимодействие с производством и авторский надзор на всех этапах разработки. Разработано более 24 изделий.</div>
       </div>
     </div>
   </div>
@@ -1495,72 +1291,57 @@
 
 <!-- ==================== КОНТАКТЫ ==================== -->
 <style>
-  .contacts-oval {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
-    text-align: center;
-  }
-  .contacts-oval h2 {
-    color: #1a0b2e;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-  }
-  .contacts-oval .oval-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  .contacts-oval .oval-item {
-    background: linear-gradient(135deg, #fce4c8 0%, #f8d5a3 50%, #f0c27a 100%);
-    border-radius: 100px;
-    padding: 1.2rem 2.5rem;
-    color: #000000;
-    font-size: 1.1rem;
-    font-weight: 500;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-    border: none;
-    text-decoration: none;
-    text-align: center;
-    min-width: 180px;
-  }
-  .contacts-oval .oval-item:hover {
-    transform: translateY(-3px);
-  }
-  .contacts-oval .oval-item .label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #3d1f6d;
-    margin-bottom: 0.3rem;
-  }
-  .contacts-oval .oval-item .value {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #000000;
-  }
-  @media (max-width: 600px) {
-    .contacts-oval .oval-wrapper {
-      gap: 1rem;
-      flex-direction: column;
-      align-items: center;
-    }
-    .contacts-oval .oval-item {
-      padding: 0.8rem 1.8rem;
-      font-size: 1rem;
-      min-width: unset;
-      width: 100%;
-      max-width: 280px;
-    }
-  }
+.contacts-oval {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-image: linear-gradient(135deg, #f1e6f9 0%, #e0cef0 40%, #d4bce6 100%);
+  text-align: center;
+}
+.contacts-oval h2 {
+  color: #1a0b2e;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.contacts-oval .oval-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.contacts-oval .oval-item {
+  background: linear-gradient(135deg, #f59f00 0%, #fcc419 40%, #ffd43b 100%) !important;
+  border-radius: 100px !important;
+  padding: 1.2rem 2.5rem !important;
+  color: #000000 !important;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(245, 159, 0, 0.3) !important;
+  transition: transform 0.3s ease;
+  border: none !important;
+  text-decoration: none;
+  text-align: center;
+  min-width: 180px !important;
+}
+.contacts-oval .oval-item:hover {
+  transform: translateY(-3px);
+}
+.contacts-oval .oval-item .label {
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  color: #5a3a00 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+}
+.contacts-oval .oval-item .value {
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  color: #000000 !important;
+}
 </style>
 
 <section class="contacts-oval" id="contacts">
@@ -1569,22 +1350,22 @@
     <div class="oval-wrapper">
       <div class="oval-item">
         <div class="label">Email</div>
-        <div class="value">SERGEY-523@yandex.ru</div>
+        <div class="value">XXXXX@yandex.ru</div>
       </div>
       <div class="oval-item">
         <div class="label">Telegram</div>
-        <div class="value">@L0miiL</div>
+        <div class="value">XXXXX</div>
       </div>
       <div class="oval-item">
         <div class="label">Телефон</div>
-        <div class="value">+7(912)254-62-04</div>
+        <div class="value">+X(XXX)XXX-XX-XX</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ==================== ФУТЕР ==================== -->
-<div style="background-color: #000000; padding: 1.5rem 0; text-align: center; color: #ffffff; font-size: 0.7rem; font-weight: 300; letter-spacing: 0.5px;">
+<div style="background-color: rgba(0,0,0,0.5) !important; backdrop-filter: blur(4px); padding: 1.5rem 0; text-align: center; color: #ffffff; font-size: 0.7rem; font-weight: 300; letter-spacing: 0.5px;">
   Сергей Копылов <span style="color: #ffffff; font-size: 0.7rem; margin: 0 0.5rem;">|</span> © 2026 Все права защищены
 </div>
 
@@ -1599,17 +1380,13 @@
 <script src="https://ai.mobirise.com/assets/startm5/formoid/formoid.min.js?v=m3frcrn2" async></script>
 <script src="https://ai.mobirise.com/assets/preview.js" async></script>
 
-<!-- ==================== ПЛАВНАЯ ПРОКРУТКА ==================== -->
 <script>
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   });
