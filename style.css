@@ -85,101 +85,25 @@ body {
   font-size: 5rem;
   line-height: 1;
 }
-.display-1 > .mbr-iconfont {
-  font-size: 6.25rem;
-}
 .display-2 {
   font-family: 'Inter', sans-serif;
   font-size: 4rem;
   line-height: 1;
-}
-.display-2 > .mbr-iconfont {
-  font-size: 5rem;
 }
 .display-4 {
   font-family: 'Inter', sans-serif;
   font-size: 1.2rem;
   line-height: 1.5;
 }
-.display-4 > .mbr-iconfont {
-  font-size: 1.5rem;
-}
 .display-5 {
   font-family: 'Inter', sans-serif;
   font-size: 2.5rem;
   line-height: 1.5;
 }
-.display-5 > .mbr-iconfont {
-  font-size: 3.125rem;
-}
 .display-7 {
   font-family: 'Inter', sans-serif;
   font-size: 1.4rem;
   line-height: 1.3;
-}
-.display-7 > .mbr-iconfont {
-  font-size: 1.75rem;
-}
-
-/* ---- Fluid typography for mobile devices ---- */
-@media (max-width: 992px) {
-  .display-1 {
-    font-size: 4rem;
-  }
-}
-@media (max-width: 768px) {
-  .display-1 {
-    font-size: 3.5rem;
-    font-size: calc( 2.4rem + (5 - 2.4) * ((100vw - 20rem) / (48 - 20)));
-    line-height: calc( 1.1 * (2.4rem + (5 - 2.4) * ((100vw - 20rem) / (48 - 20))));
-  }
-  .display-2 {
-    font-size: 3.2rem;
-    font-size: calc( 2.05rem + (4 - 2.05) * ((100vw - 20rem) / (48 - 20)));
-    line-height: calc( 1.3 * (2.05rem + (4 - 2.05) * ((100vw - 20rem) / (48 - 20))));
-  }
-  .display-4 {
-    font-size: 0.96rem;
-    font-size: calc( 1.07rem + (1.2 - 1.07) * ((100vw - 20rem) / (48 - 20)));
-    line-height: calc( 1.4 * (1.07rem + (1.2 - 1.07) * ((100vw - 20rem) / (48 - 20))));
-  }
-  .display-5 {
-    font-size: 2rem;
-    font-size: calc( 1.525rem + (2.5 - 1.525) * ((100vw - 20rem) / (48 - 20)));
-    line-height: calc( 1.4 * (1.525rem + (2.5 - 1.525) * ((100vw - 20rem) / (48 - 20))));
-  }
-  .display-7 {
-    font-size: 1.12rem;
-    font-size: calc( 1.14rem + (1.4 - 1.14) * ((100vw - 20rem) / (48 - 20)));
-    line-height: calc( 1.4 * (1.14rem + (1.4 - 1.14) * ((100vw - 20rem) / (48 - 20))));
-  }
-}
-@media (min-width: 992px) and (max-width: 1400px) {
-  .display-1 {
-    font-size: 3.5rem;
-    font-size: calc( 2.4rem + (5 - 2.4) * ((100vw - 62rem) / (87 - 62)));
-    line-height: calc( 1.1 * (2.4rem + (5 - 2.4) * ((100vw - 62rem) / (87 - 62))));
-  }
-  .display-2 {
-    font-size: 3.2rem;
-    font-size: calc( 2.05rem + (4 - 2.05) * ((100vw - 62rem) / (87 - 62)));
-    line-height: calc( 1.3 * (2.05rem + (4 - 2.05) * ((100vw - 62rem) / (87 - 62))));
-  }
-  .display-4 {
-    font-size: 0.96rem;
-    font-size: calc( 1.07rem + (1.2 - 1.07) * ((100vw - 62rem) / (87 - 62)));
-    line-height: calc( 1.4 * (1.07rem + (1.2 - 1.07) * ((100vw - 62rem) / (87 - 62))));
-  }
-  .display-5 {
-    font-size: 2rem;
-    font-size: calc( 1.525rem + (2.5 - 1.525) * ((100vw - 62rem) / (87 - 62)));
-    line-height: calc( 1.4 * (1.525rem + (2.5 - 1.525) * ((100vw - 62rem) / (87 - 62))));
-  }
-  .display-7 {
-    font-size: 1.12rem;
-    font-size: calc( 1.14rem + (1.4 - 1.14) * ((100vw - 62rem) / (87 - 62)));
-    line-height: calc( 1.4 * (1.14rem + (1.4 - 1.14) * ((100vw - 62rem) / (87 - 62))));
-  }
 }
 
 /* ===== КНОПКИ ===== */
@@ -191,18 +115,6 @@ body {
   .btn {
     padding: 0.75rem 1.5rem;
   }
-}
-.btn-sm {
-  padding: 0.6rem 1.2rem;
-  border-radius: 4px;
-}
-.btn-md {
-  padding: 0.6rem 1.2rem;
-  border-radius: 4px;
-}
-.btn-lg {
-  padding: 1.25rem 2rem;
-  border-radius: 4px;
 }
 
 /* Цветовые классы */
@@ -228,12 +140,6 @@ body {
   border-color: #e3d7f1 !important;
   box-shadow: none;
 }
-.btn-primary.disabled,
-.btn-primary:disabled {
-  color: #ffffff !important;
-  background-color: #e3d7f1 !important;
-  border-color: #e3d7f1 !important;
-}
 
 .btn-secondary,
 .btn-secondary:active {
@@ -251,305 +157,6 @@ body {
   border-color: #6b37af !important;
   box-shadow: none;
 }
-.btn-secondary.disabled,
-.btn-secondary:disabled {
-  color: #ffffff !important;
-  background-color: #6b37af !important;
-  border-color: #6b37af !important;
-}
-
-.btn-info,
-.btn-info:active {
-  background-color: #6BE0F7 !important;
-  border-color: #6BE0F7 !important;
-  color: #054f5e !important;
-  box-shadow: none;
-}
-.btn-info:hover,
-.btn-info:focus,
-.btn-info.focus,
-.btn-info.active {
-  color: inherit;
-  background-color: #9beafa !important;
-  border-color: #9beafa !important;
-  box-shadow: none;
-}
-.btn-info.disabled,
-.btn-info:disabled {
-  color: #054f5e !important;
-  background-color: #9beafa !important;
-  border-color: #9beafa !important;
-}
-
-.btn-success,
-.btn-success:active {
-  background-color: #7BE7B5 !important;
-  border-color: #7BE7B5 !important;
-  color: #0f5434 !important;
-  box-shadow: none;
-}
-.btn-success:hover,
-.btn-success:focus,
-.btn-success.focus,
-.btn-success.active {
-  color: inherit;
-  background-color: #a6efcd !important;
-  border-color: #a6efcd !important;
-  box-shadow: none;
-}
-.btn-success.disabled,
-.btn-success:disabled {
-  color: #0f5434 !important;
-  background-color: #a6efcd !important;
-  border-color: #a6efcd !important;
-}
-
-.btn-warning,
-.btn-warning:active {
-  background-color: #FFD863 !important;
-  border-color: #FFD863 !important;
-  color: #634a00 !important;
-  box-shadow: none;
-}
-.btn-warning:hover,
-.btn-warning:focus,
-.btn-warning.focus,
-.btn-warning.active {
-  color: inherit;
-  background-color: #ffe596 !important;
-  border-color: #ffe596 !important;
-  box-shadow: none;
-}
-.btn-warning.disabled,
-.btn-warning:disabled {
-  color: #634a00 !important;
-  background-color: #ffe596 !important;
-  border-color: #ffe596 !important;
-}
-
-.btn-danger,
-.btn-danger:active {
-  background-color: #E87A85 !important;
-  border-color: #E87A85 !important;
-  color: #ffffff !important;
-  box-shadow: none;
-}
-.btn-danger:hover,
-.btn-danger:focus,
-.btn-danger.focus,
-.btn-danger.active {
-  color: inherit;
-  background-color: #f0a5ad !important;
-  border-color: #f0a5ad !important;
-  box-shadow: none;
-}
-.btn-danger.disabled,
-.btn-danger:disabled {
-  color: #ffffff !important;
-  background-color: #f0a5ad !important;
-  border-color: #f0a5ad !important;
-}
-
-.btn-white,
-.btn-white:active {
-  background-color: #eff0ec !important;
-  border-color: #eff0ec !important;
-  color: #757b62 !important;
-  box-shadow: none;
-}
-.btn-white:hover,
-.btn-white:focus,
-.btn-white.focus,
-.btn-white.active {
-  color: inherit;
-  background-color: #ffffff !important;
-  border-color: #ffffff !important;
-  box-shadow: none;
-}
-.btn-white.disabled,
-.btn-white:disabled {
-  color: #757b62 !important;
-  background-color: #ffffff !important;
-  border-color: #ffffff !important;
-}
-
-.btn-black,
-.btn-black:active {
-  background-color: #232323 !important;
-  border-color: #232323 !important;
-  color: #ffffff !important;
-  box-shadow: none;
-}
-.btn-black:hover,
-.btn-black:focus,
-.btn-black.focus,
-.btn-black.active {
-  color: inherit;
-  background-color: #3d3d3d !important;
-  border-color: #3d3d3d !important;
-  box-shadow: none;
-}
-.btn-black.disabled,
-.btn-black:disabled {
-  color: #ffffff !important;
-  background-color: #3d3d3d !important;
-  border-color: #3d3d3d !important;
-}
-
-/* ===== OUTLINE-КНОПКИ ===== */
-.btn-primary-outline,
-.btn-primary-outline:active {
-  background-color: transparent !important;
-  border-color: #C8B1E4;
-  color: #C8B1E4;
-}
-.btn-primary-outline:hover,
-.btn-primary-outline:focus,
-.btn-primary-outline.focus,
-.btn-primary-outline.active {
-  color: #9b71ce !important;
-  background-color: transparent !important;
-  border-color: #9b71ce !important;
-  box-shadow: none !important;
-}
-.btn-primary-outline.disabled,
-.btn-primary-outline:disabled {
-  color: #ffffff !important;
-  background-color: #C8B1E4 !important;
-  border-color: #C8B1E4 !important;
-}
-
-.btn-secondary-outline,
-.btn-secondary-outline:active {
-  background-color: transparent !important;
-  border-color: #532B88;
-  color: #532B88;
-}
-.btn-secondary-outline:hover,
-.btn-secondary-outline:focus,
-.btn-secondary-outline.focus,
-.btn-secondary-outline.active {
-  color: #2b1646 !important;
-  background-color: transparent !important;
-  border-color: #2b1646 !important;
-  box-shadow: none !important;
-}
-.btn-secondary-outline.disabled,
-.btn-secondary-outline:disabled {
-  color: #ffffff !important;
-  background-color: #532B88 !important;
-  border-color: #532B88 !important;
-}
-
-.btn-info-outline,
-.btn-info-outline:active {
-  background-color: transparent !important;
-  border-color: #6BE0F7;
-  color: #6BE0F7;
-}
-.btn-info-outline:hover,
-.btn-info-outline:focus,
-.btn-info-outline.focus,
-.btn-info-outline.active {
-  color: #19cff3 !important;
-  background-color: transparent !important;
-  border-color: #19cff3 !important;
-  box-shadow: none !important;
-}
-.btn-info-outline.disabled,
-.btn-info-outline:disabled {
-  color: #054f5e !important;
-  background-color: #6BE0F7 !important;
-  border-color: #6BE0F7 !important;
-}
-
-.btn-success-outline,
-.btn-success-outline:active {
-  background-color: transparent !important;
-  border-color: #7BE7B5;
-  color: #7BE7B5;
-}
-.btn-success-outline:hover,
-.btn-success-outline:focus,
-.btn-success-outline.focus,
-.btn-success-outline.active {
-  color: #32da8c !important;
-  background-color: transparent !important;
-  border-color: #32da8c !important;
-  box-shadow: none !important;
-}
-.btn-success-outline.disabled,
-.btn-success-outline:disabled {
-  color: #0f5434 !important;
-  background-color: #7BE7B5 !important;
-  border-color: #7BE7B5 !important;
-}
-
-.btn-warning-outline,
-.btn-warning-outline:active {
-  background-color: transparent !important;
-  border-color: #FFD863;
-  color: #FFD863;
-}
-.btn-warning-outline:hover,
-.btn-warning-outline:focus,
-.btn-warning-outline.focus,
-.btn-warning-outline.active {
-  color: #ffc20c !important;
-  background-color: transparent !important;
-  border-color: #ffc20c !important;
-  box-shadow: none !important;
-}
-.btn-warning-outline.disabled,
-.btn-warning-outline:disabled {
-  color: #634a00 !important;
-  background-color: #FFD863 !important;
-  border-color: #FFD863 !important;
-}
-
-.btn-danger-outline,
-.btn-danger-outline:active {
-  background-color: transparent !important;
-  border-color: #E87A85;
-  color: #E87A85;
-}
-.btn-danger-outline:hover,
-.btn-danger-outline:focus,
-.btn-danger-outline.focus,
-.btn-danger-outline.active {
-  color: #db3041 !important;
-  background-color: transparent !important;
-  border-color: #db3041 !important;
-  box-shadow: none !important;
-}
-.btn-danger-outline.disabled,
-.btn-danger-outline:disabled {
-  color: #ffffff !important;
-  background-color: #E87A85 !important;
-  border-color: #E87A85 !important;
-}
-
-.btn-black-outline,
-.btn-black-outline:active {
-  background-color: transparent !important;
-  border-color: #232323;
-  color: #232323;
-}
-.btn-black-outline:hover,
-.btn-black-outline:focus,
-.btn-black-outline.focus,
-.btn-black-outline.active {
-  color: #000000 !important;
-  background-color: transparent !important;
-  border-color: #000000 !important;
-  box-shadow: none !important;
-}
-.btn-black-outline.disabled,
-.btn-black-outline:disabled {
-  color: #ffffff !important;
-  background-color: #232323 !important;
-  border-color: #232323 !important;
-}
 
 .btn-white-outline,
 .btn-white-outline:active {
@@ -566,12 +173,6 @@ body {
   border-color: #cfcfcf !important;
   box-shadow: none !important;
 }
-.btn-white-outline.disabled,
-.btn-white-outline:disabled {
-  color: #7a7a7a !important;
-  background-color: #fafafa !important;
-  border-color: #fafafa !important;
-}
 
 /* ===== ЦВЕТОВЫЕ КЛАССЫ ДЛЯ ТЕКСТА ===== */
 .text-primary { color: #C8B1E4 !important; }
@@ -583,183 +184,7 @@ body {
 .text-white { color: #fafafa !important; }
 .text-black { color: #232323 !important; }
 
-a.text-primary:hover,
-a.text-primary:focus,
-a.text-primary.active { color: #9365ca !important; }
-a.text-secondary:hover,
-a.text-secondary:focus,
-a.text-secondary.active { color: #24123b !important; }
-a.text-success:hover,
-a.text-success:focus,
-a.text-success.active { color: #27d584 !important; }
-a.text-info:hover,
-a.text-info:focus,
-a.text-info.active { color: #0dcaef !important; }
-a.text-warning:hover,
-a.text-warning:focus,
-a.text-warning.active { color: #fcbd00 !important; }
-a.text-danger:hover,
-a.text-danger:focus,
-a.text-danger.active { color: #d72537 !important; }
-a.text-white:hover,
-a.text-white:focus,
-a.text-white.active { color: #c7c7c7 !important; }
-a.text-black:hover,
-a.text-black:focus,
-a.text-black.active { color: #000000 !important; }
-
-/* Эффект подчёркивания при наведении на ссылки */
-a[class*="text-"]:not(.nav-link):not(.dropdown-item):not([role]):not(.navbar-caption) {
-  position: relative;
-  background-image: transparent;
-  background-size: 10000px 2px;
-  background-repeat: no-repeat;
-  background-position: 0px 1.2em;
-  background-position: -10000px 1.2em;
-}
-a[class*="text-"]:not(.nav-link):not(.dropdown-item):not([role]):not(.navbar-caption):hover {
-  transition: background-position 2s ease-in-out;
-  background-image: linear-gradient(currentColor 50%, currentColor 50%);
-  background-position: 0px 1.2em;
-}
-
-/* ===== ФОРМЫ И КОМПОНЕНТЫ ===== */
-.nav-tabs .nav-link.active { color: #C8B1E4; }
-.nav-tabs .nav-link:not(.active) { color: #232323; }
-.alert-success { background-color: #70c770; }
-.alert-info { background-color: #6BE0F7; }
-.alert-warning { background-color: #FFD863; }
-.alert-danger { background-color: #E87A85; }
-
-.mbr-section-btn .btn:not(.btn-form) { border-radius: 100px; }
-.mbr-gallery-filter li a { border-radius: 100px !important; }
-.mbr-gallery-filter li.active .btn {
-  background-color: #C8B1E4;
-  border-color: #C8B1E4;
-  color: #ffffff;
-}
-.mbr-gallery-filter li.active .btn:focus { box-shadow: none; }
-.nav-tabs .nav-link { border-radius: 100px !important; }
-
-a, a:hover { color: #C8B1E4; }
-
-/* Планы и цены (если используются) */
-.mbr-plan-header.bg-primary .mbr-plan-subtitle,
-.mbr-plan-header.bg-primary .mbr-plan-price-desc { color: #ffffff; }
-.mbr-plan-header.bg-success .mbr-plan-subtitle,
-.mbr-plan-header.bg-success .mbr-plan-price-desc { color: #ffffff; }
-.mbr-plan-header.bg-info .mbr-plan-subtitle,
-.mbr-plan-header.bg-info .mbr-plan-price-desc { color: #ffffff; }
-.mbr-plan-header.bg-warning .mbr-plan-subtitle,
-.mbr-plan-header.bg-warning .mbr-plan-price-desc { color: #ffffff; }
-.mbr-plan-header.bg-danger .mbr-plan-subtitle,
-.mbr-plan-header.bg-danger .mbr-plan-price-desc { color: #ffffff; }
-
-/* Кнопка "Наверх" — скрыта */
 .scrollToTop_wraper { display: none; }
-
-/* ===== ПОЛЯ ВВОДА ===== */
-.form-control {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.4rem;
-  line-height: 1.3;
-  font-weight: 400;
-  border-radius: 40px !important;
-}
-.form-control > .mbr-iconfont { font-size: 1.75rem; }
-.form-control:hover,
-.form-control:focus {
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.07) 0px 1px 3px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;
-  border-color: #C8B1E4 !important;
-}
-.form-control:-webkit-input-placeholder {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.4rem;
-  line-height: 1.3;
-  font-weight: 400;
-}
-.form-control:-webkit-input-placeholder > .mbr-iconfont { font-size: 1.75rem; }
-
-blockquote { border-color: #C8B1E4; }
-
-/* ===== ФОРМЫ (специфичные для Mobirise) ===== */
-.mbr-form .input-group-btn .btn { border-radius: 100px !important; }
-.mbr-form .input-group-btn .btn:hover {
-  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
-}
-.mbr-form .input-group-btn button[type="submit"] {
-  border-radius: 100px !important;
-  padding: 1rem 3rem;
-}
-.mbr-form .input-group-btn button[type="submit"]:hover {
-  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
-}
-
-.jq-selectbox li:hover,
-.jq-selectbox li.selected {
-  background-color: #C8B1E4;
-  color: #ffffff;
-}
-.jq-number__spin {
-  transition: 0.25s ease;
-}
-.jq-number__spin:hover {
-  border-color: #C8B1E4;
-}
-.jq-selectbox .jq-selectbox__trigger-arrow,
-.jq-number__spin.minus:after,
-.jq-number__spin.plus:after {
-  transition: 0.4s;
-  border-top-color: #232323;
-  border-bottom-color: #232323;
-}
-.jq-selectbox:hover .jq-selectbox__trigger-arrow,
-.jq-number__spin.minus:hover:after,
-.jq-number__spin.plus:hover:after {
-  border-top-color: #C8B1E4;
-  border-bottom-color: #C8B1E4;
-}
-
-.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default,
-.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,
-.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current {
-  color: #000 !important;
-  background-color: #C8B1E4 !important;
-  box-shadow: none !important;
-}
-.xdsoft_datetimepicker .xdsoft_calendar td:hover,
-.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div:hover {
-  color: #fff !important;
-  background: #532B88 !important;
-  box-shadow: none !important;
-}
-
-/* ===== ЛЕНИВАЯ ЗАГРУЗКА ===== */
-.lazy-bg { background-image: none !important; }
-.lazy-placeholder:not(section),
-.lazy-none {
-  display: block;
-  position: relative;
-  padding-bottom: 56.25%;
-  width: 100%;
-  height: auto;
-}
-iframe.lazy-placeholder,
-.lazy-placeholder:after {
-  content: '';
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background: transparent no-repeat center;
-  background-size: contain;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='32' height='32' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' stroke='%23C8B1E4' %3e%3cg fill='none' fill-rule='evenodd'%3e%3cg transform='translate(16 16)' stroke-width='2'%3e%3ccircle stroke-opacity='.5' cx='16' cy='16' r='16'/%3e%3cpath d='M32 16c0-9.94-8.06-16-16-16'%3e%3canimateTransform attributeName='transform' type='rotate' from='0 16 16' to='360 16 16' dur='1s' repeatCount='indefinite'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/svg%3e");
-}
-section.lazy-placeholder:after { opacity: 0.5; }
-
-/* ===== ОБЩИЕ НАСТРОЙКИ ===== */
 body { overflow-x: hidden; }
 a { transition: color 0.6s; }
 
@@ -770,13 +195,8 @@ a { transition: color 0.6s; }
   .container { padding-left: 32px; padding-right: 32px; }
   .container-fluid { padding-left: 32px; padding-right: 32px; }
 }
-@media (max-width: 767px) {
-  .container-fluid { padding-left: 16px; padding-right: 16px; }
-}
 
 /* ===== ТЕКСТ НА ГРАДИЕНТНОМ ФОНЕ ===== */
-
-/* ВСЕ СЕКЦИИ КРОМЕ HERO — ЧЁРНЫЙ ТЕКСТ */
 .skills-section .section-title,
 .skills-section .skill-name,
 .skills-section .skill-level-text,
@@ -801,14 +221,11 @@ a { transition: color 0.6s; }
   color: #000000 !important;
 }
 
-/* HERO-СЕКЦИЯ — БЕЛЫЙ ТЕКСТ (оставляем как есть) */
 .cid-vrMAloTEiy .mbr-section-title,
 .cid-vrMAloTEiy .mbr-text,
 .cid-vrMAloTEiy .mbr-section-btn .btn {
   color: #ffffff !important;
 }
-
-/* Кнопка "ПРОЕКТЫ" в hero — белая обводка */
 .cid-vrMAloTEiy .btn-white-outline {
   border-color: #ffffff !important;
   color: #ffffff !important;
@@ -817,21 +234,16 @@ a { transition: color 0.6s; }
   background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
-/* Метрики — оставляем белым (они в hero-стиле) */
 .cid-vrMAloT6q9 .num,
 .cid-vrMAloT6q9 .card-title {
   color: #ffffff !important;
 }
-
-/* Подписи к фото — ЧЁРНЫЕ */
 .gallery-grid .grid-item .caption {
   color: #000000 !important;
   text-shadow: none;
 }
 
-/* ===== НАВИГАЦИЯ (МЕНЮ) — ЧЁРНЫЙ ТЕКСТ ===== */
-
-/* Меню — текст чёрный */
+/* ===== НАВИГАЦИЯ (МЕНЮ) ===== */
 .cid-vrMAloSBlR .navbar-caption,
 .cid-vrMAloSBlR .nav-link {
   color: #000000 !important;
@@ -841,7 +253,6 @@ a { transition: color 0.6s; }
   color: #532B88 !important;
 }
 
-/* Контейнер меню — прозрачный фон */
 .cid-vrMAloSBlR .container {
   background: rgba(255, 255, 255, 0.6) !important;
   backdrop-filter: blur(12px);
@@ -849,14 +260,10 @@ a { transition: color 0.6s; }
   box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.08);
 }
 
-/* Бургер-меню (гамбургер) — чёрный */
 .cid-vrMAloSBlR button.navbar-toggler .hamburger span {
   background-color: #000000 !important;
 }
 
-/* ===== ОРАНЖЕВЫЙ ГРАДИЕНТ (ЯРКИЙ) ===== */
-
-/* Кнопка "Связаться" в меню */
 .cid-vrMAloSBlR .navbar-buttons .btn {
   background: linear-gradient(135deg, #f59f00 0%, #fcc419 40%, #ffd43b 100%) !important;
   border: none !important;
@@ -864,12 +271,8 @@ a { transition: color 0.6s; }
   box-shadow: 0 4px 15px rgba(245, 159, 0, 0.35);
   transition: all 0.3s ease;
 }
-.cid-vrMAloSBlR .navbar-buttons .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(245, 159, 0, 0.55);
-}
 
-/* Контакты — овалы */
+/* ===== ОРАНЖЕВЫЙ ГРАДИЕНТ ===== */
 section.contacts-oval .oval-wrapper .oval-item {
   background: linear-gradient(135deg, #f59f00 0%, #fcc419 40%, #ffd43b 100%) !important;
   border: none !important;
@@ -880,12 +283,10 @@ section.contacts-oval .oval-wrapper .oval-item {
   padding: 1.2rem 2.5rem !important;
   min-width: 180px !important;
 }
-
 section.contacts-oval .oval-wrapper .oval-item:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 25px rgba(245, 159, 0, 0.45) !important;
 }
-
 section.contacts-oval .oval-wrapper .oval-item .label {
   color: #5a3a00 !important;
   font-weight: 600 !important;
@@ -893,14 +294,12 @@ section.contacts-oval .oval-wrapper .oval-item .label {
   letter-spacing: 0.5px !important;
   text-transform: uppercase !important;
 }
-
 section.contacts-oval .oval-wrapper .oval-item .value {
   color: #000000 !important;
   font-weight: 500 !important;
   font-size: 1rem !important;
 }
 
-/* ===== ШКАЛЫ НАВЫКОВ ===== */
 .skills-section .skill-fill {
   background: linear-gradient(90deg, #f59f00 0%, #fcc419 40%, #ffd43b 100%) !important;
   border-radius: 50px !important;
@@ -908,7 +307,6 @@ section.contacts-oval .oval-wrapper .oval-item .value {
   transition: width 0.8s ease;
   box-shadow: 0 2px 15px rgba(245, 159, 0, 0.25);
 }
-
 .skills-section .skill-bar {
   background: rgba(255, 255, 255, 0.25) !important;
   border-radius: 50px !important;
@@ -917,11 +315,7 @@ section.contacts-oval .oval-wrapper .oval-item .value {
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.skills-section .skill-fill:hover {
-  box-shadow: 0 2px 25px rgba(245, 159, 0, 0.4);
-}
-
-/* ===== МОИ РАБОТЫ ПО ГОДАМ (4 в ряд, крупные контейнеры) ===== */
+/* ===== ГАЛЕРЕЯ (ДЕСКТОП) ===== */
 .gallery-grid {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -995,9 +389,6 @@ section.contacts-oval .oval-wrapper .oval-item .value {
   top: 50%;
   transform: translateY(-50%);
 }
-.gallery-grid .grid-item img:hover {
-  transform: translateY(-50%) scale(1.02);
-}
 .gallery-grid .grid-item .caption {
   margin-top: 0.6rem;
   font-size: 0.85rem;
@@ -1005,8 +396,6 @@ section.contacts-oval .oval-wrapper .oval-item .value {
   color: #000000 !important;
   padding: 0 0.5rem;
   line-height: 1.3;
-  position: relative;
-  z-index: 2;
   min-height: 2.5rem;
   word-wrap: break-word;
   text-shadow: none;
@@ -1028,28 +417,21 @@ section.contacts-oval .oval-wrapper .oval-item .value {
     max-height: 250px;
     min-height: 160px;
   }
-  .gallery-grid .grid-item img {
-    max-width: 94%;
-    max-height: 94%;
-  }
 }
 
-
-/* ================================================================ */
-/* ===== ГЛАВНЫЙ ФИКС: УБИРАЕМ ЧЁРНУЮ ПОЛОСУ ВВЕРХУ ===== */
-/* ================================================================ */
-
-/* Скрываем ЛЮБЫЕ чёрные блоки в начале страницы */
-body > div[style*="background-color: #000000"],
-body > div[style*="background-color:#000000"],
-body > div[style*="background-color: black"],
-body > div[style*="background-color:black"] {
-  display: none !important;
+/* ===== ТАЙМЛАЙН (ДЕСКТОП) ===== */
+.timeline-tree .tree-item:last-child {
+  margin-bottom: 0;
+}
+.timeline-tree .tree-item .duration {
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
-/* Но футер внизу показываем */
+/* ===== ФУТЕР ===== */
 .footer-dark {
-  display: block !important;
   background-color: rgba(0, 0, 0, 0.5) !important;
   backdrop-filter: blur(4px);
   color: #ffffff !important;
@@ -1058,27 +440,74 @@ body > div[style*="background-color:black"] {
   font-size: 0.7rem;
   font-weight: 300;
   letter-spacing: 0.5px;
-  position: relative;
-  z-index: 1;
-  margin-top: 0;
 }
-
-/* Также скрываем все div с чёрным фоном вверху */
-div[style*="background-color: #000000"]:not(.footer-dark) {
-  display: none !important;
-}
-
 
 /* ================================================================ */
-/* ===== ТОЛЬКО ДЛЯ ТЕЛЕФОНОВ (ширина до 768px) ===== */
+/* ===== ТОЛЬКО ДЛЯ ТЕЛЕФОНОВ (ДО 768px) ===== */
 /* ================================================================ */
 
 @media (max-width: 768px) {
 
-  /* --- УБИРАЕМ ВСЕ ОТСТУПЫ И ДЕЛАЕМ НА ВСЮ ШИРИНУ --- */
+  /* --- МЕНЮ - ДЕЛАЕМ ПРОЗРАЧНЫМ, УБИРАЕМ ЧЁРНЫЙ ФОН --- */
+  .cid-vrMAloSBlR .container {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    height: 54px !important;
+    padding: 0.2rem 0.6rem !important;
+    margin-top: 0.4rem !important;
+    width: 96% !important;
+    border-radius: 50px !important;
+  }
+  .cid-vrMAloSBlR .navbar-caption {
+    font-size: 1rem !important;
+    padding-left: 0.3rem !important;
+  }
+  .cid-vrMAloSBlR .navbar-buttons .btn {
+    font-size: 0.7rem !important;
+    padding: 0.25rem 0.9rem !important;
+    border-radius: 50px !important;
+  }
+  .cid-vrMAloSBlR .navbar-toggler {
+    transform: scale(0.7) !important;
+    margin-left: 4px !important;
+    margin-right: 0 !important;
+  }
+  .cid-vrMAloSBlR .navbar-collapse {
+    padding: 0.8rem !important;
+    border-radius: 1.2rem !important;
+    top: 115% !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(16px) !important;
+  }
+  .cid-vrMAloSBlR .navbar-nav .nav-item .nav-link {
+    padding: 10px !important;
+    font-size: 1rem !important;
+  }
+
+  /* --- ГАМБУРГЕР --- */
+  .cid-vrMAloSBlR .navbar-toggler .hamburger span {
+    width: 24px !important;
+    height: 2px !important;
+    background-color: #000000 !important;
+  }
+  .cid-vrMAloSBlR .navbar-toggler .hamburger span:nth-child(2),
+  .cid-vrMAloSBlR .navbar-toggler .hamburger span:nth-child(3) {
+    top: 6px !important;
+  }
+  .cid-vrMAloSBlR .navbar-toggler .hamburger span:nth-child(4) {
+    top: 12px !important;
+  }
+  .cid-vrMAloSBlR nav.opened .hamburger span:nth-child(1),
+  .cid-vrMAloSBlR nav.opened .hamburger span:nth-child(4) {
+    top: 6px !important;
+  }
+
+  /* --- УБИРАЕМ ВСЕ ОТСТУПЫ --- */
   .container, .container-fluid {
-    padding-left: 4px !important;
-    padding-right: 4px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
     max-width: 100% !important;
   }
   .row {
@@ -1086,28 +515,28 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     margin-right: 0 !important;
   }
   .col-12, .col-md-10, .col-lg-6, .col-lg-4 {
-    padding-left: 2px !important;
-    padding-right: 2px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
   }
 
-  /* --- ТЕКСТ - КРУПНЫЙ И ЧИТАЕМЫЙ --- */
+  /* --- ТЕКСТ - БОЛЬШОЙ И ЧИТАЕМЫЙ --- */
   body, p, .mbr-text, .display-7 {
-    font-size: 1.4rem !important;
+    font-size: 1.3rem !important;
     line-height: 1.6 !important;
   }
   .display-4 {
-    font-size: 1.1rem !important;
+    font-size: 1rem !important;
   }
   .display-1 {
-    font-size: 3rem !important;
+    font-size: 2.8rem !important;
     line-height: 1.2 !important;
   }
   .display-2 {
-    font-size: 2.6rem !important;
+    font-size: 2.2rem !important;
     line-height: 1.2 !important;
   }
   .display-5 {
-    font-size: 1.8rem !important;
+    font-size: 1.6rem !important;
     line-height: 1.4 !important;
   }
 
@@ -1124,10 +553,10 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     width: 100% !important;
   }
   .cid-vrMAloTEiy .mbr-section-title {
-    font-size: 2.8rem !important;
+    font-size: 2.6rem !important;
   }
   .cid-vrMAloTEiy .mbr-text {
-    font-size: 1.4rem !important;
+    font-size: 1.3rem !important;
   }
   .cid-vrMAloTEiy [style*="border: 2px solid"] {
     font-size: 0.8rem !important;
@@ -1139,7 +568,7 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     padding: 0.7rem 2.2rem !important;
   }
 
-  /* --- МЕТРИКИ - 3 КОЛОНКИ В РЯД --- */
+  /* --- МЕТРИКИ - 3 КОЛОНКИ --- */
   .cid-vrMAloT6q9 {
     padding-top: 2.5rem !important;
     padding-bottom: 1.5rem !important;
@@ -1157,7 +586,7 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     padding: 0 2px !important;
   }
   .cid-vrMAloT6q9 .item-wrapper .num {
-    font-size: 2.4rem !important;
+    font-size: 2.2rem !important;
   }
   .cid-vrMAloT6q9 .item-wrapper .card-title {
     font-size: 0.7rem !important;
@@ -1171,13 +600,13 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     padding-bottom: 2rem !important;
   }
   .cid-vrMAloTPui .mbr-section-title {
-    font-size: 2.4rem !important;
+    font-size: 2.2rem !important;
   }
   .cid-vrMAloTPui .mbr-section-subtitle {
-    font-size: 1.5rem !important;
+    font-size: 1.4rem !important;
   }
   .cid-vrMAloTPui .mbr-text {
-    font-size: 1.2rem !important;
+    font-size: 1.1rem !important;
   }
 
   /* --- НАВЫКИ --- */
@@ -1190,23 +619,20 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     margin-bottom: 1.5rem !important;
   }
   .skills-section .skill-name {
-    font-size: 1.1rem !important;
-  }
-  .skills-section .skill-level-text {
-    font-size: 0.85rem !important;
-  }
-  .skills-section .skill-bar {
-    height: 12px !important;
-  }
-  .skills-section .equipment-info p {
     font-size: 1rem !important;
   }
-  .skills-section .tag {
-    font-size: 0.75rem !important;
-    padding: 0.3rem 0.9rem !important;
+  .skills-section .skill-level-text {
+    font-size: 0.8rem !important;
   }
-  .skills-section .col-lg-6 {
-    padding: 0 4px !important;
+  .skills-section .skill-bar {
+    height: 10px !important;
+  }
+  .skills-section .equipment-info p {
+    font-size: 0.95rem !important;
+  }
+  .skills-section .tag {
+    font-size: 0.7rem !important;
+    padding: 0.3rem 0.8rem !important;
   }
 
   /* --- ГАЛЕРЕЯ - 1 КОЛОНКА, БОЛЬШИЕ КАРТИНКИ --- */
@@ -1244,7 +670,7 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     min-width: 160px !important;
   }
   .gallery-grid .grid-item .caption {
-    font-size: 0.95rem !important;
+    font-size: 0.9rem !important;
     min-height: 2.2rem !important;
   }
   .gallery-grid > div:last-child p {
@@ -1317,66 +743,10 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     border-radius: 50px !important;
   }
   .contacts-oval .oval-item .label {
-    font-size: 0.75rem !important;
+    font-size: 0.7rem !important;
   }
   .contacts-oval .oval-item .value {
-    font-size: 0.95rem !important;
-  }
-
-  /* --- МЕНЮ --- */
-  .cid-vrMAloSBlR .container {
-    height: 52px !important;
-    padding: 0.2rem 0.6rem !important;
-    margin-top: 0.5rem !important;
-    width: 96% !important;
-    border-radius: 50px !important;
-  }
-  .cid-vrMAloSBlR .navbar-caption {
-    font-size: 1rem !important;
-    padding-left: 0.3rem !important;
-  }
-  .cid-vrMAloSBlR .navbar-buttons .btn {
-    font-size: 0.75rem !important;
-    padding: 0.25rem 0.9rem !important;
-    border-radius: 50px !important;
-  }
-  .cid-vrMAloSBlR .navbar-toggler {
-    transform: scale(0.7) !important;
-    margin-left: 4px !important;
-    margin-right: 0 !important;
-  }
-  .cid-vrMAloSBlR .navbar-collapse {
-    padding: 0.8rem !important;
-    border-radius: 1.2rem !important;
-    top: 115% !important;
-  }
-  .cid-vrMAloSBlR .navbar-nav .nav-item .nav-link {
-    padding: 10px !important;
-    font-size: 1rem !important;
-  }
-
-  /* --- ГАМБУРГЕР --- */
-  .cid-vrMAloSBlR .navbar-toggler .hamburger span {
-    width: 24px !important;
-    height: 2px !important;
-  }
-  .cid-vrMAloSBlR .navbar-toggler .hamburger span:nth-child(2),
-  .cid-vrMAloSBlR .navbar-toggler .hamburger span:nth-child(3) {
-    top: 6px !important;
-  }
-  .cid-vrMAloSBlR .navbar-toggler .hamburger span:nth-child(4) {
-    top: 12px !important;
-  }
-  .cid-vrMAloSBlR nav.opened .hamburger span:nth-child(1),
-  .cid-vrMAloSBlR nav.opened .hamburger span:nth-child(4) {
-    top: 6px !important;
-  }
-
-  /* --- ФУТЕР --- */
-  .footer-dark {
-    font-size: 0.6rem !important;
-    padding: 0.8rem 0 !important;
-    letter-spacing: 0.3px !important;
+    font-size: 0.9rem !important;
   }
 
   /* --- КНОПКИ --- */
@@ -1384,6 +754,13 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     padding: 0.8rem 2rem !important;
     font-size: 1.1rem !important;
     border-radius: 50px !important;
+  }
+
+  /* --- ФУТЕР --- */
+  .footer-dark {
+    font-size: 0.6rem !important;
+    padding: 0.8rem 0 !important;
+    letter-spacing: 0.3px !important;
   }
 
   /* --- ОТКЛЮЧАЕМ ПАРАЛЛАКС --- */
@@ -1394,16 +771,21 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     transform: none !important;
   }
 
-  /* --- УБИРАЕМ ВСЕ ЛИШНИЕ ОТСТУПЫ --- */
+  /* --- УБИРАЕМ ЛИШНИЕ ОТСТУПЫ --- */
   section {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
 
-  /* --- СКРЫВАЕМ ВСЕ ЧЁРНЫЕ БЛОКИ НА ТЕЛЕФОНЕ, КРОМЕ ФУТЕРА --- */
-  div[style*="background-color: #000000"]:not(.footer-dark),
-  div[style*="background-color:#000000"]:not(.footer-dark) {
-    display: none !important;
+  /* --- ФОРСИРОВАННО УБИРАЕМ ЧЁРНЫЙ ФОН У МЕНЮ --- */
+  .cid-vrMAloSBlR {
+    background: transparent !important;
+  }
+  .cid-vrMAloSBlR .container {
+    background: rgba(255, 255, 255, 0.7) !important;
+  }
+  .cid-vrMAloSBlR .navbar {
+    background: transparent !important;
   }
 }
 
@@ -1414,15 +796,15 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     max-width: 100% !important;
   }
   .cid-vrMAloT6q9 .item-wrapper .num {
-    font-size: 2.6rem !important;
+    font-size: 2.4rem !important;
   }
   .cid-vrMAloT6q9 .item-wrapper .card-title {
-    font-size: 0.85rem !important;
+    font-size: 0.8rem !important;
   }
-  .display-1 { font-size: 2.4rem !important; }
-  .display-2 { font-size: 2rem !important; }
+  .display-1 { font-size: 2.2rem !important; }
+  .display-2 { font-size: 1.8rem !important; }
   .cid-vrMAloTEiy .mbr-section-title {
-    font-size: 2.2rem !important;
+    font-size: 2rem !important;
   }
   .gallery-grid .grid-item a {
     max-height: 280px !important;
@@ -1432,8 +814,37 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     min-height: 120px !important;
     min-width: 120px !important;
   }
-  .contacts-oval .oval-item {
-    max-width: 260px !important;
-    padding: 0.7rem 1.2rem !important;
-  }
+}
+
+/* ================================================================ */
+/* ===== ФИКС: ПОЛНОСТЬЮ УБИРАЕМ ЧЁРНЫЙ ФОН С МЕНЮ ===== */
+/* ================================================================ */
+
+/* Принудительно делаем меню прозрачным на всех устройствах */
+.cid-vrMAloSBlR .container {
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+/* Убираем любые чёрные фоны у меню и его элементов */
+.cid-vrMAloSBlR,
+.cid-vrMAloSBlR .navbar,
+.cid-vrMAloSBlR .container,
+.cid-vrMAloSBlR .navbar-brand,
+.cid-vrMAloSBlR .navbar-collapse {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Убираем чёрную полосу вверху - скрываем любой div с чёрным фоном */
+body > div[style*="background-color: #000000"],
+body > div[style*="background-color:#000000"],
+body > div[style*="background-color: black"],
+body > div[style*="background-color:black"] {
+  display: none !important;
+}
+
+/* Показываем только футер */
+.footer-dark {
+  display: block !important;
 }
