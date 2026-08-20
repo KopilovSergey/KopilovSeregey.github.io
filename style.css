@@ -18,7 +18,7 @@ img,
   overflow: hidden;
 }
 
-/* ===== ГРАДИЕНТНЫЙ ФОН ВСЕГО САЙТА (НАСЫЩЕННЫЙ) ===== */
+/* ===== ГРАДИЕНТНЫЙ ФОН ВСЕГО САЙТА ===== */
 html {
   height: 100%;
 }
@@ -1036,17 +1036,20 @@ section.contacts-oval .oval-wrapper .oval-item .value {
 
 
 /* ================================================================ */
-/* ===== ФИКС: УБИРАЕМ ЧЁРНУЮ ПОЛОСУ ВВЕРХУ ===== */
+/* ===== ГЛАВНЫЙ ФИКС: УБИРАЕМ ЧЁРНУЮ ПОЛОСУ ВВЕРХУ ===== */
 /* ================================================================ */
 
-/* Удаляем все возможные чёрные блоки вверху страницы */
-body > div:first-child:not(#loader):not(.menu):not(.cid-vrMAloSBlR) {
+/* Скрываем ЛЮБЫЕ чёрные блоки в начале страницы */
+body > div[style*="background-color: #000000"],
+body > div[style*="background-color:#000000"],
+body > div[style*="background-color: black"],
+body > div[style*="background-color:black"] {
   display: none !important;
 }
 
-/* Футер - только внизу */
-.footer-dark,
-div[style*="background-color: #000000"] {
+/* Но футер внизу показываем */
+.footer-dark {
+  display: block !important;
   background-color: rgba(0, 0, 0, 0.5) !important;
   backdrop-filter: blur(4px);
   color: #ffffff !important;
@@ -1058,10 +1061,9 @@ div[style*="background-color: #000000"] {
   position: relative;
   z-index: 1;
   margin-top: 0;
-  display: block !important;
 }
 
-/* Скрываем все чёрные блоки, которые не являются футером */
+/* Также скрываем все div с чёрным фоном вверху */
 div[style*="background-color: #000000"]:not(.footer-dark) {
   display: none !important;
 }
@@ -1075,8 +1077,8 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
 
   /* --- УБИРАЕМ ВСЕ ОТСТУПЫ И ДЕЛАЕМ НА ВСЮ ШИРИНУ --- */
   .container, .container-fluid {
-    padding-left: 8px !important;
-    padding-right: 8px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
     max-width: 100% !important;
   }
   .row {
@@ -1084,28 +1086,28 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     margin-right: 0 !important;
   }
   .col-12, .col-md-10, .col-lg-6, .col-lg-4 {
-    padding-left: 4px !important;
-    padding-right: 4px !important;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
   }
 
   /* --- ТЕКСТ - КРУПНЫЙ И ЧИТАЕМЫЙ --- */
   body, p, .mbr-text, .display-7 {
-    font-size: 1.2rem !important;
+    font-size: 1.4rem !important;
     line-height: 1.6 !important;
   }
   .display-4 {
-    font-size: 1rem !important;
+    font-size: 1.1rem !important;
   }
   .display-1 {
-    font-size: 2.6rem !important;
+    font-size: 3rem !important;
     line-height: 1.2 !important;
   }
   .display-2 {
-    font-size: 2.2rem !important;
+    font-size: 2.6rem !important;
     line-height: 1.2 !important;
   }
   .display-5 {
-    font-size: 1.6rem !important;
+    font-size: 1.8rem !important;
     line-height: 1.4 !important;
   }
 
@@ -1122,25 +1124,25 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     width: 100% !important;
   }
   .cid-vrMAloTEiy .mbr-section-title {
-    font-size: 2.4rem !important;
+    font-size: 2.8rem !important;
   }
   .cid-vrMAloTEiy .mbr-text {
-    font-size: 1.2rem !important;
+    font-size: 1.4rem !important;
   }
   .cid-vrMAloTEiy [style*="border: 2px solid"] {
-    font-size: 0.7rem !important;
-    padding: 0.2rem 1rem !important;
+    font-size: 0.8rem !important;
+    padding: 0.3rem 1.2rem !important;
     white-space: normal !important;
   }
   .cid-vrMAloTEiy .btn-white-outline {
-    font-size: 1rem !important;
-    padding: 0.6rem 1.8rem !important;
+    font-size: 1.1rem !important;
+    padding: 0.7rem 2.2rem !important;
   }
 
   /* --- МЕТРИКИ - 3 КОЛОНКИ В РЯД --- */
   .cid-vrMAloT6q9 {
-    padding-top: 2rem !important;
-    padding-bottom: 1rem !important;
+    padding-top: 2.5rem !important;
+    padding-bottom: 1.5rem !important;
   }
   .cid-vrMAloT6q9 .row {
     display: flex !important;
@@ -1155,53 +1157,53 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     padding: 0 2px !important;
   }
   .cid-vrMAloT6q9 .item-wrapper .num {
-    font-size: 2rem !important;
+    font-size: 2.4rem !important;
   }
   .cid-vrMAloT6q9 .item-wrapper .card-title {
-    font-size: 0.6rem !important;
+    font-size: 0.7rem !important;
     white-space: normal !important;
     line-height: 1.2 !important;
   }
 
   /* --- ОБО МНЕ --- */
   .cid-vrMAloTPui {
-    padding-top: 1rem !important;
-    padding-bottom: 1.5rem !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 2rem !important;
   }
   .cid-vrMAloTPui .mbr-section-title {
-    font-size: 2rem !important;
+    font-size: 2.4rem !important;
   }
   .cid-vrMAloTPui .mbr-section-subtitle {
-    font-size: 1.3rem !important;
+    font-size: 1.5rem !important;
   }
   .cid-vrMAloTPui .mbr-text {
-    font-size: 1rem !important;
+    font-size: 1.2rem !important;
   }
 
   /* --- НАВЫКИ --- */
   .skills-section {
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
   }
   .skills-section .section-title {
-    font-size: 2rem !important;
+    font-size: 2.2rem !important;
     margin-bottom: 1.5rem !important;
   }
   .skills-section .skill-name {
-    font-size: 0.9rem !important;
+    font-size: 1.1rem !important;
   }
   .skills-section .skill-level-text {
-    font-size: 0.75rem !important;
-  }
-  .skills-section .skill-bar {
-    height: 8px !important;
-  }
-  .skills-section .equipment-info p {
     font-size: 0.85rem !important;
   }
+  .skills-section .skill-bar {
+    height: 12px !important;
+  }
+  .skills-section .equipment-info p {
+    font-size: 1rem !important;
+  }
   .skills-section .tag {
-    font-size: 0.65rem !important;
-    padding: 0.2rem 0.7rem !important;
+    font-size: 0.75rem !important;
+    padding: 0.3rem 0.9rem !important;
   }
   .skills-section .col-lg-6 {
     padding: 0 4px !important;
@@ -1209,179 +1211,178 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
 
   /* --- ГАЛЕРЕЯ - 1 КОЛОНКА, БОЛЬШИЕ КАРТИНКИ --- */
   .gallery-grid {
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
   }
   .gallery-grid h2 {
-    font-size: 2rem !important;
+    font-size: 2.2rem !important;
     margin-bottom: 1.5rem !important;
   }
   .gallery-grid .year-row h3 {
-    font-size: 1.3rem !important;
-    margin-bottom: 0.8rem !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem !important;
   }
   .gallery-grid .year-row {
-    margin-bottom: 2rem !important;
+    margin-bottom: 2.5rem !important;
   }
   .gallery-grid .grid-container {
     grid-template-columns: 1fr !important;
-    gap: 1.2rem !important;
-    padding: 0 0.3rem !important;
+    gap: 1.5rem !important;
+    padding: 0 0.5rem !important;
   }
   .gallery-grid .grid-item {
     max-height: none !important;
   }
   .gallery-grid .grid-item a {
-    max-height: 300px !important;
-    min-height: 200px !important;
+    max-height: 350px !important;
+    min-height: 250px !important;
   }
   .gallery-grid .grid-item img {
     max-width: 96% !important;
     max-height: 96% !important;
-    min-height: 120px !important;
-    min-width: 120px !important;
+    min-height: 160px !important;
+    min-width: 160px !important;
   }
   .gallery-grid .grid-item .caption {
-    font-size: 0.8rem !important;
-    min-height: 2rem !important;
+    font-size: 0.95rem !important;
+    min-height: 2.2rem !important;
   }
   .gallery-grid > div:last-child p {
-    font-size: 1rem !important;
+    font-size: 1.1rem !important;
     padding: 0 0.5rem !important;
     margin-top: -0.5rem !important;
   }
 
   /* --- ТАЙМЛАЙН --- */
   .timeline-tree {
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
   }
   .timeline-tree h2 {
-    font-size: 2rem !important;
+    font-size: 2.2rem !important;
     margin-bottom: 1.5rem !important;
   }
   .timeline-tree .tree {
-    padding-left: 1rem !important;
+    padding-left: 1.2rem !important;
     padding-right: 0.5rem !important;
   }
   .timeline-tree .tree-item {
-    padding: 1rem 0.8rem !important;
-    margin-bottom: 1.2rem !important;
-    border-radius: 0.8rem !important;
+    padding: 1.2rem 1rem !important;
+    margin-bottom: 1.5rem !important;
+    border-radius: 1rem !important;
   }
   .timeline-tree .tree-item::before {
-    left: -1rem !important;
-    top: 1rem !important;
-    width: 10px !important;
-    height: 10px !important;
+    left: -1.2rem !important;
+    top: 1.2rem !important;
+    width: 12px !important;
+    height: 12px !important;
     border-width: 2px !important;
   }
   .timeline-tree .tree::before {
     width: 2px !important;
   }
   .timeline-tree .tree-item .year {
-    font-size: 1rem !important;
+    font-size: 1.2rem !important;
   }
   .timeline-tree .tree-item .company {
-    font-size: 0.95rem !important;
+    font-size: 1.1rem !important;
   }
   .timeline-tree .tree-item .position {
-    font-size: 0.85rem !important;
+    font-size: 0.95rem !important;
   }
   .timeline-tree .tree-item .description {
-    font-size: 0.8rem !important;
-    line-height: 1.4 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
   }
 
   /* --- КОНТАКТЫ - ОВАЛЫ В КОЛОНКУ --- */
   .contacts-oval {
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
   }
   .contacts-oval h2 {
-    font-size: 2rem !important;
+    font-size: 2.2rem !important;
     margin-bottom: 1.5rem !important;
   }
   .contacts-oval .oval-wrapper {
     flex-direction: column !important;
     align-items: center !important;
-    gap: 0.6rem !important;
+    gap: 0.8rem !important;
   }
   .contacts-oval .oval-item {
     width: 100% !important;
-    max-width: 280px !important;
-    padding: 0.7rem 1.2rem !important;
+    max-width: 320px !important;
+    padding: 0.9rem 1.5rem !important;
     min-width: unset !important;
     border-radius: 50px !important;
   }
   .contacts-oval .oval-item .label {
-    font-size: 0.65rem !important;
+    font-size: 0.75rem !important;
   }
   .contacts-oval .oval-item .value {
-    font-size: 0.85rem !important;
+    font-size: 0.95rem !important;
   }
 
   /* --- МЕНЮ --- */
   .cid-vrMAloSBlR .container {
-    height: 48px !important;
-    padding: 0.2rem 0.5rem !important;
-    margin-top: 0.4rem !important;
+    height: 52px !important;
+    padding: 0.2rem 0.6rem !important;
+    margin-top: 0.5rem !important;
     width: 96% !important;
     border-radius: 50px !important;
   }
   .cid-vrMAloSBlR .navbar-caption {
-    font-size: 0.9rem !important;
-    padding-left: 0.2rem !important;
+    font-size: 1rem !important;
+    padding-left: 0.3rem !important;
   }
   .cid-vrMAloSBlR .navbar-buttons .btn {
-    font-size: 0.65rem !important;
-    padding: 0.2rem 0.8rem !important;
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.9rem !important;
     border-radius: 50px !important;
   }
   .cid-vrMAloSBlR .navbar-toggler {
-    transform: scale(0.65) !important;
-    margin-left: 2px !important;
+    transform: scale(0.7) !important;
+    margin-left: 4px !important;
     margin-right: 0 !important;
   }
   .cid-vrMAloSBlR .navbar-collapse {
-    padding: 0.6rem !important;
-    border-radius: 1rem !important;
+    padding: 0.8rem !important;
+    border-radius: 1.2rem !important;
     top: 115% !important;
   }
   .cid-vrMAloSBlR .navbar-nav .nav-item .nav-link {
-    padding: 8px !important;
-    font-size: 0.9rem !important;
+    padding: 10px !important;
+    font-size: 1rem !important;
   }
 
   /* --- ГАМБУРГЕР --- */
   .cid-vrMAloSBlR .navbar-toggler .hamburger span {
-    width: 20px !important;
+    width: 24px !important;
     height: 2px !important;
   }
   .cid-vrMAloSBlR .navbar-toggler .hamburger span:nth-child(2),
   .cid-vrMAloSBlR .navbar-toggler .hamburger span:nth-child(3) {
-    top: 5px !important;
+    top: 6px !important;
   }
   .cid-vrMAloSBlR .navbar-toggler .hamburger span:nth-child(4) {
-    top: 10px !important;
+    top: 12px !important;
   }
   .cid-vrMAloSBlR nav.opened .hamburger span:nth-child(1),
   .cid-vrMAloSBlR nav.opened .hamburger span:nth-child(4) {
-    top: 5px !important;
+    top: 6px !important;
   }
 
   /* --- ФУТЕР --- */
-  .footer-dark,
-  div[style*="background-color: #000000"] {
-    font-size: 0.5rem !important;
-    padding: 0.6rem 0 !important;
-    letter-spacing: 0.2px !important;
+  .footer-dark {
+    font-size: 0.6rem !important;
+    padding: 0.8rem 0 !important;
+    letter-spacing: 0.3px !important;
   }
 
   /* --- КНОПКИ --- */
   .mbr-section-btn .btn {
-    padding: 0.6rem 1.5rem !important;
-    font-size: 0.95rem !important;
+    padding: 0.8rem 2rem !important;
+    font-size: 1.1rem !important;
     border-radius: 50px !important;
   }
 
@@ -1398,6 +1399,12 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+
+  /* --- СКРЫВАЕМ ВСЕ ЧЁРНЫЕ БЛОКИ НА ТЕЛЕФОНЕ, КРОМЕ ФУТЕРА --- */
+  div[style*="background-color: #000000"]:not(.footer-dark),
+  div[style*="background-color:#000000"]:not(.footer-dark) {
+    display: none !important;
+  }
 }
 
 /* ===== ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ (ДО 400px) ===== */
@@ -1407,14 +1414,26 @@ div[style*="background-color: #000000"]:not(.footer-dark) {
     max-width: 100% !important;
   }
   .cid-vrMAloT6q9 .item-wrapper .num {
-    font-size: 2.2rem !important;
+    font-size: 2.6rem !important;
   }
   .cid-vrMAloT6q9 .item-wrapper .card-title {
-    font-size: 0.8rem !important;
+    font-size: 0.85rem !important;
   }
-  .display-1 { font-size: 2.2rem !important; }
-  .display-2 { font-size: 1.8rem !important; }
+  .display-1 { font-size: 2.4rem !important; }
+  .display-2 { font-size: 2rem !important; }
   .cid-vrMAloTEiy .mbr-section-title {
-    font-size: 2rem !important;
+    font-size: 2.2rem !important;
+  }
+  .gallery-grid .grid-item a {
+    max-height: 280px !important;
+    min-height: 200px !important;
+  }
+  .gallery-grid .grid-item img {
+    min-height: 120px !important;
+    min-width: 120px !important;
+  }
+  .contacts-oval .oval-item {
+    max-width: 260px !important;
+    padding: 0.7rem 1.2rem !important;
   }
 }
