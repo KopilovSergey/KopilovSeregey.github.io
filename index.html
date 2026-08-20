@@ -14,7 +14,7 @@
   <meta name="description" content="Портфолио инженера-конструктора. Проектирование защитных аксессуаров для квадроциклов и снегоходов из стали, алюминия и ПЭНД.">
   <title>Копылов Сергей - инженер-конструктор</title>
 
-  <!-- Preconnect для ускорения загрузки шрифтов и внешних ресурсов -->
+  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -45,22 +45,17 @@
 
   <!-- Оптимизация загрузки на мобильных -->
   <script>
-    // Отключаем анимации и параллакс на мобильных устройствах
     if (window.innerWidth < 768) {
       document.addEventListener('DOMContentLoaded', function() {
-        // Отключаем параллакс
         document.querySelectorAll('[data-jarallax]').forEach(function(el) {
           el.removeAttribute('data-jarallax');
         });
-        // Отключаем анимации
         document.querySelectorAll('.mbr-parallax-background').forEach(function(el) {
           el.classList.remove('mbr-parallax-background');
         });
       });
     }
   </script>
-
-  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=bgZiF6BnAZUMyif0JkpyYpTIHotbkL-ZVlCru5Mqp0IerVyQR-4jaGhA10fDVURce4J0yQn_wgA6-dsp3NlmJbwiNSr7pkTlyef72w_LyHw" charset="UTF-8"></script>
 </head>
 <body>
 
@@ -94,15 +89,24 @@
   @keyframes spin {
     to { transform: rotate(360deg); }
   }
+  #loader .loader-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    margin-top: 20px;
+    letter-spacing: 1px;
+  }
 </style>
-<div id="loader"><div class="spinner"></div></div>
+<div id="loader">
+  <div class="spinner"></div>
+  <div class="loader-text">Загрузка...</div>
+</div>
 <script>
   window.addEventListener('load', function() {
     setTimeout(function() {
       document.getElementById('loader').classList.add('hidden');
     }, 300);
   });
-  // Запасной вариант - скрыть через 2 секунды
   setTimeout(function() {
     document.getElementById('loader').classList.add('hidden');
   }, 2000);
@@ -712,14 +716,14 @@
             border: none;
             transition: all 0.3s ease;
             white-space: nowrap;
-          " onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='1'">Связаться</a>
+          ">Связаться</a>
         </div>
       </div>
     </div>
   </nav>
 </section>
 
-<!-- ==================== HERO-СЕКЦИЯ (главная) ==================== -->
+<!-- ==================== HERO-СЕКЦИЯ ==================== -->
 <style>
 .cid-vrMAloTEiy {
   display: flex;
@@ -792,7 +796,7 @@
   </div>
 </section>
 
-<!-- ==================== МЕТРИКИ (ЦИФРЫ) ==================== -->
+<!-- ==================== МЕТРИКИ ==================== -->
 <style>
 .cid-vrMAloT6q9 {
   padding-top: 5rem;
@@ -847,7 +851,6 @@
 <section class="features023 cid-vrMAloT6q9" id="metrics-1-vrMAloT6q9">
     <div class="container">
         <div class="row content-row justify-content-center" style="justify-content: space-around;">
-            <!-- Первая колонка -->
             <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
                 <div class="item-wrapper" style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%;">
                     <div class="title mb-2 mb-md-3" style="width: 100%; text-align: center;">
@@ -858,7 +861,6 @@
                     </h4>
                 </div>
             </div>
-            <!-- Вторая колонка (центральная) -->
             <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
                 <div class="item-wrapper" style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%;">
                     <div class="title mb-2 mb-md-3" style="width: 100%; text-align: center;">
@@ -869,7 +871,6 @@
                     </h4>
                 </div>
             </div>
-            <!-- Третья колонка -->
             <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
                 <div class="item-wrapper" style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%;">
                     <div class="title mb-2 mb-md-3" style="width: 100%; text-align: center;">
@@ -884,7 +885,7 @@
     </div>
 </section>
   
-<!-- ==================== ОБО МНЕ (текст) ==================== -->
+<!-- ==================== ОБО МНЕ ==================== -->
 <style>
 .cid-vrMAloTPui {
   padding-top: 0.5rem;
@@ -957,7 +958,7 @@
   .skills-section .skill-fill {
     height: 100%;
     border-radius: 50px;
-       width: 0%;
+    width: 0%;
     transition: width 0.8s ease;
   }
   .skills-section .skill-level-text {
@@ -1006,9 +1007,7 @@
       </div>
     </div>
     <div class="row">
-      <!-- Левая колонка: шкалы -->
       <div class="col-lg-6">
-        <!-- Siemens NX -->
         <div class="skill-item">
           <div class="skill-name">
             <span>Siemens NX</span>
@@ -1018,7 +1017,6 @@
             <div class="skill-fill" style="width: 90%;"></div>
           </div>
         </div>
-        <!-- SolidWorks -->
         <div class="skill-item">
           <div class="skill-name">
             <span>SolidWorks</span>
@@ -1028,7 +1026,6 @@
             <div class="skill-fill" style="width: 50%;"></div>
           </div>
         </div>
-        <!-- Компас-3D -->
         <div class="skill-item">
           <div class="skill-name">
             <span>Компас-3D</span>
@@ -1038,7 +1035,6 @@
             <div class="skill-fill" style="width: 60%;"></div>
           </div>
         </div>
-        <!-- Blender -->
         <div class="skill-item">
           <div class="skill-name">
             <span>Blender</span>
@@ -1048,7 +1044,6 @@
             <div class="skill-fill" style="width: 50%;"></div>
           </div>
         </div>
-        <!-- 3D-сканирование -->
         <div class="skill-item">
           <div class="skill-name">
             <span>3D-сканирование</span>
@@ -1058,7 +1053,6 @@
             <div class="skill-fill" style="width: 75%;"></div>
           </div>
         </div>
-        <!-- 3D-печать -->
         <div class="skill-item">
           <div class="skill-name">
             <span>3D-печать</span>
@@ -1070,7 +1064,6 @@
         </div>
       </div>
 
-      <!-- Правая колонка: оборудование и теги -->
       <div class="col-lg-6">
         <div class="equipment-info">
           <p style="font-weight: 500; color: #1a0b2e;">Оборудование</p>
@@ -1098,7 +1091,7 @@
   </div>
 </section>
 
-<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ (4 в ряд, большие контейнеры, без масштаба) ==================== -->
+<!-- ==================== МОИ РАБОТЫ ПО ГОДАМ ==================== -->
 <style>
   .gallery-grid {
     padding-top: 5rem;
@@ -1172,6 +1165,10 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    /* Плейсхолдер пока картинка не загрузилась */
+    background: rgba(200, 177, 228, 0.1);
+    min-height: 100px;
+    min-width: 100px;
   }
   .gallery-grid .grid-item img:hover {
     transform: translateY(-50%) scale(1.02);
@@ -1208,6 +1205,8 @@
     .gallery-grid .grid-item img {
       max-width: 94%;
       max-height: 94%;
+      min-height: 80px;
+      min-width: 80px;
     }
   }
   @media (max-width: 600px) {
@@ -1224,6 +1223,8 @@
     .gallery-grid .grid-item img {
       max-width: 96%;
       max-height: 96%;
+      min-height: 100px;
+      min-width: 100px;
     }
     .gallery-grid .grid-item .caption {
       min-height: 2rem;
@@ -1231,23 +1232,19 @@
   }
 </style>
 
-  
 <section class="gallery-grid" id="projects">
   <h2>Мои готовые изделия</h2>
 
-  <!-- 2025 -->
   <div class="year-row">
     <h3>2025</h3>
     <div class="grid-container" id="grid-2025"></div>
   </div>
 
-  <!-- 2026 -->
   <div class="year-row">
     <h3>2026</h3>
     <div class="grid-container" id="grid-2026"></div>
   </div>
 
-  <!-- Текст после всех фото -->
   <div style="max-width: 900px; margin: -3rem auto 0 auto; padding: 1rem 2rem 2rem 2rem; text-align: center;">
     <p style="font-size: 1.6rem; line-height: 1.5; color: #000000; font-weight: 400;">
       По каждой фотографии имеется рендер модели, который я готов продемонстрировать при личной встрече.
@@ -1256,8 +1253,6 @@
 </section>
 
 <script>
-  console.log('Сетка загружена ✅');
-
   const images2025 = [
     'Задний_бампер_снегохода_RM_FRONTIER',
     'Передний_бампер_квадроцикла_Loncin_Xolf_700i',
@@ -1284,37 +1279,95 @@
     'Корзина_багажная_для_лодки'
   ];
 
-  function populateGrid(containerId, imageList, year) {
+  function populateGridWithObserver(containerId, imageList, year) {
     const container = document.getElementById(containerId);
     if (!container) {
       console.error('Контейнер не найден:', containerId);
       return;
     }
     container.innerHTML = '';
-    imageList.forEach(name => {
+
+    // Создаём все элементы сразу, но картинки загружаем через Observer
+    imageList.forEach((name, index) => {
       const item = document.createElement('div');
       item.className = 'grid-item';
       const caption = name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-      // Изменение: используем .webp вместо .png
       const imgSrc = `${year}/${name}.webp`;
-      item.innerHTML = `
-        <a href="${imgSrc}" target="_blank" style="display:block; text-decoration:none; width:100%; height:100%;">
-          <img src="${imgSrc}" alt="${caption}" loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwY2VmMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNkMWY2ZCI+5L2g55WZ5r2uPC90ZXh0Pjwvc3ZnPg=='">
-        </a>
-        <div class="caption">${caption}</div>
-      `;
+
+      // Контейнер для изображения с плейсхолдером
+      const link = document.createElement('a');
+      link.href = imgSrc;
+      link.target = '_blank';
+      link.style.display = 'block';
+      link.style.textDecoration = 'none';
+      link.style.width = '100%';
+      link.style.height = '100%';
+
+      const img = document.createElement('img');
+      img.alt = caption;
+      img.loading = 'lazy';
+      img.dataset.src = imgSrc;
+      img.style.width = 'auto';
+      img.style.height = 'auto';
+      img.style.maxWidth = '96%';
+      img.style.maxHeight = '96%';
+      img.style.objectFit = 'contain';
+      img.style.borderRadius = '0.5rem';
+      img.style.display = 'block';
+      img.style.margin = 'auto';
+      img.style.padding = '0';
+      img.style.transition = 'transform 0.3s ease';
+      img.style.background = 'rgba(200, 177, 228, 0.1)';
+      img.style.minHeight = '100px';
+      img.style.minWidth = '100px';
+
+      // Обработчик ошибки
+      img.onerror = function() {
+        this.src = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2UwY2VmMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNkMWY2ZCI+5L2g55WZ5r2uPC90ZXh0Pjwvc3ZnPg==";
+      };
+
+      link.appendChild(img);
+      item.appendChild(link);
+
+      const captionDiv = document.createElement('div');
+      captionDiv.className = 'caption';
+      captionDiv.textContent = caption;
+      item.appendChild(captionDiv);
+
       container.appendChild(item);
+
+      // Используем Intersection Observer для загрузки изображения
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const imgEl = entry.target.querySelector('img');
+              if (imgEl && imgEl.dataset.src && !imgEl.src) {
+                imgEl.src = imgEl.dataset.src;
+              }
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          rootMargin: '50px', // Начинаем загрузку за 50px до появления
+          threshold: 0.01
+        });
+        observer.observe(item);
+      } else {
+        // Fallback для старых браузеров
+        img.src = img.dataset.src;
+      }
     });
-    console.log('Сетка', containerId, 'заполнена!');
   }
 
+  // Заполняем сетки после загрузки страницы
   window.addEventListener('load', function() {
-    populateGrid('grid-2025', images2025, '2025');
-    populateGrid('grid-2026', images2026, '2026');
+    populateGridWithObserver('grid-2025', images2025, '2025');
+    populateGridWithObserver('grid-2026', images2026, '2026');
   });
 </script>
 
-<!-- ==================== ОБРАЗОВАНИЕ И ОПЫТ (ХРОНОЛОГИЧЕСКОЕ ДРЕВО) ==================== -->
+<!-- ==================== ОБРАЗОВАНИЕ И ОПЫТ ==================== -->
 <style>
   .timeline-tree {
     padding-top: 5rem;
@@ -1334,7 +1387,6 @@
     margin: 0 auto;
     padding-left: 2.5rem;
   }
-  /* Вертикальная линия */
   .timeline-tree .tree::before {
     content: '';
     position: absolute;
@@ -1356,7 +1408,6 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     border: 1px solid rgba(255,255,255,0.3);
   }
-  /* Точка на линии */
   .timeline-tree .tree-item::before {
     content: '';
     position: absolute;
@@ -1369,7 +1420,6 @@
     border: 3px solid #a67dc9;
     box-shadow: 0 0 0 4px rgba(107, 63, 160, 0.2);
   }
-  /* Последний элемент — без нижнего отступа */
   .timeline-tree .tree-item:last-child {
     margin-bottom: 0;
   }
@@ -1422,8 +1472,6 @@
   <div class="container">
     <h2>Образование и опыт</h2>
     <div class="tree">
-
-      <!-- Этап 1: 2019 -->
       <div class="tree-item">
         <div class="year">2019 · 5 лет</div>
         <div class="company">Свердловская дирекция по ремонту и обслуживанию приборов безопасности</div>
@@ -1433,7 +1481,6 @@
         </div>
       </div>
 
-      <!-- Этап 2: 2024 -->
       <div class="tree-item">
         <div class="year">2024 · 2 года (по настоящее время)</div>
         <div class="company">Rival Powersports</div>
@@ -1442,7 +1489,6 @@
           Разработка и проектирование бамперов, защит, аксессуаров, универсальных изделий для квадроциклов, снегоходов и лодок. Работа в Siemens NX с полным производственным циклом: 3D-сканирование, реверс-инжиниринг, твердотельное моделирование, конструкторская документация по ГОСТ/ЕСКД. Взаимодействие с производством и авторский надзор на всех этапах разработки. Разработано более 24 изделий.
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -1542,8 +1588,7 @@
   Сергей Копылов <span style="color: #ffffff; font-size: 0.7rem; margin: 0 0.5rem;">|</span> © 2026 Все права защищены
 </div>
 
-<!-- ==================== СКРИПТЫ (асинхронная загрузка) ==================== -->
-<!-- Все скрипты загружаются с async, чтобы не блокировать отрисовку -->
+<!-- ==================== СКРИПТЫ ==================== -->
 <script src="https://ai.mobirise.com/assets/startm5/parallax/jarallax.js?v=m3frcrn2" async></script>
 <script src="https://ai.mobirise.com/assets/startm5/bootstrap/js/bootstrap.bundle.min.js?v=m3frcrn2" async></script>
 <script src="https://ai.mobirise.com/assets/startm5/dropdown/js/navbar-dropdown.js?v=m3frcrn2" async></script>
@@ -1553,8 +1598,8 @@
 <script src="https://ai.mobirise.com/assets/startm5/theme/js/script.js?v=m3frcrn2" async></script>
 <script src="https://ai.mobirise.com/assets/startm5/formoid/formoid.min.js?v=m3frcrn2" async></script>
 <script src="https://ai.mobirise.com/assets/preview.js" async></script>
-  
-<!-- ==================== СКРИПТ ПЛАВНОЙ ПРОКРУТКИ (ДЛЯ МЕНЮ) ==================== -->
+
+<!-- ==================== ПЛАВНАЯ ПРОКРУТКА ==================== -->
 <script>
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
