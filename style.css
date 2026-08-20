@@ -847,3 +847,197 @@ section.contacts-oval .oval-wrapper .oval-item .value {
   background: transparent !important;
   background-color: transparent !important;
 }
+/* ================================================================ */
+/* ===== ФИКС МОБИЛЬНОЙ ВЕРСИИ (ДОБАВЛЯЕМ В КОНЕЦ) ===== */
+/* ================================================================ */
+
+@media (max-width: 768px) {
+
+  /* Принудительно увеличиваем все шрифты */
+  body, 
+  p, 
+  .mbr-text, 
+  .display-7,
+  .display-4,
+  .mbr-fonts-style {
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+  }
+
+  .display-1,
+  h1,
+  .mbr-section-title {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+  }
+
+  .display-2,
+  h2 {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+  }
+
+  .display-5,
+  h5,
+  .mbr-section-subtitle {
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* HERO */
+  .cid-vrMAloTEiy .mbr-section-title {
+    font-size: 32px !important;
+  }
+  .cid-vrMAloTEiy .mbr-text {
+    font-size: 20px !important;
+  }
+  .cid-vrMAloTEiy .btn-white-outline {
+    font-size: 16px !important;
+    padding: 12px 30px !important;
+    border-radius: 50px !important;
+  }
+  .cid-vrMAloTEiy [style*="border: 2px solid"] {
+    font-size: 12px !important;
+    padding: 4px 16px !important;
+    white-space: normal !important;
+  }
+
+  /* Метрики */
+  .cid-vrMAloT6q9 .item-wrapper .num {
+    font-size: 32px !important;
+  }
+  .cid-vrMAloT6q9 .item-wrapper .card-title {
+    font-size: 12px !important;
+    white-space: normal !important;
+  }
+
+  /* Галерея - 1 колонка */
+  .gallery-grid .grid-container {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .gallery-grid .grid-item a {
+    max-height: 300px !important;
+    min-height: 200px !important;
+  }
+  .gallery-grid .grid-item .caption {
+    font-size: 14px !important;
+  }
+  .gallery-grid h2 {
+    font-size: 28px !important;
+  }
+  .gallery-grid .year-row h3 {
+    font-size: 22px !important;
+  }
+
+  /* Контакты - в колонку */
+  .contacts-oval .oval-wrapper {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+  .contacts-oval .oval-item {
+    width: 100% !important;
+    max-width: 300px !important;
+    padding: 12px 20px !important;
+    min-width: unset !important;
+  }
+  .contacts-oval .oval-item .label {
+    font-size: 11px !important;
+  }
+  .contacts-oval .oval-item .value {
+    font-size: 14px !important;
+  }
+  .contacts-oval h2 {
+    font-size: 28px !important;
+  }
+
+  /* Навыки */
+  .skills-section .skill-name {
+    font-size: 15px !important;
+  }
+  .skills-section .skill-level-text {
+    font-size: 12px !important;
+  }
+  .skills-section .tag {
+    font-size: 11px !important;
+    padding: 4px 12px !important;
+  }
+  .skills-section .section-title {
+    font-size: 28px !important;
+  }
+
+  /* Таймлайн */
+  .timeline-tree .tree-item .year {
+    font-size: 16px !important;
+  }
+  .timeline-tree .tree-item .company {
+    font-size: 16px !important;
+  }
+  .timeline-tree .tree-item .position {
+    font-size: 14px !important;
+  }
+  .timeline-tree .tree-item .description {
+    font-size: 13px !important;
+  }
+  .timeline-tree h2 {
+    font-size: 28px !important;
+  }
+
+  /* Обо мне */
+  .cid-vrMAloTPui .mbr-section-title {
+    font-size: 28px !important;
+  }
+  .cid-vrMAloTPui .mbr-section-subtitle {
+    font-size: 20px !important;
+  }
+  .cid-vrMAloTPui .mbr-text {
+    font-size: 16px !important;
+  }
+
+  /* Кнопки */
+  .btn,
+  .mbr-section-btn .btn {
+    padding: 10px 24px !important;
+    font-size: 16px !important;
+    border-radius: 50px !important;
+    min-height: 44px !important;
+  }
+
+  /* Отступы */
+  .gallery-grid,
+  .skills-section,
+  .timeline-tree,
+  .contacts-oval {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+
+  /* Отключаем параллакс */
+  .mbr-parallax-background {
+    background-attachment: scroll !important;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 400px) {
+  .cid-vrMAloT6q9 .item-mb {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  .cid-vrMAloT6q9 .item-wrapper .num {
+    font-size: 36px !important;
+  }
+  .cid-vrMAloT6q9 .item-wrapper .card-title {
+    font-size: 14px !important;
+  }
+  .display-1 { font-size: 28px !important; }
+  .display-2 { font-size: 24px !important; }
+  .cid-vrMAloTEiy .mbr-section-title {
+    font-size: 28px !important;
+  }
+  .gallery-grid .grid-item a {
+    max-height: 240px !important;
+    min-height: 160px !important;
+  }
+}
