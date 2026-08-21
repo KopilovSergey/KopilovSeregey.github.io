@@ -36,8 +36,6 @@
 
   <link rel="stylesheet" href="https://ai-builder.mobirise.com/api/v2/themes/startm5-next/additional.css?v=0Tg50PK5XtpL3E-AsAXeYA&backgroundColor=%23F5F1FA&primaryColor=%23C8B1E4&secondaryColor=%23532B88&successColor=%237BE7B5&infoColor=%236BE0F7&warningColor=%23FFD863&dangerColor=%23E87A85&mainFont=Inter&display1Font=Inter&display1Size=5&display2Font=Inter&display2Size=4&display5Font=Inter&display5Size=2.5&display7Font=Inter&display7Size=1.4&display4Font=Inter&display4Size=1.2&isRoundedImages=true&isRoundedButtons=true&isLargeButtons=true&isGhostButtonBorder=true&underlinedLinks=false&isAnimatedOnScroll=false&isScrollToTopButton=false" type="text/css">
 
-  <link rel="stylesheet" href="style.css">
-
   <style>
     /* ===== ОБЩИЕ СТИЛИ ===== */
     * {
@@ -147,12 +145,14 @@
       background-color: transparent !important;
       border-color: #fafafa;
       color: #fafafa;
+      border-radius: 100px !important;
     }
     .btn-white-outline:hover, .btn-white-outline:focus, .btn-white-outline.focus, .btn-white-outline.active {
       color: #cfcfcf !important;
       background-color: transparent !important;
       border-color: #cfcfcf !important;
       box-shadow: none !important;
+      border-radius: 100px !important;
     }
 
     .text-primary { color: #C8B1E4 !important; }
@@ -200,6 +200,7 @@
     .cid-vrMAloTEiy .btn-white-outline {
       border-color: #ffffff !important;
       color: #ffffff !important;
+      border-radius: 100px !important;
     }
     .cid-vrMAloTEiy .btn-white-outline:hover {
       background-color: rgba(255,255,255,0.15) !important;
@@ -231,6 +232,12 @@
     }
 
     /* ===== НАВИГАЦИЯ ===== */
+    .cid-vrMAloSBlR {
+      background: transparent !important;
+    }
+    .cid-vrMAloSBlR .navbar {
+      background: transparent !important;
+    }
     .cid-vrMAloSBlR .navbar-caption,
     .cid-vrMAloSBlR .nav-link {
       color: #000000 !important;
@@ -240,11 +247,12 @@
       color: #532B88 !important;
     }
     .cid-vrMAloSBlR .container {
-      background: rgba(255,255,255,0.6) !important;
+      background: rgba(255,255,255,0.7) !important;
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.3);
       box-shadow: 0 30px 60px 0 rgba(0,0,0,0.08);
+      border-radius: 100px !important;
     }
     .cid-vrMAloSBlR button.navbar-toggler .hamburger span {
       background-color: #000000 !important;
@@ -255,6 +263,7 @@
       color: #000000 !important;
       box-shadow: 0 4px 15px rgba(245,159,0,0.35);
       transition: all 0.3s ease;
+      border-radius: 100px !important;
     }
     .cid-vrMAloSBlR .navbar-buttons .btn:hover {
       transform: translateY(-2px);
@@ -455,15 +464,15 @@
     }
 
     /* ================================================================ */
-    /* ===== МОБИЛЬНАЯ ВЕРСИЯ (ДО 992px) ===== */
+    /* ===== ТОЛЬКО ДЛЯ ТЕЛЕФОНОВ (ДО 576px) ===== */
     /* ================================================================ */
 
-    @media (max-width: 992px) {
+    @media (max-width: 576px) {
 
       /* --- ОБЩИЕ --- */
       .container, .container-fluid {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
         max-width: 100% !important;
       }
       .row {
@@ -471,64 +480,64 @@
         margin-right: 0 !important;
       }
       .col-12, .col-md-10, .col-lg-6, .col-lg-4 {
-        padding-left: 10px !important;
-        padding-right: 10px !important;
+        padding-left: 4px !important;
+        padding-right: 4px !important;
       }
 
       /* --- МЕНЮ --- */
       .cid-vrMAloSBlR .container {
-        height: 56px !important;
-        padding: 0.2rem 0.8rem !important;
-        margin-top: 0.5rem !important;
-        width: 96% !important;
+        height: 48px !important;
+        padding: 0.1rem 0.6rem !important;
+        margin-top: 0.3rem !important;
+        width: 98% !important;
         border-radius: 50px !important;
       }
       .cid-vrMAloSBlR .navbar-caption {
-        font-size: 0.95rem !important;
-        padding-left: 0.3rem !important;
+        font-size: 0.8rem !important;
+        padding-left: 0.2rem !important;
       }
       .cid-vrMAloSBlR .navbar-buttons .btn {
-        font-size: 0.7rem !important;
-        padding: 0.25rem 1rem !important;
+        font-size: 0.6rem !important;
+        padding: 0.2rem 0.8rem !important;
         border-radius: 50px !important;
       }
       .cid-vrMAloSBlR .navbar-toggler {
-        transform: scale(0.7) !important;
-        margin-left: 4px !important;
+        transform: scale(0.6) !important;
+        margin-left: 2px !important;
         margin-right: 0 !important;
       }
       .cid-vrMAloSBlR .navbar-collapse {
-        padding: 0.8rem !important;
-        border-radius: 1.2rem !important;
-        top: 115% !important;
+        padding: 0.6rem !important;
+        border-radius: 1rem !important;
+        top: 110% !important;
         background: rgba(255,255,255,0.95) !important;
         backdrop-filter: blur(16px) !important;
         -webkit-backdrop-filter: blur(16px) !important;
       }
       .cid-vrMAloSBlR .navbar-nav .nav-item .nav-link {
-        padding: 10px !important;
-        font-size: 1rem !important;
+        padding: 8px !important;
+        font-size: 0.9rem !important;
       }
 
-      /* --- ТЕКСТ - УВЕЛИЧЕННЫЙ ДЛЯ ЧИТАЕМОСТИ --- */
+      /* --- ТЕКСТ - КРУПНЫЙ И ЧИТАЕМЫЙ --- */
       body, p, .mbr-text, .display-7 {
-        font-size: 17px !important;
+        font-size: 16px !important;
         line-height: 1.7 !important;
       }
       .display-4 {
-        font-size: 15px !important;
+        font-size: 14px !important;
         line-height: 1.5 !important;
       }
       .display-1 {
-        font-size: 34px !important;
+        font-size: 30px !important;
         line-height: 1.2 !important;
       }
       .display-2 {
-        font-size: 28px !important;
+        font-size: 26px !important;
         line-height: 1.2 !important;
       }
       .display-5 {
-        font-size: 22px !important;
+        font-size: 20px !important;
         line-height: 1.4 !important;
       }
 
@@ -541,30 +550,30 @@
         justify-content: center !important;
       }
       .cid-vrMAloTEiy .content-wrap {
-        padding: 0 0.5rem !important;
+        padding: 0 0.3rem !important;
         width: 100% !important;
       }
       .cid-vrMAloTEiy .mbr-section-title {
-        font-size: 30px !important;
+        font-size: 28px !important;
       }
       .cid-vrMAloTEiy .mbr-text {
-        font-size: 18px !important;
+        font-size: 16px !important;
       }
       .cid-vrMAloTEiy [style*="border: 2px solid"] {
-        font-size: 12px !important;
-        padding: 0.3rem 1.5rem !important;
+        font-size: 10px !important;
+        padding: 0.2rem 1rem !important;
         white-space: normal !important;
       }
       .cid-vrMAloTEiy .btn-white-outline {
-        font-size: 16px !important;
-        padding: 12px 30px !important;
+        font-size: 14px !important;
+        padding: 10px 24px !important;
         border-radius: 100px !important;
       }
 
-      /* --- МЕТРИКИ - 3 В РЯД НА ТЕЛЕФОНЕ --- */
+      /* --- МЕТРИКИ - 3 В РЯД --- */
       .cid-vrMAloT6q9 {
-        padding-top: 2.5rem !important;
-        padding-bottom: 1.5rem !important;
+        padding-top: 2rem !important;
+        padding-bottom: 1rem !important;
       }
       .cid-vrMAloT6q9 .row {
         display: flex !important;
@@ -575,189 +584,186 @@
       .cid-vrMAloT6q9 .item-mb {
         flex: 0 0 33.333% !important;
         max-width: 33.333% !important;
-        margin-bottom: 0.5rem !important;
-        padding: 0 4px !important;
+        margin-bottom: 0.3rem !important;
+        padding: 0 2px !important;
       }
       .cid-vrMAloT6q9 .item-wrapper .num {
-        font-size: 28px !important;
+        font-size: 24px !important;
       }
       .cid-vrMAloT6q9 .item-wrapper .card-title {
-        font-size: 11px !important;
+        font-size: 10px !important;
         white-space: normal !important;
         line-height: 1.2 !important;
       }
 
       /* --- ОБО МНЕ --- */
       .cid-vrMAloTPui {
-        padding-top: 2rem !important;
-        padding-bottom: 2.5rem !important;
+        padding-top: 1.5rem !important;
+        padding-bottom: 2rem !important;
       }
       .cid-vrMAloTPui .mbr-section-title {
-        font-size: 28px !important;
+        font-size: 26px !important;
       }
       .cid-vrMAloTPui .mbr-section-subtitle {
-        font-size: 20px !important;
+        font-size: 18px !important;
       }
       .cid-vrMAloTPui .mbr-text {
-        font-size: 17px !important;
-        padding: 0 0.2rem !important;
+        font-size: 16px !important;
+        padding: 0 0.1rem !important;
       }
 
       /* --- НАВЫКИ --- */
       .skills-section {
-        padding-top: 2.5rem !important;
-        padding-bottom: 2.5rem !important;
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
       }
       .skills-section .section-title {
-        font-size: 28px !important;
-        margin-bottom: 2rem !important;
-      }
-      .skills-section .skill-name {
-        font-size: 16px !important;
-      }
-      .skills-section .skill-level-text {
-        font-size: 13px !important;
-      }
-      .skills-section .skill-bar {
-        height: 12px !important;
-      }
-      .skills-section .equipment-info p {
-        font-size: 15px !important;
-      }
-      .skills-section .tag {
-        font-size: 12px !important;
-        padding: 0.4rem 1rem !important;
-      }
-      .skills-section .col-lg-6 {
-        padding: 0 4px !important;
-      }
-
-      /* --- ГАЛЕРЕЯ - 1 КОЛОНКА НА ТЕЛЕФОНЕ --- */
-      .gallery-grid {
-        padding-top: 2.5rem !important;
-        padding-bottom: 2.5rem !important;
-      }
-      .gallery-grid h2 {
-        font-size: 28px !important;
+        font-size: 26px !important;
         margin-bottom: 1.5rem !important;
       }
-      .gallery-grid .year-row h3 {
-        font-size: 22px !important;
+      .skills-section .skill-name {
+        font-size: 15px !important;
+      }
+      .skills-section .skill-level-text {
+        font-size: 12px !important;
+      }
+      .skills-section .skill-bar {
+        height: 10px !important;
+      }
+      .skills-section .equipment-info p {
+        font-size: 14px !important;
+      }
+      .skills-section .tag {
+        font-size: 11px !important;
+        padding: 0.3rem 0.8rem !important;
+      }
+
+      /* --- ГАЛЕРЕЯ - 1 КОЛОНКА, ФОТО ПО ОДНОМУ --- */
+      .gallery-grid {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+      }
+      .gallery-grid h2 {
+        font-size: 26px !important;
         margin-bottom: 1rem !important;
       }
+      .gallery-grid .year-row h3 {
+        font-size: 20px !important;
+        margin-bottom: 0.8rem !important;
+      }
       .gallery-grid .year-row {
-        margin-bottom: 2.5rem !important;
+        margin-bottom: 2rem !important;
       }
       .gallery-grid .grid-container {
         grid-template-columns: 1fr !important;
-        gap: 2rem !important;
-        padding: 0 0.5rem !important;
+        gap: 1.5rem !important;
+        padding: 0 0.2rem !important;
       }
       .gallery-grid .grid-item {
         max-height: none !important;
       }
       .gallery-grid .grid-item a {
-        max-height: 350px !important;
-        min-height: 250px !important;
+        max-height: 300px !important;
+        min-height: 200px !important;
       }
       .gallery-grid .grid-item img {
         max-width: 96% !important;
         max-height: 96% !important;
-        min-height: 160px !important;
-        min-width: 160px !important;
+        min-height: 140px !important;
+        min-width: 140px !important;
       }
       .gallery-grid .grid-item .caption {
-        font-size: 15px !important;
-        min-height: 2.5rem !important;
+        font-size: 14px !important;
+        min-height: 2rem !important;
       }
       .gallery-grid > div:last-child p {
-        font-size: 17px !important;
-        padding: 0 0.5rem !important;
+        font-size: 15px !important;
+        padding: 0 0.3rem !important;
         margin-top: -0.5rem !important;
       }
 
       /* --- ТАЙМЛАЙН --- */
       .timeline-tree {
-        padding-top: 2.5rem !important;
-        padding-bottom: 2.5rem !important;
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
       }
       .timeline-tree h2 {
-        font-size: 28px !important;
-        margin-bottom: 1.5rem !important;
+        font-size: 26px !important;
+        margin-bottom: 1rem !important;
       }
       .timeline-tree .tree {
-        padding-left: 1.5rem !important;
-        padding-right: 0.5rem !important;
+        padding-left: 1.2rem !important;
+        padding-right: 0.3rem !important;
       }
       .timeline-tree .tree-item {
-        padding: 1.5rem 1.2rem !important;
-        margin-bottom: 1.5rem !important;
-        border-radius: 1rem !important;
+        padding: 1.2rem 1rem !important;
+        margin-bottom: 1.2rem !important;
+        border-radius: 0.8rem !important;
       }
       .timeline-tree .tree-item::before {
-        left: -1.5rem !important;
-        top: 1.5rem !important;
-        width: 14px !important;
-        height: 14px !important;
+        left: -1.2rem !important;
+        top: 1.2rem !important;
+        width: 12px !important;
+        height: 12px !important;
         border-width: 2px !important;
       }
       .timeline-tree .tree::before {
         width: 2px !important;
       }
       .timeline-tree .tree-item .year {
-        font-size: 18px !important;
+        font-size: 16px !important;
       }
       .timeline-tree .tree-item .company {
-        font-size: 17px !important;
+        font-size: 15px !important;
       }
       .timeline-tree .tree-item .position {
-        font-size: 15px !important;
+        font-size: 14px !important;
       }
       .timeline-tree .tree-item .description {
-        font-size: 15px !important;
-        line-height: 1.6 !important;
+        font-size: 14px !important;
+        line-height: 1.5 !important;
       }
 
       /* --- КОНТАКТЫ - В КОЛОНКУ --- */
       .contacts-oval {
-        padding-top: 2.5rem !important;
-        padding-bottom: 2.5rem !important;
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
       }
       .contacts-oval h2 {
-        font-size: 28px !important;
-        margin-bottom: 1.5rem !important;
+        font-size: 26px !important;
+        margin-bottom: 1rem !important;
       }
       .contacts-oval .oval-wrapper {
         flex-direction: column !important;
         align-items: center !important;
-        gap: 0.8rem !important;
+        gap: 0.6rem !important;
       }
       .contacts-oval .oval-item {
         width: 100% !important;
-        max-width: 320px !important;
-        padding: 1rem 1.8rem !important;
+        max-width: 280px !important;
+        padding: 0.8rem 1.5rem !important;
         min-width: unset !important;
         border-radius: 50px !important;
       }
       .contacts-oval .oval-item .label {
-        font-size: 12px !important;
+        font-size: 11px !important;
       }
       .contacts-oval .oval-item .value {
-        font-size: 16px !important;
+        font-size: 14px !important;
       }
 
       /* --- КНОПКИ --- */
       .mbr-section-btn .btn {
-        padding: 12px 28px !important;
-        font-size: 16px !important;
+        padding: 10px 24px !important;
+        font-size: 14px !important;
         border-radius: 50px !important;
       }
 
       /* --- ФУТЕР --- */
       .footer-dark {
-        font-size: 11px !important;
-        padding: 1rem 0 !important;
-        letter-spacing: 0.3px !important;
+        font-size: 10px !important;
+        padding: 0.8rem 0 !important;
+        letter-spacing: 0.2px !important;
       }
 
       section {
@@ -774,58 +780,42 @@
       }
     }
 
-    /* ===== ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ (ДО 400px) ===== */
-    @media (max-width: 400px) {
+    /* ===== ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ (ДО 380px) ===== */
+    @media (max-width: 380px) {
       .container, .container-fluid {
-        padding-left: 12px !important;
-        padding-right: 12px !important;
+        padding-left: 4px !important;
+        padding-right: 4px !important;
       }
       .cid-vrMAloT6q9 .item-mb {
         flex: 0 0 100% !important;
         max-width: 100% !important;
       }
       .cid-vrMAloT6q9 .item-wrapper .num {
-        font-size: 32px !important;
+        font-size: 28px !important;
       }
       .cid-vrMAloT6q9 .item-wrapper .card-title {
-        font-size: 14px !important;
+        font-size: 13px !important;
       }
-      .display-1 { font-size: 28px !important; }
-      .display-2 { font-size: 24px !important; }
+      .display-1 { font-size: 24px !important; }
+      .display-2 { font-size: 22px !important; }
       .cid-vrMAloTEiy .mbr-section-title {
-        font-size: 26px !important;
+        font-size: 22px !important;
       }
       .gallery-grid .grid-item a {
-        max-height: 280px !important;
-        min-height: 200px !important;
+        max-height: 240px !important;
+        min-height: 160px !important;
       }
       .gallery-grid .grid-item img {
         max-height: 85% !important;
-        min-height: 120px !important;
-        min-width: 120px !important;
+        min-height: 100px !important;
+        min-width: 100px !important;
       }
       .contacts-oval .oval-item {
-        max-width: 260px !important;
-        padding: 0.8rem 1.2rem !important;
+        max-width: 220px !important;
+        padding: 0.6rem 1rem !important;
       }
       body, p, .mbr-text, .display-7 {
-        font-size: 16px !important;
-      }
-    }
-
-    /* ===== ПЛАНШЕТЫ (577-992px) ===== */
-    @media (min-width: 577px) and (max-width: 992px) {
-      .gallery-grid .grid-container {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 1.5rem !important;
-      }
-      .gallery-grid .grid-item a {
-        max-height: 280px !important;
-        min-height: 180px !important;
-      }
-      .cid-vrMAloT6q9 .item-mb {
-        flex: 0 0 33.333% !important;
-        max-width: 33.333% !important;
+        font-size: 14px !important;
       }
     }
 
@@ -839,8 +829,7 @@
   </style>
 
   <script>
-    // Отключаем параллакс на мобильных
-    if (window.innerWidth < 992) {
+    if (window.innerWidth < 576) {
       document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('[data-jarallax]').forEach(function(el) {
           el.removeAttribute('data-jarallax');
@@ -876,6 +865,10 @@
   z-index: 1000;
   width: 100%;
   position: relative;
+  background: transparent !important;
+}
+.cid-vrMAloSBlR .navbar {
+  background: transparent !important;
 }
 .cid-vrMAloSBlR .dropdown-item:before {
   font-family: Moririse2 !important;
@@ -953,23 +946,30 @@
   height: 90px;
   padding: 0.5rem 0.6rem;
   flex-wrap: nowrap;
-  background: rgba(255,255,255,0.6) !important;
+  background: rgba(255,255,255,0.7) !important;
   left: 0;
   right: 0;
   justify-content: flex-end;
   align-items: center;
-  border-radius: 100vw;
+  border-radius: 100px !important;
   margin-top: 1rem;
-  background-color: #ffffff;
   box-shadow: 0 30px 60px 0 rgba(27,31,10,0.08);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
 }
 @media (max-width: 992px) {
   .cid-vrMAloSBlR .container {
     padding-right: 1rem;
     height: 56px !important;
+  }
+}
+@media (max-width: 576px) {
+  .cid-vrMAloSBlR .container {
+    height: 48px !important;
+    padding: 0.1rem 0.6rem !important;
+    margin-top: 0.3rem !important;
+    width: 98% !important;
   }
 }
 .cid-vrMAloSBlR .navbar-caption,
@@ -986,7 +986,7 @@
   color: #000000 !important;
   box-shadow: 0 4px 15px rgba(245,159,0,0.35);
   transition: all 0.3s ease;
-  border-radius: 100px;
+  border-radius: 100px !important;
   padding: 0.4rem 1.8rem;
   white-space: nowrap;
 }
@@ -1055,7 +1055,7 @@
 }
 @media (max-width: 575px) {
   .cid-vrMAloSBlR .navbar-collapse {
-    padding: 1rem;
+    padding: 0.6rem;
   }
 }
 </style>
@@ -1133,6 +1133,7 @@
 .cid-vrMAloTEiy .btn-white-outline {
   border-color: #ffffff !important;
   color: #ffffff !important;
+  border-radius: 100px !important;
 }
 .cid-vrMAloTEiy .btn-white-outline:hover {
   background-color: rgba(255,255,255,0.15) !important;
@@ -1471,11 +1472,11 @@
   .gallery-grid .grid-item img { max-width: 94%; max-height: 94%; min-height: 80px; min-width: 80px; }
 }
 @media (max-width: 576px) {
-  .gallery-grid .grid-container { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .gallery-grid .grid-container { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
   .gallery-grid .grid-item { max-height: none !important; }
-  .gallery-grid .grid-item a { max-height: 350px !important; min-height: 250px !important; }
-  .gallery-grid .grid-item img { max-width: 96% !important; max-height: 96% !important; min-height: 160px !important; min-width: 160px !important; }
-  .gallery-grid .grid-item .caption { font-size: 15px !important; min-height: 2.5rem !important; }
+  .gallery-grid .grid-item a { max-height: 300px !important; min-height: 200px !important; }
+  .gallery-grid .grid-item img { max-width: 96% !important; max-height: 96% !important; min-height: 140px !important; min-width: 140px !important; }
+  .gallery-grid .grid-item .caption { font-size: 14px !important; min-height: 2rem !important; }
 }
 </style>
 
@@ -1680,10 +1681,10 @@ window.addEventListener('load', function() {
   .timeline-tree .tree-item { padding: 1.5rem 1.2rem !important; margin-bottom: 1.5rem !important; border-radius: 1rem !important; }
   .timeline-tree .tree-item::before { left: -1.5rem !important; top: 1.5rem !important; width: 14px !important; height: 14px !important; border-width: 2px !important; }
   .timeline-tree .tree::before { width: 2px !important; }
-  .timeline-tree .tree-item .year { font-size: 18px !important; }
-  .timeline-tree .tree-item .company { font-size: 17px !important; }
-  .timeline-tree .tree-item .position { font-size: 15px !important; }
-  .timeline-tree .tree-item .description { font-size: 15px !important; line-height: 1.6 !important; }
+  .timeline-tree .tree-item .year { font-size: 16px !important; }
+  .timeline-tree .tree-item .company { font-size: 15px !important; }
+  .timeline-tree .tree-item .position { font-size: 14px !important; }
+  .timeline-tree .tree-item .description { font-size: 14px !important; line-height: 1.5 !important; }
 }
 </style>
 
@@ -1761,10 +1762,10 @@ window.addEventListener('load', function() {
   color: #000000 !important;
 }
 @media (max-width: 576px) {
-  .contacts-oval .oval-wrapper { flex-direction: column !important; align-items: center !important; gap: 0.8rem !important; }
-  .contacts-oval .oval-item { width: 100% !important; max-width: 320px !important; padding: 1rem 1.8rem !important; min-width: unset !important; border-radius: 50px !important; }
-  .contacts-oval .oval-item .label { font-size: 12px !important; }
-  .contacts-oval .oval-item .value { font-size: 16px !important; }
+  .contacts-oval .oval-wrapper { flex-direction: column !important; align-items: center !important; gap: 0.6rem !important; }
+  .contacts-oval .oval-item { width: 100% !important; max-width: 280px !important; padding: 0.8rem 1.5rem !important; min-width: unset !important; border-radius: 50px !important; }
+  .contacts-oval .oval-item .label { font-size: 11px !important; }
+  .contacts-oval .oval-item .value { font-size: 14px !important; }
 }
 </style>
 
